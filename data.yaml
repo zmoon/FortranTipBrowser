@@ -1,0 +1,36 @@
+#
+
+tips:
+
+  # 17-Dec-2021
+
+  - title: Hello World
+    intro: |
+      Hello World in Fortran is
+    file: hello-world.f90
+    url: https://twitter.com/fortrantip/status/1471887565745799173
+
+  - title: Intrinsic data types
+    intro: |
+      Fortran has 5 intrinsic data types: integer, real, complex, logical, and character.
+      The types have various `kind`s that determine the range of data they can represent.
+    file: ~
+    url: https://twitter.com/fortrantip/status/1471890355561943054
+
+  - title: `do`-`enddo` loop
+    intro: |
+      The primary looping construct in Fortran is do ... end do.
+      A program to print the sum the squares of the integers from 1 to 5 is
+    file: do-enddo.f90
+    url: https://twitter.com/fortrantip/status/1471891644370796550
+
+  # ...
+
+  # 19-Dec-2021 (first day that stored source files in the repo)
+
+  # ...
+
+  - title: Function overloading using an interface with module procedures
+    intro: ~
+    file: interface.f90
+    url: https://twitter.com/fortrantip/status/1472629090758836229
