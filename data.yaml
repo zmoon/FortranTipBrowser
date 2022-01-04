@@ -17,7 +17,7 @@ tips:
     file: ~
     url: https://twitter.com/fortrantip/status/1471890355561943054
 
-  - title: `do`-`enddo` loop
+  - title: '`do`-`enddo` loop'
     intro: |
       The primary looping construct in Fortran is do ... end do.
       A program to print the sum the squares of the integers from 1 to 5 is
