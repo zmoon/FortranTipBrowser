@@ -3,6 +3,7 @@ Use the data file and Fortran source files
 to construct MyST Markdown pages for Sphinx.
 """
 import subprocess
+import urllib.parse
 from pathlib import Path
 
 import yaml
@@ -17,11 +18,25 @@ with open("data.yaml", "r") as f:
     data = yaml.load(f, Loader=yaml.Loader)
 
 
+gb_url_fmt = "https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:{nl},positionColumn:1,positionLineNumber:{nl},selectionStartColumn:1,selectionStartLineNumber:{nl},startColumn:1,startLineNumber:{nl}),source:'{source:s}'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4"
+gh_link_fmt = '<a href="https://github.com/zmoon/FortranTip-site/blob/main/src/{fn}" target="_blank"><i class="fab fa-github"></i></a>'
+
 def fortran_to_myst(fn: str) -> str:
+    gh = gh_link_fmt.format(fn=fn)
+
+    with open(SRC / fn) as f:
+        s = f.read()
+    nl = len(s.splitlines())
+    source = urllib.parse.quote_plus(s, safe=",:!*()")
+    source = source.replace("!", "!!")  # this is how GodBolt escapes `!`
+    gb = gb_url_fmt.format(nl=nl, source=source)
+
+    gb = f'<a href="{gb}" target="_blank">GodBolt</a>'
+
     return f"""\
 ```{{literalinclude}} ../../src/{fn}
 :language: fortran
-:caption: {fn} <a href="https://github.com/zmoon/FortranTip-site/blob/main/src/{fn}" target="_blank"><i class="fab fa-github"></i></a>
+:caption: {fn} | {gh} | {gb}
 ```
 """
 

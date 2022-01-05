@@ -8,7 +8,7 @@ Ideas:
 * [ ] expanded intro/conclu text
 * [x] embedded original tweet
 * [ ] lists of additional references
-* [ ] GodBolt button for programs
+* [x] GodBolt button for programs
 * [ ] random tip button on home page
 * [ ] category/tag-based browsing
 * [ ] ...
