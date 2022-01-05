@@ -42,13 +42,18 @@ DST.mkdir(exist_ok=True)
 
 # Generate tip pages
 
+# TODO: cache last Fortran run, MD generation time, yaml DATA, so can regen only things that need it
+
 for i, d in enumerate(data["tips"], start=1):
     fn = f"{i:03d}.md"
 
+    # Required keys
     title = d["title"]
     # tweet_url = d["url"]
     intro = d["intro"]
     fortran = d["file"]
+
+    # Optional keys
     concl = d.get("concl")
     tweet_html = d.get("embed")
 
@@ -74,6 +79,7 @@ for i, d in enumerate(data["tips"], start=1):
 {run_fortran(fortran)["gfortran"]}
 ```
 """
+    # TODO: footnote with `gfortran --version` first line?
 
     # TODO: Conclu MD
     if concl is not None:

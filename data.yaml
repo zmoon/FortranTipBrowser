@@ -11,7 +11,7 @@ tips:
     concl: |
       (Every Fortran program must have an `end` statement.)
     url: https://twitter.com/fortrantip/status/1471887565745799173
-    embed: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hello World in Fortran is<br><br>print*,&quot;Hello, World.&quot;<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471887565745799173?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hello World in Fortran is<br><br>print*,&quot;Hello, World.&quot;<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471887565745799173?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
   - title: Intrinsic data types
     intro: |
@@ -19,17 +19,87 @@ tips:
       The types have various `kind`s that determine the range of data they can represent.
     file: ~
     url: https://twitter.com/fortrantip/status/1471890355561943054
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran has 5 intrinsic data types: integer, real, complex, logical, and character. The types have various KINDs that determine the range of data they can represent.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471890355561943054?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  - title: '`do`-`enddo` loop'
+  - title: '`do` loop'
     intro: |
-      The primary looping construct in Fortran is do ... end do.
+      The primary looping construct in Fortran is `do` ... `end do`.
       A program to print the sum the squares of the integers from 1 to 5 is
     file: do-enddo.f90
     url: https://twitter.com/fortrantip/status/1471891644370796550
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The primary looping construct in Fortran is do ... end do. A program to print the sum the squares of the integers from 1 to 5 is<br><br>implicit none<br>integer :: i,ssq<br>ssq = 0<br>do i=1,5<br> ssq = ssq + i**2<br>end do<br>print*,&quot;sum of squares is &quot;,ssq<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471891644370796550?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: '`exit`ing a `do` loop'
+    intro: |
+      You `exit` a loop as shown in the code below,
+      which accumulates the sums of squared integers until the sum exceeds 100.
+    file: do-exit.f90
+    url: https://twitter.com/fortrantip/status/1471895490346291206
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">You EXIT a loop as shown in the code below, which accumulates the sums of squared integers until the sum exceeds 100<br><br>implicit none<br>integer :: i,ssq<br>ssq = 0<br>i = 0<br>do<br> i = i+1<br> ssq = ssq + i**2<br> if (ssq &gt; 100) exit<br>end do <br>print*,&quot;sum of squares from 1 to &quot;,i,&quot; is&quot;,ssq<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471895490346291206?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Fortran compilers and tutorials
+    intro: |
+      Two good sites to get started with Fortran are
+      <https://fortran-lang.org> and <https://fortranwiki.org/fortran/show/HomePage>.
+      A good free compiler is `gfortran`, part of GCC.
+      Intel Fortran is also free.
+      LFortran is an interactive compiler that covers most but not yet all of Fortran.
+    file: ~
+    url: https://twitter.com/fortrantip/status/1471897319671046147
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Two good sites to get started with Fortran are <a href="https://t.co/i6lkcIfPqy">https://t.co/i6lkcIfPqy</a> and <a href="https://t.co/uxmVspKsPm">https://t.co/uxmVspKsPm</a> . A good free compiler is gfortran, part of gcc. Intel Fortran is also free. LFortran is an interactive compiler that covers most but not yet all of Fortran.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471897319671046147?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: '`**` is the exponentiation operator'
+    intro: |
+      The exponentiation operator in Fortran is `**`, as in Python.
+    file: expon.f90
+    concl: |
+      Many Fortran operators and intrinsic functions are elemental, and brackets denote arrays.
+    url: https://twitter.com/fortrantip/status/1471903802185986050
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The exponentiation operator in Fortran is **, as in Python. <br><br>print*,1.2**2<br><br>gives 1.44<br><br>Many Fortran operators and intrinsic functions are elemental, and brackets denote arrays, so<br><br>print*,[1.0,1.1,1.2,1.3]**2<br><br>gives<br><br>1.00000000 1.21000004 1.44000006 1.68999982</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471903802185986050?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Integer division truncates
+    intro: ~
+    file: int-trunc.f90
+    concl: |
+      2/3 = 0 in Fortran because the quotient of two integers is truncated to an integer.
+      The quotient of an integer and a real is a real.
+    url: https://twitter.com/fortrantip/status/1471936756857643008
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">print*,2+3,2-3,2*3,2/3,2/3.0,2.0/3,2**3<br><br>gives<br><br>5 -1 6 0 0.6666667 0.6666667 8<br><br>2/3 = 0 in Fortran because the quotient of two integers is truncated to an integer. The quotient of an integer and a real is a real.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471936756857643008?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: 'Array intrinsic functions: `sum`, `minval`, `maxval`, `minloc`, `findloc`'
+    intro: |
+      Fortran has many array intrinsic functions. Below, `!` starts a comment.
+    file: array-intrinsics.f90
+    url: https://twitter.com/fortrantip/status/1471989760046641153
+    embed: '<blockquote class="twitter-tweet"><p lang="fr" dir="ltr">Fortran has many array intrinsic functions. Below, ! starts a comment.<br><br>integer, parameter :: vec(3) = [4,1,9]<br>print*,minval(vec),maxval(vec) ! output: 1 9<br>print*,sum(vec),product(vec) ! 14 36<br>print*,minloc(vec),maxloc(vec) ! 2 3<br>print*,findloc(vec,9),findloc(vec,8) ! 3 0<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471989760046641153?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Fortran array sections contain both endpoints
+    intro: |
+      Fortran array sections contain both endpoints like Julia, Matlab and R, unlike Python.
+    file: array-sections.f90
+    url: https://twitter.com/fortrantip/status/1471994100161388545
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran array sections contain both endpoints like Julia, Matlab and R, unlike Python.<br><br>integer, parameter :: v(3) = [10,20,30]<br>print*,v(1:2) ! output 10 20<br>print*,v(:2) ! 10 20<br>print*,v(2:3) ! 20 30<br>print*,v(2:) ! 20 30<br>print*,v(::2) ! 10 30 -- stride of 2</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471994100161388545?ref_src=twsrc%5Etfw">December 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Fortran arrays can have any lower bound (the default is 1)
+    intro: |
+      Fortran arrays can have any lower bound. 
+      The default is 1.
+      Array functions have optional mask arguments to determine the elements used.    
+    file: array-lbound.f90
+    url: https://twitter.com/fortrantip/status/1471997763848183810
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran arrays can have any lower bound. <br>The default is 1. Array functions have optional mask arguments to determine the elements used.<br><br>integer :: v(-1:1) = [1,-2,3]<br>print*,lbound(v),ubound(v),size(v) ! -1 1 3<br>print*,sum(v) ! 2<br>print*,sum(v,mask=v&gt;0) ! 4 -- sum excludes -2<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471997763848183810?ref_src=twsrc%5Etfw">December 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: '`sum` and other array functions have an optional `dim`ension argument'
+    intro: ~
+    file: sum-dim.f90
+    url: https://twitter.com/fortrantip/status/1472018791525720069
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">sum and other array functions have an optional dim(ension) argument<br><br>integer :: v(2,3) ! 2x3 matrix<br>v(1,:) = [1,2,3]<br>v(2,:) = 10*v(1,:) ! set to [10,20,30]<br>print*,sum(v) ! all elements: 66<br>print*,sum(v,dim=1) ! sum each row: 6 60<br>print*,sum(v,dim=2) ! sum each col: 11 22 33</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472018791525720069?ref_src=twsrc%5Etfw">December 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 18-Dec-2021
 
   # ...
 
-  # 19-Dec-2021 (first day that stored source files in the repo)
+  # 19-Dec-2021 (first day that stored source files in the Beliavsky/FortranTip repo)
 
   # ...
 
