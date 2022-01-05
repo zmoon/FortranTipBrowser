@@ -1,1 +1,10 @@
+#
+# MD generation
 PyYaml
+#
+# Sphinx
+myst_parser
+sphinx
+sphinx-autobuild
+sphinx-book-theme
+sphinx-design

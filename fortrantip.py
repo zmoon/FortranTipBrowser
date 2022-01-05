@@ -9,7 +9,7 @@ import yaml
 
 HERE = Path(__file__).parent
 
-DST = HERE / "docs" / "_gen"
+DST = HERE / "docs" / "tips"
 SRC = HERE / "src"
 
 
@@ -23,6 +23,7 @@ def fortran_to_myst(fn: str) -> str:
     out_blocks = []
     with open(SRC / fn, "r") as f:
         for line in f:
+
             in_code = not line.startswith("!")
 
             if in_code:
@@ -72,8 +73,10 @@ def run_fortran(fn: str):
     return {"gfortran": cp2.stdout.decode()}
 
 
-
 DST.mkdir(exist_ok=True)
+
+
+# Generate tip pages
 
 for i, d in enumerate(data["tips"], start=1):
     fn = f"{i:03d}.md"
@@ -83,25 +86,47 @@ for i, d in enumerate(data["tips"], start=1):
     intro = d["intro"]
     fortran = d["file"]
 
-    s = f"# {title}\n\n"
-
-    if intro is not None:
-        s += intro
+    s = f"# {i:03d}. {title}\n\n"
 
     s += f"""\
-Tweet: {tweet_url}
+Tweet: <{tweet_url}>
 
 """
+
+    if intro is not None:
+        s += intro + "\n"
 
     if fortran is not None:
         s += fortran_to_myst(fortran)
 
         s += "\n\n" f"""\
 Ouput:
-```
+```text
 {run_fortran(fortran)["gfortran"]}
 ```
 """
 
     with open(DST / fn, "w") as f:
         f.write(s)
+
+
+# Generate tips index file
+
+nums = "\n".join(f"{n:03d}" for n in range(1, i+1))
+
+s = f"""\
+---
+sd_hide_title: true
+...
+
+# Tips index
+
+```{{toctree}}
+:hidden:
+
+{nums}
+```
+"""
+
+with open(DST / "index.md", "w") as f:
+    f.write(s)
