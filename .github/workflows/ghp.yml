@@ -33,7 +33,12 @@ jobs:
       - name: Sphinx build
         run: sphinx-build -b html -W docs docs/_build/html
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: build
-
+      # - name: Push built HTML to GHP
+      #   uses: JamesIves/github-pages-deploy-action@4.1.9
+      #    with:
+      #      branch: gh-pages
+      #      folder: ./docs/_build/html
+      #      git-config-name: github-actions
+      #      git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
+      #      clean: true
+      #      clean-exclude: .nojekyll  # default      
