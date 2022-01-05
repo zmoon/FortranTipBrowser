@@ -71,7 +71,7 @@ gfortran_version_info = get_gfortran_version_info()
 for i, d in enumerate(data["tips"], start=1):
     fn = f"{i:03d}.md"
 
-    # Required keys
+    # Required keys (but all except title can be null (parsed to None))
     title = d["title"]
     # tweet_url = d["url"]
     intro = d["intro"]
