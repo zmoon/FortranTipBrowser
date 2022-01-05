@@ -158,12 +158,192 @@ tips:
     url: https://twitter.com/fortrantip/status/1472365082067755017
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In addition to if-elseif, Fortran has a one-line if:<br>if (condition) executable_statement<br><br>integer :: i<br>do i=-1,1<br> if (i /= 0) print*,i,1/i ! one-line if equivalent to below<br> if (i /= 0) then<br> print*,i,1/i<br> end if<br>end do<br>end<br>! output:<br>! -1 -1<br>! -1 -1<br>! 1 1<br>! 1 1</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472365082067755017?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # 19-Dec-2021 (first day that stored source files in the Beliavsky/FortranTip repo)
+  # 19-Dec-2021 (first day that stored some source files in the Beliavsky/FortranTip repo)
 
+  - title: '`associate` creates an alias for expressions or variables'
+    intro: ~
+    file: assoc.f90
+    url: https://twitter.com/fortrantip/status/1472565511628197891
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Associate creates an alias for expressions or variables.<br><br>integer, allocatable :: u(:)<br>u = [4,9]<br>associate (v =&gt; u)<br>v = v - 2<br>print*,v ! 2 7<br>print*,u ! 2 7<br>associate (w =&gt; [4,9])<br>print*,w<br>w = w - 2 ! illegal since w set to a constant expression<br>end associate<br>end associate<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472565511628197891?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Loop variable after completion
+    intro: |
+      The loop variable equals the upper bound plus the stride
+      after normal completion of a loop.
+    file: loop-var.f90
+    url: https://twitter.com/fortrantip/status/1472598697489965061
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The loop variable equals the upper bound plus the stride<br>after normal completion of a loop<br><br>integer :: i<br>do i=1,3<br> if (i &gt; 1) exit<br>end do<br>print*,i ! 2<br>do i=1,3 ! stride of 1<br> continue ! placeholder<br>end do<br>print*,i ! 4<br>do i=1,3,2 ! stride of 2<br> continue<br>end do<br>print*,i ! 5<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472598697489965061?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' 
+
+  - title: '`pack` selects elements'
+    intro: ~
+    file: pack.f90
+    url: https://twitter.com/fortrantip/status/1472600871192125451
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Pack selects elements<br><br>integer :: v(3) = [1,-4,9]<br>print*,pack(v,v&gt;0) ! 1 9 -- keep values &gt; 0<br>print*,count(v&gt;0) ! 2 -- count values &gt; 0<br>print*,size(v) ! 3<br>print*,sum(v) ! 6<br>print*,sum(v,v&gt;0) ! 10 -- sum has optional mask<br>print*,sum(pack(v,v&gt;0)) ! 10<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472600871192125451?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Functions should be `pure` and have `intent(in)` arguments
+    intro: |
+      `intent(in)` arguments cannot be changed.
+      `pure` = no side effects.
+      Use `subroutine` instead for a procedure with side effects.
+    file: func.f90
+    concl: |
+      `real` in the function definition line indicates the type of the return value.
+      By default, the value corresponding to a variable with the same name as the function
+      is returned (here `area`).
+    url: https://twitter.com/fortrantip/status/1472603894886932482
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Demo of a Fortran function. Intent(in) arguments<br>cannot be changed. Function arguments should be intent(in). Pure = no side-effects.<br><br>print*,area(3.,4.) ! 12<br>contains<br>real pure function area(length,width)<br>real, intent(in) :: length,width<br>area = length*width<br>end function area<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472603894886932482?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: '`elemental` functions broadcast arguments'
+    intro: ~
+    file: elemental.f90
+    url: https://twitter.com/fortrantip/status/1472606914857078793
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Elemental functions broadcast arguments. Neat Fortran feature!<br><br>print*,area(3,4) ! 12<br>print*,area(3,[4,5]) ! 12 15<br>print*,area([3,4],[4,5]) ! 12 20<br>contains<br>integer elemental function area(length,width)<br>integer, intent(in) :: length,width<br>area = length*width<br>end function area<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472606914857078793?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Put functions and subroutines in modules to ensure that interfaces are checked
+    intro: |
+      Fortran procedures should be defined in modules to
+      ensure that interfaces are checked.
+    file: mod.f90
+    url: https://twitter.com/fortrantip/status/1472610403884670976
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran procedures should be defined in modules to<br>ensure that interfaces are checked.<br><br>module m<br>contains<br>integer function area(length,width)<br>integer, intent(in) :: length,width<br>area = length*width<br>end<br>end module m<br>program main<br>use m<br>print*,area(3,4) ! 12<br>end program main</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472610403884670976?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: 'Avoid polluting the namespace by using `use`-`only`'
+    intro: |
+      In Fortran, 
+      ```fortran
+      use m
+      ```
+      is equivalent to Python
+      ```python
+      from m import *
+      ```
+      It is better to write
+      ```fortran
+      use m, only: foo, bar
+      ```
+      to avoid polluting the namespace and to clarify the origin of imported entities.
+    file: ~
+    url: https://twitter.com/fortrantip/status/1472613921886552065
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In Fortran, <br><br>use m<br><br>is equivalent to Python<br><br>from m import *<br><br>It is better to write <br><br>use m, only: foo, bar<br><br>to avoid polluting the namespace and to clarify the origin of imported entities.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472613921886552065?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # This is the first one with source code file in the FortranTip repo
+  - title: Function overloading using an interface with module procedures
+    intro: ~
+    file: interface.f90
+    file0: same
+    url: https://twitter.com/fortrantip/status/1472629090758836229
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/qsfPFLVUkl">pic.twitter.com/qsfPFLVUkl</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472629090758836229?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO: maybe split into two?
+  - title: Optional arguments (and the `random_number` intrinsic)
+    intro: ~
+    file: optional.f90
+    file0: same
+    url: https://twitter.com/fortrantip/status/1472684194765672450
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/ZNqwgg3Wgq">pic.twitter.com/ZNqwgg3Wgq</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472684194765672450?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Define and call a subroutine
+    intro: ~
+    file: subroutine.f90
+    file0: subroutine.f90
+    concl: |
+      Subroutines are commonly used to return multiple values,
+      although a function can return an array or a user-defined type that contains multiple values.
+      Use functions when possible, but subroutines are often needed.
+      The subroutine is invoked with the `call` statement.
+    url: https://twitter.com/fortrantip/status/1472692305522044932
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/Wi7Imqi5vW">pic.twitter.com/Wi7Imqi5vW</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472692305522044932?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: 'Subroutines can have `intent(in out)` arguments, but functions should not'
+    intro: |
+      A procedure argument can be `intent(in out)`,
+      which means that it is an input that can be overwritten.
+      Functions should not have such arguments, but subroutines often do.
+      `intent(out)` means the argument is set to uninitialized upon entering the procedure.
+    file: intent-in-out.f90
+    file0: intent_in_out.f90
+    url: https://twitter.com/fortrantip/status/1472696912541364224
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/3FjJkJUHSn">pic.twitter.com/3FjJkJUHSn</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472696912541364224?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: 'Specify function and subroutine `intent`s'
+    intro: |
+      Function and subroutine argument `intent`s were introduced in the Fortran 90 standard.
+      Much Fortran code does not specify intents, which is legal, but all new code should.
+      Arguments should be `intent(in)` or `intent(out)` unless `intent(in out)` is necessary.
+    file: ~
+    url: https://twitter.com/fortrantip/status/1472698233298333699
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Function and subroutine argument INTENTs were introduced in the Fortran 90 standard. Much Fortran code does not specify intents, which is legal, but all new code should. Arguments should be intent(in) or intent(out) unless intent(in out) is necessary.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472698233298333699?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO: update `file0` after fixing in FortranTip?
+  - title: Procedures can be recursive
+    intro: |
+      Fortran procedures declared `recursive` can call themselves.
+    file: recursive.f90
+    file0: missing
+    url: https://twitter.com/fortrantip/status/1472702427740745728
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/czICWzekYU">pic.twitter.com/czICWzekYU</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472702427740745728?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: Use `parameter`s in modules to define constants
+    intro: |
+      A physical or mathematical constant such as $\pi$ that will be used 
+      in many parts of a program should be defined as a `parameter` in a 
+      module that is `use`d where needed.
+      In the code below, `pi` is used both in module `m` and the main program.
+    file: module-parameter.f90
+    file0: module_parameter.f90
+    concl: |
+      One should declare a module `private` and list as `public`
+      the entities that will be referenced outside the module.
+      Module entities are public by default.
+    url: https://twitter.com/fortrantip/status/1472718436040073226
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/vWJuAwle97">pic.twitter.com/vWJuAwle97</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472718436040073226?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  - title: 'Declare floating point variables with `kind`s'
+    intro: |
+      Although floating point variables can still be declared just `real`
+      or `double precision` in Fortran, they should not be.
+      Instead, the `kind` of `real` should be specified as a parameter
+      that is used throughout the program.
+
+      The code below can be changed from double to single or quadruple precision
+      by simply changing the definition of `wp` (working precision) in `kind_mod`
+      using the `kind` constants fron the instrinsic `iso_fortran_env` module.
+
+      Note the `_wp` suffix used in the literal constants for $\pi$ and $10.0$.
+      Any literal constant without a suffix is considered single precision in Fortran,
+      regardless of the number of digits provided.
+
+      See <https://fortran-lang.org/learn/best_practices/floating_point> for more dicussion.
+    file: real-precision.f90
+    file0: kind.f90
+    url: https://twitter.com/fortrantip/status/1472771842242920451
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/Pxu7PbR5b6">pic.twitter.com/Pxu7PbR5b6</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472771842242920451?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # Note: this one is a comment on the previous tweet
+  - title: 'Replace non-standard `REAL*8` declaration with `real(kind=real64)`'
+    intro: |
+      In older code, declarations such as[^1]
+      ```fortran
+      REAL*8 x
+      ```
+      are common but non-standard.
+      They should be replaced by
+      ```fortran
+      real(kind=real64) :: x
+      ```
+      or 
+      ```fortran
+      real(kind=wp) :: x
+      ```
+      with `wp`[^wp] set appropriately (e.g., `use iso_fortran_env, only: wp => real64`).
+
+      [^1]: Here indicating double precision (8-byte)
+      [^wp]: "Working precision"
+    file: ~
+    url: https://twitter.com/fortrantip/status/1472772577600942083
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In older code, declarations such as<br><br>real*8 x<br><br>are common but non-standard. They should be replaced by<br><br>real(kind=real64) :: x<br><br>or <br><br>real(kind=wp) :: x<br><br>with wp set appropriately.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472772577600942083?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 20-December-2021
 
   # ...
 
-  - title: Function overloading using an interface with module procedures
-    intro: Demonstrate overloading with an interface and module procedures.
-    file: interface.f90
-    url: https://twitter.com/fortrantip/status/1472629090758836229
