@@ -63,6 +63,8 @@ gfortran_version_info = get_gfortran_version_info()
 
 # Generate tip pages
 
+# TODO: parallel
+
 # TODO: cache last Fortran run, MD generation time, yaml DATA, so can regen only things that need it
 
 for i, d in enumerate(data["tips"], start=1):

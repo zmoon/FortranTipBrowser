@@ -1,0 +1,39 @@
+name: Build and deploy to GHP
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          cache: pip
+      
+      - name: Install Python requirements
+        run: pip install -r requirements.txt
+
+      - name: GFortran info
+        run: gfortran --version
+
+      - name: Generate MD
+        run: python fortrantip.py
+
+      - name: Sphinx linkcheck
+        run: sphinx-build -b linkcheck docs docs/_build/linkcheck
+
+      - name: Sphinx build
+        run: sphinx-build -b html -W docs docs/_build/html
+
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+
