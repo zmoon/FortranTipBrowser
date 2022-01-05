@@ -7,6 +7,9 @@ sd_hide_title: true
 [FortranTip](https://twitter.com/fortrantip) tips in one Sphinx site.
 
 
+```{include} _random-tip-btn_snippet.myst
+```
+
 
 ```{toctree}
 :maxdepth: 2

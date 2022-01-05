@@ -10,7 +10,8 @@ import yaml
 
 HERE = Path(__file__).parent
 
-DST = HERE / "docs" / "tips"
+DOC = HERE / "docs"
+DST = DOC / "tips"
 SRC = HERE / "src"
 
 
@@ -123,7 +124,8 @@ for i, d in enumerate(data["tips"], start=1):
 
 # Generate tips index file
 
-nums = "\n".join(f"{n:03d}" for n in range(1, i+1))
+ntips = i
+nums = "\n".join(f"{i:03d}" for i in range(1, ntips+1))
 
 s = f"""\
 ---
@@ -141,3 +143,28 @@ sd_hide_title: true
 
 with open(DST / "index.md", "w") as f:
     f.write(s)
+
+
+# Generate random tip button snippet
+
+btn_snippet = f"""\
+```{{raw}} html
+<script>
+function randoTip() {{
+  i = Math.floor(1 + Math.random() * {ntips});
+  tip = String(i).padStart(3, '0');
+  tip_page = `tips/${{tip}}.html`;
+  // alert(tip_page);
+  window.open(tip_page, "_self")
+}}
+
+</script>
+
+<button class="sd-sphinx-override sd-btn sd-btn-primary sd-shadow-sm", onclick="randoTip()">
+  Go to random tip
+</button>
+```
+"""
+
+with open(DOC / "_random-tip-btn_snippet.myst", "w") as f:
+    f.write(btn_snippet)

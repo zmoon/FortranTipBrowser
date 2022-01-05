@@ -1,6 +1,9 @@
 a.out
 *.mod
+
 venv*/
+
+docs/_*snippet*.*
 
 
 # Byte-compiled / optimized / DLL files
