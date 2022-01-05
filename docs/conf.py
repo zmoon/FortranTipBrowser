@@ -1,5 +1,5 @@
 project = "FortranTip"
-author = "Beliavsky"
+author = "Beliavsky and FortranTip contributors"
 copyright = "2021"
 
 extensions = [

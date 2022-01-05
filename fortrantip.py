@@ -18,49 +18,13 @@ with open("data.yaml", "r") as f:
 
 
 def fortran_to_myst(fn: str) -> str:
-    comment_lines = []
-    code_lines = []
-    out_blocks = []
-    with open(SRC / fn, "r") as f:
-        for line in f:
-
-            in_code = not line.startswith("!")
-
-            if in_code:
-                if comment_lines:
-                    out_blocks.append("```{margin}\n" + "\n".join(comment_lines) + "\n```")
-                    comment_lines = []
-
-                # TODO: strip eol comments to comment block
-                try:
-                    code, eol_comment = line.split("!")
-                except ValueError:
-                    code = line.rstrip()
-                    code_lines.append(code)
-                else:
-                    code_lines.append(code)
-                    out_blocks.append("```fortran\n" + "\n".join(code_lines) + "\n```")
-                    code_lines = []
-                    out_blocks.append("```{margin}\n" + eol_comment.strip() + "\n```")
-                
-
-            else:
-                if code_lines:
-                    out_blocks.append("```fortran\n" + "\n".join(code_lines) + "\n```")
-                    code_lines = []
-
-                comment_lines.append(line.lstrip("!").strip())
-
-    # TODO: DRY
-    if comment_lines:
-        out_blocks.append("```{margin}\n" + "\n".join(comment_lines) + "\n```")
-        comment_lines = []
-
-    if code_lines:
-        out_blocks.append("```fortran\n" + "\n".join(code_lines) + "\n```")
-        code_lines = []
-
-    return "\n\n".join(out_blocks)
+    return f"""\
+```{{literalinclude}} ../../src/{fn}
+:language: fortran
+:linenos:
+:caption: {fn} <a href="https://github.com/zmoon/FortranTip-site/blob/main/src/{fn}" target="_blank"><i class="fab fa-github"></i></a>
+```
+"""
 
 
 def run_fortran(fn: str):
@@ -82,30 +46,46 @@ for i, d in enumerate(data["tips"], start=1):
     fn = f"{i:03d}.md"
 
     title = d["title"]
-    tweet_url = d["url"]
+    # tweet_url = d["url"]
     intro = d["intro"]
     fortran = d["file"]
+    concl = d.get("concl")
+    tweet_html = d.get("embed")
 
     s = f"# {i:03d}. {title}\n\n"
 
-    s += f"""\
-Tweet: <{tweet_url}>
+#     s += f"""\
+# Tweet: <{tweet_url}>
 
-"""
+# """
 
+    # Intro MD
     if intro is not None:
         s += intro + "\n"
 
+    # Fortran source file and output
     if fortran is not None:
         s += fortran_to_myst(fortran)
 
-        s += "\n\n" f"""\
-Ouput:
-```text
+        s += "\n" f"""\
+```{{code-block}} text
+:caption: Output
+
 {run_fortran(fortran)["gfortran"]}
 ```
 """
 
+    # TODO: Conclu MD
+    if concl is not None:
+        s += f"\n{concl}"
+
+    # TODO: List of refs for futher info
+
+    # Tweet embed
+    if tweet_html is not None:
+        s += "\n---\n\n" f"{tweet_html}"
+
+    # Write tip MD
     with open(DST / fn, "w") as f:
         f.write(s)
 

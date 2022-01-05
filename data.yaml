@@ -6,9 +6,12 @@ tips:
 
   - title: Hello World
     intro: |
-      Hello World in Fortran is
+      [Hello World](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) in Fortran is
     file: hello-world.f90
+    concl: |
+      (Every Fortran program must have an `end` statement.)
     url: https://twitter.com/fortrantip/status/1471887565745799173
+    embed: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hello World in Fortran is<br><br>print*,&quot;Hello, World.&quot;<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471887565745799173?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   - title: Intrinsic data types
     intro: |
@@ -31,6 +34,6 @@ tips:
   # ...
 
   - title: Function overloading using an interface with module procedures
-    intro: ~
+    intro: Demonstrate overloading with an interface and module procedures.
     file: interface.f90
     url: https://twitter.com/fortrantip/status/1472629090758836229

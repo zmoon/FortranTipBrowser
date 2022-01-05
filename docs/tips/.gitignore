@@ -1,0 +1,4 @@
+# These files are generated as part of the docs build process,
+# before invoking sphinx
+*
+!.gitignore
