@@ -41,6 +41,11 @@ def fortran_to_myst(fn: str) -> str:
 """
 
 
+def get_gfortran_version_info() -> str:
+    cp = subprocess.run(["gfortran", "--version"], check=True, capture_output=True)
+    return cp.stdout.decode().splitlines()[0]
+
+
 def run_fortran(fn: str):
     # Compile
     cp1 = subprocess.run(["gfortran", (SRC / fn).as_posix()], check=True, capture_output=True)
@@ -52,6 +57,8 @@ def run_fortran(fn: str):
 
 
 DST.mkdir(exist_ok=True)
+
+gfortran_version_info = get_gfortran_version_info()
 
 
 # Generate tip pages
@@ -88,10 +95,12 @@ for i, d in enumerate(data["tips"], start=1):
 
         s += "\n" f"""\
 ```{{code-block}} text
-:caption: Output
+:caption: Output[^gfortran-version]
 
 {run_fortran(fortran)["gfortran"]}
 ```
+
+[^gfortran-version]: Compiled using `{gfortran_version_info}` with no flags
 """
     # TODO: footnote with `gfortran --version` first line?
 

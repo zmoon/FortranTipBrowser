@@ -8,7 +8,7 @@ extensions = [
     "sphinx_design",
 ]
 
-html_title = "FortranTip"
+html_title = "FortranTip browser"
 html_theme = "sphinx_book_theme"
 html_theme_options = {
     "use_repository_button": True,
