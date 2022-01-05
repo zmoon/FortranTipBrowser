@@ -21,7 +21,6 @@ def fortran_to_myst(fn: str) -> str:
     return f"""\
 ```{{literalinclude}} ../../src/{fn}
 :language: fortran
-:linenos:
 :caption: {fn} <a href="https://github.com/zmoon/FortranTip-site/blob/main/src/{fn}" target="_blank"><i class="fab fa-github"></i></a>
 ```
 """

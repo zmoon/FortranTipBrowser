@@ -4,6 +4,7 @@ copyright = "2021"
 
 extensions = [
     "myst_parser",
+    "sphinx_copybutton",
     "sphinx_design",
 ]
 

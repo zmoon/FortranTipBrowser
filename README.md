@@ -10,4 +10,5 @@ Ideas:
 * [ ] lists of additional references
 * [ ] GodBolt button for programs
 * [ ] random tip button on home page
+* [ ] category/tag-based browsing
 * [ ] ...
