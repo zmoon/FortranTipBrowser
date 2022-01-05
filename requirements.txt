@@ -2,7 +2,7 @@
 # MD generation
 PyYaml
 #
-# Sphinx
+# Sphinx >=4
 myst_parser
 sphinx
 sphinx-autobuild
