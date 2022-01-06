@@ -1,0 +1,9 @@
+# 002. Intrinsic data types
+
+Fortran has 5 intrinsic data types: integer, real, complex, logical, and character.
+The types have various `kind`s that determine the range of data they can represent.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran has 5 intrinsic data types: integer, real, complex, logical, and character. The types have various KINDs that determine the range of data they can represent.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471890355561943054?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

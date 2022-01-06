@@ -1,0 +1,12 @@
+# 005. Fortran compilers and tutorials
+
+Two good sites to get started with Fortran are
+<https://fortran-lang.org> and <https://fortranwiki.org/fortran/show/HomePage>.
+A good free compiler is `gfortran`, part of GCC.
+Intel Fortran is also free.
+LFortran is an interactive compiler that covers most but not yet all of Fortran.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Two good sites to get started with Fortran are <a href="https://t.co/i6lkcIfPqy">https://t.co/i6lkcIfPqy</a> and <a href="https://t.co/uxmVspKsPm">https://t.co/uxmVspKsPm</a> . A good free compiler is gfortran, part of gcc. Intel Fortran is also free. LFortran is an interactive compiler that covers most but not yet all of Fortran.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1471897319671046147?ref_src=twsrc%5Etfw">December 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

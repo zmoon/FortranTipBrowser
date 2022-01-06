@@ -1,0 +1,24 @@
+# 034. Replace non-standard `REAL*8` declaration with `real(kind=real64)`
+
+In older code, declarations such as[^1]
+```fortran
+REAL*8 x
+```
+are common but non-standard.
+They should be replaced by
+```fortran
+real(kind=real64) :: x
+```
+or 
+```fortran
+real(kind=wp) :: x
+```
+with `wp`[^wp] set appropriately (e.g., `use iso_fortran_env, only: wp => real64`).
+
+[^1]: Here indicating double precision (8-byte)
+[^wp]: "Working precision"
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In older code, declarations such as<br><br>real*8 x<br><br>are common but non-standard. They should be replaced by<br><br>real(kind=real64) :: x<br><br>or <br><br>real(kind=wp) :: x<br><br>with wp set appropriately.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472772577600942083?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

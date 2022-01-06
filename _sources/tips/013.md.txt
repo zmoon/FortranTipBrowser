@@ -1,0 +1,11 @@
+# 013. New Fortran code should use free source form and `.f90` suffix
+
+New Fortran code should be written using free source form and stored in a file with a `.f90` file extension.
+Free form was introduced in the Fortran 90 standard,
+but using the `.f90` suffix does NOT mean the code is restricted to Fortran 90 features.
+Don't use the `.f95`, `.f08`, `.f18` suffixes, which are not recognized by many tools.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">New Fortran code should be written using free source form and stored in a file with the .f90 suffix. Free form was introduced in the Fortran 90 standard, but using the .f90 suffix does NOT mean the code is restricted to Fortran 90 features. Don&#39;t use .f95 .f08 .f18 suffixes.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472183935044145157?ref_src=twsrc%5Etfw">December 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

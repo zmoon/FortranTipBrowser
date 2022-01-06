@@ -1,0 +1,27 @@
+# 022. Functions should be `pure` and have `intent(in)` arguments
+
+`intent(in)` arguments cannot be changed.
+`pure` = no side effects.
+Use `subroutine` instead for a procedure with side effects.
+
+```{literalinclude} ../../src/func.f90
+:language: fortran
+:caption: func.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/func.f90" target="_blank"><i class="fab fa-github"></i></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:10,positionColumn:1,positionLineNumber:10,selectionStartColumn:1,selectionStartLineNumber:10,startColumn:1,startLineNumber:10),source:'print+*,+area(3.,+4.)++!!+12%0A%0Acontains%0A%0Areal+pure+function+area(length,+width)%0A+++real,+intent(in)+::+length,+width%0A+++area+%3D+length*width%0Aend+function+area%0A%0Aend%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank">GodBolt</a>
+```
+
+```{code-block} text
+:caption: Output[^gfortran-version]
+
+   12.0000000    
+
+```
+
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+
+`real` in the function definition line indicates the type of the return value.
+By default, the value corresponding to a variable with the same name as the function
+is returned (here `area`).
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Demo of a Fortran function. Intent(in) arguments<br>cannot be changed. Function arguments should be intent(in). Pure = no side-effects.<br><br>print*,area(3.,4.) ! 12<br>contains<br>real pure function area(length,width)<br>real, intent(in) :: length,width<br>area = length*width<br>end function area<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472603894886932482?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

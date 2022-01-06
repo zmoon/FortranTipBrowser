@@ -1,0 +1,21 @@
+# 019. `associate` creates an alias for expressions or variables
+
+```{literalinclude} ../../src/assoc.f90
+:language: fortran
+:caption: assoc.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/assoc.f90" target="_blank"><i class="fab fa-github"></i></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:21,positionColumn:1,positionLineNumber:21,selectionStartColumn:1,selectionStartLineNumber:21,startColumn:1,startLineNumber:21),source:'integer,+allocatable+::+u(:)%0A%0Au+%3D+%5B4,9%5D%0A%0Aassociate+(v+%3D%3E+u)%0Av+%3D+v+-+2%0Aprint+*,+v++!!+2+7%0Aprint+*,+u++!!+2+7%0A%0Aassociate+(w+%3D%3E+%5B4,+9%5D)%0Aprint+*,+w%0A%0A!!+The+following+is+illegal+since+%60w%60+is+set+to+a+constant+expression%3B%0A!!+it+will+raise+a+compilation+error:%0A!!+w+%3D+w+-+2++%0A%0A!!+Need+one+for+each+of+the+%60associate%60s+above%0Aend+associate%0Aend+associate%0A%0Aend%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank">GodBolt</a>
+```
+
+```{code-block} text
+:caption: Output[^gfortran-version]
+
+           2           7
+           2           7
+           4           9
+
+```
+
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Associate creates an alias for expressions or variables.<br><br>integer, allocatable :: u(:)<br>u = [4,9]<br>associate (v =&gt; u)<br>v = v - 2<br>print*,v ! 2 7<br>print*,u ! 2 7<br>associate (w =&gt; [4,9])<br>print*,w<br>w = w - 2 ! illegal since w set to a constant expression<br>end associate<br>end associate<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472565511628197891?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

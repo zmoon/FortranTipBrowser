@@ -1,0 +1,10 @@
+# 030. Specify function and subroutine `intent`s
+
+Function and subroutine argument `intent`s were introduced in the Fortran 90 standard.
+Much Fortran code does not specify intents, which is legal, but all new code should.
+Arguments should be `intent(in)` or `intent(out)` unless `intent(in out)` is necessary.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Function and subroutine argument INTENTs were introduced in the Fortran 90 standard. Much Fortran code does not specify intents, which is legal, but all new code should. Arguments should be intent(in) or intent(out) unless intent(in out) is necessary.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472698233298333699?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

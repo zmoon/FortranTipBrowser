@@ -1,0 +1,20 @@
+# 025. Avoid polluting the namespace by using `use`-`only`
+
+In Fortran, 
+```fortran
+use m
+```
+is equivalent to Python
+```python
+from m import *
+```
+It is better to write
+```fortran
+use m, only: foo, bar
+```
+to avoid polluting the namespace and to clarify the origin of imported entities.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In Fortran, <br><br>use m<br><br>is equivalent to Python<br><br>from m import *<br><br>It is better to write <br><br>use m, only: foo, bar<br><br>to avoid polluting the namespace and to clarify the origin of imported entities.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472613921886552065?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
