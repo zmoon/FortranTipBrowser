@@ -5,6 +5,7 @@ to construct MyST Markdown pages for Sphinx.
 import subprocess
 import urllib.parse
 from pathlib import Path
+from typing import Optional
 
 import yaml
 
@@ -21,8 +22,9 @@ with open("data.yaml", "r") as f:
 
 gb_url_fmt = "https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:{nl},positionColumn:1,positionLineNumber:{nl},selectionStartColumn:1,selectionStartLineNumber:{nl},startColumn:1,startLineNumber:{nl}),source:'{source:s}'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4"
 gh_link_fmt = '<a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/{fn}" target="_blank"><i class="fab fa-github"></i></a>'
+gh0_link_fmt = '<a href="https://github.com/Beliavsky/FortranTip/blob/main/{fn}" target="_blank"><i class="fab fa-github"></i><sub>0</sub></a>'
 
-def fortran_to_myst(fn: str) -> str:
+def fortran_to_myst(fn: str, *, fn0: Optional[str] = None) -> str:
     gh = gh_link_fmt.format(fn=fn)
 
     with open(SRC / fn) as f:
@@ -34,10 +36,16 @@ def fortran_to_myst(fn: str) -> str:
 
     gb = f'<a href="{gb}" target="_blank">GodBolt</a>'
 
+    if fn0 is not None:
+        gh0 = gh0_link_fmt.format(fn=fn0)
+        caption = f"{fn} | {gh} | {gh0} | {gb}"
+    else:
+        caption = f"{fn} | {gh} | {gb}"
+
     return f"""\
 ```{{literalinclude}} ../../src/{fn}
 :language: fortran
-:caption: {fn} | {gh} | {gb}
+:caption: {caption}
 ```
 """
 
@@ -81,6 +89,14 @@ for i, d in enumerate(data["tips"], start=1):
     concl = d.get("concl")
     tweet_html = d.get("embed")
 
+    # File in original FortranTip repo
+    fortran0 = d.get("file0")
+    if fortran0 == "same":
+        fortran0 = fortran
+    elif fortran0 == "missing":
+        fortran0 = None
+    assert fortran0 is None or fortran0.endswith(".f90")
+
     s = f"# {i:03d}. {title}\n\n"
 
 #     s += f"""\
@@ -94,7 +110,7 @@ for i, d in enumerate(data["tips"], start=1):
 
     # Fortran source file and output
     if fortran is not None:
-        s += fortran_to_myst(fortran)
+        s += fortran_to_myst(fn=fortran, fn0=fortran0)
 
         s += "\n" f"""\
 ```{{code-block}} text
@@ -115,7 +131,7 @@ for i, d in enumerate(data["tips"], start=1):
 
     # Tweet embed
     if tweet_html is not None:
-        s += "\n---\n\n" f"{tweet_html}"
+        s += "\n---\n\n" f"{tweet_html}"  # TODO: wrap with ```{raw} html
 
     # Write tip MD
     with open(DST / fn, "w") as f:
