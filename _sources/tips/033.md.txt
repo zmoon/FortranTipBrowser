@@ -7,7 +7,7 @@ that is used throughout the program.
 
 The code below can be changed from double to single or quadruple precision
 by simply changing the definition of `wp` (working precision) in `kind_mod`
-using the `kind` constants fron the instrinsic `iso_fortran_env` module.
+using the `kind` constants from the intrinsic `iso_fortran_env` module.
 
 Note the `_wp` suffix used in the literal constants for $\pi$ and $10.0$.
 Any literal constant without a suffix is considered single precision in Fortran,

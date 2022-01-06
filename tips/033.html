@@ -37,6 +37,8 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="034. Replace non-standard REAL*8 declaration with real(kind=real64)" href="034.html" />
@@ -567,8 +569,8 @@ Instead, the <code class="docutils literal notranslate"><span class="pre">kind</
 that is used throughout the program.</p>
 <p>The code below can be changed from double to single or quadruple precision
 by simply changing the definition of <code class="docutils literal notranslate"><span class="pre">wp</span></code> (working precision) in <code class="docutils literal notranslate"><span class="pre">kind_mod</span></code>
-using the <code class="docutils literal notranslate"><span class="pre">kind</span></code> constants fron the instrinsic <code class="docutils literal notranslate"><span class="pre">iso_fortran_env</span></code> module.</p>
-<p>Note the <code class="docutils literal notranslate"><span class="pre">_wp</span></code> suffix used in the literal constants for $\pi$ and $10.0$.
+using the <code class="docutils literal notranslate"><span class="pre">kind</span></code> constants from the intrinsic <code class="docutils literal notranslate"><span class="pre">iso_fortran_env</span></code> module.</p>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">_wp</span></code> suffix used in the literal constants for <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(10.0\)</span>.
 Any literal constant without a suffix is considered single precision in Fortran,
 regardless of the number of digits provided.</p>
 <p>See <a class="reference external" href="https://fortran-lang.org/learn/best_practices/floating_point">https://fortran-lang.org/learn/best_practices/floating_point</a> for more dicussion.</p>
