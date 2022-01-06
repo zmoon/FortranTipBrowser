@@ -128,7 +128,7 @@ for i, d in enumerate(data["tips"], start=1):
     if concl is not None:
         s += f"\n{concl}"
 
-    # TODO: List of refs for futher info
+    # TODO: List of refs for further info
 
     # Tweet embed
     if tweet_html is not None:

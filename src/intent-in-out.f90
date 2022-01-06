@@ -9,7 +9,7 @@ program intent_in_out
 contains
 
    subroutine normalize(x)
-      ! Ccale `x` so that `sum(x)` = 1.
+      ! Scale `x` so that `sum(x)` = 1.
       real, intent(in out) :: x(:)
       real                 :: xsum
       xsum = sum(x)
