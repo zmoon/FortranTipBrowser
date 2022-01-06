@@ -21,8 +21,16 @@ jobs:
       - name: Install Python requirements
         run: pip install -r requirements.txt
 
-      - name: GFortran info
-        run: gfortran --version
+      - name: Default GFortran info
+        run: |
+          gfortran --version
+          echo $(which gfortran)
+
+      - name: Install GFortran v11 and link to `/usr/bin/gfortran`
+        run: |
+          sudo apt install gfortran-11
+          sudo ln -sf $(which gfortran-11) /usr/bin/gfortran
+          gfortran --version
 
       - name: Generate MD
         run: python fortrantip.py

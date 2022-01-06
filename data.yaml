@@ -280,6 +280,14 @@ tips:
       Fortran procedures declared `recursive` can call themselves.
     file: recursive.f90
     file0: missing
+    concl: |
+      ```{warning}
+
+      In GFortran v9 and v10 (and lower verisons, presumably):
+      ```text
+      Error: ELEMENTAL attribute conflicts with RECURSIVE attribute
+      ```
+      ```
     url: https://twitter.com/fortrantip/status/1472702427740745728
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/czICWzekYU">pic.twitter.com/czICWzekYU</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472702427740745728?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
