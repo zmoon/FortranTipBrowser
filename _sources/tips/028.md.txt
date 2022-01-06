@@ -8,7 +8,7 @@
 ```{code-block} text
 :caption: Output[^gfortran-version]
 
-  0.500435948      0.288569748    
+  0.500002384      0.288520634    
 
 ```
 
