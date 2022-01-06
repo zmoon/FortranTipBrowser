@@ -30,9 +30,11 @@ def fortran_to_myst(fn: str, *, fn0: Optional[str] = None) -> str:
     with open(SRC / fn) as f:
         s = f.read()
     nl = len(s.splitlines())
-    source = urllib.parse.quote_plus(s, safe=",:!*()")
+    source = urllib.parse.quote_plus(s, safe=",:!*()/'")
     source = source.replace("!", "!!")  # this is how GodBolt escapes `!`
+    source = source.replace("'", "!'")  # " "                         `'`
     gb = gb_url_fmt.format(nl=nl, source=source)
+    # TODO: use GB short links (only create new if needed)
 
     gb = f'<a href="{gb}" target="_blank">GodBolt</a>'
 

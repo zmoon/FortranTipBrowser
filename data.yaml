@@ -142,7 +142,9 @@ tips:
     intro: |
       Fortran character variables are padded with spaces at the end if necessary.
       The `//` operator concatenates.
-      Trim removes trailing spaces.
+      `trim` removes trailing spaces.[^1]
+
+      [^1]: Use `trim(adjustl(s))` to remove both leading and trailing spaces.
     file: char-pad.f90
     url: https://twitter.com/fortrantip/status/1472209602074849285
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran character variables are padded with spaces at the end if necessary. The // operator concatenates. Trim removes trailing spaces.<br><br>character (len=5) :: v = &quot;one&quot;<br>print*,&quot;&#39;&quot; // v // &quot;&#39;&quot; ! &#39;one &#39;<br>print*,&quot;&#39;&quot; // trim(v) // &quot;&#39;&quot; ! &#39;one&#39;<br>print*,len(v),len_trim(v) ! 5 3<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472209602074849285?ref_src=twsrc%5Etfw">December 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
