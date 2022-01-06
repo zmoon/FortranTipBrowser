@@ -16,13 +16,14 @@ Fortran procedures declared `recursive` can call themselves.
 
 [^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
 
-```{warning}
+````{warning}
 
-In GFortran v9 and v10 (and lower verisons, presumably):
+In GFortran v9 and v10 (and lower versions, presumably),
+this isn't allowed, and we get:
 ```text
 Error: ELEMENTAL attribute conflicts with RECURSIVE attribute
 ```
-```
+````
 
 ---
 
