@@ -121,7 +121,6 @@ for i, d in enumerate(data["tips"], start=1):
 
 [^gfortran-version]: Compiled using `{gfortran_version_info}` with no flags
 """
-    # TODO: footnote with `gfortran --version` first line?
 
     # TODO: Conclu MD
     if concl is not None:
