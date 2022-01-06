@@ -19,7 +19,9 @@ jobs:
           cache: pip
       
       - name: Install Python requirements
-        run: pip install -r requirements.txt
+        run: |
+          pip install -U pip setuptools wheel
+          pip install -r requirements.txt
 
       - name: Default GFortran info
         run: |
