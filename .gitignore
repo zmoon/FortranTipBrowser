@@ -1,4 +1,6 @@
 a.out
+a.exe
+a.x
 *.mod
 
 venv*/

@@ -2,9 +2,9 @@
 # MD generation
 PyYaml
 #
-# Sphinx >=4
+# Sphinx
 myst_parser
-sphinx
+sphinx >= 4
 sphinx-autobuild
 sphinx-book-theme
 sphinx-copybutton
