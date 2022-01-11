@@ -1,6 +1,8 @@
 #
 # MD generation
+python-dateutil
 PyYaml
+requests
 #
 # Sphinx
 myst_parser
