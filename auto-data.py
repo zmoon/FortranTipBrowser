@@ -6,6 +6,7 @@ import re
 from dataclasses import dataclass
 
 import requests
+#import yaml
 from dateutil.parser import parse
 
 
@@ -42,6 +43,8 @@ lines = readme.splitlines()
 ihead = 3
 assert lines[ihead].startswith("### Index")
 
+mentioned_files = []
+
 for line in lines[ihead+1:]:
     if not line.strip():
         continue
@@ -60,8 +63,31 @@ for line in lines[ihead+1:]:
         else:
             file_links = []
 
+        mentioned_files.extend(l.target for l in file_links if not l.target.startswith("http"))
+
         # Validate finding of file links
         if not file_links:
               s_ = line[m.span(2)[1]:]
               assert s_.count(".f90") == s_.count(".txt") == 0, line
+
+
+r = requests.get(
+    "https://api.github.com/repos/Beliavsky/FortranTip/git/trees/HEAD?recursive=1"
+)
+r.raise_for_status()
+ghtree = r.json()["tree"]
+
+gh_fns = {d["path"] for d in ghtree} - {"README.md",}
+
+assert len(set(mentioned_files)) == len(mentioned_files), "files should be unique to tip"
+
+fns = {fn.lstrip("./") for fn in mentioned_files}
+
+print("Not mentioned in the readme:")
+for fn in sorted(gh_fns - fns):
+    print(f"- `{fn}`")
+print()
+print("Mentioned in the readme but not present in the repo:")
+for fn in sorted(fns - gh_fns):
+    print(f"- `{fn}`")
 
