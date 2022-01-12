@@ -1,8 +1,10 @@
 #
 # MD generation
 python-dateutil
+python-dotenv
 PyYaml
 requests
+rich
 #
 # Sphinx
 myst_parser
