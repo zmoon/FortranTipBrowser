@@ -1,5 +1,6 @@
 #
 # MD generation
+joblib
 python-dateutil
 python-dotenv
 PyYaml

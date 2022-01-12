@@ -40,7 +40,7 @@ fmt = """\
 lines = []
 
 last_date = None
-for i in range(istart, istart+10):
+for i in range(istart, len(tips0)):
     d = tips0[i]
 
     title = d["title"]
@@ -64,6 +64,11 @@ for i in range(istart, istart+10):
     url = f"https://twitter.com/fortrantip/status/{d['tweet_id']}"
     embed = d["tweet_embed"].replace("\n", "")
 
+    dt = d["datetime"]
+    date = dt.date().strftime(r"%d-%b-%Y")
+    if date != last_date:
+        lines.append(f"  # {date}")
+
     lines.append(
         fmt.format(
             title=title,
@@ -73,11 +78,6 @@ for i in range(istart, istart+10):
             embed=embed
         )
     )
-
-    dt = d["datetime"]
-    date = dt.date().strftime(r"%d-%b-%Y")
-    if date != last_date:
-        lines.append(f"  # {date}")
 
     last_date = date
 

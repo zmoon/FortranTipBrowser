@@ -2,14 +2,18 @@
 Use the data file and Fortran source files
 to construct MyST Markdown pages for Sphinx.
 """
+# import multiprocessing
+import os
 import subprocess
 import urllib.parse
 from pathlib import Path
 from typing import Optional
 
+import joblib
 import yaml
+# from rich.progress import Progress
 
-HERE = Path(__file__).parent
+HERE = Path(__file__).parent.absolute()
 
 DOC = HERE / "docs"
 DST = DOC / "tips"
@@ -18,6 +22,8 @@ SRC = HERE / "src"
 
 with open("data.yaml", "r") as f:
     data = yaml.load(f, Loader=yaml.Loader)
+
+ntips = len(data["tips"])
 
 
 gb_url_fmt = "https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:{nl},positionColumn:1,positionLineNumber:{nl},selectionStartColumn:1,selectionStartLineNumber:{nl},startColumn:1,startLineNumber:{nl}),source:'{source:s}'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4"
@@ -71,9 +77,21 @@ def get_gfortran_version_info() -> str:
 
 
 def run_fortran(fn: str):
+    import tempfile
+
+    xpath = "a.x"
+
+    cwd = os.getcwd()
+    td = tempfile.mkdtemp(prefix="fortrantip")
+    os.chdir(td)
+
     # Compile
     try:
-        subprocess.run(["gfortran", (SRC / fn).as_posix(), "-o", "a.x"], check=True, capture_output=True)
+        subprocess.run(
+            ["gfortran", (SRC / fn).as_posix(), "-o", xpath],
+            check=True,
+            capture_output=True,
+        )
     except subprocess.CalledProcessError as e:
         import textwrap
 
@@ -86,7 +104,9 @@ def run_fortran(fn: str):
         raise
 
     # Run
-    cp = subprocess.run(["./a.x"], capture_output=True)
+    cp = subprocess.run([xpath], capture_output=True)
+
+    os.chdir(cwd)
 
     return {"gfortran": cp.stdout.decode()}
 
@@ -98,11 +118,10 @@ gfortran_version_info = get_gfortran_version_info()
 
 # Generate tip pages
 
-# TODO: parallel
-
 # TODO: cache last Fortran run, MD generation time, yaml DATA, so can regen only things that need it
 
-for i, d in enumerate(data["tips"], start=1):
+def write_tip_md(i, d):
+
     fn = f"{i:03d}.md"
 
     # Required keys (but all except title can be null (parsed to None))
@@ -162,10 +181,27 @@ for i, d in enumerate(data["tips"], start=1):
     with open(DST / fn, "w") as f:
         f.write(s)
 
+    return None
+
+
+# TODO: figure out how to fix...?:
+# RuntimeError:
+#   An attempt has been made to start a new process before the
+#   current process has finished its bootstrapping phase.
+# with Progress() as progress:
+#     task_id = progress.add_task("Generating MD pages...", total=ntips)
+#     with multiprocessing.Pool(3) as pool:
+#         for _ in pool.map(write_tip_md, enumerate(data["tips"][:3], start=1)):
+#             progress.advance(task_id)
+
+joblib.Parallel(n_jobs=-1, verbose=5)(
+    joblib.delayed(write_tip_md)(i, d)
+    for i, d in enumerate(data["tips"], start=1)
+)
+
 
 # Generate tips index file
 
-ntips = i
 nums = "\n".join(f"{i:03d}" for i in range(1, ntips+1))
 
 s = f"""\
