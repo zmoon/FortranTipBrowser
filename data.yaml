@@ -241,6 +241,12 @@ tips:
     intro: ~
     file: optional.f90
     file0: same
+    concl: |
+      ```{important}
+      Within a procedure, you should test that an optional argument is present
+      (with the `present` intrinsic function) before attempting to use it.
+      Using an optional argument that is not present is a common cause of program crashes.
+      ```
     url: https://twitter.com/fortrantip/status/1472684194765672450
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/ZNqwgg3Wgq">pic.twitter.com/ZNqwgg3Wgq</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472684194765672450?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
