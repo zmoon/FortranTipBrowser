@@ -24,7 +24,7 @@ re_readme_line = re.compile(
     r"(<br>)?$"
 )
 
-re_link = re.compile(r"\[(?P<text>.*)\]\((?P<target>.+)\)")
+re_link = re.compile(r"\[(?P<text>.*?)\]\((?P<target>.+?)\)")
 
 
 @dataclass(frozen=True)
@@ -114,13 +114,13 @@ fns = {fn.lstrip("./") for fn in mentioned_files}
 gh_fns_only = gh_fns - fns
 if gh_fns_only:
     print("Not mentioned in the readme:")
-    for fn in sorted(gh_fns - fns):
+    for fn in sorted(gh_fns_only):
         print(f"- `{fn}`")
     print()
 fns_only = fns - gh_fns
 if fns_only:
     print("Mentioned in the readme but not present in the repo:")
-    for fn in sorted(fns - gh_fns):
+    for fn in sorted(fns_only):
         print(f"- `{fn}`")
     print()
 
