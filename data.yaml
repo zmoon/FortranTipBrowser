@@ -996,3 +996,86 @@ tips:
     file0: arguments.f90
     url: https://twitter.com/fortrantip/status/1480893840068390913
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Procedures can be called with a mix of named and positional arguments, but positional arguments cannot follow named ones. Naming arguments makes it easier to add arguments without breaking code. It&#39;s good to<br>name OPTIONAL arguments.<a href="https://t.co/rIl2jM0DTA">pic.twitter.com/rIl2jM0DTA</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1480893840068390913?ref_src=twsrc%5Etfw">January 11, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 12-Jan-2022
+
+  # TODO
+  - title: Use the same name for analogous procedures defined in different modules using an INTERFACE
+    intro: |
+      Using an INTERFACE, one can use the same name for analogous procedures that operate on derived types defined in different modules, for example str to convert a derived type to a string.
+    file: ~
+    file0: shared_interface.f90
+    url: https://twitter.com/fortrantip/status/1481247763048407042
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using an INTERFACE, one can use the same name for analogous procedures that operate on derived types defined in different modules, for example str to convert a derived type to a string.<a href="https://t.co/VeqDzgg5AE">pic.twitter.com/VeqDzgg5AE</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1481247763048407042?ref_src=twsrc%5Etfw">January 12, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 13-Jan-2022
+
+  # TODO
+  - title: How to rename an imported module entity
+    intro: |
+      An imported module entity can be renamed with the syntax
+
+      use mod, only: local_name =&gt; use_name
+
+      or
+
+      use mod, local_name =&gt; use_name
+
+      This is necessary when importing procedures with the same name, not in interfaces, from different
+      modules.
+    file: ~
+    file0: rename.f90
+    url: https://twitter.com/fortrantip/status/1481597325499842563
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An imported module entity can be renamed with the syntax<br><br>use mod, only: local_name =&gt; use_name<br><br>or<br><br>use mod, local_name =&gt; use_name<br><br>This is necessary when importing procedures with the same name, not in interfaces, from different<br>modules. <a href="https://t.co/89mRx3jsWV">pic.twitter.com/89mRx3jsWV</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1481597325499842563?ref_src=twsrc%5Etfw">January 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 14-Jan-2022
+
+  # TODO
+  - title: Module entities are PUBLIC by default.
+    intro: |
+      Module entities are PUBLIC by default, but if a blank PRIVATE statement is used, any public entities must be labeled so explicitly. Doing this clarifies what is exported from the module.
+    file: ~
+    file0: private.f90
+    url: https://twitter.com/fortrantip/status/1481970740475932676
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Module entities are PUBLIC by default, but if a blank PRIVATE statement is used, any public entities must be labeled so explicitly. Doing this clarifies what is exported from the module.<a href="https://t.co/4eJZDbU7CZ">pic.twitter.com/4eJZDbU7CZ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1481970740475932676?ref_src=twsrc%5Etfw">January 14, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 15-Jan-2022
+
+  # TODO
+  - title: An unqualified USE foo statement imports public entities defined in foo and what foo imported.
+    intro: |
+      use foo
+
+      imports not only the public entities defined in module foo but also the entities that foo imports from module bar. To avoid inadvertent imports and clarify what is imported, write
+
+      use foo, only: &lt;imports&gt;
+      use bar, only: &lt;imports&gt; ! if any
+    file: ~
+    file0: imports.f90
+    url: https://twitter.com/fortrantip/status/1482328990798987266
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">use foo<br><br>imports not only the public entities defined in module foo but also the entities that foo imports from module bar. To avoid inadvertent imports and clarify what is imported, write<br><br>use foo, only: &lt;imports&gt;<br>use bar, only: &lt;imports&gt; ! if any<a href="https://t.co/9s78tF1V5Q">pic.twitter.com/9s78tF1V5Q</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482328990798987266?ref_src=twsrc%5Etfw">January 15, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 16-Jan-2022
+
+  # TODO
+  - title: Use iostat and iomsg to handle READ errors
+    intro: |
+      The Fortran 2003 module iso_fortran_env has constants 
+
+      iostat_eor -- end of record
+      iostat_end -- end of file
+
+      to which the iostat of a READ statement will be set if that error occurs. READ also has an iomsg specifier returning a text error message.
+    file: ~
+    file0: iomsg.f90
+    url: https://twitter.com/fortrantip/status/1482687630877892608
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Fortran 2003 module iso_fortran_env has constants <br><br>iostat_eor -- end of record<br>iostat_end -- end of file<br><br>to which the iostat of a READ statement will be set if that error occurs. READ also has an iomsg specifier returning a text error message.<a href="https://t.co/Rm6DmsKPP9">pic.twitter.com/Rm6DmsKPP9</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482687630877892608?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: List of Fortran compilers, build tools, text editors, etc.
+    intro: |
+      I keep a list of Fortran compilers, build tools, text editors and plug-ins, linters, preprocessors, translators to and from Fortran, profilers, tools for refactoring, interoperability, and automatic documentation, and unit testing frameworks.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1482709817466707969
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I keep a list of Fortran compilers, build tools, text editors and plug-ins, linters, preprocessors, translators to and from Fortran, profilers, tools for refactoring, interoperability, and automatic documentation, and unit testing frameworks.<a href="https://t.co/fnWwF04z5D">https://t.co/fnWwF04z5D</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482709817466707969?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
