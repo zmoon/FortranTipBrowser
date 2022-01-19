@@ -79,7 +79,7 @@ def get_gfortran_version_info() -> str:
 def run_fortran(fn: str):
     import tempfile
 
-    xpath = "a.x"
+    xname = "a.x"
 
     cwd = os.getcwd()
     td = tempfile.mkdtemp(prefix="fortrantip")
@@ -88,7 +88,7 @@ def run_fortran(fn: str):
     # Compile
     try:
         subprocess.run(
-            ["gfortran", (SRC / fn).as_posix(), "-o", xpath],
+            ["gfortran", (SRC / fn).as_posix(), "-o", xname],
             check=True,
             capture_output=True,
         )
@@ -104,9 +104,13 @@ def run_fortran(fn: str):
         raise
 
     # Run
-    cp = subprocess.run([xpath], capture_output=True)
-
-    os.chdir(cwd)
+    try:
+        cp = subprocess.run([f"{td}/{xname}"], capture_output=True)
+    except:
+        print(td, os.listdir(td))
+        raise
+    finally:
+        os.chdir(cwd)
 
     return {"gfortran": cp.stdout.decode()}
 
