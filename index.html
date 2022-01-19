@@ -461,7 +461,16 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tips/035.html">
-     035. SELECT CASE for conditional execution
+     035.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       select
+      </span>
+      <span class="pre">
+       case
+      </span>
+     </code>
+     for conditional execution
     </a>
    </li>
    <li class="toctree-l2">
@@ -873,17 +882,17 @@
 <p><a class="reference external" href="https://twitter.com/fortrantip">FortranTip</a> tips in one Sphinx site.</p>
 <script>
 function randoTip() {
-  i = Math.floor(1 + Math.random() * 95);
-  tip = String(i).padStart(3, '0');
-  tip_page = `tips/${tip}.html`;
-  // alert(tip_page);
-  window.open(tip_page, "_self")
+i = Math.floor(1 + Math.random() * 95);
+tip = String(i).padStart(3, '0');
+tip_page = `tips/${tip}.html`;
+// alert(tip_page);
+window.open(tip_page, "_self")
 }
 
 </script>
 
 <button class="sd-sphinx-override sd-btn sd-btn-primary sd-shadow-sm", onclick="randoTip()">
-  Go to random tip
+Go to random tip
 </button><div class="toctree-wrapper compound">
 </div>
 </div>

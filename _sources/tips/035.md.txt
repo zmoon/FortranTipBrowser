@@ -1,7 +1,32 @@
-# 035. SELECT CASE for conditional execution
+# 035. `select case` for conditional execution
 
-Created with @carbon_app
+> A `select case` construct conditionally executes one block of
+> constructs or statements depending on the value of a scalar expression
+> in a select case statement.
 
+--- <https://riptutorial.com/fortran/example/5584/select-case-construct>
+
+`select case` is more restrictive and clear than an `if` block
+and should be used when it is possible, especially when there are many branches.
+
+```{literalinclude} ../../src/select-case.f90
+:language: fortran
+:caption: select-case.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/select-case.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://github.com/Beliavsky/FortranTip/blob/main/select_case.f90" target="_blank" title="See the original source on Beliavsky/FortranTip GitHub"><i class="fab fa-github"></i><sub>0</sub></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:20,positionColumn:1,positionLineNumber:20,selectionStartColumn:1,selectionStartLineNumber:20,startColumn:1,startLineNumber:20),source:'program+select_case%0A+++implicit+none%0A+++integer+::+i%0A+++character(len%3D6)+::+rating%0A%0A+++do+i+%3D+0,+5%0A++++++select+case+(i)%0A+++++++++case+(1:2)%0A++++++++++++rating+%3D+%22bad%22%0A+++++++++case+(3)%0A++++++++++++rating+%3D+%22medium%22%0A+++++++++case+(4:)%0A++++++++++++rating+%3D+%22good%22%0A+++++++++case+default%0A++++++++++++rating+%3D+%22%3F%3F%3F%22%0A++++++end+select%0A++++++print+*,+i,+trim(rating)%0A+++end+do%0A%0Aend+program+select_case%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a>
+```
+
+```{code-block} text
+:caption: Output[^gfortran-version]
+
+           0 ???
+           1 bad
+           2 bad
+           3 medium
+           4 good
+           5 good
+
+```
+
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
 
 ---
 

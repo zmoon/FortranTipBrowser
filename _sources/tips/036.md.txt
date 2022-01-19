@@ -1,7 +1,38 @@
 # 036. Reading user input
 
-Created with @carbon_app
+The `read` statement is used to get data from the terminal or a file.
+To handle errors, set the `iostat` in the `read` call and check afterwards if it is zero.
 
+This program prompts the user for integers, one at a time, and prints their sum.
+
+```{literalinclude} ../../src/read-sum.f90
+:language: fortran
+:caption: read-sum.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/read-sum.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://github.com/Beliavsky/FortranTip/blob/main/read_sum.f90" target="_blank" title="See the original source on Beliavsky/FortranTip GitHub"><i class="fab fa-github"></i><sub>0</sub></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:18,positionColumn:1,positionLineNumber:18,selectionStartColumn:1,selectionStartLineNumber:18,startColumn:1,startLineNumber:18),source:'program+sum_int%0A+++implicit+none%0A+++integer+::+i,+ierr,+isum%0A%0A+++isum+%3D+0%0A+++do%0A++++++print+*,+%22enter+an+integer,+0+to+stop%22%0A++++++read+(*,+*,+iostat%3Dierr)+i%0A++++++if+(ierr+/%3D+0)+then%0A+++++++++print+*,+%22invalid+input%22%0A+++++++++cycle++!!+return+to+beginning+of+loop%0A++++++end+if%0A++++++if+(i+%3D%3D+0)+exit%0A++++++isum+%3D+isum+%2B+i%0A+++end+do%0A+++print+*,+%22sum+is%22,+isum%0A%0Aend+program+sum_int%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a>
+```
+
+```{code-block} text
+:caption: Input
+
+1
+1
+2
+3
+0
+```
+
+```{code-block} text
+:caption: Output[^gfortran-version]
+
+ enter an integer, 0 to stop
+ enter an integer, 0 to stop
+ enter an integer, 0 to stop
+ enter an integer, 0 to stop
+ enter an integer, 0 to stop
+ sum is           7
+
+```
+
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
 
 ---
 
