@@ -282,12 +282,11 @@ tips:
     url: https://twitter.com/fortrantip/status/1472698233298333699
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Function and subroutine argument INTENTs were introduced in the Fortran 90 standard. Much Fortran code does not specify intents, which is legal, but all new code should. Arguments should be intent(in) or intent(out) unless intent(in out) is necessary.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472698233298333699?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # TODO: update `file0` after fixing in FortranTip?
   - title: Procedures can be recursive
     intro: |
       Fortran procedures declared `recursive` can call themselves.
     file: recursive.f90
-    file0: missing
+    file0: recursive.f90
     concl: |
       ````{warning}
 
@@ -362,22 +361,29 @@ tips:
 
   # 20-Dec-2021
 
-  # ...
-
-  # TODO
-  - title: SELECT CASE for conditional execution
+  - title: '`select case` for conditional execution'
     intro: |
-      Created with @carbon_app
-    file: ~
+      > A `select case` construct conditionally executes one block of
+      > constructs or statements depending on the value of a scalar expression
+      > in a select case statement.
+
+      --- <https://riptutorial.com/fortran/example/5584/select-case-construct>
+
+      `select case` is more restrictive and clear than an `if` block
+      and should be used when it is possible, especially when there are many branches.
+    file: select-case.f90
     file0: select_case.f90
     url: https://twitter.com/fortrantip/status/1472930444572336128
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/5R6yeSnvpY">pic.twitter.com/5R6yeSnvpY</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472930444572336128?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # TODO
   - title: Reading user input
     intro: |
-      Created with @carbon_app
-    file: ~
+      The `read` statement is used to get data from the terminal or a file.
+      To handle errors, set the `iostat` in the `read` call and check afterwards if it is zero.
+      
+      This program prompts the user for integers, one at a time, and prints their sum.
+    file: read-sum.f90
+    inputs: ["1", "1", "2", "3", "0"]
     file0: read_sum.f90
     url: https://twitter.com/fortrantip/status/1472941850218700805
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/pzKMXlNriJ">pic.twitter.com/pzKMXlNriJ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472941850218700805?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'

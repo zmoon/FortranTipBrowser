@@ -35,7 +35,7 @@ jobs:
           gfortran --version
 
       - name: Generate MD
-        run: python fortrantip.py
+        run: python fortrantip.py all
 
       - name: Sphinx linkcheck
         run: sphinx-build -b linkcheck docs docs/_build/linkcheck
