@@ -1,0 +1,8 @@
+# 054. Consider using a tolerance to compare floats
+
+If the arrays are INTEGER or CHARACTER, then the comparison can be exact. For REAL or COMPLEX arrays, you should consider using a suitably small tolerance when comparing values. This and the previous tip are from urbanjost.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If the arrays are INTEGER or CHARACTER, then the comparison can be exact. For REAL or COMPLEX arrays, you should consider using a suitably small tolerance when comparing values. This and the previous tip are from urbanjost. <a href="https://t.co/qjaMf5T06W">pic.twitter.com/qjaMf5T06W</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475826650835214338?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

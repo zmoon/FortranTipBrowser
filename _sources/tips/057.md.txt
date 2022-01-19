@@ -1,0 +1,12 @@
+# 057. Use .true. and .false. for Booleans, not 1 and 0
+
+Use .true. and .false. for Booleans and use the expression 
+
+merge(1,0,logical_variable)
+
+if needed. Fortran standards have never specified an equivalence between integers and Booleans.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use .true. and .false. for Booleans and use the expression <br><br>merge(1,0,logical_variable)<br><br>if needed. Fortran standards have never specified an equivalence between integers and Booleans. <a href="https://t.co/V1ZfGdxAWT">https://t.co/V1ZfGdxAWT</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475905587774959616?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

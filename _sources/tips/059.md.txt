@@ -1,0 +1,12 @@
+# 059. LEN of a character variable may be deferred in Fortran 2003 on
+
+The LEN of a character variable may be deferred in F2003 on.
+
+character (len=:), allocatable :: s,t(:)
+
+declares a scalar and an array of such variables. The LEN is taken from the RHS of an assignment but not from a READ. Elements of t(:) have same LEN.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The LEN of a character variable may be deferred in F2003 on.<br><br>character (len=:), allocatable :: s,t(:)<br><br>declares a scalar and an array of such variables. The LEN is taken from the RHS of an assignment but not from a READ. Elements of t(:) have same LEN.<br> <a href="https://t.co/wP6lXJ3XL2">pic.twitter.com/wP6lXJ3XL2</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476201645885337611?ref_src=twsrc%5Etfw">December 29, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,8 @@
+# 060. Many compilers evaluate ALL(x==y) efficiently with short-circuiting
+
+For a code that evaluates ALL(x==y) with a short-circuiting function and the intrinsic, gfortran, ifort, and nvfortran seem to short-circuit the intrinsic, so it may be OK to use ALL for large expressions.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For a code that evaluates ALL(x==y) with a short-circuiting function and the intrinsic, gfortran, ifort, and nvfortran seem to short-circuit the intrinsic, so it may be OK to use ALL for large expressions.<a href="https://t.co/n99MPh7rKt">https://t.co/n99MPh7rKt</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476255945923641347?ref_src=twsrc%5Etfw">December 29, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

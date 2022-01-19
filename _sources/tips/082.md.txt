@@ -1,0 +1,15 @@
+# 082. Two types of syntax for defining a function
+
+Ways of defining a function:
+
+1. Function and result name are the same.
+
+2. RESULT has a different name within the function, which can be used
+to return an array.
+
+RETURN, when needed, is used to exit the function, not set its value.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ways of defining a function:<br><br>1. Function and result name are the same.<br><br>2. RESULT has a different name within the function, which can be used<br>to return an array.<br><br>RETURN, when needed, is used to exit the function, not set its value. <a href="https://t.co/TYdVDZPwCz">pic.twitter.com/TYdVDZPwCz</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479641195898826754?ref_src=twsrc%5Etfw">January 8, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

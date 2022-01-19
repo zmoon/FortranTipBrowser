@@ -1,0 +1,13 @@
+# 080. Intrinsic character functions
+
+Character functions:
+
+scan(x,y): first position of a character in x found in y
+verify(x,y): first position in x NOT found in y
+index(x,y): first position of substring y in x
+adjustl/adjustr: remove leading/trailing spaces and pad to preserve LEN
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Character functions:<br><br>scan(x,y): first position of a character in x found in y<br>verify(x,y): first position in x NOT found in y<br>index(x,y): first position of substring y in x<br>adjustl/adjustr: remove leading/trailing spaces and pad to preserve LEN<a href="https://t.co/ZQZUyRq86b">pic.twitter.com/ZQZUyRq86b</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479391930744283144?ref_src=twsrc%5Etfw">January 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

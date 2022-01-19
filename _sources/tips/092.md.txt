@@ -1,0 +1,8 @@
+# 092. List of Fortran compilers, build tools, text editors, etc.
+
+I keep a list of Fortran compilers, build tools, text editors and plug-ins, linters, preprocessors, translators to and from Fortran, profilers, tools for refactoring, interoperability, and automatic documentation, and unit testing frameworks.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I keep a list of Fortran compilers, build tools, text editors and plug-ins, linters, preprocessors, translators to and from Fortran, profilers, tools for refactoring, interoperability, and automatic documentation, and unit testing frameworks.<a href="https://t.co/fnWwF04z5D">https://t.co/fnWwF04z5D</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482709817466707969?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

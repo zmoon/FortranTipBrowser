@@ -1,0 +1,8 @@
+# 085. UnALLOCATED variable passed to a procedure is not PRESENT there.
+
+A variable that is not ALLOCATED, when passed as an OPTIONAL, non-allocatable argument to a procedure, is considered not PRESENT there. This Fortran 2008 feature can simplify code.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A variable that is not ALLOCATED, when passed as an OPTIONAL, non-allocatable argument to a procedure, is considered not PRESENT there. This Fortran 2008 feature can simplify code. <a href="https://t.co/TdSd5Jv0Pt">https://t.co/TdSd5Jv0Pt</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1480585104997163018?ref_src=twsrc%5Etfw">January 10, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

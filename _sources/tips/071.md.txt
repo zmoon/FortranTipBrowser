@@ -1,0 +1,9 @@
+# 071. KindFinder code finds all KIND Values implemented by a compiler
+
+The KindFinder Fortran 90 code of Werner Schulz can also find
+all KIND Values implemented by a compiler, list the properties of the associated numeric models, and generate a KIND parameter module.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The KindFinder Fortran 90 code of Werner Schulz can also find<br>all KIND Values implemented by a compiler, list the properties of the associated numeric models, and generate a KIND parameter module.<a href="https://t.co/RY5uLdCMXl">pic.twitter.com/RY5uLdCMXl</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478030318485577728?ref_src=twsrc%5Etfw">January 3, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

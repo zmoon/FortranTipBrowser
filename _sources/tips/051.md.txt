@@ -1,0 +1,8 @@
+# 051. Doubled delimiter in a string is regarded as a single character of the constant
+
+A doubled delimiter in a string without any embedded intervening blanks is regarded as a single character of the constant. One can also put a single quote in double quotes or a double quote in single quotes. Thanks to Amir Shahmoradi for tip.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A doubled delimiter in a string without any embedded intervening blanks is regarded as a single character of the constant. One can also put a single quote in double quotes or a double quote in single quotes. Thanks to Amir Shahmoradi for tip.<br> <a href="https://t.co/JSneWjHZgo">pic.twitter.com/JSneWjHZgo</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475453317526528003?ref_src=twsrc%5Etfw">December 27, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

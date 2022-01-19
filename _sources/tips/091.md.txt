@@ -1,0 +1,13 @@
+# 091. Use iostat and iomsg to handle READ errors
+
+The Fortran 2003 module iso_fortran_env has constants 
+
+iostat_eor -- end of record
+iostat_end -- end of file
+
+to which the iostat of a READ statement will be set if that error occurs. READ also has an iomsg specifier returning a text error message.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Fortran 2003 module iso_fortran_env has constants <br><br>iostat_eor -- end of record<br>iostat_end -- end of file<br><br>to which the iostat of a READ statement will be set if that error occurs. READ also has an iomsg specifier returning a text error message.<a href="https://t.co/Rm6DmsKPP9">pic.twitter.com/Rm6DmsKPP9</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482687630877892608?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

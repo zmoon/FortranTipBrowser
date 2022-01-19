@@ -1,0 +1,9 @@
+# 086. Procedures can be called with a mix of named and positional arguments.
+
+Procedures can be called with a mix of named and positional arguments, but positional arguments cannot follow named ones. Naming arguments makes it easier to add arguments without breaking code. It's good to
+name OPTIONAL arguments.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Procedures can be called with a mix of named and positional arguments, but positional arguments cannot follow named ones. Naming arguments makes it easier to add arguments without breaking code. It&#39;s good to<br>name OPTIONAL arguments.<a href="https://t.co/rIl2jM0DTA">pic.twitter.com/rIl2jM0DTA</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1480893840068390913?ref_src=twsrc%5Etfw">January 11, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

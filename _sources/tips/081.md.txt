@@ -1,0 +1,16 @@
+# 081. Syntax for character array without manual padding
+
+Fortran 2003 lets you write an array of character variables as
+
+s = [character (len=4) :: "one","two","five"]
+
+instead of
+
+s = ["one ","two ","five"] ! "one" and "two" padded
+
+Manually padding large arrays of strings is a pain.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2003 lets you write an array of character variables as<br><br>s = [character (len=4) :: &quot;one&quot;,&quot;two&quot;,&quot;five&quot;]<br><br>instead of<br><br>s = [&quot;one &quot;,&quot;two &quot;,&quot;five&quot;] ! &quot;one&quot; and &quot;two&quot; padded<br><br>Manually padding large arrays of strings is a pain.<a href="https://t.co/TH7x2tQ5Wz">pic.twitter.com/TH7x2tQ5Wz</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479487784205402116?ref_src=twsrc%5Etfw">January 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

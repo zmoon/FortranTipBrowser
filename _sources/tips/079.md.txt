@@ -1,0 +1,13 @@
+# 079. Substrings of character variable arrays
+
+For variables
+
+character (len=10) :: s, v(5)
+
+s(2:4) is the substring from positions 2 to 4 and v(1:3)(2:4) is an array of substrings from 
+positions 2 to 4 of the elements v(1) to v(3).
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For variables<br><br>character (len=10) :: s, v(5)<br><br>s(2:4) is the substring from positions 2 to 4 and v(1:3)(2:4) is an array of substrings from <br>positions 2 to 4 of the elements v(1) to v(3). <a href="https://t.co/h5AIaZwYL2">pic.twitter.com/h5AIaZwYL2</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479128610623606787?ref_src=twsrc%5Etfw">January 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

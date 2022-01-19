@@ -1,0 +1,8 @@
+# 043. Fortran equivalents of NumPy
+
+Used to NumPy? Lots of the Fortran intrinsics to deal with arrays will already be familiar to you.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Used to NumPy? Lots of the Fortran intrinsics to deal with arrays will already be familiar to you. <a href="https://t.co/GnKnbscsDX">pic.twitter.com/GnKnbscsDX</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473958733571104773?ref_src=twsrc%5Etfw">December 23, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

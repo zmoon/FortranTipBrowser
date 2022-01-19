@@ -1,0 +1,8 @@
+# 041. Use G0.d and colon edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+
+Combine the G0.d and colon edit descriptors, along with infinite repeat count, to write delimited (CSV, etc.) output.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Combine the G0.d and colon edit descriptors, along with infinite repeat count, to write delimited (CSV, etc.) output. <a href="https://t.co/QfMmdEj7Fn">pic.twitter.com/QfMmdEj7Fn</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473680777279852553?ref_src=twsrc%5Etfw">December 22, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,8 @@
+# 053. Use ALL(A==B) to test for array equality
+
+If size(A)==size(B), use ALL(A==B) to test for equality of arrays A and B and ANY(A==B) to test for equality of any corresponding elements.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If size(A)==size(B), use ALL(A==B) to test for equality of arrays A and B and ANY(A==B) to test for equality of any corresponding elements. <a href="https://t.co/sx1gxm5XIh">pic.twitter.com/sx1gxm5XIh</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475822105358913540?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,10 @@
+# 095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
+
+Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.
+
+print*, all([4,9] == (/4,9/)) ! T
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.<br><br>print*, all([4,9] == (/4,9/)) ! T</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483773578839474180?ref_src=twsrc%5Etfw">January 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,8 @@
+# 061. Compiler Support for the Fortran 2008 and 2018 Standards
+
+@jeff_replies @axccl @OndrejCertik There is a paper "Compiler Support for the Fortran 2008 and 2018 Standards" April 2020 by Chivers &amp; Sleightholme covering Absoft Arm Cray Fujitsu gfortran IBM Intel Nag NEC Oracle PGI
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">There is a paper &quot;Compiler Support for the Fortran 2008 and 2018 Standards&quot; April 2020 by Chivers &amp; Sleightholme covering Absoft Arm Cray Fujitsu gfortran IBM Intel Nag NEC Oracle PGI <a href="https://t.co/dPp0cZaLBs">https://t.co/dPp0cZaLBs</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476281645011505162?ref_src=twsrc%5Etfw">December 29, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,17 @@
+# 084. DIMENSION can be used to declare several arrays of the same SHAPE
+
+DIMENSION can be used to declare several arrays of the same SHAPE, which can be overridden on the same line.
+
+real, dimension(3,4) :: x, y, z(5,6)
+
+is legal but should be written
+
+real, dimension(3,4) :: x, y
+real :: z(5,6)
+
+for clarity.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">DIMENSION can be used to declare several arrays of the same SHAPE, which can be overridden on the same line.<br><br>real, dimension(3,4) :: x, y, z(5,6)<br><br>is legal but should be written<br><br>real, dimension(3,4) :: x, y<br>real :: z(5,6)<br><br>for clarity.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1480162604559523840?ref_src=twsrc%5Etfw">January 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

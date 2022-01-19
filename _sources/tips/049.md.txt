@@ -1,0 +1,8 @@
+# 049. Fortran is column-major
+
+The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order. <a href="https://t.co/oEtrOaMbzC">pic.twitter.com/oEtrOaMbzC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475049356155883524?ref_src=twsrc%5Etfw">December 26, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

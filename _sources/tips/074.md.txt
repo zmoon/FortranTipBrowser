@@ -1,0 +1,19 @@
+# 074. Avoid implicit save
+
+A variable given a value in the declaration has the implicit SAVE attribute and is not re-initialized in later calls to the procedure. Write
+
+integer :: i
+i = 0
+
+instead of 
+
+integer :: i = 0
+
+If SAVE is intended be explicit:
+
+integer, save :: i = 0
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A variable given a value in the declaration has the implicit SAVE attribute and is not re-initialized in later calls to the procedure. Write<br><br>integer :: i<br>i = 0<br><br>instead of <br><br>integer :: i = 0<br><br>If SAVE is intended be explicit:<br><br>integer, save :: i = 0<a href="https://t.co/X1ZUSZblZX">pic.twitter.com/X1ZUSZblZX</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478363292028784645?ref_src=twsrc%5Etfw">January 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

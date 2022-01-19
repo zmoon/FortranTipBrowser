@@ -1,0 +1,13 @@
+# 075. KIND numbers of types are not portable across compilers and should not be used directly.
+
+KIND numbers of types are not portable across compilers and should not be used directly. It's better to use the named constants from iso_fortran_env. For both gfortran and Intel Fortran
+
+use iso_fortran_env
+print*,int8,int16,int32,int64
+
+gives 1 2 4 8, but NAG gives 1 2 3 4.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">KIND numbers of types are not portable across compilers and should not be used directly. It&#39;s better to use the named constants from iso_fortran_env. For both gfortran and Intel Fortran<br><br>use iso_fortran_env<br>print*,int8,int16,int32,int64<br><br>gives 1 2 4 8, but NAG gives 1 2 3 4.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478526602136981511?ref_src=twsrc%5Etfw">January 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

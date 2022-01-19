@@ -1,0 +1,13 @@
+# 065. Fortran-lang suggested variable naming conventions
+
+Fortran-lang Best Practices:
+1. Use lower case for all Fortran constructs, such as do, end do, if, then
+2. Follow short mathematical notation for mathematical variables/functions
+3. For other names use all lower case
+
+Details at
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran-lang Best Practices:<br>1. Use lower case for all Fortran constructs, such as do, end do, if, then<br>2. Follow short mathematical notation for mathematical variables/functions<br>3. For other names use all lower case<br><br>Details at<a href="https://t.co/WHTD1MAbFq">https://t.co/WHTD1MAbFq</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477282631553269764?ref_src=twsrc%5Etfw">January 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

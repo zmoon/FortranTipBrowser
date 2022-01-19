@@ -1,0 +1,8 @@
+# 044. List-directed vs. explicitly formatted output
+
+List-directed output (format *) is convenient, but don't use it when you care about layout as you'll lose control over spacing, line breaks and number of significant digits. If you care, use explicit formats instead.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">List-directed output (format *) is convenient, but don&#39;t use it when you care about layout as you&#39;ll lose control over spacing, line breaks and number of significant digits. If you care, use explicit formats instead.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474105626611662857?ref_src=twsrc%5Etfw">December 23, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

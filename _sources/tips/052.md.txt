@@ -1,0 +1,8 @@
+# 052. Intel Fortran Compiler (ifx)
+
+The Intel� Fortran Compiler (ifx), available in the oneAPI HPC Toolkit 2022.1, is production-ready for CPUs and GPUs. ifx is based on the Intel� Fortran Compiler Classic (ifort) frontend and runtime libraries, but uses LLVM backend compiler technology.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Intel� Fortran Compiler (ifx), available in the oneAPI HPC Toolkit 2022.1, is production-ready for CPUs and GPUs. ifx is based on the Intel� Fortran Compiler Classic (ifort) frontend and runtime libraries, but uses LLVM backend compiler technology.  <a href="https://t.co/YC72lJcOVC">https://t.co/YC72lJcOVC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475494838074318852?ref_src=twsrc%5Etfw">December 27, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

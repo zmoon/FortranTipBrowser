@@ -1,0 +1,17 @@
+# 073. Use parameters to dimension fixed-size arrays to make a code easier to change
+
+Use parameters to dimension fixed-size arrays to make a code easier to change, for example
+
+integer, parameter :: n1=3,n2=5
+real :: x(n1,n2),y(n1,n2),z(n1,n2)
+
+or
+
+real, dimension(n1,n2) :: x,y,z
+
+Numbers other than 0 or 1 should not appear repeatedly and should be parameters.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use parameters to dimension fixed-size arrays to make a code easier to change, for example<br><br>integer, parameter :: n1=3,n2=5<br>real :: x(n1,n2),y(n1,n2),z(n1,n2)<br><br>or<br><br>real, dimension(n1,n2) :: x,y,z<br><br>Numbers other than 0 or 1 should not appear repeatedly and should be parameters.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478331686412861440?ref_src=twsrc%5Etfw">January 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

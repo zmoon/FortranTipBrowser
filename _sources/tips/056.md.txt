@@ -1,0 +1,18 @@
+# 056. Standards committee has approved conditional expressions
+
+@arclight The standards committee has approved conditional expressions, with 
+
+y = ( i&gt;=1 .And. i&lt;=Size(a) ? a(i) : -Huge(y) )
+
+equivalent to
+
+if (i&gt;=1 .And. i&lt;=Size(a)) then
+   y = a(i)
+else
+   y = -Huge(y)
+end if
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The standards committee has approved conditional expressions, with <br><br>y = ( i&gt;=1 .And. i&lt;=Size(a) ? a(i) : -Huge(y) )<br><br>equivalent to<br><br>if (i&gt;=1 .And. i&lt;=Size(a)) then<br>   y = a(i)<br>else<br>   y = -Huge(y)<br>end if<a href="https://t.co/NKcB9wR2kU">https://t.co/NKcB9wR2kU</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475840940791279616?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

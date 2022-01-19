@@ -1,0 +1,17 @@
+# 088. How to rename an imported module entity
+
+An imported module entity can be renamed with the syntax
+
+use mod, only: local_name =&gt; use_name
+
+or
+
+use mod, local_name =&gt; use_name
+
+This is necessary when importing procedures with the same name, not in interfaces, from different
+modules.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An imported module entity can be renamed with the syntax<br><br>use mod, only: local_name =&gt; use_name<br><br>or<br><br>use mod, local_name =&gt; use_name<br><br>This is necessary when importing procedures with the same name, not in interfaces, from different<br>modules. <a href="https://t.co/89mRx3jsWV">pic.twitter.com/89mRx3jsWV</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1481597325499842563?ref_src=twsrc%5Etfw">January 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

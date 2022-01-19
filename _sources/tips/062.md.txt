@@ -1,0 +1,15 @@
+# 062. MODULO vs. MOD function
+
+Fortran has similar MODULO and MOD functions.
+MODULO (MOD) takes the sign of the 2nd (1st) argument.
+
+print*,modulo([-1,0,1],2)  !   1 0  1
+print*,mod([-1,0,1],2)        ! -1 0  1
+print*,modulo([-1,0,1],-2) ! -1 0 -1
+print*,mod([-1,0,1],-2)      ! -1 0   1
+end
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran has similar MODULO and MOD functions.<br>MODULO (MOD) takes the sign of the 2nd (1st) argument.<br><br>print*,modulo([-1,0,1],2)  !   1 0  1<br>print*,mod([-1,0,1],2)        ! -1 0  1<br>print*,modulo([-1,0,1],-2) ! -1 0 -1<br>print*,mod([-1,0,1],-2)      ! -1 0   1<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476541936681066501?ref_src=twsrc%5Etfw">December 30, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

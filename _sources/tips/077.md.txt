@@ -1,0 +1,8 @@
+# 077. Use integer powers when possible.
+
+Use integer powers when possible, writing x**2 instead of x**2.0, since depending on the compiler option used, the latter may be computed as exp(2*log(x)), which is slower.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use integer powers when possible, writing x**2 instead of x**2.0, since depending on the compiler option used, the latter may be computed as exp(2*log(x)), which is slower. <a href="https://t.co/vlBznFvWIf">pic.twitter.com/vlBznFvWIf</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478765410405298176?ref_src=twsrc%5Etfw">January 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

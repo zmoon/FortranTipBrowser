@@ -1,0 +1,8 @@
+# 068. Len of character variable function result can depend on arguments
+
+The LEN of a character variable function RESULT can also depend on intrinsic functions of the arguments.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The LEN of a character variable function RESULT can also depend on intrinsic functions of the arguments.  <a href="https://t.co/6vXoO79BAK">pic.twitter.com/6vXoO79BAK</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477632693617799169?ref_src=twsrc%5Etfw">January 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

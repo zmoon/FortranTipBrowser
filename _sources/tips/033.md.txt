@@ -13,7 +13,7 @@ Note the `_wp` suffix used in the literal constants for $\pi$ and $10.0$.
 Any literal constant without a suffix is considered single precision in Fortran,
 regardless of the number of digits provided.
 
-See <https://fortran-lang.org/learn/best_practices/floating_point> for more dicussion.
+See <https://fortran-lang.org/learn/best_practices/floating_point> for more discussion.
 
 ```{literalinclude} ../../src/real-precision.f90
 :language: fortran

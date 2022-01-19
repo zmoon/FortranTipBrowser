@@ -1,0 +1,8 @@
+# 094. Impure elemental procedure can be used to generate array of non-uniform variates
+
+The RANDOM_NUMBER intrinsic returns a scalar or an array of uniform variates. An impure elemental subroutine can do the same for normal variates, given an algorithm to generate a single normal variate, possibly using RANDOM_NUMBER.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The RANDOM_NUMBER intrinsic returns a scalar or an array of uniform variates. An impure elemental subroutine can do the same for normal variates, given an algorithm to generate a single normal variate, possibly using RANDOM_NUMBER.<a href="https://t.co/udthsbMT7T">pic.twitter.com/udthsbMT7T</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483430581232967684?ref_src=twsrc%5Etfw">January 18, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

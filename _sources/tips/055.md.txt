@@ -1,0 +1,10 @@
+# 055. ANY and ALL may not be the most efficient methods to compare arrays.
+
+ANY and ALL may not be the most efficient methods to compare arrays. They
+may generate a logical array the size of the input arrays or always test all elements, depending on how they are
+implemented. More from urbanjost:
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">ANY and ALL may not be the most efficient methods to compare arrays. They<br>may generate a logical array the size of the input arrays or always test all elements, depending on how they are<br>implemented. More from urbanjost:<a href="https://t.co/8I5ed7nnDT">pic.twitter.com/8I5ed7nnDT</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475829444543717378?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

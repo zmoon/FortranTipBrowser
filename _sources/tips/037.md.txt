@@ -1,0 +1,8 @@
+# 037. Using READ and WRITE for file i/o
+
+Using READ and WRITE for file i/o.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using READ and WRITE for file i/o. <a href="https://t.co/Be3gH8SLnL">pic.twitter.com/Be3gH8SLnL</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472999893631447043?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

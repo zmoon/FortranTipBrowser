@@ -1,0 +1,13 @@
+# 090. An unqualified USE foo statement imports public entities defined in foo and what foo imported.
+
+use foo
+
+imports not only the public entities defined in module foo but also the entities that foo imports from module bar. To avoid inadvertent imports and clarify what is imported, write
+
+use foo, only: &lt;imports&gt;
+use bar, only: &lt;imports&gt; ! if any
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">use foo<br><br>imports not only the public entities defined in module foo but also the entities that foo imports from module bar. To avoid inadvertent imports and clarify what is imported, write<br><br>use foo, only: &lt;imports&gt;<br>use bar, only: &lt;imports&gt; ! if any<a href="https://t.co/9s78tF1V5Q">pic.twitter.com/9s78tF1V5Q</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482328990798987266?ref_src=twsrc%5Etfw">January 15, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,13 @@
+# 076. Use d0 or \_kind to make a constant double precision.
+
+Use d0 or _kind to make a constant double precision. Merely having many decimal places in a literal constant does not do so.
+
+real(kind(1.0d0)) :: pi
+pi = 3.14159265358979323846 ! RHS is single precision
+
+probably does not do what the programmer intends!
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use d0 or _kind to make a constant double precision. Merely having many decimal places in a literal constant does not do so.<br><br>real(kind(1.0d0)) :: pi<br>pi = 3.14159265358979323846 ! RHS is single precision<br><br>probably does not do what the programmer intends! <a href="https://t.co/T9hNCwfcE2">pic.twitter.com/T9hNCwfcE2</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478713534850736129?ref_src=twsrc%5Etfw">January 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

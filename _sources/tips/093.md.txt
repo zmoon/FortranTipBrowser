@@ -1,0 +1,8 @@
+# 093. Fortran 2008 introduced IMPURE ELEMENTAL procedures
+
+Fortran 2008 allows procedures to be labeled IMPURE ELEMENTAL. Such procedures can do external I/O and have a STOP or ERROR STOP statement. They can simulate a loop over a collection. The plain ELEMENTAL designation means the same as PURE ELEMENTAL.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2008 allows procedures to be labeled IMPURE ELEMENTAL. Such procedures can do external I/O and have a STOP or ERROR STOP statement. They can simulate a loop over a collection. The plain ELEMENTAL designation means the same as PURE ELEMENTAL.<a href="https://t.co/e5Z6K7MvvC">pic.twitter.com/e5Z6K7MvvC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483063464562204672?ref_src=twsrc%5Etfw">January 17, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

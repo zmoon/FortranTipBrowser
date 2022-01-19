@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>072. Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z) &#8212; FortranTip Browser</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="073. Use parameters to dimension fixed-size arrays to make a code easier to change" href="073.html" />
+    <link rel="prev" title="071. KindFinder code finds all KIND Values implemented by a compiler" href="071.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">FortranTip Browser</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Tips
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="001.html">
+     001. Hello World
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="002.html">
+     002. Intrinsic data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="003.html">
+     003.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       do
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="004.html">
+     004.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       exit
+      </span>
+     </code>
+     ing a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       do
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="005.html">
+     005. Fortran compilers and tutorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="006.html">
+     006.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       **
+      </span>
+     </code>
+     is the exponentiation operator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="007.html">
+     007. Integer division truncates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="008.html">
+     008. Array intrinsic functions:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sum
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       minval
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       maxval
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       minloc
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       findloc
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="009.html">
+     009. Fortran array sections contain both endpoints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="010.html">
+     010. Fortran arrays can have any lower bound (the default is 1)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="011.html">
+     011.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sum
+      </span>
+     </code>
+     and other array functions have an optional
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dim
+      </span>
+     </code>
+     ension argument
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="012.html">
+     012. Fortran has allocation-on-assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="013.html">
+     013. New Fortran code should use free source form and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .f90
+      </span>
+     </code>
+     suffix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="014.html">
+     014.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+      <span class="pre">
+       if
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       end
+      </span>
+      <span class="pre">
+       if
+      </span>
+     </code>
+     block
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="015.html">
+     015.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       merge(x,
+      </span>
+      <span class="pre">
+       y,
+      </span>
+      <span class="pre">
+       cond)
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="016.html">
+     016. An array of character variables has elements of the same
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       len
+      </span>
+     </code>
+     gth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="017.html">
+     017. Character variables are padded with spaces at the end if necessary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="018.html">
+     018. Fortran has a one-line
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="019.html">
+     019.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       associate
+      </span>
+     </code>
+     creates an alias for expressions or variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="020.html">
+     020. Loop variable after completion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="021.html">
+     021.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pack
+      </span>
+     </code>
+     selects elements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="022.html">
+     022. Functions should be
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pure
+      </span>
+     </code>
+     and have
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       intent(in)
+      </span>
+     </code>
+     arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="023.html">
+     023.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elemental
+      </span>
+     </code>
+     functions broadcast arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="024.html">
+     024. Put functions and subroutines in modules to ensure that interfaces are checked
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="025.html">
+     025. Avoid polluting the namespace by using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       use
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       only
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="026.html">
+     026. Function overloading using an interface with module procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="027.html">
+     027. Optional arguments (and the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       random_number
+      </span>
+     </code>
+     intrinsic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="028.html">
+     028. Define and call a subroutine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="029.html">
+     029. Subroutines can have
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       intent(in
+      </span>
+      <span class="pre">
+       out)
+      </span>
+     </code>
+     arguments, but functions should not
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="030.html">
+     030. Specify function and subroutine
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       intent
+      </span>
+     </code>
+     s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="031.html">
+     031. Procedures can be recursive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="032.html">
+     032. Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       parameter
+      </span>
+     </code>
+     s in modules to define constants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="033.html">
+     033. Declare floating point variables with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       kind
+      </span>
+     </code>
+     s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="034.html">
+     034. Replace non-standard
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       REAL*8
+      </span>
+     </code>
+     declaration with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       real(kind=real64)
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="035.html">
+     035. SELECT CASE for conditional execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="036.html">
+     036. Reading user input
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="037.html">
+     037. Using READ and WRITE for file i/o
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="038.html">
+     038. Use unformatted stream of Fortran 2003 for large-scale I/O.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="039.html">
+     039. Name modules and the source files containing them consistently, with one module per file.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="040.html">
+     040. If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="041.html">
+     041. Use G0.d and colon edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="042.html">
+     042. Zero-size array constructor such as [real ::]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="043.html">
+     043. Fortran equivalents of NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="044.html">
+     044. List-directed vs. explicitly formatted output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="045.html">
+     045. Derived type definition, initialization, and operator overloading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="046.html">
+     046. Use GAMMA to compute factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="047.html">
+     047. RESHAPE with the optional ORDER and PAD arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="048.html">
+     048. CMPLX should be used with a KIND argument
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="049.html">
+     049. Fortran is column-major
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="050.html">
+     050. Store data as an array of derived types or a derived type with array components?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="051.html">
+     051. Doubled delimiter in a string is regarded as a single character of the constant
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="052.html">
+     052. Intel Fortran Compiler (ifx)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="053.html">
+     053. Use ALL(A==B) to test for array equality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="054.html">
+     054. Consider using a tolerance to compare floats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="055.html">
+     055. ANY and ALL may not be the most efficient methods to compare arrays.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="056.html">
+     056. Standards committee has approved conditional expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="057.html">
+     057. Use .true. and .false. for Booleans, not 1 and 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="058.html">
+     058. To learn about Fortran beyond F95, read the New Features articles of John Reid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="059.html">
+     059. LEN of a character variable may be deferred in Fortran 2003 on
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="060.html">
+     060. Many compilers evaluate ALL(x==y) efficiently with short-circuiting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="061.html">
+     061. Compiler Support for the Fortran 2008 and 2018 Standards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="062.html">
+     062. MODULO vs. MOD function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="063.html">
+     063. Returning multiple values from a subroutine or function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="064.html">
+     064. Case insensitivity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="065.html">
+     065. Fortran-lang suggested variable naming conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="066.html">
+     066. Do case-insensitive string comparisons by converting to lower case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="067.html">
+     067. How size of an array function result can depend on function arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="068.html">
+     068. Len of character variable function result can depend on arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="069.html">
+     069. Advance=”no” specifier of WRITE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="070.html">
+     070. Real and integer KIND constants from iso_fortran_env; HUGE() and TINY()
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="071.html">
+     071. KindFinder code finds all KIND Values implemented by a compiler
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     072. Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="073.html">
+     073. Use parameters to dimension fixed-size arrays to make a code easier to change
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="074.html">
+     074. Avoid implicit save
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="075.html">
+     075. KIND numbers of types are not portable across compilers and should not be used directly.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="076.html">
+     076. Use d0 or _kind to make a constant double precision.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="077.html">
+     077. Use integer powers when possible.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="078.html">
+     078. Parenthesize a variable to copy it “on the fly”.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="079.html">
+     079. Substrings of character variable arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="080.html">
+     080. Intrinsic character functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="081.html">
+     081. Syntax for character array without manual padding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="082.html">
+     082. Two types of syntax for defining a function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="083.html">
+     083. Propagation of an optional argument
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="084.html">
+     084. DIMENSION can be used to declare several arrays of the same SHAPE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="085.html">
+     085. UnALLOCATED variable passed to a procedure is not PRESENT there.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="086.html">
+     086. Procedures can be called with a mix of named and positional arguments.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="087.html">
+     087. Use the same name for analogous procedures defined in different modules using an INTERFACE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="088.html">
+     088. How to rename an imported module entity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="089.html">
+     089. Module entities are PUBLIC by default.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="090.html">
+     090. An unqualified USE foo statement imports public entities defined in foo and what foo imported.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="091.html">
+     091. Use iostat and iomsg to handle READ errors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="092.html">
+     092. List of Fortran compilers, build tools, text editors, etc.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="093.html">
+     093. Fortran 2008 introduced IMPURE ELEMENTAL procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="094.html">
+     094. Impure elemental procedure can be used to generate array of non-uniform variates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="095.html">
+     095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://twitter.com/fortrantip">
+   @FortranTip
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tips/072.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zmoon/FortranTipBrowser"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>072. Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fortran-2008-introduced-z-re-and-z-im-as-alternatives-to-real-z-and-aimag-z">
+<h1>072. Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z)<a class="headerlink" href="#fortran-2008-introduced-z-re-and-z-im-as-alternatives-to-real-z-and-aimag-z" title="Permalink to this headline">¶</a></h1>
+<p>Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z) to refer to the real and imaginary parts of a complex variable z, either scalar or array. The %re and %im syntax does not apply to expressions, so (2*z)%im is disallowed.</p>
+<hr class="docutils" />
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z) to refer to the real and imaginary parts of a complex variable z, either scalar or array. The %re and %im syntax does not apply to expressions, so (2*z)%im is disallowed. <a href="https://t.co/GcspgfI4zB">pic.twitter.com/GcspgfI4zB</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478160269671124993?ref_src=twsrc%5Etfw">January 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="071.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">071. KindFinder code finds all KIND Values implemented by a compiler</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="073.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">073. Use parameters to dimension fixed-size arrays to make a code easier to change</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Beliavsky and FortranTip contributors<br/>
+    
+        &copy; Copyright 2021, Beliavsky and FortranTip contributors (website by zmoon).<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+# 063. Returning multiple values from a subroutine or function
+
+Fortran cannot return multiple values with syntax like
+
+c, d = f(x)
+
+You can use a subroutine
+
+call f(x,c,d)
+
+or a function that returns a derived type containing c and d or a function that returns a size-2 array if c and d have the same type.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran cannot return multiple values with syntax like<br><br>c, d = f(x)<br><br>You can use a subroutine<br><br>call f(x,c,d)<br><br>or a function that returns a derived type containing c and d or a function that returns a size-2 array if c and d have the same type. <a href="https://t.co/vYr5h8FsMw">pic.twitter.com/vYr5h8FsMw</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476724929299197962?ref_src=twsrc%5Etfw">December 31, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

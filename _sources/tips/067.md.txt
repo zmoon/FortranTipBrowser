@@ -1,0 +1,8 @@
+# 067. How size of an array function result can depend on function arguments
+
+The SIZE of a function result can be an argument, depend on an intrinsic function of an argument such as SIZE, or have an arbitrary dependence if the result is allocatable.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The SIZE of a function result can be an argument, depend on an intrinsic function of an argument such as SIZE, or have an arbitrary dependence if the result is allocatable. <a href="https://t.co/MKlJOXn4yZ">pic.twitter.com/MKlJOXn4yZ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477606275643019269?ref_src=twsrc%5Etfw">January 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

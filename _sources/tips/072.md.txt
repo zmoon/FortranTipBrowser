@@ -1,0 +1,8 @@
+# 072. Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z)
+
+Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z) to refer to the real and imaginary parts of a complex variable z, either scalar or array. The %re and %im syntax does not apply to expressions, so (2*z)%im is disallowed.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z) to refer to the real and imaginary parts of a complex variable z, either scalar or array. The %re and %im syntax does not apply to expressions, so (2*z)%im is disallowed. <a href="https://t.co/GcspgfI4zB">pic.twitter.com/GcspgfI4zB</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478160269671124993?ref_src=twsrc%5Etfw">January 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,10 @@
+# 048. CMPLX should be used with a KIND argument
+
+CMPLX(X,Y,[KIND]) returns a single precision complex variable, even if X and Y are double precision, unless a KIND is specified. 
+
+Merry Christmas and Happy Holidays! Posts may be sparse until the new year.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">CMPLX(X,Y,[KIND]) returns a single precision complex variable, even if X and Y are double precision, unless a KIND is specified. <br><br>Merry Christmas and Happy Holidays! Posts may be sparse until the new year. <a href="https://t.co/MD9tCw4pTB">pic.twitter.com/MD9tCw4pTB</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474537984066301959?ref_src=twsrc%5Etfw">December 25, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

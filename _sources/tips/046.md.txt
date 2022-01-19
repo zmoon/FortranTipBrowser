@@ -1,0 +1,13 @@
+# 046. Use GAMMA to compute factorials
+
+Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).
+That is,
+
+x! == gamma(x+1)
+
+Thanks to urbanjost for tip!
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).<br>That is,<br><br>x! == gamma(x+1)<br><br>Thanks to urbanjost for tip! <a href="https://t.co/fTAPvhKEpr">pic.twitter.com/fTAPvhKEpr</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474357943667671060?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,8 @@
+# 040. If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures
+
+If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures, and check the STAT of ALLOCATE.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures, and check the STAT of ALLOCATE. <a href="https://t.co/EV4jE4pfdx">pic.twitter.com/EV4jE4pfdx</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473636468405030913?ref_src=twsrc%5Etfw">December 22, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

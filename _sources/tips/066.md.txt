@@ -1,0 +1,8 @@
+# 066. Do case-insensitive string comparisons by converting to lower case
+
+Character variables are case-sensitive, and to compare two strings ignoring case you can first convert them to lower case.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Character variables are case-sensitive, and to compare two strings ignoring case you can first convert them to lower case. <a href="https://t.co/D4tnPO8tLE">pic.twitter.com/D4tnPO8tLE</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477278656376590340?ref_src=twsrc%5Etfw">January 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,9 @@
+# 069. Advance="no" specifier of WRITE
+
+WRITE inserts a newline at the end, which can be avoided with the
+advance="no" specifier. This is useful for prompting input and reading it from the same line and for printing an unknown amount of data with one format before another format. From zoziha.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">WRITE inserts a newline at the end, which can be avoided with the<br>advance=&quot;no&quot; specifier. This is useful for prompting input and reading it from the same line and for printing an unknown amount of data with one format before another format. From zoziha.<a href="https://t.co/38h3L99q8Q">pic.twitter.com/38h3L99q8Q</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477788560359141382?ref_src=twsrc%5Etfw">January 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

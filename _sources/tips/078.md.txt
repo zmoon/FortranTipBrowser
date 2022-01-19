@@ -1,0 +1,14 @@
+# 078. Parenthesize a variable to copy it "on the fly".
+
+Parenthesize a variable to copy it "on the fly" to avoid overlapping INTENT(IN) and INTENT(OUT) arguments, which is non-standard, for example writing
+
+call double((i),i)
+
+instead of
+
+call double(i,i) ! bad if args are intent(in) and intent(out)
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Parenthesize a variable to copy it &quot;on the fly&quot; to avoid overlapping INTENT(IN) and INTENT(OUT) arguments, which is non-standard, for example writing<br><br>call double((i),i)<br><br>instead of<br><br>call double(i,i) ! bad if args are intent(in) and intent(out)<a href="https://t.co/WqS0AvVcCE">pic.twitter.com/WqS0AvVcCE</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479071485859962880?ref_src=twsrc%5Etfw">January 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
