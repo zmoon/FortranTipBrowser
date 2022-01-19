@@ -1,4 +1,4 @@
-#
+# This data is used to generate the tip pages
 
 tips:
 
@@ -241,6 +241,12 @@ tips:
     intro: ~
     file: optional.f90
     file0: same
+    concl: |
+      ```{important}
+      Within a procedure, you should test that an optional argument is present
+      (with the `present` intrinsic function) before attempting to use it.
+      Using an optional argument that is not present is a common cause of program crashes.
+      ```
     url: https://twitter.com/fortrantip/status/1472684194765672450
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/ZNqwgg3Wgq">pic.twitter.com/ZNqwgg3Wgq</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472684194765672450?ref_src=twsrc%5Etfw">December 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
@@ -324,7 +330,7 @@ tips:
       Any literal constant without a suffix is considered single precision in Fortran,
       regardless of the number of digits provided.
 
-      See <https://fortran-lang.org/learn/best_practices/floating_point> for more dicussion.
+      See <https://fortran-lang.org/learn/best_practices/floating_point> for more discussion.
     file: real-precision.f90
     file0: kind.f90
     url: https://twitter.com/fortrantip/status/1472771842242920451
@@ -354,7 +360,758 @@ tips:
     url: https://twitter.com/fortrantip/status/1472772577600942083
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In older code, declarations such as<br><br>real*8 x<br><br>are common but non-standard. They should be replaced by<br><br>real(kind=real64) :: x<br><br>or <br><br>real(kind=wp) :: x<br><br>with wp set appropriately.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472772577600942083?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # 20-December-2021
+  # 20-Dec-2021
 
   # ...
 
+  # TODO
+  - title: SELECT CASE for conditional execution
+    intro: |
+      Created with @carbon_app
+    file: ~
+    file0: select_case.f90
+    url: https://twitter.com/fortrantip/status/1472930444572336128
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/5R6yeSnvpY">pic.twitter.com/5R6yeSnvpY</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472930444572336128?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Reading user input
+    intro: |
+      Created with @carbon_app
+    file: ~
+    file0: read_sum.f90
+    url: https://twitter.com/fortrantip/status/1472941850218700805
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/pzKMXlNriJ">pic.twitter.com/pzKMXlNriJ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472941850218700805?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Using READ and WRITE for file i/o
+    intro: |
+      Using READ and WRITE for file i/o.
+    file: ~
+    file0: read_write_file.f90
+    url: https://twitter.com/fortrantip/status/1472999893631447043
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using READ and WRITE for file i/o. <a href="https://t.co/Be3gH8SLnL">pic.twitter.com/Be3gH8SLnL</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472999893631447043?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 21-Dec-2021
+
+  # TODO
+  - title: Use unformatted stream of Fortran 2003 for large-scale I/O.
+    intro: |
+      Use unformatted stream of Fortran 2003 for large-scale I/O.
+    file: ~
+    file0: stream_io.f90
+    url: https://twitter.com/fortrantip/status/1473261954244435973
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use unformatted stream of Fortran 2003 for large-scale I/O. <a href="https://t.co/I2PHa3YiaA">pic.twitter.com/I2PHa3YiaA</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473261954244435973?ref_src=twsrc%5Etfw">December 21, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Name modules and the source files containing them consistently, with one module per file.
+    intro: |
+      Name modules and the source files containing them consistently, with one module per file. The convention I use is that a module named  m_mod is defined in a source file m.f90. That way if I see 
+
+      use m_mod, only: foo
+
+      in my code I know to look in m.f90 for the definition of foo.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1473340740055015431
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Name modules and the source files containing them consistently, with one module per file. The convention I use is that a module named  m_mod is defined in a source file m.f90. That way if I see <br><br>use m_mod, only: foo<br><br>in my code I know to look in m.f90 for the definition of foo.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473340740055015431?ref_src=twsrc%5Etfw">December 21, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 22-Dec-2021
+
+  # TODO
+  - title: If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures
+    intro: |
+      If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures, and check the STAT of ALLOCATE.
+    file: ~
+    file0: automatic.f90
+    url: https://twitter.com/fortrantip/status/1473636468405030913
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures, and check the STAT of ALLOCATE. <a href="https://t.co/EV4jE4pfdx">pic.twitter.com/EV4jE4pfdx</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473636468405030913?ref_src=twsrc%5Etfw">December 22, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Use G0.d and colon edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+    intro: |
+      Combine the G0.d and colon edit descriptors, along with infinite repeat count, to write delimited (CSV, etc.) output.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1473680777279852553
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Combine the G0.d and colon edit descriptors, along with infinite repeat count, to write delimited (CSV, etc.) output. <a href="https://t.co/QfMmdEj7Fn">pic.twitter.com/QfMmdEj7Fn</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473680777279852553?ref_src=twsrc%5Etfw">December 22, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Zero-size array constructor such as [real ::]
+    intro: |
+      [data_type :: ] is a zero-size array of type data_type.
+    file: ~
+    file0: zero_size.f90
+    url: https://twitter.com/fortrantip/status/1473848675566858242
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">[data_type :: ] is a zero-size array of type data_type.<a href="https://t.co/XmBx5W4ZBG">pic.twitter.com/XmBx5W4ZBG</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473848675566858242?ref_src=twsrc%5Etfw">December 23, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 23-Dec-2021
+
+  # TODO
+  - title: Fortran equivalents of NumPy
+    intro: |
+      Used to NumPy? Lots of the Fortran intrinsics to deal with arrays will already be familiar to you.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1473958733571104773
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Used to NumPy? Lots of the Fortran intrinsics to deal with arrays will already be familiar to you. <a href="https://t.co/GnKnbscsDX">pic.twitter.com/GnKnbscsDX</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473958733571104773?ref_src=twsrc%5Etfw">December 23, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: List-directed vs. explicitly formatted output
+    intro: |
+      List-directed output (format *) is convenient, but don't use it when you care about layout as you'll lose control over spacing, line breaks and number of significant digits. If you care, use explicit formats instead.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1474105626611662857
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">List-directed output (format *) is convenient, but don&#39;t use it when you care about layout as you&#39;ll lose control over spacing, line breaks and number of significant digits. If you care, use explicit formats instead.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474105626611662857?ref_src=twsrc%5Etfw">December 23, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Derived type definition, initialization, and operator overloading
+    intro: |
+      How to define a derived type, initialize it, access its components, convert it to a string, and define operators for it.
+    file: ~
+    file0: date.f90
+    url: https://twitter.com/fortrantip/status/1474169072665440259
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">How to define a derived type, initialize it, access its components, convert it to a string, and define operators for it. <a href="https://t.co/jcai3Usy25">pic.twitter.com/jcai3Usy25</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474169072665440259?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 24-Dec-2021
+
+  # TODO
+  - title: Use GAMMA to compute factorials
+    intro: |
+      Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).
+      That is,
+
+      x! == gamma(x+1)
+
+      Thanks to urbanjost for tip!
+    file: ~
+    file0: factorial.f90
+    url: https://twitter.com/fortrantip/status/1474357943667671060
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).<br>That is,<br><br>x! == gamma(x+1)<br><br>Thanks to urbanjost for tip! <a href="https://t.co/fTAPvhKEpr">pic.twitter.com/fTAPvhKEpr</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474357943667671060?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: RESHAPE with the optional ORDER and PAD arguments
+    intro: |
+      RESHAPE returns an array with a different shape than the SOURCE array. Optional ORDER argument changes the order of elements of SOURCE from the usual column major. Optional PAD argument fills the result, with recycling, after source is exhausted.
+    file: ~
+    file0: reshape_array.f90
+    url: https://twitter.com/fortrantip/status/1474394605890244614
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">RESHAPE returns an array with a different shape than the SOURCE array. Optional ORDER argument changes the order of elements of SOURCE from the usual column major. Optional PAD argument fills the result, with recycling, after source is exhausted. <a href="https://t.co/Xb3RCZ6LcW">pic.twitter.com/Xb3RCZ6LcW</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474394605890244614?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: CMPLX should be used with a KIND argument
+    intro: |
+      CMPLX(X,Y,[KIND]) returns a single precision complex variable, even if X and Y are double precision, unless a KIND is specified. 
+
+      Merry Christmas and Happy Holidays! Posts may be sparse until the new year.
+    file: ~
+    file0: cmplx.f90
+    url: https://twitter.com/fortrantip/status/1474537984066301959
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">CMPLX(X,Y,[KIND]) returns a single precision complex variable, even if X and Y are double precision, unless a KIND is specified. <br><br>Merry Christmas and Happy Holidays! Posts may be sparse until the new year. <a href="https://t.co/MD9tCw4pTB">pic.twitter.com/MD9tCw4pTB</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474537984066301959?ref_src=twsrc%5Etfw">December 25, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 26-Dec-2021
+
+  # TODO
+  - title: Fortran is column-major
+    intro: |
+      The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order.
+    file: ~
+    file0: column_major.f90
+    url: https://twitter.com/fortrantip/status/1475049356155883524
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order. <a href="https://t.co/oEtrOaMbzC">pic.twitter.com/oEtrOaMbzC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475049356155883524?ref_src=twsrc%5Etfw">December 26, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Store data as an array of derived types or a derived type with array components?
+    intro: |
+      Whether to store data as an array of derived types or a derived type with array components also depends on how the data will typically be accessed.
+    file: ~
+    file0: derived_type_array.f90
+    url: https://twitter.com/fortrantip/status/1475133178763427848
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Whether to store data as an array of derived types or a derived type with array components also depends on how the data will typically be accessed.<a href="https://t.co/UUqiYkaLO7">pic.twitter.com/UUqiYkaLO7</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475133178763427848?ref_src=twsrc%5Etfw">December 26, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 27-Dec-2021
+
+  # TODO
+  - title: Doubled delimiter in a string is regarded as a single character of the constant
+    intro: |
+      A doubled delimiter in a string without any embedded intervening blanks is regarded as a single character of the constant. One can also put a single quote in double quotes or a double quote in single quotes. Thanks to Amir Shahmoradi for tip.
+    file: ~
+    file0: doubled_delim.f90
+    url: https://twitter.com/fortrantip/status/1475453317526528003
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A doubled delimiter in a string without any embedded intervening blanks is regarded as a single character of the constant. One can also put a single quote in double quotes or a double quote in single quotes. Thanks to Amir Shahmoradi for tip.<br> <a href="https://t.co/JSneWjHZgo">pic.twitter.com/JSneWjHZgo</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475453317526528003?ref_src=twsrc%5Etfw">December 27, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Intel Fortran Compiler (ifx)
+    intro: |
+      The Intel� Fortran Compiler (ifx), available in the oneAPI HPC Toolkit 2022.1, is production-ready for CPUs and GPUs. ifx is based on the Intel� Fortran Compiler Classic (ifort) frontend and runtime libraries, but uses LLVM backend compiler technology.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1475494838074318852
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Intel� Fortran Compiler (ifx), available in the oneAPI HPC Toolkit 2022.1, is production-ready for CPUs and GPUs. ifx is based on the Intel� Fortran Compiler Classic (ifort) frontend and runtime libraries, but uses LLVM backend compiler technology.  <a href="https://t.co/YC72lJcOVC">https://t.co/YC72lJcOVC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475494838074318852?ref_src=twsrc%5Etfw">December 27, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 28-Dec-2021
+
+  # TODO
+  - title: Use ALL(A==B) to test for array equality
+    intro: |
+      If size(A)==size(B), use ALL(A==B) to test for equality of arrays A and B and ANY(A==B) to test for equality of any corresponding elements.
+    file: ~
+    file0: all_any.f90
+    url: https://twitter.com/fortrantip/status/1475822105358913540
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If size(A)==size(B), use ALL(A==B) to test for equality of arrays A and B and ANY(A==B) to test for equality of any corresponding elements. <a href="https://t.co/sx1gxm5XIh">pic.twitter.com/sx1gxm5XIh</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475822105358913540?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Consider using a tolerance to compare floats
+    intro: |
+      If the arrays are INTEGER or CHARACTER, then the comparison can be exact. For REAL or COMPLEX arrays, you should consider using a suitably small tolerance when comparing values. This and the previous tip are from urbanjost.
+    file: ~
+    file0: compare_floats.f90
+    url: https://twitter.com/fortrantip/status/1475826650835214338
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If the arrays are INTEGER or CHARACTER, then the comparison can be exact. For REAL or COMPLEX arrays, you should consider using a suitably small tolerance when comparing values. This and the previous tip are from urbanjost. <a href="https://t.co/qjaMf5T06W">pic.twitter.com/qjaMf5T06W</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475826650835214338?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: ANY and ALL may not be the most efficient methods to compare arrays.
+    intro: |
+      ANY and ALL may not be the most efficient methods to compare arrays. They
+      may generate a logical array the size of the input arrays or always test all elements, depending on how they are
+      implemented. More from urbanjost:
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1475829444543717378
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">ANY and ALL may not be the most efficient methods to compare arrays. They<br>may generate a logical array the size of the input arrays or always test all elements, depending on how they are<br>implemented. More from urbanjost:<a href="https://t.co/8I5ed7nnDT">pic.twitter.com/8I5ed7nnDT</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475829444543717378?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Standards committee has approved conditional expressions
+    intro: |
+      @arclight The standards committee has approved conditional expressions, with 
+
+      y = ( i&gt;=1 .And. i&lt;=Size(a) ? a(i) : -Huge(y) )
+
+      equivalent to
+
+      if (i&gt;=1 .And. i&lt;=Size(a)) then
+         y = a(i)
+      else
+         y = -Huge(y)
+      end if
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1475840940791279616
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The standards committee has approved conditional expressions, with <br><br>y = ( i&gt;=1 .And. i&lt;=Size(a) ? a(i) : -Huge(y) )<br><br>equivalent to<br><br>if (i&gt;=1 .And. i&lt;=Size(a)) then<br>   y = a(i)<br>else<br>   y = -Huge(y)<br>end if<a href="https://t.co/NKcB9wR2kU">https://t.co/NKcB9wR2kU</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475840940791279616?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Use .true. and .false. for Booleans, not 1 and 0
+    intro: |
+      Use .true. and .false. for Booleans and use the expression 
+
+      merge(1,0,logical_variable)
+
+      if needed. Fortran standards have never specified an equivalence between integers and Booleans.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1475905587774959616
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use .true. and .false. for Booleans and use the expression <br><br>merge(1,0,logical_variable)<br><br>if needed. Fortran standards have never specified an equivalence between integers and Booleans. <a href="https://t.co/V1ZfGdxAWT">https://t.co/V1ZfGdxAWT</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475905587774959616?ref_src=twsrc%5Etfw">December 28, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 29-Dec-2021
+
+  # TODO
+  - title: To learn about Fortran beyond F95, read the New Features articles of John Reid
+    intro: |
+      To learn about Fortran beyond F95, read the 3 articles of John Reid, convenor (chairman) of the standards committee 1999-2017 on the New Features of Fortran 2018, 2008, and 2003
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1476150602866511873
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To learn about Fortran beyond F95, read the 3 articles of John Reid, convenor (chairman) of the standards committee 1999-2017 on the New Features of Fortran 2018, 2008, and 2003 <a href="https://t.co/y7bBC94ZdB">https://t.co/y7bBC94ZdB</a><a href="https://t.co/NrcHEeED8r">https://t.co/NrcHEeED8r</a><a href="https://t.co/tPtqc8BU3J">https://t.co/tPtqc8BU3J</a><br>and his co-authored book.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476150602866511873?ref_src=twsrc%5Etfw">December 29, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: LEN of a character variable may be deferred in Fortran 2003 on
+    intro: |
+      The LEN of a character variable may be deferred in F2003 on.
+
+      character (len=:), allocatable :: s,t(:)
+
+      declares a scalar and an array of such variables. The LEN is taken from the RHS of an assignment but not from a READ. Elements of t(:) have same LEN.
+    file: ~
+    file0: deferred_character.f90
+    url: https://twitter.com/fortrantip/status/1476201645885337611
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The LEN of a character variable may be deferred in F2003 on.<br><br>character (len=:), allocatable :: s,t(:)<br><br>declares a scalar and an array of such variables. The LEN is taken from the RHS of an assignment but not from a READ. Elements of t(:) have same LEN.<br> <a href="https://t.co/wP6lXJ3XL2">pic.twitter.com/wP6lXJ3XL2</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476201645885337611?ref_src=twsrc%5Etfw">December 29, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Many compilers evaluate ALL(x==y) efficiently with short-circuiting
+    intro: |
+      For a code that evaluates ALL(x==y) with a short-circuiting function and the intrinsic, gfortran, ifort, and nvfortran seem to short-circuit the intrinsic, so it may be OK to use ALL for large expressions.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1476255945923641347
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For a code that evaluates ALL(x==y) with a short-circuiting function and the intrinsic, gfortran, ifort, and nvfortran seem to short-circuit the intrinsic, so it may be OK to use ALL for large expressions.<a href="https://t.co/n99MPh7rKt">https://t.co/n99MPh7rKt</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476255945923641347?ref_src=twsrc%5Etfw">December 29, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Compiler Support for the Fortran 2008 and 2018 Standards
+    intro: |
+      @jeff_replies @axccl @OndrejCertik There is a paper "Compiler Support for the Fortran 2008 and 2018 Standards" April 2020 by Chivers &amp; Sleightholme covering Absoft Arm Cray Fujitsu gfortran IBM Intel Nag NEC Oracle PGI
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1476281645011505162
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">There is a paper &quot;Compiler Support for the Fortran 2008 and 2018 Standards&quot; April 2020 by Chivers &amp; Sleightholme covering Absoft Arm Cray Fujitsu gfortran IBM Intel Nag NEC Oracle PGI <a href="https://t.co/dPp0cZaLBs">https://t.co/dPp0cZaLBs</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476281645011505162?ref_src=twsrc%5Etfw">December 29, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 30-Dec-2021
+
+  # TODO
+  - title: MODULO vs. MOD function
+    intro: |
+      Fortran has similar MODULO and MOD functions.
+      MODULO (MOD) takes the sign of the 2nd (1st) argument.
+
+      print*,modulo([-1,0,1],2)  !   1 0  1
+      print*,mod([-1,0,1],2)        ! -1 0  1
+      print*,modulo([-1,0,1],-2) ! -1 0 -1
+      print*,mod([-1,0,1],-2)      ! -1 0   1
+      end
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1476541936681066501
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran has similar MODULO and MOD functions.<br>MODULO (MOD) takes the sign of the 2nd (1st) argument.<br><br>print*,modulo([-1,0,1],2)  !   1 0  1<br>print*,mod([-1,0,1],2)        ! -1 0  1<br>print*,modulo([-1,0,1],-2) ! -1 0 -1<br>print*,mod([-1,0,1],-2)      ! -1 0   1<br>end</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476541936681066501?ref_src=twsrc%5Etfw">December 30, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Returning multiple values from a subroutine or function
+    intro: |
+      Fortran cannot return multiple values with syntax like
+
+      c, d = f(x)
+
+      You can use a subroutine
+
+      call f(x,c,d)
+
+      or a function that returns a derived type containing c and d or a function that returns a size-2 array if c and d have the same type.
+    file: ~
+    file0: subroutine_dt.f90
+    url: https://twitter.com/fortrantip/status/1476724929299197962
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran cannot return multiple values with syntax like<br><br>c, d = f(x)<br><br>You can use a subroutine<br><br>call f(x,c,d)<br><br>or a function that returns a derived type containing c and d or a function that returns a size-2 array if c and d have the same type. <a href="https://t.co/vYr5h8FsMw">pic.twitter.com/vYr5h8FsMw</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476724929299197962?ref_src=twsrc%5Etfw">December 31, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 01-Jan-2022
+
+  # TODO
+  - title: Case insensitivity
+    intro: |
+      Fortran used to be written entirely in UPPERCASE, but is now case insensitive. However, whilst the following example is completely valid, to ensure legibility it's highly recommended to choose a case convention and stick to it!
+    file: ~
+    file0: case_insensitivity.f90
+    url: https://twitter.com/fortrantip/status/1477230568781795334
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran used to be written entirely in UPPERCASE, but is now case insensitive. However, whilst the following example is completely valid, to ensure legibility it&#39;s highly recommended to choose a case convention and stick to it! <a href="https://t.co/AMXjjEVsOE">pic.twitter.com/AMXjjEVsOE</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477230568781795334?ref_src=twsrc%5Etfw">January 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Fortran-lang suggested variable naming conventions
+    intro: |
+      Fortran-lang Best Practices:
+      1. Use lower case for all Fortran constructs, such as do, end do, if, then
+      2. Follow short mathematical notation for mathematical variables/functions
+      3. For other names use all lower case
+
+      Details at
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1477282631553269764
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran-lang Best Practices:<br>1. Use lower case for all Fortran constructs, such as do, end do, if, then<br>2. Follow short mathematical notation for mathematical variables/functions<br>3. For other names use all lower case<br><br>Details at<a href="https://t.co/WHTD1MAbFq">https://t.co/WHTD1MAbFq</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477282631553269764?ref_src=twsrc%5Etfw">January 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Do case-insensitive string comparisons by converting to lower case
+    intro: |
+      Character variables are case-sensitive, and to compare two strings ignoring case you can first convert them to lower case.
+    file: ~
+    file0: lower_case.f90
+    url: https://twitter.com/fortrantip/status/1477278656376590340
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Character variables are case-sensitive, and to compare two strings ignoring case you can first convert them to lower case. <a href="https://t.co/D4tnPO8tLE">pic.twitter.com/D4tnPO8tLE</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477278656376590340?ref_src=twsrc%5Etfw">January 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 02-Jan-2022
+
+  # TODO
+  - title: How size of an array function result can depend on function arguments
+    intro: |
+      The SIZE of a function result can be an argument, depend on an intrinsic function of an argument such as SIZE, or have an arbitrary dependence if the result is allocatable.
+    file: ~
+    file0: array_func.f90
+    url: https://twitter.com/fortrantip/status/1477606275643019269
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The SIZE of a function result can be an argument, depend on an intrinsic function of an argument such as SIZE, or have an arbitrary dependence if the result is allocatable. <a href="https://t.co/MKlJOXn4yZ">pic.twitter.com/MKlJOXn4yZ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477606275643019269?ref_src=twsrc%5Etfw">January 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Len of character variable function result can depend on arguments
+    intro: |
+      The LEN of a character variable function RESULT can also depend on intrinsic functions of the arguments.
+    file: ~
+    file0: join.f90
+    url: https://twitter.com/fortrantip/status/1477632693617799169
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The LEN of a character variable function RESULT can also depend on intrinsic functions of the arguments.  <a href="https://t.co/6vXoO79BAK">pic.twitter.com/6vXoO79BAK</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477632693617799169?ref_src=twsrc%5Etfw">January 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Advance="no" specifier of WRITE
+    intro: |
+      WRITE inserts a newline at the end, which can be avoided with the
+      advance="no" specifier. This is useful for prompting input and reading it from the same line and for printing an unknown amount of data with one format before another format. From zoziha.
+    file: ~
+    file0: advance_no.f90
+    url: https://twitter.com/fortrantip/status/1477788560359141382
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">WRITE inserts a newline at the end, which can be avoided with the<br>advance=&quot;no&quot; specifier. This is useful for prompting input and reading it from the same line and for printing an unknown amount of data with one format before another format. From zoziha.<a href="https://t.co/38h3L99q8Q">pic.twitter.com/38h3L99q8Q</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477788560359141382?ref_src=twsrc%5Etfw">January 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 03-Jan-2022
+
+  # TODO
+  - title: Real and integer KIND constants from iso_fortran_env; HUGE() and TINY()
+    intro: |
+      Module iso_fortran_env has KIND constants int8, int16, int32, int64 for integers with those storage sizes and real32, real64, real128 for reals.
+      Use huge(x) and tiny(x) to get the largest and smallest numbers of type real x and huge(i) for integer i.
+    file: ~
+    file0: iso_kinds.f90
+    url: https://twitter.com/fortrantip/status/1477985901145993221
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Module iso_fortran_env has KIND constants int8, int16, int32, int64 for integers with those storage sizes and real32, real64, real128 for reals.<br>Use huge(x) and tiny(x) to get the largest and smallest numbers of type real x and huge(i) for integer i.<a href="https://t.co/1T3srjZIsX">pic.twitter.com/1T3srjZIsX</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1477985901145993221?ref_src=twsrc%5Etfw">January 3, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: KindFinder code finds all KIND Values implemented by a compiler
+    intro: |
+      The KindFinder Fortran 90 code of Werner Schulz can also find
+      all KIND Values implemented by a compiler, list the properties of the associated numeric models, and generate a KIND parameter module.
+    file: ~
+    file0: kindfind.f90
+    url: https://twitter.com/fortrantip/status/1478030318485577728
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The KindFinder Fortran 90 code of Werner Schulz can also find<br>all KIND Values implemented by a compiler, list the properties of the associated numeric models, and generate a KIND parameter module.<a href="https://t.co/RY5uLdCMXl">pic.twitter.com/RY5uLdCMXl</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478030318485577728?ref_src=twsrc%5Etfw">January 3, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z)
+    intro: |
+      Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z) to refer to the real and imaginary parts of a complex variable z, either scalar or array. The %re and %im syntax does not apply to expressions, so (2*z)%im is disallowed.
+    file: ~
+    file0: im_re.f90
+    url: https://twitter.com/fortrantip/status/1478160269671124993
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z) to refer to the real and imaginary parts of a complex variable z, either scalar or array. The %re and %im syntax does not apply to expressions, so (2*z)%im is disallowed. <a href="https://t.co/GcspgfI4zB">pic.twitter.com/GcspgfI4zB</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478160269671124993?ref_src=twsrc%5Etfw">January 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 04-Jan-2022
+
+  # TODO
+  - title: Use parameters to dimension fixed-size arrays to make a code easier to change
+    intro: |
+      Use parameters to dimension fixed-size arrays to make a code easier to change, for example
+
+      integer, parameter :: n1=3,n2=5
+      real :: x(n1,n2),y(n1,n2),z(n1,n2)
+
+      or
+
+      real, dimension(n1,n2) :: x,y,z
+
+      Numbers other than 0 or 1 should not appear repeatedly and should be parameters.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1478331686412861440
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use parameters to dimension fixed-size arrays to make a code easier to change, for example<br><br>integer, parameter :: n1=3,n2=5<br>real :: x(n1,n2),y(n1,n2),z(n1,n2)<br><br>or<br><br>real, dimension(n1,n2) :: x,y,z<br><br>Numbers other than 0 or 1 should not appear repeatedly and should be parameters.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478331686412861440?ref_src=twsrc%5Etfw">January 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Avoid implicit save
+    intro: |
+      A variable given a value in the declaration has the implicit SAVE attribute and is not re-initialized in later calls to the procedure. Write
+
+      integer :: i
+      i = 0
+
+      instead of 
+
+      integer :: i = 0
+
+      If SAVE is intended be explicit:
+
+      integer, save :: i = 0
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1478363292028784645
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A variable given a value in the declaration has the implicit SAVE attribute and is not re-initialized in later calls to the procedure. Write<br><br>integer :: i<br>i = 0<br><br>instead of <br><br>integer :: i = 0<br><br>If SAVE is intended be explicit:<br><br>integer, save :: i = 0<a href="https://t.co/X1ZUSZblZX">pic.twitter.com/X1ZUSZblZX</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478363292028784645?ref_src=twsrc%5Etfw">January 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: KIND numbers of types are not portable across compilers and should not be used directly.
+    intro: |
+      KIND numbers of types are not portable across compilers and should not be used directly. It's better to use the named constants from iso_fortran_env. For both gfortran and Intel Fortran
+
+      use iso_fortran_env
+      print*,int8,int16,int32,int64
+
+      gives 1 2 4 8, but NAG gives 1 2 3 4.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1478526602136981511
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">KIND numbers of types are not portable across compilers and should not be used directly. It&#39;s better to use the named constants from iso_fortran_env. For both gfortran and Intel Fortran<br><br>use iso_fortran_env<br>print*,int8,int16,int32,int64<br><br>gives 1 2 4 8, but NAG gives 1 2 3 4.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478526602136981511?ref_src=twsrc%5Etfw">January 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 05-Jan-2022
+
+  # TODO
+  - title: Use d0 or \_kind to make a constant double precision.
+    intro: |
+      Use d0 or _kind to make a constant double precision. Merely having many decimal places in a literal constant does not do so.
+
+      real(kind(1.0d0)) :: pi
+      pi = 3.14159265358979323846 ! RHS is single precision
+
+      probably does not do what the programmer intends!
+    file: ~
+    file0: precision.f90
+    url: https://twitter.com/fortrantip/status/1478713534850736129
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use d0 or _kind to make a constant double precision. Merely having many decimal places in a literal constant does not do so.<br><br>real(kind(1.0d0)) :: pi<br>pi = 3.14159265358979323846 ! RHS is single precision<br><br>probably does not do what the programmer intends! <a href="https://t.co/T9hNCwfcE2">pic.twitter.com/T9hNCwfcE2</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478713534850736129?ref_src=twsrc%5Etfw">January 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Use integer powers when possible.
+    intro: |
+      Use integer powers when possible, writing x**2 instead of x**2.0, since depending on the compiler option used, the latter may be computed as exp(2*log(x)), which is slower.
+    file: ~
+    file0: pow_real.f90
+    url: https://twitter.com/fortrantip/status/1478765410405298176
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use integer powers when possible, writing x**2 instead of x**2.0, since depending on the compiler option used, the latter may be computed as exp(2*log(x)), which is slower. <a href="https://t.co/vlBznFvWIf">pic.twitter.com/vlBznFvWIf</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1478765410405298176?ref_src=twsrc%5Etfw">January 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 06-Jan-2022
+
+  # TODO
+  - title: Parenthesize a variable to copy it "on the fly".
+    intro: |
+      Parenthesize a variable to copy it "on the fly" to avoid overlapping INTENT(IN) and INTENT(OUT) arguments, which is non-standard, for example writing
+
+      call double((i),i)
+
+      instead of
+
+      call double(i,i) ! bad if args are intent(in) and intent(out)
+    file: ~
+    file0: overlapping_arg.f90
+    url: https://twitter.com/fortrantip/status/1479071485859962880
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Parenthesize a variable to copy it &quot;on the fly&quot; to avoid overlapping INTENT(IN) and INTENT(OUT) arguments, which is non-standard, for example writing<br><br>call double((i),i)<br><br>instead of<br><br>call double(i,i) ! bad if args are intent(in) and intent(out)<a href="https://t.co/WqS0AvVcCE">pic.twitter.com/WqS0AvVcCE</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479071485859962880?ref_src=twsrc%5Etfw">January 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Substrings of character variable arrays
+    intro: |
+      For variables
+
+      character (len=10) :: s, v(5)
+
+      s(2:4) is the substring from positions 2 to 4 and v(1:3)(2:4) is an array of substrings from 
+      positions 2 to 4 of the elements v(1) to v(3).
+    file: ~
+    file0: substring.f90
+    url: https://twitter.com/fortrantip/status/1479128610623606787
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For variables<br><br>character (len=10) :: s, v(5)<br><br>s(2:4) is the substring from positions 2 to 4 and v(1:3)(2:4) is an array of substrings from <br>positions 2 to 4 of the elements v(1) to v(3). <a href="https://t.co/h5AIaZwYL2">pic.twitter.com/h5AIaZwYL2</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479128610623606787?ref_src=twsrc%5Etfw">January 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 07-Jan-2022
+
+  # TODO
+  - title: Intrinsic character functions
+    intro: |
+      Character functions:
+
+      scan(x,y): first position of a character in x found in y
+      verify(x,y): first position in x NOT found in y
+      index(x,y): first position of substring y in x
+      adjustl/adjustr: remove leading/trailing spaces and pad to preserve LEN
+    file: ~
+    file0: string_func.f90
+    url: https://twitter.com/fortrantip/status/1479391930744283144
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Character functions:<br><br>scan(x,y): first position of a character in x found in y<br>verify(x,y): first position in x NOT found in y<br>index(x,y): first position of substring y in x<br>adjustl/adjustr: remove leading/trailing spaces and pad to preserve LEN<a href="https://t.co/ZQZUyRq86b">pic.twitter.com/ZQZUyRq86b</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479391930744283144?ref_src=twsrc%5Etfw">January 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Syntax for character array without manual padding
+    intro: |
+      Fortran 2003 lets you write an array of character variables as
+
+      s = [character (len=4) :: "one","two","five"]
+
+      instead of
+
+      s = ["one ","two ","five"] ! "one" and "two" padded
+
+      Manually padding large arrays of strings is a pain.
+    file: ~
+    file0: character_array.f90
+    url: https://twitter.com/fortrantip/status/1479487784205402116
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2003 lets you write an array of character variables as<br><br>s = [character (len=4) :: &quot;one&quot;,&quot;two&quot;,&quot;five&quot;]<br><br>instead of<br><br>s = [&quot;one &quot;,&quot;two &quot;,&quot;five&quot;] ! &quot;one&quot; and &quot;two&quot; padded<br><br>Manually padding large arrays of strings is a pain.<a href="https://t.co/TH7x2tQ5Wz">pic.twitter.com/TH7x2tQ5Wz</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479487784205402116?ref_src=twsrc%5Etfw">January 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Two types of syntax for defining a function
+    intro: |
+      Ways of defining a function:
+
+      1. Function and result name are the same.
+
+      2. RESULT has a different name within the function, which can be used
+      to return an array.
+
+      RETURN, when needed, is used to exit the function, not set its value.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1479641195898826754
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ways of defining a function:<br><br>1. Function and result name are the same.<br><br>2. RESULT has a different name within the function, which can be used<br>to return an array.<br><br>RETURN, when needed, is used to exit the function, not set its value. <a href="https://t.co/TYdVDZPwCz">pic.twitter.com/TYdVDZPwCz</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479641195898826754?ref_src=twsrc%5Etfw">January 8, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 08-Jan-2022
+
+  # TODO
+  - title: Propagation of an optional argument
+    intro: |
+      A procedure with an OPTIONAL argument can call a procedure with that argument if it is OPTIONAL there too. The PRESENT status of the argument propagates to called procedures. The optval function of the Fortran stdlib project exploits this.
+    file: ~
+    file0: optional_use.f90
+    url: https://twitter.com/fortrantip/status/1479805991382360066
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A procedure with an OPTIONAL argument can call a procedure with that argument if it is OPTIONAL there too. The PRESENT status of the argument propagates to called procedures. The optval function of the Fortran stdlib project exploits this. <a href="https://t.co/amhSL1cbY7">pic.twitter.com/amhSL1cbY7</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1479805991382360066?ref_src=twsrc%5Etfw">January 8, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 09-Jan-2022
+
+  # TODO
+  - title: DIMENSION can be used to declare several arrays of the same SHAPE
+    intro: |
+      DIMENSION can be used to declare several arrays of the same SHAPE, which can be overridden on the same line.
+
+      real, dimension(3,4) :: x, y, z(5,6)
+
+      is legal but should be written
+
+      real, dimension(3,4) :: x, y
+      real :: z(5,6)
+
+      for clarity.
+    file: ~
+    file0: dimension.f90
+    url: https://twitter.com/fortrantip/status/1480162604559523840
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">DIMENSION can be used to declare several arrays of the same SHAPE, which can be overridden on the same line.<br><br>real, dimension(3,4) :: x, y, z(5,6)<br><br>is legal but should be written<br><br>real, dimension(3,4) :: x, y<br>real :: z(5,6)<br><br>for clarity.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1480162604559523840?ref_src=twsrc%5Etfw">January 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 10-Jan-2022
+
+  # TODO
+  - title: UnALLOCATED variable passed to a procedure is not PRESENT there.
+    intro: |
+      A variable that is not ALLOCATED, when passed as an OPTIONAL, non-allocatable argument to a procedure, is considered not PRESENT there. This Fortran 2008 feature can simplify code.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1480585104997163018
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A variable that is not ALLOCATED, when passed as an OPTIONAL, non-allocatable argument to a procedure, is considered not PRESENT there. This Fortran 2008 feature can simplify code. <a href="https://t.co/TdSd5Jv0Pt">https://t.co/TdSd5Jv0Pt</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1480585104997163018?ref_src=twsrc%5Etfw">January 10, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 11-Jan-2022
+
+  # TODO
+  - title: Procedures can be called with a mix of named and positional arguments.
+    intro: |
+      Procedures can be called with a mix of named and positional arguments, but positional arguments cannot follow named ones. Naming arguments makes it easier to add arguments without breaking code. It's good to
+      name OPTIONAL arguments.
+    file: ~
+    file0: arguments.f90
+    url: https://twitter.com/fortrantip/status/1480893840068390913
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Procedures can be called with a mix of named and positional arguments, but positional arguments cannot follow named ones. Naming arguments makes it easier to add arguments without breaking code. It&#39;s good to<br>name OPTIONAL arguments.<a href="https://t.co/rIl2jM0DTA">pic.twitter.com/rIl2jM0DTA</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1480893840068390913?ref_src=twsrc%5Etfw">January 11, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 12-Jan-2022
+
+  # TODO
+  - title: Use the same name for analogous procedures defined in different modules using an INTERFACE
+    intro: |
+      Using an INTERFACE, one can use the same name for analogous procedures that operate on derived types defined in different modules, for example str to convert a derived type to a string.
+    file: ~
+    file0: shared_interface.f90
+    url: https://twitter.com/fortrantip/status/1481247763048407042
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using an INTERFACE, one can use the same name for analogous procedures that operate on derived types defined in different modules, for example str to convert a derived type to a string.<a href="https://t.co/VeqDzgg5AE">pic.twitter.com/VeqDzgg5AE</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1481247763048407042?ref_src=twsrc%5Etfw">January 12, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 13-Jan-2022
+
+  # TODO
+  - title: How to rename an imported module entity
+    intro: |
+      An imported module entity can be renamed with the syntax
+
+      use mod, only: local_name =&gt; use_name
+
+      or
+
+      use mod, local_name =&gt; use_name
+
+      This is necessary when importing procedures with the same name, not in interfaces, from different
+      modules.
+    file: ~
+    file0: rename.f90
+    url: https://twitter.com/fortrantip/status/1481597325499842563
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An imported module entity can be renamed with the syntax<br><br>use mod, only: local_name =&gt; use_name<br><br>or<br><br>use mod, local_name =&gt; use_name<br><br>This is necessary when importing procedures with the same name, not in interfaces, from different<br>modules. <a href="https://t.co/89mRx3jsWV">pic.twitter.com/89mRx3jsWV</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1481597325499842563?ref_src=twsrc%5Etfw">January 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 14-Jan-2022
+
+  # TODO
+  - title: Module entities are PUBLIC by default.
+    intro: |
+      Module entities are PUBLIC by default, but if a blank PRIVATE statement is used, any public entities must be labeled so explicitly. Doing this clarifies what is exported from the module.
+    file: ~
+    file0: private.f90
+    url: https://twitter.com/fortrantip/status/1481970740475932676
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Module entities are PUBLIC by default, but if a blank PRIVATE statement is used, any public entities must be labeled so explicitly. Doing this clarifies what is exported from the module.<a href="https://t.co/4eJZDbU7CZ">pic.twitter.com/4eJZDbU7CZ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1481970740475932676?ref_src=twsrc%5Etfw">January 14, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 15-Jan-2022
+
+  # TODO
+  - title: An unqualified USE foo statement imports public entities defined in foo and what foo imported.
+    intro: |
+      use foo
+
+      imports not only the public entities defined in module foo but also the entities that foo imports from module bar. To avoid inadvertent imports and clarify what is imported, write
+
+      use foo, only: &lt;imports&gt;
+      use bar, only: &lt;imports&gt; ! if any
+    file: ~
+    file0: imports.f90
+    url: https://twitter.com/fortrantip/status/1482328990798987266
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">use foo<br><br>imports not only the public entities defined in module foo but also the entities that foo imports from module bar. To avoid inadvertent imports and clarify what is imported, write<br><br>use foo, only: &lt;imports&gt;<br>use bar, only: &lt;imports&gt; ! if any<a href="https://t.co/9s78tF1V5Q">pic.twitter.com/9s78tF1V5Q</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482328990798987266?ref_src=twsrc%5Etfw">January 15, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 16-Jan-2022
+
+  # TODO
+  - title: Use iostat and iomsg to handle READ errors
+    intro: |
+      The Fortran 2003 module iso_fortran_env has constants 
+
+      iostat_eor -- end of record
+      iostat_end -- end of file
+
+      to which the iostat of a READ statement will be set if that error occurs. READ also has an iomsg specifier returning a text error message.
+    file: ~
+    file0: iomsg.f90
+    url: https://twitter.com/fortrantip/status/1482687630877892608
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Fortran 2003 module iso_fortran_env has constants <br><br>iostat_eor -- end of record<br>iostat_end -- end of file<br><br>to which the iostat of a READ statement will be set if that error occurs. READ also has an iomsg specifier returning a text error message.<a href="https://t.co/Rm6DmsKPP9">pic.twitter.com/Rm6DmsKPP9</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482687630877892608?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: List of Fortran compilers, build tools, text editors, etc.
+    intro: |
+      I keep a list of Fortran compilers, build tools, text editors and plug-ins, linters, preprocessors, translators to and from Fortran, profilers, tools for refactoring, interoperability, and automatic documentation, and unit testing frameworks.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1482709817466707969
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I keep a list of Fortran compilers, build tools, text editors and plug-ins, linters, preprocessors, translators to and from Fortran, profilers, tools for refactoring, interoperability, and automatic documentation, and unit testing frameworks.<a href="https://t.co/fnWwF04z5D">https://t.co/fnWwF04z5D</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482709817466707969?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+
+  # 17-Jan-2022
+
+  # TODO
+  - title: Fortran 2008 introduced IMPURE ELEMENTAL procedures
+    intro: |
+      Fortran 2008 allows procedures to be labeled IMPURE ELEMENTAL. Such procedures can do external I/O and have a STOP or ERROR STOP statement. They can simulate a loop over a collection. The plain ELEMENTAL designation means the same as PURE ELEMENTAL.
+    file: ~
+    file0: impure_elemental.f90
+    url: https://twitter.com/fortrantip/status/1483063464562204672
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2008 allows procedures to be labeled IMPURE ELEMENTAL. Such procedures can do external I/O and have a STOP or ERROR STOP statement. They can simulate a loop over a collection. The plain ELEMENTAL designation means the same as PURE ELEMENTAL.<a href="https://t.co/e5Z6K7MvvC">pic.twitter.com/e5Z6K7MvvC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483063464562204672?ref_src=twsrc%5Etfw">January 17, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 18-Jan-2022
+
+  # TODO
+  - title: Impure elemental procedure can be used to generate array of non-uniform variates
+    intro: |
+      The RANDOM_NUMBER intrinsic returns a scalar or an array of uniform variates. An impure elemental subroutine can do the same for normal variates, given an algorithm to generate a single normal variate, possibly using RANDOM_NUMBER.
+    file: ~
+    file0: random_normal.f90
+    url: https://twitter.com/fortrantip/status/1483430581232967684
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The RANDOM_NUMBER intrinsic returns a scalar or an array of uniform variates. An impure elemental subroutine can do the same for normal variates, given an algorithm to generate a single normal variate, possibly using RANDOM_NUMBER.<a href="https://t.co/udthsbMT7T">pic.twitter.com/udthsbMT7T</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483430581232967684?ref_src=twsrc%5Etfw">January 18, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 19-Jan-2022
+
+  # TODO
+  - title: Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
+    intro: |
+      Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.
+
+      print*, all([4,9] == (/4,9/)) ! T
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1483773578839474180
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.<br><br>print*, all([4,9] == (/4,9/)) ! T</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483773578839474180?ref_src=twsrc%5Etfw">January 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'

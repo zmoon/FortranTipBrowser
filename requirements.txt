@@ -1,6 +1,11 @@
 #
 # MD generation
+joblib
+python-dateutil
+python-dotenv
 PyYaml
+requests
+rich
 #
 # Sphinx
 myst_parser
