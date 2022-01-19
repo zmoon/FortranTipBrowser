@@ -1079,3 +1079,39 @@ tips:
     file0: ~
     url: https://twitter.com/fortrantip/status/1482709817466707969
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I keep a list of Fortran compilers, build tools, text editors and plug-ins, linters, preprocessors, translators to and from Fortran, profilers, tools for refactoring, interoperability, and automatic documentation, and unit testing frameworks.<a href="https://t.co/fnWwF04z5D">https://t.co/fnWwF04z5D</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482709817466707969?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+
+  # 17-Jan-2022
+
+  # TODO
+  - title: Fortran 2008 introduced IMPURE ELEMENTAL procedures
+    intro: |
+      Fortran 2008 allows procedures to be labeled IMPURE ELEMENTAL. Such procedures can do external I/O and have a STOP or ERROR STOP statement. They can simulate a loop over a collection. The plain ELEMENTAL designation means the same as PURE ELEMENTAL.
+    file: ~
+    file0: impure_elemental.f90
+    url: https://twitter.com/fortrantip/status/1483063464562204672
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2008 allows procedures to be labeled IMPURE ELEMENTAL. Such procedures can do external I/O and have a STOP or ERROR STOP statement. They can simulate a loop over a collection. The plain ELEMENTAL designation means the same as PURE ELEMENTAL.<a href="https://t.co/e5Z6K7MvvC">pic.twitter.com/e5Z6K7MvvC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483063464562204672?ref_src=twsrc%5Etfw">January 17, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 18-Jan-2022
+
+  # TODO
+  - title: Impure elemental procedure can be used to generate array of non-uniform variates
+    intro: |
+      The RANDOM_NUMBER intrinsic returns a scalar or an array of uniform variates. An impure elemental subroutine can do the same for normal variates, given an algorithm to generate a single normal variate, possibly using RANDOM_NUMBER.
+    file: ~
+    file0: random_normal.f90
+    url: https://twitter.com/fortrantip/status/1483430581232967684
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The RANDOM_NUMBER intrinsic returns a scalar or an array of uniform variates. An impure elemental subroutine can do the same for normal variates, given an algorithm to generate a single normal variate, possibly using RANDOM_NUMBER.<a href="https://t.co/udthsbMT7T">pic.twitter.com/udthsbMT7T</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483430581232967684?ref_src=twsrc%5Etfw">January 18, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 19-Jan-2022
+
+  # TODO
+  - title: Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
+    intro: |
+      Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.
+
+      print*, all([4,9] == (/4,9/)) ! T
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1483773578839474180
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.<br><br>print*, all([4,9] == (/4,9/)) ! T</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483773578839474180?ref_src=twsrc%5Etfw">January 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
