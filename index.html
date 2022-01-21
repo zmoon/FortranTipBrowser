@@ -480,7 +480,19 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tips/037.html">
-     037. Using READ and WRITE for file i/o
+     037. Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       read
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       write
+      </span>
+     </code>
+     for file I/O
     </a>
    </li>
    <li class="toctree-l2">
@@ -773,6 +785,16 @@
      095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tips/096.html">
+     096. PROTECTED module variables cannot be changed outside the module.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tips/097.html">
+     097. Use INTRINSIC to specify that compiler-provided procedures and modules are referenced
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -882,7 +904,7 @@
 <p><a class="reference external" href="https://twitter.com/fortrantip">FortranTip</a> tips in one Sphinx site.</p>
 <script>
 function randoTip() {
-i = Math.floor(1 + Math.random() * 95);
+i = Math.floor(1 + Math.random() * 97);
 tip = String(i).padStart(3, '0');
 tip_page = `tips/${tip}.html`;
 // alert(tip_page);

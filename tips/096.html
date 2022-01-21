@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//) &#8212; FortranTip Browser</title>
+    <title>096. PROTECTED module variables cannot be changed outside the module. &#8212; FortranTip Browser</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -39,8 +39,8 @@
     <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="096. PROTECTED module variables cannot be changed outside the module." href="096.html" />
-    <link rel="prev" title="094. Impure elemental procedure can be used to generate array of non-uniform variates" href="094.html" />
+    <link rel="next" title="097. Use INTRINSIC to specify that compiler-provided procedures and modules are referenced" href="097.html" />
+    <link rel="prev" title="095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)" href="095.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -781,13 +781,13 @@
      094. Impure elemental procedure can be used to generate array of non-uniform variates
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="095.html">
      095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="096.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      096. PROTECTED module variables cannot be changed outside the module.
     </a>
    </li>
@@ -844,7 +844,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/tips/095.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/tips/096.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -889,7 +889,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)</h1>
+                <h1>096. PROTECTED module variables cannot be changed outside the module.</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -900,12 +900,11 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="array-constructor-with-was-introduced-in-fortran-2003-still-valid-is">
-<h1>095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)<a class="headerlink" href="#array-constructor-with-was-introduced-in-fortran-2003-still-valid-is" title="Permalink to this headline">¶</a></h1>
-<p>Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.</p>
-<p>print*, all([4,9] == (/4,9/)) ! T</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="protected-module-variables-cannot-be-changed-outside-the-module">
+<h1>096. PROTECTED module variables cannot be changed outside the module.<a class="headerlink" href="#protected-module-variables-cannot-be-changed-outside-the-module" title="Permalink to this headline">¶</a></h1>
+<p>If a module variable is PROTECTED, an attribute introduced in Fortran 2003, it can only be modified by a procedure in the module where it is declared. It is useful for PUBLIC module variables that can be accessed but should not changed outside the module.</p>
 <hr class="docutils" />
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.<br><br>print*, all([4,9] == (/4,9/)) ! T</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483773578839474180?ref_src=twsrc%5Etfw">January 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If a module variable is PROTECTED, an attribute introduced in Fortran 2003, it can only be modified by a procedure in the module where it is declared. It is useful for PUBLIC module variables that can be accessed but should not changed outside the module.<a href="https://t.co/HoABECoBdO">pic.twitter.com/HoABECoBdO</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484136749924245509?ref_src=twsrc%5Etfw">January 20, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
 
               </div>
@@ -913,17 +912,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="094.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="095.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">094. Impure elemental procedure can be used to generate array of non-uniform variates</p>
+            <p class="prev-next-title">095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="096.html" title="next page">
+    <a class='right-next' id="next-link" href="097.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">096. PROTECTED module variables cannot be changed outside the module.</p>
+        <p class="prev-next-title">097. Use INTRINSIC to specify that compiler-provided procedures and modules are referenced</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

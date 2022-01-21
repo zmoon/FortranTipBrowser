@@ -1,0 +1,8 @@
+# 096. PROTECTED module variables cannot be changed outside the module.
+
+If a module variable is PROTECTED, an attribute introduced in Fortran 2003, it can only be modified by a procedure in the module where it is declared. It is useful for PUBLIC module variables that can be accessed but should not changed outside the module.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If a module variable is PROTECTED, an attribute introduced in Fortran 2003, it can only be modified by a procedure in the module where it is declared. It is useful for PUBLIC module variables that can be accessed but should not changed outside the module.<a href="https://t.co/HoABECoBdO">pic.twitter.com/HoABECoBdO</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484136749924245509?ref_src=twsrc%5Etfw">January 20, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

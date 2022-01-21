@@ -1,0 +1,11 @@
+# 097. Use INTRINSIC to specify that compiler-provided procedures and modules are referenced
+
+You can supply procedures and modules with the same names as intrinsics. To specify that the intrinsic procedure or module provided by the compiler is used write
+
+use, intrinsic :: iso_fortran_env
+intrinsic :: sin
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">You can supply procedures and modules with the same names as intrinsics. To specify that the intrinsic procedure or module provided by the compiler is used write<br><br>use, intrinsic :: iso_fortran_env<br>intrinsic :: sin <a href="https://t.co/NydDt6a9eD">pic.twitter.com/NydDt6a9eD</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484517091738886147?ref_src=twsrc%5Etfw">January 21, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
