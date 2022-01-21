@@ -159,8 +159,8 @@ def run_fortran(fn: str, *, inputs: list[Optional[str]] = None) -> str:
     # Run
     fp = f"{td}/{xname}"
     if inputs is None:
-        cp = subprocess.run([fp], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        out = cp.stdout.decode()
+        cp = subprocess.run([fp], text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        out = cp.stdout
     else:
         out = _run_fortran_inputs(fp, inputs)
     

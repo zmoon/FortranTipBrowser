@@ -43,6 +43,9 @@ last_date = None
 for i in range(istart, len(tips0)):
     d = tips0[i]
 
+    if i == istart:
+        print(f"writing {len(tips0) - istart} new tips, {d['datetime']} to present")
+
     title = d["title"]
     if "`" in title:
         title = f"'{title}'"
@@ -84,6 +87,6 @@ for i in range(istart, len(tips0)):
 s = "\n\n".join(lines)
 
 with open("data.yaml", "a") as f:
-    f.write("\n\n")
+    f.write("\n")
     f.write(s)
     f.write("\n")

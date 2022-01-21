@@ -388,11 +388,23 @@ tips:
     url: https://twitter.com/fortrantip/status/1472941850218700805
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/pzKMXlNriJ">pic.twitter.com/pzKMXlNriJ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472941850218700805?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # TODO
-  - title: Using READ and WRITE for file i/o
+  - title: Using `read` and `write` for file I/O
     intro: |
-      Using READ and WRITE for file i/o.
-    file: ~
+      To `read` or `write` data from a file, it must first be connected to a unit.
+      The `newunit` specifier, introduced in Fortran 2008, finds a free unit number.
+      
+      The program below writes some data to a file and then reads it back.
+      When the number of records[^1] in a file is unknown, set and check the `iostat` of `read`,
+      as shown[^2].
+
+      [^1]: lines
+      [^2]: and as in the previous tip
+    file: write-read-file.f90
+    concl: |
+      ```{note}
+      The initial (unset) value of `iunit` here is compiler-dependent,
+      and the used `iunit` values created by using `newunit` are compiler- and situation-dependent.
+      ```
     file0: read_write_file.f90
     url: https://twitter.com/fortrantip/status/1472999893631447043
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using READ and WRITE for file i/o. <a href="https://t.co/Be3gH8SLnL">pic.twitter.com/Be3gH8SLnL</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1472999893631447043?ref_src=twsrc%5Etfw">December 20, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
@@ -1086,7 +1098,6 @@ tips:
     url: https://twitter.com/fortrantip/status/1482709817466707969
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I keep a list of Fortran compilers, build tools, text editors and plug-ins, linters, preprocessors, translators to and from Fortran, profilers, tools for refactoring, interoperability, and automatic documentation, and unit testing frameworks.<a href="https://t.co/fnWwF04z5D">https://t.co/fnWwF04z5D</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1482709817466707969?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-
   # 17-Jan-2022
 
   # TODO
@@ -1121,3 +1132,30 @@ tips:
     file0: ~
     url: https://twitter.com/fortrantip/status/1483773578839474180
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.<br><br>print*, all([4,9] == (/4,9/)) ! T</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1483773578839474180?ref_src=twsrc%5Etfw">January 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 20-Jan-2022
+
+  # TODO
+  - title: PROTECTED module variables cannot be changed outside the module.
+    intro: |
+      If a module variable is PROTECTED, an attribute introduced in Fortran 2003, it can only be modified by a procedure in the module where it is declared. It is useful for PUBLIC module variables that can be accessed but should not changed outside the module.
+    file: ~
+    file0: protected.f90
+    url: https://twitter.com/fortrantip/status/1484136749924245509
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If a module variable is PROTECTED, an attribute introduced in Fortran 2003, it can only be modified by a procedure in the module where it is declared. It is useful for PUBLIC module variables that can be accessed but should not changed outside the module.<a href="https://t.co/HoABECoBdO">pic.twitter.com/HoABECoBdO</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484136749924245509?ref_src=twsrc%5Etfw">January 20, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 21-Jan-2022
+
+  # TODO
+  - title: Use INTRINSIC to specify that compiler-provided procedures and modules are referenced
+    intro: |
+      You can supply procedures and modules with the same names as intrinsics. To specify that the intrinsic procedure or module provided by the compiler is used write
+
+      use, intrinsic :: iso_fortran_env
+      intrinsic :: sin
+    file: ~
+    file0: intrinsic.f90
+    url: https://twitter.com/fortrantip/status/1484517091738886147
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">You can supply procedures and modules with the same names as intrinsics. To specify that the intrinsic procedure or module provided by the compiler is used write<br><br>use, intrinsic :: iso_fortran_env<br>intrinsic :: sin <a href="https://t.co/NydDt6a9eD">pic.twitter.com/NydDt6a9eD</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484517091738886147?ref_src=twsrc%5Etfw">January 21, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+
