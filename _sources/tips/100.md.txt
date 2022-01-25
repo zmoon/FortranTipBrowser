@@ -1,0 +1,9 @@
+# 100. An INTENT(OUT) argument is undefined at the beginning of a procedure
+
+A non-allocatable INTENT(OUT) dummy argument is undefined at the beginning of a procedure. Although most compilers will set it to the value of the actual argument, you should declare the argument 
+INTENT(IN OUT) to mandate this behavior.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A non-allocatable INTENT(OUT) dummy argument is undefined at the beginning of a procedure. Although most compilers will set it to the value of the actual argument, you should declare the argument <br>INTENT(IN OUT) to mandate this behavior. <a href="https://t.co/3dLZA7aWwP">pic.twitter.com/3dLZA7aWwP</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1485594671300632576?ref_src=twsrc%5Etfw">January 24, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

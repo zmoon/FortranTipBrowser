@@ -1,0 +1,12 @@
+# 099. Turn compiler warnings into errors to force code defects to be fixed.
+
+To ensure that code defects are fixed, use options to turn the relevant compiler warnings into errors in the build system. For example
+
+gfortran -Werror=unused-variable -Werror=unused-function
+
+rejects the code below. Mere warnings are often ignored.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To ensure that code defects are fixed, use options to turn the relevant compiler warnings into errors in the build system. For example<br><br>gfortran -Werror=unused-variable -Werror=unused-function<br><br>rejects the code below. Mere warnings are often ignored.<a href="https://t.co/OiYA1EWwcj">pic.twitter.com/OiYA1EWwcj</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1485235396179079173?ref_src=twsrc%5Etfw">January 23, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

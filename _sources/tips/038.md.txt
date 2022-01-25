@@ -1,7 +1,53 @@
-# 038. Use unformatted stream of Fortran 2003 for large-scale I/O.
+# 038. Use unformatted stream of Fortran 2003 for large-scale I/O
 
-Use unformatted stream of Fortran 2003 for large-scale I/O.
+Consider using unformatted stream I/O introduced in Fortran 2003 for 
+large data sets. Formatted I/O converts numerical data to and from ASCII 
+and is much slower than unformatted.
 
+This program times the writing and reading of $10^6$ double precision floats[^size]
+using formatted and unformatted stream I/O.
+
+[^size]: float64; $10^6 \times 64\,\text{bits} = 8\,\text{MB}$
+
+```{literalinclude} ../../src/stream-io.f90
+:language: fortran
+:caption: stream-io.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/stream-io.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://github.com/Beliavsky/FortranTip/blob/main/stream_io.f90" target="_blank" title="See the original source on Beliavsky/FortranTip GitHub"><i class="fab fa-github"></i><sub>0</sub></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:49,positionColumn:1,positionLineNumber:49,selectionStartColumn:1,selectionStartLineNumber:49,startColumn:1,startLineNumber:49),source:'program+stream_io%0A+++use+iso_fortran_env,+only:+wp+%3D%3E+real64,+int64%0A+++implicit+none%0A%0A+++integer,+parameter++::+n+%3D+10**6%0A+++real(kind%3Dwp)+++++++::+x(n),+xchk(n)%0A+++integer(kind%3Dint64)+::+iunit,+irate,+times(6)%0A%0A+++call+system_clock(count_rate%3Dirate)++!!+%23+of+clock+ticks+per+second%0A+++print+*,+%22n+%3D%22,+n%0A+++print+*,+%22irate+%3D%22,+irate%0A+++call+random_number(x)%0A+++call+system_clock(count%3Dtimes(1))%0A%0A+++!!+Use+formatted+write+and+read%0A+++open+(newunit%3Diunit,+file%3D%22temp.txt%22,+action%3D%22write%22,+status%3D%22replace%22)%0A+++write+(iunit,+%22(f0.16)%22)+x%0A+++close+(iunit)%0A+++call+system_clock(count%3Dtimes(2))%0A+++open+(newunit%3Diunit,+file%3D%22temp.txt%22,+action%3D%22read%22,+status%3D%22old%22)%0A+++read+(iunit,+*)+xchk++!!+List-directed+read+with+%60*%60+gets+data+from+as+many+lines+as+are+needed%0A+++call+system_clock(count%3Dtimes(3))%0A+++print+*,+maxval(x+-+xchk),+minval(x),+maxval(x),+minval(xchk),+maxval(xchk)+!!+check%0A+++call+system_clock(count%3Dtimes(4))%0A%0A+++!!+Use+unformatted+stream+write+and+read%0A+++open+(newunit%3Diunit,+file%3D%22temp.bin%22,+action%3D%22write%22,+status%3D%22replace%22,+%26%0A+++++++++form%3D%22unformatted%22,+access%3D%22stream%22)%0A+++write+(iunit)+x++!!+Note+no+format+supplied+for+unformatted+I/O%0A+++close+(iunit)%0A+++call+system_clock(count%3Dtimes(5))%0A+++open+(newunit%3Diunit,+file%3D%22temp.bin%22,+action%3D%22read%22,+status%3D%22old%22,+%26%0A+++++++++form%3D%22unformatted%22,+access%3D%22stream%22)%0A+++read+(iunit)+xchk%0A+++call+system_clock(count%3Dtimes(6))%0A+++print+*,+maxval(x+-+xchk),+minval(x),+maxval(x),+minval(xchk),+maxval(xchk)++!!+check%0A%0A+++!!+Count+differences+divided+by+%60count_rate%60+gives+seconds+elapsed%0A+++print+%22(/,+*(a12))%22,+%22formatted%22,+%22formatted%22,+%22unformatted%22,+%22unformatted%22%0A+++print+%22(*(a12))%22,+%22write%22,+%22read%22,+%22write%22,+%22read%22%0A+++print+%22(*(g12.3))%22,+%5Btimes(2:3)+-+times(1:2),+times(5:6)+-+times(4:5)%5D+/+real(irate,+wp)%0A%0A+++!!+Enhancement+factors%0A+++print+%22(/,+*(a12))%22,+%22enhancement%22,+%22enhancement%22%0A+++print+%22(*(a12))%22,+%22write%22,+%22read%22%0A+++print+%22(*(g12.3))%22,+real(times(2)+-+times(1),+wp)+/+(times(5)+-+times(4)),+%26%0A+++++++++++++++++++++++real(times(3)+-+times(2),+wp)+/+(times(6)+-+times(5))%0A%0Aend+program+stream_io%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a>
+```
+
+```{code-block} text
+:caption: Output[^gfortran-version]
+
+ n =     1000000
+ irate =           1000000000
+   5.5511151231257827E-017   7.4930734295097778E-007  0.99999981255962545        7.4930734300000003E-007  0.99999981255962545     
+   0.0000000000000000        7.4930734295097778E-007  0.99999981255962545        7.4930734295097778E-007  0.99999981255962545     
+
+   formatted   formatted unformatted unformatted
+       write        read       write        read
+   0.579       0.450       0.580E-02   0.101E-02
+
+ enhancement enhancement
+       write        read
+    100.        447.    
+
+```
+
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+
+The degree of enhancement depends on $n$ and your hardware, but it should be considerable.
+
+```{note}
+The Tweet, using $n=10^7$, reported that unformatted stream write and read were, respectively,
+25 and 260 times faster than formatted.
+```
+
+```{note}
+Using a 64-bit integer when getting `count_rate` allows for greater timing precision[^sys-clock].
+For a 32-bit integer (default) or smaller, we only get millisecond precision, which was consistently
+not sufficient to measure the unformatted write time on my laptop.
+```
+
+[^sys-clock]: <https://gcc.gnu.org/onlinedocs/gfortran/SYSTEM_005fCLOCK.html>
 
 ---
 

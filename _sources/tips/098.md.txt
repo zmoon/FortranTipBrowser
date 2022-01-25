@@ -1,0 +1,8 @@
+# 098. VALUE attribute for procedure arguments introduced in Fortran 2003
+
+If an argument has the VALUE attribute, added in Fortran 2003, changes to the dummy argument in the procedure do not change the actual argument in the the caller.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If an argument has the VALUE attribute, added in Fortran 2003, changes to the dummy argument in the procedure do not change the actual argument in the the caller.<a href="https://t.co/SVdZjbaw5v">pic.twitter.com/SVdZjbaw5v</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484874794352918528?ref_src=twsrc%5Etfw">January 22, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
