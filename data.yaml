@@ -432,8 +432,8 @@ tips:
       ```
 
       ```{note}
-      Using a 64-bit integer when getting `count_rate` allows for greater timing precision[^sys-clock].
-      For a 32-bit integer (default) or smaller, we only get millisecond precision, which was consistently
+      Using 64-bit integer arguments when calling `system_clock` allows for greater timing precision[^sys-clock].
+      For 32-bit integers (default) or smaller, we only get millisecond precision, which was consistently
       not sufficient to measure the unformatted write time on my laptop.
       ```
 
