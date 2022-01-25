@@ -982,16 +982,16 @@ using formatted and unformatted stream I/O.</p>
 <div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id2">2</a></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   7.4930734295097778E-007  0.99999981255962545        7.4930734300000003E-007  0.99999981255962545     
-   0.0000000000000000        7.4930734295097778E-007  0.99999981255962545        7.4930734295097778E-007  0.99999981255962545     
+   5.5511151231257827E-017   2.5574541751005597E-007  0.99999944859998391        2.5574541750000000E-007  0.99999944859998391     
+   0.0000000000000000        2.5574541751005597E-007  0.99999944859998391        2.5574541751005597E-007  0.99999944859998391     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.579       0.450       0.580E-02   0.101E-02
+   0.703       0.539       0.975E-02   0.221E-02
 
  enhancement enhancement
        write        read
-    100.        447.    
+    72.1        244.    
 </pre></div>
 </div>
 </div>
@@ -1003,8 +1003,8 @@ using formatted and unformatted stream I/O.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Using a 64-bit integer when getting <code class="docutils literal notranslate"><span class="pre">count_rate</span></code> allows for greater timing precision<a class="footnote-reference brackets" href="#sys-clock" id="id3">3</a>.
-For a 32-bit integer (default) or smaller, we only get millisecond precision, which was consistently
+<p>Using 64-bit integer arguments when calling <code class="docutils literal notranslate"><span class="pre">system_clock</span></code> allows for greater timing precision<a class="footnote-reference brackets" href="#sys-clock" id="id3">3</a>.
+For 32-bit integers (default) or smaller, we only get millisecond precision, which was consistently
 not sufficient to measure the unformatted write time on my laptop.</p>
 </div>
 <hr class="docutils" />

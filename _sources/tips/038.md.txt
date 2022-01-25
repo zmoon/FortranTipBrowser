@@ -19,16 +19,16 @@ using formatted and unformatted stream I/O.
 
  n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   7.4930734295097778E-007  0.99999981255962545        7.4930734300000003E-007  0.99999981255962545     
-   0.0000000000000000        7.4930734295097778E-007  0.99999981255962545        7.4930734295097778E-007  0.99999981255962545     
+   5.5511151231257827E-017   2.5574541751005597E-007  0.99999944859998391        2.5574541750000000E-007  0.99999944859998391     
+   0.0000000000000000        2.5574541751005597E-007  0.99999944859998391        2.5574541751005597E-007  0.99999944859998391     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.579       0.450       0.580E-02   0.101E-02
+   0.703       0.539       0.975E-02   0.221E-02
 
  enhancement enhancement
        write        read
-    100.        447.    
+    72.1        244.    
 
 ```
 
@@ -42,8 +42,8 @@ The Tweet, using $n=10^7$, reported that unformatted stream write and read were,
 ```
 
 ```{note}
-Using a 64-bit integer when getting `count_rate` allows for greater timing precision[^sys-clock].
-For a 32-bit integer (default) or smaller, we only get millisecond precision, which was consistently
+Using 64-bit integer arguments when calling `system_clock` allows for greater timing precision[^sys-clock].
+For 32-bit integers (default) or smaller, we only get millisecond precision, which was consistently
 not sufficient to measure the unformatted write time on my laptop.
 ```
 
