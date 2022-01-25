@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>039. Name modules and the source files containing them consistently, with one module per file. &#8212; FortranTip Browser</title>
+    <title>039. Name modules and the source files containing them consistently, with one module per file &#8212; FortranTip Browser</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -503,7 +503,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     039. Name modules and the source files containing them consistently, with one module per file.
+     039. Name modules and the source files containing them consistently, with one module per file
     </a>
    </li>
    <li class="toctree-l2">
@@ -904,7 +904,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>039. Name modules and the source files containing them consistently, with one module per file.</h1>
+                <h1>039. Name modules and the source files containing them consistently, with one module per file</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -916,12 +916,56 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="name-modules-and-the-source-files-containing-them-consistently-with-one-module-per-file">
-<h1>039. Name modules and the source files containing them consistently, with one module per file.<a class="headerlink" href="#name-modules-and-the-source-files-containing-them-consistently-with-one-module-per-file" title="Permalink to this headline">¶</a></h1>
-<p>Name modules and the source files containing them consistently, with one module per file. The convention I use is that a module named  m_mod is defined in a source file m.f90. That way if I see</p>
-<p>use m_mod, only: foo</p>
-<p>in my code I know to look in m.f90 for the definition of foo.</p>
+<h1>039. Name modules and the source files containing them consistently, with one module per file<a class="headerlink" href="#name-modules-and-the-source-files-containing-them-consistently-with-one-module-per-file" title="Permalink to this headline">¶</a></h1>
+<p>The convention &#64;Beliavsky uses is that a module named <code class="docutils literal notranslate"><span class="pre">m_mod</span></code> is defined in a source file <code class="docutils literal notranslate"><span class="pre">m.f90</span></code>.
+That way if you see</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">m_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">foo</span><span class="w"></span>
+</pre></div>
+</div>
+<p>in the code you know to look in <code class="docutils literal notranslate"><span class="pre">m.f90</span></code> for the definition of <code class="docutils literal notranslate"><span class="pre">foo</span></code><a class="footnote-reference brackets" href="#c" id="id1">1</a>.
+This also helps to avoid name clashes, since otherwise
+“it is quite frequent to have a procedure with the same name,
+or a type with the same name as the module”<a class="footnote-reference brackets" href="#a" id="id2">2</a><a class="footnote-reference brackets" href="#b" id="id3">3</a>.</p>
+<p>This type of convention is not uncommon. For example:</p>
+<ul class="simple">
+<li><p>Curcic’s <em>Modern Fortran</em> (<a class="reference external" href="https://github.com/modern-fortran">code examples</a>),
+where the modules are named <code class="docutils literal notranslate"><span class="pre">mod_&lt;name&gt;</span></code> and the files <code class="docutils literal notranslate"><span class="pre">mod_&lt;name&gt;.f90</span></code></p></li>
+<li><p>The <a class="reference external" href="https://github.com/ESCOMP/CTSM/tree/master/src">Community Land Model</a>,
+where <em>some</em> module names and their source file names are suffixed with <code class="docutils literal notranslate"><span class="pre">Mod</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">Type</span></code> if the main purpose of the module is to define a single type</p></li>
+<li><p>&#64;everythingfunctional <a class="reference external" href="https://everythingfunctional.gitlab.io/fortran-style-guide/">recommends</a>
+suffixing module names with <code class="docutils literal notranslate"><span class="pre">_m</span></code> (and types with <code class="docutils literal notranslate"><span class="pre">_t</span></code>) and naming the source file with
+suffix <code class="docutils literal notranslate"><span class="pre">_m.f90</span></code></p></li>
+</ul>
+<p>Additional recommendations:</p>
+<ul>
+<li><blockquote>
+<div><p>Prefix module names with the library name to avoid name clashes
+when used as dependency in other projects</p>
+</div></blockquote>
+<p>— <a class="reference external" href="https://fortran-lang.org/learn/best_practices/modules_programs">https://fortran-lang.org/learn/best_practices/modules_programs</a></p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Similar to the <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_mod</span></code> module naming convention, since Fortran code is case-insensitive,
+a convention for naming types is to use <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_type</span></code>.</p>
+</div>
 <hr class="docutils" />
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Name modules and the source files containing them consistently, with one module per file. The convention I use is that a module named  m_mod is defined in a source file m.f90. That way if I see <br><br>use m_mod, only: foo<br><br>in my code I know to look in m.f90 for the definition of foo.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473340740055015431?ref_src=twsrc%5Etfw">December 21, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Name modules and the source files containing them consistently, with one module per file. The convention I use is that a module named  m_mod is defined in a source file m.f90. That way if I see <br><br>use m_mod, only: foo<br><br>in my code I know to look in m.f90 for the definition of foo.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473340740055015431?ref_src=twsrc%5Etfw">December 21, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="c"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Note that modern development environments, like <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls">this VS Code extension</a>
+will generally provide go-to-definition functionality.</p>
+</dd>
+<dt class="label" id="a"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a class="reference external" href="https://everythingfunctional.gitlab.io/fortran-style-guide/">https://everythingfunctional.gitlab.io/fortran-style-guide/</a></p>
+</dd>
+<dt class="label" id="b"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p><a class="reference external" href="https://github.com/Fortran-FOSS-Programmers/Best_Practices#-entities-disambiguation">https://github.com/Fortran-FOSS-Programmers/Best_Practices#-entities-disambiguation</a></p>
+</dd>
+</dl>
+</div>
 
 
               </div>
