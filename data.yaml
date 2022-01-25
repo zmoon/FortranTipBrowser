@@ -411,12 +411,33 @@ tips:
 
   # 21-Dec-2021
 
-  # TODO
-  - title: Use unformatted stream of Fortran 2003 for large-scale I/O.
+  - title: Use unformatted stream of Fortran 2003 for large-scale I/O
     intro: |
-      Use unformatted stream of Fortran 2003 for large-scale I/O.
-    file: ~
+      Consider using unformatted stream I/O introduced in Fortran 2003 for 
+      large data sets. Formatted I/O converts numerical data to and from ASCII 
+      and is much slower than unformatted.
+      
+      This program times the writing and reading of $10^6$ double precision floats[^size]
+      using formatted and unformatted stream I/O.
+
+      [^size]: float64; $10^6 \times 64\,\text{bits} = 8\,\text{MB}$
+    file: stream-io.f90
     file0: stream_io.f90
+    concl: |
+      The degree of enhancement depends on $n$ and your hardware, but it should be considerable.
+
+      ```{note}
+      The Tweet, using $n=10^7$, reported that unformatted stream write and read were, respectively,
+      25 and 260 times faster than formatted.
+      ```
+
+      ```{note}
+      Using a 64-bit integer when getting `count_rate` allows for greater timing precision[^sys-clock].
+      For a 32-bit integer (default) or smaller, we only get millisecond precision, which was consistently
+      not sufficient to measure the unformatted write time on my laptop.
+      ```
+
+      [^sys-clock]: <https://gcc.gnu.org/onlinedocs/gfortran/SYSTEM_005fCLOCK.html>
     url: https://twitter.com/fortrantip/status/1473261954244435973
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use unformatted stream of Fortran 2003 for large-scale I/O. <a href="https://t.co/I2PHa3YiaA">pic.twitter.com/I2PHa3YiaA</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473261954244435973?ref_src=twsrc%5Etfw">December 21, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
@@ -1159,3 +1180,41 @@ tips:
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">You can supply procedures and modules with the same names as intrinsics. To specify that the intrinsic procedure or module provided by the compiler is used write<br><br>use, intrinsic :: iso_fortran_env<br>intrinsic :: sin <a href="https://t.co/NydDt6a9eD">pic.twitter.com/NydDt6a9eD</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484517091738886147?ref_src=twsrc%5Etfw">January 21, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
 
+
+  # 22-Jan-2022
+
+  # TODO
+  - title: VALUE attribute for procedure arguments introduced in Fortran 2003
+    intro: |
+      If an argument has the VALUE attribute, added in Fortran 2003, changes to the dummy argument in the procedure do not change the actual argument in the the caller.
+    file: ~
+    file0: value.f90
+    url: https://twitter.com/fortrantip/status/1484874794352918528
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If an argument has the VALUE attribute, added in Fortran 2003, changes to the dummy argument in the procedure do not change the actual argument in the the caller.<a href="https://t.co/SVdZjbaw5v">pic.twitter.com/SVdZjbaw5v</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484874794352918528?ref_src=twsrc%5Etfw">January 22, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 23-Jan-2022
+
+  # TODO
+  - title: Turn compiler warnings into errors to force code defects to be fixed.
+    intro: |
+      To ensure that code defects are fixed, use options to turn the relevant compiler warnings into errors in the build system. For example
+
+      gfortran -Werror=unused-variable -Werror=unused-function
+
+      rejects the code below. Mere warnings are often ignored.
+    file: ~
+    file0: warnings.f90
+    url: https://twitter.com/fortrantip/status/1485235396179079173
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To ensure that code defects are fixed, use options to turn the relevant compiler warnings into errors in the build system. For example<br><br>gfortran -Werror=unused-variable -Werror=unused-function<br><br>rejects the code below. Mere warnings are often ignored.<a href="https://t.co/OiYA1EWwcj">pic.twitter.com/OiYA1EWwcj</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1485235396179079173?ref_src=twsrc%5Etfw">January 23, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 24-Jan-2022
+
+  # TODO
+  - title: An INTENT(OUT) argument is undefined at the beginning of a procedure
+    intro: |
+      A non-allocatable INTENT(OUT) dummy argument is undefined at the beginning of a procedure. Although most compilers will set it to the value of the actual argument, you should declare the argument 
+      INTENT(IN OUT) to mandate this behavior.
+    file: ~
+    file0: intent_out_undefined.f90
+    url: https://twitter.com/fortrantip/status/1485594671300632576
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A non-allocatable INTENT(OUT) dummy argument is undefined at the beginning of a procedure. Although most compilers will set it to the value of the actual argument, you should declare the argument <br>INTENT(IN OUT) to mandate this behavior. <a href="https://t.co/3dLZA7aWwP">pic.twitter.com/3dLZA7aWwP</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1485594671300632576?ref_src=twsrc%5Etfw">January 24, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
