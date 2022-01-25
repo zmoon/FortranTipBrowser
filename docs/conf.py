@@ -20,3 +20,7 @@ myst_enable_extensions = [
     "dollarmath",
     "tasklist",
 ]
+
+linkcheck_ignore = [
+    "https://github\.com/.+/.+#.+",  # anchor link in a Markdown file on GH
+]
