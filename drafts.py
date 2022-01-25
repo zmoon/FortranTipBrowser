@@ -87,6 +87,5 @@ for i in range(istart, len(tips0)):
 s = "\n\n".join(lines)
 
 with open("data.yaml", "a") as f:
-    f.write("\n")
     f.write(s)
     f.write("\n")

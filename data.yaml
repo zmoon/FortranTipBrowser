@@ -442,13 +442,47 @@ tips:
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use unformatted stream of Fortran 2003 for large-scale I/O. <a href="https://t.co/I2PHa3YiaA">pic.twitter.com/I2PHa3YiaA</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473261954244435973?ref_src=twsrc%5Etfw">December 21, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
   # TODO
-  - title: Name modules and the source files containing them consistently, with one module per file.
+  - title: Name modules and the source files containing them consistently, with one module per file
     intro: |
-      Name modules and the source files containing them consistently, with one module per file. The convention I use is that a module named  m_mod is defined in a source file m.f90. That way if I see 
-
+      The convention @Beliavsky uses is that a module named `m_mod` is defined in a source file `m.f90`.
+      That way if you see
+      ```fortran
       use m_mod, only: foo
+      ```
+      in the code you know to look in `m.f90` for the definition of `foo`[^c].
+      This also helps to avoid name clashes, since otherwise
+      "it is quite frequent to have a procedure with the same name,
+      or a type with the same name as the module"[^a][^b].
 
-      in my code I know to look in m.f90 for the definition of foo.
+      This type of convention is not uncommon. For example:
+
+      - Curcic's *Modern Fortran* ([code examples](https://github.com/modern-fortran)),
+        where the modules are named `mod_<name>` and the files `mod_<name>.f90`
+
+      - The [Community Land Model](https://github.com/ESCOMP/CTSM/tree/master/src),
+        where *some* module names and their source file names are suffixed with `Mod`,
+        or `Type` if the main purpose of the module is to define a single type
+
+      - @everythingfunctional [recommends](https://everythingfunctional.gitlab.io/fortran-style-guide/)
+        suffixing module names with `_m` (and types with `_t`) and naming the source file with 
+        suffix `_m.f90`
+
+      Additional recommendations:
+
+      - > Prefix module names with the library name to avoid name clashes
+        > when used as dependency in other projects
+
+        --- <https://fortran-lang.org/learn/best_practices/modules_programs>
+
+      ```{note}
+      Similar to the `<name>_mod` module naming convention, since Fortran code is case-insensitive,
+      a convention for naming types is to use `<name>_type`.
+      ```
+
+      [^a]: <https://everythingfunctional.gitlab.io/fortran-style-guide/>
+      [^b]: <https://github.com/Fortran-FOSS-Programmers/Best_Practices#-entities-disambiguation>
+      [^c]: Note that modern development environments, like [this VS Code extension](https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls)
+        will generally provide go-to-definition functionality.
     file: ~
     file0: ~
     url: https://twitter.com/fortrantip/status/1473340740055015431
@@ -1178,8 +1212,6 @@ tips:
     file0: intrinsic.f90
     url: https://twitter.com/fortrantip/status/1484517091738886147
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">You can supply procedures and modules with the same names as intrinsics. To specify that the intrinsic procedure or module provided by the compiler is used write<br><br>use, intrinsic :: iso_fortran_env<br>intrinsic :: sin <a href="https://t.co/NydDt6a9eD">pic.twitter.com/NydDt6a9eD</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1484517091738886147?ref_src=twsrc%5Etfw">January 21, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
-
-
 
   # 22-Jan-2022
 
