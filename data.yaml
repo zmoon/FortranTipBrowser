@@ -1250,3 +1250,97 @@ tips:
     file0: intent_out_undefined.f90
     url: https://twitter.com/fortrantip/status/1485594671300632576
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A non-allocatable INTENT(OUT) dummy argument is undefined at the beginning of a procedure. Although most compilers will set it to the value of the actual argument, you should declare the argument <br>INTENT(IN OUT) to mandate this behavior. <a href="https://t.co/3dLZA7aWwP">pic.twitter.com/3dLZA7aWwP</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1485594671300632576?ref_src=twsrc%5Etfw">January 24, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 25-Jan-2022
+
+  # TODO
+  - title: ALLOCATABLE INTENT(OUT) argument is deallocated.
+    intro: |
+      An ALLOCATABLE INTENT(OUT) dummy argument is deallocated at the beginning of a procedure, as are the ALLOCATABLE components of an INTENT(OUT) derived type.
+    file: ~
+    file0: intent_out_allocatable.f90
+    url: https://twitter.com/fortrantip/status/1485957543990018053
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An ALLOCATABLE INTENT(OUT) dummy argument is deallocated at the beginning of a procedure, as are the ALLOCATABLE components of an INTENT(OUT) derived type.<a href="https://t.co/gtBVzGD0nv">pic.twitter.com/gtBVzGD0nv</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1485957543990018053?ref_src=twsrc%5Etfw">January 25, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 26-Jan-2022
+
+  # TODO
+  - title: Dummy argument that is changed must be definable in the caller.
+    intro: |
+      If a dummy argument without the VALUE attribute is changed in a procedure, the actual argument must be definable in the caller -- a variable, not a constant or expression.
+    file: ~
+    file0: definable_arg.f90
+    url: https://twitter.com/fortrantip/status/1486313053092208645
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If a dummy argument without the VALUE attribute is changed in a procedure, the actual argument must be definable in the caller -- a variable, not a constant or expression.<a href="https://t.co/cpxhod0nN7">pic.twitter.com/cpxhod0nN7</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1486313053092208645?ref_src=twsrc%5Etfw">January 26, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 27-Jan-2022
+
+  # TODO
+  - title: IEEE_ARITHMETIC module has functions to test numerical conditions.
+    intro: |
+      Fortran 2003 introduced an ieee_arithmetic module with elemental functions ieee_is_nan, ieee_is_finite, 
+      ieee_is_negative, and ieee_is_normal, which test for those conditions. They have a real argument and logical RESULT.
+    file: ~
+    file0: ieee_arithmetic.f90
+    url: https://twitter.com/fortrantip/status/1486706121335263246
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2003 introduced an ieee_arithmetic module with elemental functions ieee_is_nan, ieee_is_finite, <br>ieee_is_negative, and ieee_is_normal, which test for those conditions. They have a real argument and logical RESULT.<a href="https://t.co/82On9iDxXQ">pic.twitter.com/82On9iDxXQ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1486706121335263246?ref_src=twsrc%5Etfw">January 27, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 28-Jan-2022
+
+  # TODO
+  - title: Call ieee_set_halting_mode() to set floating point conditions that halt program.
+    intro: |
+      Call ieee_set_halting_mode() of F2003 module ieee_exceptions to set the floating point conditions (NaN, overflow, underflow, divide-by-zero, inexact) that will halt a program. Similar compiler options include 
+      gfortran -ffpe-trap=invalid
+      ifort -fpe0.
+    file: ~
+    file0: ieee_exceptions.f90
+    url: https://twitter.com/fortrantip/status/1487084606780325889
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Call ieee_set_halting_mode() of F2003 module ieee_exceptions to set the floating point conditions (NaN, overflow, underflow, divide-by-zero, inexact) that will halt a program. Similar compiler options include <br>gfortran -ffpe-trap=invalid<br>ifort -fpe0.<a href="https://t.co/gHjgCZMQU0">pic.twitter.com/gHjgCZMQU0</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1487084606780325889?ref_src=twsrc%5Etfw">January 28, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 29-Jan-2022
+
+  # TODO
+  - title: A procedure can have an argument that is another PROCEDURE with an INTERFACE.
+    intro: |
+      A procedure can have an argument that is another PROCEDURE with an INTERFACE, which is useful for writing a procedure that minimizes or integrates a function.
+    file: ~
+    file0: trapezoid.f90
+    url: https://twitter.com/fortrantip/status/1487410814919356419
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A procedure can have an argument that is another PROCEDURE with an INTERFACE, which is useful for writing a procedure that minimizes or integrates a function.<a href="https://t.co/NtVYKTbltS">pic.twitter.com/NtVYKTbltS</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1487410814919356419?ref_src=twsrc%5Etfw">January 29, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # TODO
+  - title: Google foo filetype:f90 or foo filetype:f to find Fortran code with foo.
+    intro: |
+      Since Fortran source files usually have the .f90 or .f suffix, you can Google, for example, "finite element" filetype:f90 and "finite element" filetype:f to find finite element codes.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1487557071818084357
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since Fortran source files usually have the .f90 or .f suffix, you can Google, for example, &quot;finite element&quot; filetype:f90 and &quot;finite element&quot; filetype:f to find finite element codes.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1487557071818084357?ref_src=twsrc%5Etfw">January 29, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 30-Jan-2022
+
+  # TODO
+  - title: Polyhedron suggested compiler optimization options and Fortran 95 benchmarks
+    intro: |
+      Polyhedron has suggested compiler options for optimization and compared compiler speed on some Fortran 95 codes.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1487791193710866437
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Polyhedron has suggested compiler options for optimization and compared compiler speed on some Fortran 95 codes. <a href="https://t.co/3zrgBY9TPM">https://t.co/3zrgBY9TPM</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1487791193710866437?ref_src=twsrc%5Etfw">January 30, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 31-Jan-2022
+
+  # TODO
+  - title: Vector subscript can be used for non-contiguous array sections.
+    intro: |
+      A vector subscript can be used for non-contiguous array sections, for example 
+
+      real :: x(5)
+      print*,x([2,4])
+
+      An array section with a vector subscript cannot be passed as an intent(out) or intent(in out) argument.
+    file: ~
+    file0: vector_subscript.f90
+    url: https://twitter.com/fortrantip/status/1488132722761609216
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A vector subscript can be used for non-contiguous array sections, for example <br><br>real :: x(5)<br>print*,x([2,4])<br><br>An array section with a vector subscript cannot be passed as an intent(out) or intent(in out) argument. <a href="https://t.co/kTdDGksivR">pic.twitter.com/kTdDGksivR</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1488132722761609216?ref_src=twsrc%5Etfw">January 31, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
