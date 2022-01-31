@@ -1,0 +1,13 @@
+# 108. Vector subscript can be used for non-contiguous array sections.
+
+A vector subscript can be used for non-contiguous array sections, for example 
+
+real :: x(5)
+print*,x([2,4])
+
+An array section with a vector subscript cannot be passed as an intent(out) or intent(in out) argument.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A vector subscript can be used for non-contiguous array sections, for example <br><br>real :: x(5)<br>print*,x([2,4])<br><br>An array section with a vector subscript cannot be passed as an intent(out) or intent(in out) argument. <a href="https://t.co/kTdDGksivR">pic.twitter.com/kTdDGksivR</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1488132722761609216?ref_src=twsrc%5Etfw">January 31, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,8 @@
+# 107. Polyhedron suggested compiler optimization options and Fortran 95 benchmarks
+
+Polyhedron has suggested compiler options for optimization and compared compiler speed on some Fortran 95 codes.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Polyhedron has suggested compiler options for optimization and compared compiler speed on some Fortran 95 codes. <a href="https://t.co/3zrgBY9TPM">https://t.co/3zrgBY9TPM</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1487791193710866437?ref_src=twsrc%5Etfw">January 30, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

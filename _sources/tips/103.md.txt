@@ -1,0 +1,9 @@
+# 103. IEEE_ARITHMETIC module has functions to test numerical conditions.
+
+Fortran 2003 introduced an ieee_arithmetic module with elemental functions ieee_is_nan, ieee_is_finite, 
+ieee_is_negative, and ieee_is_normal, which test for those conditions. They have a real argument and logical RESULT.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2003 introduced an ieee_arithmetic module with elemental functions ieee_is_nan, ieee_is_finite, <br>ieee_is_negative, and ieee_is_normal, which test for those conditions. They have a real argument and logical RESULT.<a href="https://t.co/82On9iDxXQ">pic.twitter.com/82On9iDxXQ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1486706121335263246?ref_src=twsrc%5Etfw">January 27, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

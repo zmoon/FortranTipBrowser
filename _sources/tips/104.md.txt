@@ -1,0 +1,10 @@
+# 104. Call ieee_set_halting_mode() to set floating point conditions that halt program.
+
+Call ieee_set_halting_mode() of F2003 module ieee_exceptions to set the floating point conditions (NaN, overflow, underflow, divide-by-zero, inexact) that will halt a program. Similar compiler options include 
+gfortran -ffpe-trap=invalid
+ifort -fpe0.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Call ieee_set_halting_mode() of F2003 module ieee_exceptions to set the floating point conditions (NaN, overflow, underflow, divide-by-zero, inexact) that will halt a program. Similar compiler options include <br>gfortran -ffpe-trap=invalid<br>ifort -fpe0.<a href="https://t.co/gHjgCZMQU0">pic.twitter.com/gHjgCZMQU0</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1487084606780325889?ref_src=twsrc%5Etfw">January 28, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

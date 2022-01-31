@@ -1,0 +1,8 @@
+# 101. ALLOCATABLE INTENT(OUT) argument is deallocated.
+
+An ALLOCATABLE INTENT(OUT) dummy argument is deallocated at the beginning of a procedure, as are the ALLOCATABLE components of an INTENT(OUT) derived type.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An ALLOCATABLE INTENT(OUT) dummy argument is deallocated at the beginning of a procedure, as are the ALLOCATABLE components of an INTENT(OUT) derived type.<a href="https://t.co/gtBVzGD0nv">pic.twitter.com/gtBVzGD0nv</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1485957543990018053?ref_src=twsrc%5Etfw">January 25, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

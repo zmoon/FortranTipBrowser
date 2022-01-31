@@ -1,0 +1,8 @@
+# 105. A procedure can have an argument that is another PROCEDURE with an INTERFACE.
+
+A procedure can have an argument that is another PROCEDURE with an INTERFACE, which is useful for writing a procedure that minimizes or integrates a function.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A procedure can have an argument that is another PROCEDURE with an INTERFACE, which is useful for writing a procedure that minimizes or integrates a function.<a href="https://t.co/NtVYKTbltS">pic.twitter.com/NtVYKTbltS</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1487410814919356419?ref_src=twsrc%5Etfw">January 29, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

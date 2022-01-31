@@ -1,0 +1,8 @@
+# 102. Dummy argument that is changed must be definable in the caller.
+
+If a dummy argument without the VALUE attribute is changed in a procedure, the actual argument must be definable in the caller -- a variable, not a constant or expression.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If a dummy argument without the VALUE attribute is changed in a procedure, the actual argument must be definable in the caller -- a variable, not a constant or expression.<a href="https://t.co/cpxhod0nN7">pic.twitter.com/cpxhod0nN7</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1486313053092208645?ref_src=twsrc%5Etfw">January 26, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
