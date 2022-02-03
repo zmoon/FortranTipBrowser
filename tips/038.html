@@ -521,7 +521,19 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="041.html">
-     041. Use G0.d and colon edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+     041. Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       g0.d
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       :
+      </span>
+     </code>
+     edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
     </a>
    </li>
    <li class="toctree-l2">
@@ -859,6 +871,11 @@
      108. Vector subscript can be used for non-contiguous array sections.
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="109.html">
+     109. Setting the values of an array section
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -1028,16 +1045,16 @@ using formatted and unformatted stream I/O.</p>
 <div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id2">2</a></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   3.9446829058764621E-007  0.99999914927543476        3.9446829060000003E-007  0.99999914927543476     
-   0.0000000000000000        3.9446829058764621E-007  0.99999914927543476        3.9446829058764621E-007  0.99999914927543476     
+   5.5511151231257827E-017   1.7148060087457395E-006  0.99999843444861769        1.7148060087000000E-006  0.99999843444861769     
+   0.0000000000000000        1.7148060087457395E-006  0.99999843444861769        1.7148060087457395E-006  0.99999843444861769     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.640       0.516       0.815E-02   0.759E-03
+   0.577       0.443       0.577E-02   0.838E-03
 
  enhancement enhancement
        write        read
-    78.5        680.    
+    100.        528.    
 </pre></div>
 </div>
 </div>

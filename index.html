@@ -518,7 +518,19 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tips/041.html">
-     041. Use G0.d and colon edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+     041. Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       g0.d
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       :
+      </span>
+     </code>
+     edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
     </a>
    </li>
    <li class="toctree-l2">
@@ -856,6 +868,11 @@
      108. Vector subscript can be used for non-contiguous array sections.
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tips/109.html">
+     109. Setting the values of an array section
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -965,7 +982,7 @@
 <p><a class="reference external" href="https://twitter.com/fortrantip">FortranTip</a> tips in one Sphinx site.</p>
 <script>
 function randoTip() {
-i = Math.floor(1 + Math.random() * 108);
+i = Math.floor(1 + Math.random() * 109);
 tip = String(i).padStart(3, '0');
 tip_page = `tips/${tip}.html`;
 // alert(tip_page);

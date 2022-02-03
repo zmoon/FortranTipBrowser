@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>063. Returning multiple values from a subroutine or function &#8212; FortranTip Browser</title>
+    <title>109. Setting the values of an array section &#8212; FortranTip Browser</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -39,8 +39,7 @@
     <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="064. Case insensitivity" href="064.html" />
-    <link rel="prev" title="062. MODULO vs. MOD function" href="062.html" />
+    <link rel="prev" title="108. Vector subscript can be used for non-contiguous array sections." href="108.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -639,8 +638,8 @@
      062. MODULO vs. MOD function
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="063.html">
      063. Returning multiple values from a subroutine or function
     </a>
    </li>
@@ -869,8 +868,8 @@
      108. Vector subscript can be used for non-contiguous array sections.
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="109.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      109. Setting the values of an array section
     </a>
    </li>
@@ -922,7 +921,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/tips/063.md.txt"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/tips/109.md.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -967,7 +966,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>063. Returning multiple values from a subroutine or function</h1>
+                <h1>109. Setting the values of an array section</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -978,15 +977,17 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="returning-multiple-values-from-a-subroutine-or-function">
-<h1>063. Returning multiple values from a subroutine or function<a class="headerlink" href="#returning-multiple-values-from-a-subroutine-or-function" title="Permalink to this headline">¶</a></h1>
-<p>Fortran cannot return multiple values with syntax like</p>
-<p>c, d = f(x)</p>
-<p>You can use a subroutine</p>
-<p>call f(x,c,d)</p>
-<p>or a function that returns a derived type containing c and d or a function that returns a size-2 array if c and d have the same type.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="setting-the-values-of-an-array-section">
+<h1>109. Setting the values of an array section<a class="headerlink" href="#setting-the-values-of-an-array-section" title="Permalink to this headline">¶</a></h1>
+<p>Fortran array indices must be integers, so you cannot write</p>
+<p>v(v&lt;0) = -1</p>
+<p>as in R, but alternatives are</p>
+<p>where (v&lt;0) v = -1
+v = merge(-1,v,v&lt;0)
+v(truloc(v&lt;0)) = -1</p>
+<p>where truloc is a user function that creates a vector subscript from a logical mask.</p>
 <hr class="docutils" />
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran cannot return multiple values with syntax like<br><br>c, d = f(x)<br><br>You can use a subroutine<br><br>call f(x,c,d)<br><br>or a function that returns a derived type containing c and d or a function that returns a size-2 array if c and d have the same type. <a href="https://t.co/vYr5h8FsMw">pic.twitter.com/vYr5h8FsMw</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1476724929299197962?ref_src=twsrc%5Etfw">December 31, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran array indices must be integers, so you cannot write<br><br>v(v&lt;0) = -1<br><br>as in R, but alternatives are<br><br>where (v&lt;0) v = -1<br>v = merge(-1,v,v&lt;0)<br>v(truloc(v&lt;0)) = -1<br><br>where truloc is a user function that creates a vector subscript from a logical mask.<a href="https://t.co/Z8BM3iUNOF">pic.twitter.com/Z8BM3iUNOF</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1488492649166295043?ref_src=twsrc%5Etfw">February 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
 
               </div>
@@ -994,19 +995,12 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="062.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="108.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">062. MODULO vs. MOD function</p>
+            <p class="prev-next-title">108. Vector subscript can be used for non-contiguous array sections.</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="064.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">064. Case insensitivity</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

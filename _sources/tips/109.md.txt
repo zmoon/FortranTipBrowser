@@ -1,0 +1,18 @@
+# 109. Setting the values of an array section
+
+Fortran array indices must be integers, so you cannot write
+
+v(v&lt;0) = -1
+
+as in R, but alternatives are
+
+where (v&lt;0) v = -1
+v = merge(-1,v,v&lt;0)
+v(truloc(v&lt;0)) = -1
+
+where truloc is a user function that creates a vector subscript from a logical mask.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran array indices must be integers, so you cannot write<br><br>v(v&lt;0) = -1<br><br>as in R, but alternatives are<br><br>where (v&lt;0) v = -1<br>v = merge(-1,v,v&lt;0)<br>v(truloc(v&lt;0)) = -1<br><br>where truloc is a user function that creates a vector subscript from a logical mask.<a href="https://t.co/Z8BM3iUNOF">pic.twitter.com/Z8BM3iUNOF</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1488492649166295043?ref_src=twsrc%5Etfw">February 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
