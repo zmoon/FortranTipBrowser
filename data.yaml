@@ -520,11 +520,17 @@ tips:
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures, and check the STAT of ALLOCATE. <a href="https://t.co/EV4jE4pfdx">pic.twitter.com/EV4jE4pfdx</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473636468405030913?ref_src=twsrc%5Etfw">December 22, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
   # TODO
-  - title: Use G0.d and colon edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+  - title: 'Use `g0.d` and `:` edit descriptors with infinite repeat count to write delimited (CSV, etc.) output'
     intro: |
-      Combine the G0.d and colon edit descriptors, along with infinite repeat count, to write delimited (CSV, etc.) output.
-    file: ~
+      - `g0.d` will appropriately format any intrinsic type.
+      - `:` causes processing to stop until the next I/O list item.
+      - `*` repeats a format group as many times as necessary.
+    file: csv.f90
     file0: ~
+    concl: |
+      ```{note}
+      Intrinsic function `norm2` is part of the Fortran 2008 standard.
+      ```
     url: https://twitter.com/fortrantip/status/1473680777279852553
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Combine the G0.d and colon edit descriptors, along with infinite repeat count, to write delimited (CSV, etc.) output. <a href="https://t.co/QfMmdEj7Fn">pic.twitter.com/QfMmdEj7Fn</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473680777279852553?ref_src=twsrc%5Etfw">December 22, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
