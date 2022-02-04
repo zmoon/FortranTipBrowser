@@ -519,7 +519,6 @@ tips:
     url: https://twitter.com/fortrantip/status/1473636468405030913
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If allocation errors must be handled, use ALLOCATABLE rather than automatic arrays in procedures, and check the STAT of ALLOCATE. <a href="https://t.co/EV4jE4pfdx">pic.twitter.com/EV4jE4pfdx</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473636468405030913?ref_src=twsrc%5Etfw">December 22, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # TODO
   - title: 'Use `g0.d` and `:` edit descriptors with infinite repeat count to write delimited (CSV, etc.) output'
     intro: |
       - `g0.d` will appropriately format any intrinsic type.
@@ -1391,3 +1390,40 @@ tips:
     file0: truloc.f90
     url: https://twitter.com/fortrantip/status/1488492649166295043
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran array indices must be integers, so you cannot write<br><br>v(v&lt;0) = -1<br><br>as in R, but alternatives are<br><br>where (v&lt;0) v = -1<br>v = merge(-1,v,v&lt;0)<br>v(truloc(v&lt;0)) = -1<br><br>where truloc is a user function that creates a vector subscript from a logical mask.<a href="https://t.co/Z8BM3iUNOF">pic.twitter.com/Z8BM3iUNOF</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1488492649166295043?ref_src=twsrc%5Etfw">February 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 02-Feb-2022
+
+  # TODO
+  - title: Mistakes in Fortran 90 Programs That Might Surprise You, by Szymanski
+    intro: |
+      Here is a a survey of Fortran 90 pitfalls. Most are still relevant, but now
+      (1) Derived types can have allocatable components.
+      (2) A pointer can be initialized to null() in the
+      declaration.
+      (3) Stream I/O is an alternative to record-based I/O.
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1488844789575569408
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here is a a survey of Fortran 90 pitfalls. Most are still relevant, but now<br>(1) Derived types can have allocatable components.<br>(2) A pointer can be initialized to null() in the<br>declaration.<br>(3) Stream I/O is an alternative to record-based I/O.<a href="https://t.co/P4tRJyN0Y6">https://t.co/P4tRJyN0Y6</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1488844789575569408?ref_src=twsrc%5Etfw">February 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 03-Feb-2022
+
+  # TODO
+  - title: Execute_command_line() to pass a command to the shell.
+    intro: |
+      execute_command_line(command [,wait,exitstat]) is a Fortran 2008 subroutine that issues a command to the shell and returns the exit code exitstat of the command. The program pauses until the command is finished unless wait is PRESENT and .FALSE.
+    file: ~
+    file0: execute.f90
+    url: https://twitter.com/fortrantip/status/1489212898777964545
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">execute_command_line(command [,wait,exitstat]) is a Fortran 2008 subroutine that issues a command to the shell and returns the exit code exitstat of the command. The program pauses until the command is finished unless wait is PRESENT and .FALSE.<a href="https://t.co/XF3s5THxv8">pic.twitter.com/XF3s5THxv8</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1489212898777964545?ref_src=twsrc%5Etfw">February 3, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+
+  # 04-Feb-2022
+
+  # TODO
+  - title: Execute_command_line() can call gnuplot to display a plot during a run.
+    intro: |
+
+    file: ~
+    file0: ~
+    url: https://twitter.com/fortrantip/status/1489580579653918729
+    embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://t.co/UW5eVxka7J">https://t.co/UW5eVxka7J</a> <br>execute_command_line() can call gnuplot to display a plot during a run, as done in GitHub project ogpf. Another use is execute_command_line(&quot;ls data/*.csv &gt; list.txt&quot;) to create a list of files to process.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1489580579653918729?ref_src=twsrc%5Etfw">February 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
