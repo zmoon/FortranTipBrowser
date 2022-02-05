@@ -30,7 +30,7 @@ fmt = """\
   # TODO
   - title: {title}
     intro: |
-{intro}
+{indented_intro}
     file: ~
     file0: {file0}
     url: {url}
@@ -55,7 +55,10 @@ for i in range(istart, len(tips0)):
         iendtext = tweet_text.index("https://t.co/")
     except ValueError:  # substring not found
         iendtext = None
-    intro = indent(tweet_text[:iendtext].rstrip(), " "*6)
+    intro = tweet_text[:iendtext].rstrip()
+    if not intro:
+        intro = "&nbsp;"  # can't be empty
+    indented_intro = indent(intro, " "*6)
     
     file0 = findfirst(
         (l["target"].lstrip("./") for l in d["file_links"]),
@@ -75,7 +78,7 @@ for i in range(istart, len(tips0)):
     lines.append(
         fmt.format(
             title=title,
-            intro=intro,
+            indented_intro=indented_intro,
             file0=file0,
             url=url,
             embed=embed
