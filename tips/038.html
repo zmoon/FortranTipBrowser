@@ -538,7 +538,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="042.html">
-     042. Zero-size array constructor such as [real ::]
+     042. Zero-size array constructor
     </a>
    </li>
    <li class="toctree-l2">
@@ -876,6 +876,21 @@
      109. Setting the values of an array section
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="110.html">
+     110. Mistakes in Fortran 90 Programs That Might Surprise You, by Szymanski
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="111.html">
+     111. Execute_command_line() to pass a command to the shell.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="112.html">
+     112. Execute_command_line() can call gnuplot to display a plot during a run.
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -1045,16 +1060,16 @@ using formatted and unformatted stream I/O.</p>
 <div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id2">2</a></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   1.7148060087457395E-006  0.99999843444861769        1.7148060087000000E-006  0.99999843444861769     
-   0.0000000000000000        1.7148060087457395E-006  0.99999843444861769        1.7148060087457395E-006  0.99999843444861769     
+   5.5511151231257827E-017   9.2754042102516365E-007  0.99999977897368086        9.2754042100000000E-007  0.99999977897368086     
+   0.0000000000000000        9.2754042102516365E-007  0.99999977897368086        9.2754042102516365E-007  0.99999977897368086     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.577       0.443       0.577E-02   0.838E-03
+   0.582       0.449       0.559E-02   0.814E-03
 
  enhancement enhancement
        write        read
-    100.        528.    
+    104.        551.    
 </pre></div>
 </div>
 </div>

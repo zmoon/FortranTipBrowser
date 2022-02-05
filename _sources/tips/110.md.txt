@@ -1,0 +1,12 @@
+# 110. Mistakes in Fortran 90 Programs That Might Surprise You, by Szymanski
+
+Here is a a survey of Fortran 90 pitfalls. Most are still relevant, but now
+(1) Derived types can have allocatable components.
+(2) A pointer can be initialized to null() in the
+declaration.
+(3) Stream I/O is an alternative to record-based I/O.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here is a a survey of Fortran 90 pitfalls. Most are still relevant, but now<br>(1) Derived types can have allocatable components.<br>(2) A pointer can be initialized to null() in the<br>declaration.<br>(3) Stream I/O is an alternative to record-based I/O.<a href="https://t.co/P4tRJyN0Y6">https://t.co/P4tRJyN0Y6</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1488844789575569408?ref_src=twsrc%5Etfw">February 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
