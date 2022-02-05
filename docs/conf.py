@@ -18,6 +18,7 @@ html_theme_options = {
 
 myst_enable_extensions = [
     "dollarmath",
+    "substitution",
     "tasklist",
 ]
 
