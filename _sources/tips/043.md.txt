@@ -3,156 +3,135 @@
 Used to NumPy?
 Many of the Fortran intrinsics to deal with arrays will already be familiar to you.
 
-```{eval-rst}
+```{list-table} A bit of Fortran vs NumPy
+---
+header-rows: 1
+widths: 2 2 3
+---
+* - Fortran
+  - NumPy equivalent[^np]
+  - Value
 
-.. list-table:: A bit of Fortran vs NumPy
-   :header-rows: 1
-   :widths: 2 2 3
-   
-   * - Fortran
-     - NumPy equivalent
-     - Value
+* - ```fortran 
+    integer :: a(2, 3)
+    ```
+  - ```python
+    np.empty(
+      (2, 3),
+      dtype=np.int32
+    )
+    ```
+  - Empty 2x3 array of int32 [^empty] [^order]
 
-   * - .. code-block:: fortran
+* - ```fortran
+    a = 1
+    ```
+  - ```python
+    a[:] = 1
+    ``` 
+  - All array elements set to 1 [^np.full] [^setting]
 
-          integer :: a(2, 3)
+* - ```fortran
+    size(a)
+    ``` 
+  - ```python
+    a.size
+    ``` 
+  - 6
 
-     - .. code-block :: python
-   
-          np.empty(
-            (2, 3),
-            dtype=np.int32
-          )
-        
-     - Empty 2x3 array of int32
+* - ```fortran
+    shape(a)
+    ``` 
+  - ```python
+    a.shape
+    ``` 
+  - (2, 3) [^shape]
 
-   * - .. code-block:: fortran
-          
-          a = 1
+* - ```fortran
+    a(1,1) = 100
+    ``` 
+  - ```python
+    a[0,0] = 100
+    ``` 
+  - Element in first row and first column set to 100
 
-     - .. code-block :: python
-   
-          a[:] = 1
-        
-     - All array elements set to 1
+* - ```fortran
+    maxval(a)
+    ``` 
+  - ```python
+    a.max()
+    ``` 
+  - 100
 
-   * - .. code-block:: fortran
+* - ```fortran
+    minval(a)
+    ``` 
+  - ```python
+    a.min()
+    ``` 
+  - 1
 
-          size(a)
-        
-     - .. code-block :: python
-   
-          a.size
-        
-     - 6
+* - ```fortran
+    sum(a)
+    ``` 
+  - ```python
+    a.sum()
+    ``` 
+  - 105
 
-   * - .. code-block:: fortran
-
-          shape(a)
-        
-     - .. code-block :: python
-   
-          a.shape
-        
-     - (2, 3)
-
-   * - .. code-block:: fortran
-
-          a(1,1) = 100
-        
-     - .. code-block :: python
-   
-          a[0,0] = 100
-        
-     - Element in first row and first column set to 100
-
-   * - .. code-block:: fortran
-
-          maxval(a)
-        
-     - .. code-block :: python
-   
-          a.max()
-        
-     - 100
-
-   * - .. code-block:: fortran
-
-          minval(a)
-        
-     - .. code-block :: python
-   
-          a.min()
-        
-     - 1
-
-   * - .. code-block:: fortran
-
-          sum(a)
-        
-     - .. code-block :: python
-   
-          a.sum()
-        
-     - 105
-
-   * - .. code-block:: fortran
-
-          sum(a, dim=1)
-        
-     - .. code-block :: python
-   
-          a.sum(axis=0)
-        
-     - (101, 2, 2)
+* - ```fortran
+    sum(a, dim=1)
+    ``` 
+  - ```python
+    a.sum(axis=0)
+    ``` 
+  - (101, 2, 2)
 ```
 
-**Notes**[^a]
+[^np]: The NumPy examples assume
+    ```python
+    import numpy as np
+    ```
 
-* The NumPy examples assume
-  ```python
-  import numpy as np
-  ```
+[^empty]: In Fortran, the "empty" array may get values set to zero,
+    but this is not guaranteed (compiler and hardware(?) dependence).
+    With NumPy, the unintialized array elements will not (all) be zero.
 
-* In Fortran, the "empty" array may get values set to zero,
-  but this is not guaranteed (compiler and hardware(?) dependence).
-  With NumPy, the unintialized array elements will not (all) be zero.
+[^np.full]: With NumPy,
+    ```python
+    a = np.full((m, n), value, dtype=np.int32)
+    ```
+    could be used  to achieve the result of the first two steps.
 
-* With NumPy,
-  ```python
-  a = np.full((m, n), value, dtype=np.int32)
-  ```
-  could be used  to achieve the result of the first two steps.
+[^order]: In Fortran, remember that the array elements are stored in
+    column-major order.
+    In NumPy, row-major order is the default, though you can specify
+    [on creation](https://numpy.org/doc/stable/reference/generated/numpy.empty.html)
+    or [transform to](https://numpy.org/doc/stable/reference/generated/numpy.asfortranarray.html)
+    column-major order.
 
-* In Fortran, remember that the array elements are stored in
-  column-major order.
-  In NumPy, row-major order is the default, though you can specify
-  [on creation](https://numpy.org/doc/stable/reference/generated/numpy.empty.html)
-  or [transform to](https://numpy.org/doc/stable/reference/generated/numpy.asfortranarray.html)
-  column-major order.
+[^setting]: **Notes**
+    * Fortran supports the shorthand for setting all elements (`a = 1` above),
+      but if you do that in Python, `a` becomes a single Python integer (`int`).
 
-* Fortran supports the shorthand for setting all elements (`a = 1` above),
-  but if you do that in Python, `a` becomes a single Python integer (`int`).
+    * Fortran also supports setting all elements with colon syntax,
+      but you must specify a `:` for each dimension.
 
-* Fortran also supports setting all elements with colon syntax,
-  but you must specify a `:` for each dimension.
+    * In NumPy, `a[:]` and `a[...]` both work as shorthand for the entire array
+      regardless of the number of dimensions,
+      whereas in Fortran we need to give a colon for each dimension: `a(:,:)`.
 
-* In NumPy, `a[:]` and `a[...]` both work as shorthand for the entire array
-  regardless of the number of dimensions,
-  whereas in Fortran we need to give a colon for each dimension: `a(:,:)`.
+    * For Fortran allocatable arrays, `a = ...` might[^b] re-allocate the array,
+      whereas explicit `a(:,:) = ...` would not.
+    
+    [^b]: If it has already been allocated and the RHS is an array with
+        a different shape from the LHS.
+        `a = 1` like in our example still just sets all elements to 1.
 
-* For Fortran allocatable arrays, `a = ...` might re-allocate the array[^b],
-  whereas explicit `a(:,:) = ...` would not.
+[^shape]: `shape(a)` (Fortran) returns an integer array,
+    whereas `a.shape` (NumPy) returns a tuple of Python `int`s
+    (i.e., not NumPy integers).
 
-* `shape(a)` (Fortran) returns an integer array,
-  whereas `a.shape` (NumPy) returns a tuple of Python `int`s
-  (i.e., not NumPy integers).
-
-[^a]: rST footnote links inside the rST `list-table` inside the MyST `{eval-rst}` fence
-  didn't work, though I tried...
-[^b]: If it has already been allocated and the RHS is an array with
-  a different shape from the LHS.
-  `a = 1` like in our example still just sets all elements to 1.
 
 ---
 
@@ -165,7 +144,7 @@ Many of the Fortran intrinsics to deal with arrays will already be familiar to y
 :caption: Output[^gfortran-version]
 
  Before setting:
-   row 1: 0 1720353280 0
+   row 1: 0 1414855936 0
    col 1: 0 0
  After setting:
    row 1: 1 1 1

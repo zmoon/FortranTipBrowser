@@ -997,8 +997,8 @@
 <h1>043. Comparing Fortran and NumPy syntax<a class="headerlink" href="#comparing-fortran-and-numpy-syntax" title="Permalink to this headline">¶</a></h1>
 <p>Used to NumPy?
 Many of the Fortran intrinsics to deal with arrays will already be familiar to you.</p>
-<table class="colwidths-given table" id="id4">
-<caption><span class="caption-text">A bit of Fortran vs NumPy</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given table" id="id9">
+<caption><span class="caption-text">A bit of Fortran vs NumPy</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 29%" />
 <col style="width: 29%" />
@@ -1006,7 +1006,7 @@ Many of the Fortran intrinsics to deal with arrays will already be familiar to y
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Fortran</p></th>
-<th class="head"><p>NumPy equivalent</p></th>
+<th class="head"><p>NumPy equivalent<a class="footnote-reference brackets" href="#np" id="id1">1</a></p></th>
 <th class="head"><p>Value</p></th>
 </tr>
 </thead>
@@ -1022,7 +1022,7 @@ Many of the Fortran intrinsics to deal with arrays will already be familiar to y
 </pre></div>
 </div>
 </td>
-<td><p>Empty 2x3 array of int32</p></td>
+<td><p>Empty 2x3 array of int32 <a class="footnote-reference brackets" href="#empty" id="id2">2</a> <a class="footnote-reference brackets" href="#order" id="id3">3</a></p></td>
 </tr>
 <tr class="row-odd"><td><div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </pre></div>
@@ -1032,7 +1032,7 @@ Many of the Fortran intrinsics to deal with arrays will already be familiar to y
 </pre></div>
 </div>
 </td>
-<td><p>All array elements set to 1</p></td>
+<td><p>All array elements set to 1 <a class="footnote-reference brackets" href="#np-full" id="id4">4</a> <a class="footnote-reference brackets" href="#setting" id="id5">5</a></p></td>
 </tr>
 <tr class="row-even"><td><div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">size</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -1052,7 +1052,7 @@ Many of the Fortran intrinsics to deal with arrays will already be familiar to y
 </pre></div>
 </div>
 </td>
-<td><p>(2, 3)</p></td>
+<td><p>(2, 3) <a class="footnote-reference brackets" href="#shape" id="id6">7</a></p></td>
 </tr>
 <tr class="row-even"><td><div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
 </pre></div>
@@ -1106,44 +1106,9 @@ Many of the Fortran intrinsics to deal with arrays will already be familiar to y
 </tr>
 </tbody>
 </table>
-<p><strong>Notes</strong><a class="footnote-reference brackets" href="#a" id="id1">1</a></p>
-<ul>
-<li><p>The NumPy examples assume</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</li>
-<li><p>In Fortran, the “empty” array may get values set to zero,
-but this is not guaranteed (compiler and hardware(?) dependence).
-With NumPy, the unintialized array elements will not (all) be zero.</p></li>
-<li><p>With NumPy,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>could be used  to achieve the result of the first two steps.</p>
-</li>
-<li><p>In Fortran, remember that the array elements are stored in
-column-major order.
-In NumPy, row-major order is the default, though you can specify
-<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.empty.html">on creation</a>
-or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.asfortranarray.html">transform to</a>
-column-major order.</p></li>
-<li><p>Fortran supports the shorthand for setting all elements (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code> above),
-but if you do that in Python, <code class="docutils literal notranslate"><span class="pre">a</span></code> becomes a single Python integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>).</p></li>
-<li><p>Fortran also supports setting all elements with colon syntax,
-but you must specify a <code class="docutils literal notranslate"><span class="pre">:</span></code> for each dimension.</p></li>
-<li><p>In NumPy, <code class="docutils literal notranslate"><span class="pre">a[:]</span></code> and <code class="docutils literal notranslate"><span class="pre">a[...]</span></code> both work as shorthand for the entire array
-regardless of the number of dimensions,
-whereas in Fortran we need to give a colon for each dimension: <code class="docutils literal notranslate"><span class="pre">a(:,:)</span></code>.</p></li>
-<li><p>For Fortran allocatable arrays, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">...</span></code> might re-allocate the array<a class="footnote-reference brackets" href="#b" id="id2">2</a>,
-whereas explicit <code class="docutils literal notranslate"><span class="pre">a(:,:)</span> <span class="pre">=</span> <span class="pre">...</span></code> would not.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">shape(a)</span></code> (Fortran) returns an integer array,
-whereas <code class="docutils literal notranslate"><span class="pre">a.shape</span></code> (NumPy) returns a tuple of Python <code class="docutils literal notranslate"><span class="pre">int</span></code>s
-(i.e., not NumPy integers).</p></li>
-</ul>
 <hr class="docutils" />
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">cf-numpy.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/cf-numpy.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:38,positionColumn:1,positionLineNumber:38,selectionStartColumn:1,selectionStartLineNumber:38,startColumn:1,startLineNumber:38),source:'program+cf_numpy%0A+++implicit+none%0A%0A+++integer,+parameter+::+m+%3D+2,+n+%3D+3%0A+++integer+::+a(m,+n)%0A+++character(len%3D*),+parameter+::+fmt+%3D+%22(x,+a,+!':!',+x,+*(g0,+x))%22%0A%0A+++print+*,+%22Before+setting:%22%0A+++call+print11(a)%0A%0A+++a+%3D+1++!!+Set+all+elements%0A%0A+++print+*,+%22After+setting:%22%0A+++call+print11(a)%0A%0A+++print+fmt,+%22size%22,+size(a)%0A+++print+fmt,+%22shape%22,+shape(a)%0A%0A+++a(1,1)+%3D+100%0A+++%0A+++print+fmt,+%22maxval%22,+maxval(a)%0A+++print+fmt,+%22minval%22,+minval(a)%0A%0A+++print+fmt,+%22sum%22,+sum(a)%0A+++print+fmt,+%22sum,+dim%3D1%22,+sum(a,+dim%3D1)%0A+++print+fmt,+%22sum,+dim%3D2%22,+sum(a,+dim%3D2)%0A%0Acontains%0A%0A+++subroutine+print11(mat)%0A++++++integer,+intent(in)+::+mat(:,:)%0A%0A++++++print+%22(3x,+!'row+1:!',+x,+*(i0,+x))%22,+mat(1,+:)%0A++++++print+%22(3x,+!'col+1:!',+x,+*(i0,+x))%22,+mat(:,+1)%0A%0A+++end+subroutine+print11%0A%0Aend+program+cf_numpy%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">cf-numpy.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/cf-numpy.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:38,positionColumn:1,positionLineNumber:38,selectionStartColumn:1,selectionStartLineNumber:38,startColumn:1,startLineNumber:38),source:'program+cf_numpy%0A+++implicit+none%0A%0A+++integer,+parameter+::+m+%3D+2,+n+%3D+3%0A+++integer+::+a(m,+n)%0A+++character(len%3D*),+parameter+::+fmt+%3D+%22(x,+a,+!':!',+x,+*(g0,+x))%22%0A%0A+++print+*,+%22Before+setting:%22%0A+++call+print11(a)%0A%0A+++a+%3D+1++!!+Set+all+elements%0A%0A+++print+*,+%22After+setting:%22%0A+++call+print11(a)%0A%0A+++print+fmt,+%22size%22,+size(a)%0A+++print+fmt,+%22shape%22,+shape(a)%0A%0A+++a(1,1)+%3D+100%0A+++%0A+++print+fmt,+%22maxval%22,+maxval(a)%0A+++print+fmt,+%22minval%22,+minval(a)%0A%0A+++print+fmt,+%22sum%22,+sum(a)%0A+++print+fmt,+%22sum,+dim%3D1%22,+sum(a,+dim%3D1)%0A+++print+fmt,+%22sum,+dim%3D2%22,+sum(a,+dim%3D2)%0A%0Acontains%0A%0A+++subroutine+print11(mat)%0A++++++integer,+intent(in)+::+mat(:,:)%0A%0A++++++print+%22(3x,+!'row+1:!',+x,+*(i0,+x))%22,+mat(1,+:)%0A++++++print+%22(3x,+!'col+1:!',+x,+*(i0,+x))%22,+mat(:,+1)%0A%0A+++end+subroutine+print11%0A%0Aend+program+cf_numpy%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">cf_numpy</span><span class="w"></span>
 <span class="w">   </span><span class="k">implicit none</span>
 
@@ -1185,10 +1150,10 @@ whereas <code class="docutils literal notranslate"><span class="pre">a.shape</sp
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id3">3</a></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id7">8</a></span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> Before setting:
-   row 1: 0 1720353280 0
+   row 1: 0 1414855936 0
    col 1: 0 0
  After setting:
    row 1: 1 1 1
@@ -1212,16 +1177,59 @@ See such comparisons and more here:
 <hr class="docutils" />
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Used to NumPy? Lots of the Fortran intrinsics to deal with arrays will already be familiar to you. <a href="https://t.co/GnKnbscsDX">pic.twitter.com/GnKnbscsDX</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1473958733571104773?ref_src=twsrc%5Etfw">December 23, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="a"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>rST footnote links inside the rST <code class="docutils literal notranslate"><span class="pre">list-table</span></code> inside the MyST <code class="docutils literal notranslate"><span class="pre">{eval-rst}</span></code> fence
-didn’t work, though I tried…</p>
+<dt class="label" id="np"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The NumPy examples assume</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
 </dd>
-<dt class="label" id="b"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="empty"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>In Fortran, the “empty” array may get values set to zero,
+but this is not guaranteed (compiler and hardware(?) dependence).
+With NumPy, the unintialized array elements will not (all) be zero.</p>
+</dd>
+<dt class="label" id="order"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>In Fortran, remember that the array elements are stored in
+column-major order.
+In NumPy, row-major order is the default, though you can specify
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.empty.html">on creation</a>
+or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.asfortranarray.html">transform to</a>
+column-major order.</p>
+</dd>
+<dt class="label" id="np-full"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>With NumPy,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>could be used  to achieve the result of the first two steps.</p>
+</dd>
+<dt class="label" id="setting"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p><strong>Notes</strong></p>
+<ul class="simple">
+<li><p>Fortran supports the shorthand for setting all elements (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code> above),
+but if you do that in Python, <code class="docutils literal notranslate"><span class="pre">a</span></code> becomes a single Python integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>).</p></li>
+<li><p>Fortran also supports setting all elements with colon syntax,
+but you must specify a <code class="docutils literal notranslate"><span class="pre">:</span></code> for each dimension.</p></li>
+<li><p>In NumPy, <code class="docutils literal notranslate"><span class="pre">a[:]</span></code> and <code class="docutils literal notranslate"><span class="pre">a[...]</span></code> both work as shorthand for the entire array
+regardless of the number of dimensions,
+whereas in Fortran we need to give a colon for each dimension: <code class="docutils literal notranslate"><span class="pre">a(:,:)</span></code>.</p></li>
+<li><p>For Fortran allocatable arrays, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">...</span></code> might<a class="footnote-reference brackets" href="#b" id="id8">6</a> re-allocate the array,
+whereas explicit <code class="docutils literal notranslate"><span class="pre">a(:,:)</span> <span class="pre">=</span> <span class="pre">...</span></code> would not.</p></li>
+</ul>
+<dt class="label" id="b"><span class="brackets"><a class="fn-backref" href="#id8">6</a></span></dt>
 <dd><p>If it has already been allocated and the RHS is an array with
 a different shape from the LHS.
 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code> like in our example still just sets all elements to 1.</p>
 </dd>
-<dt class="label" id="gfortran-version"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+</dl>
+</dd>
+<dl class="footnote brackets">
+<dt class="label" id="shape"><span class="brackets"><a class="fn-backref" href="#id6">7</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">shape(a)</span></code> (Fortran) returns an integer array,
+whereas <code class="docutils literal notranslate"><span class="pre">a.shape</span></code> (NumPy) returns a tuple of Python <code class="docutils literal notranslate"><span class="pre">int</span></code>s
+(i.e., not NumPy integers).</p>
+</dd>
+<dt class="label" id="gfortran-version"><span class="brackets"><a class="fn-backref" href="#id7">8</a></span></dt>
 <dd><p>Compiled using <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Fortran</span> <span class="pre">(Ubuntu</span> <span class="pre">11.1.0-1ubuntu1~20.04)</span> <span class="pre">11.1.0</span></code> with no flags</p>
 </dd>
 </dl>
