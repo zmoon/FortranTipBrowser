@@ -543,7 +543,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="043.html">
-     043. Fortran equivalents of NumPy
+     043. Comparing Fortran and NumPy syntax
     </a>
    </li>
    <li class="toctree-l2">
@@ -1060,16 +1060,16 @@ using formatted and unformatted stream I/O.</p>
 <div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id2">2</a></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   1.8769158420806065E-006  0.99999911674207176        1.8769158420999999E-006  0.99999911674207176     
-   0.0000000000000000        1.8769158420806065E-006  0.99999911674207176        1.8769158420806065E-006  0.99999911674207176     
+   5.5511151231257827E-017   6.0547674407551710E-007  0.99999985466942720        6.0547674409999996E-007  0.99999985466942720     
+   0.0000000000000000        6.0547674407551710E-007  0.99999985466942720        6.0547674407551710E-007  0.99999985466942720     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.576       0.417       0.574E-02   0.782E-03
+   0.587       0.451       0.646E-02   0.186E-02
 
  enhancement enhancement
        write        read
-    100.        533.    
+    90.9        242.    
 </pre></div>
 </div>
 </div>

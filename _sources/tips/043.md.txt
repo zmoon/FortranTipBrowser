@@ -1,7 +1,192 @@
-# 043. Fortran equivalents of NumPy
+# 043. Comparing Fortran and NumPy syntax
 
-Used to NumPy? Lots of the Fortran intrinsics to deal with arrays will already be familiar to you.
+Used to NumPy?
+Many of the Fortran intrinsics to deal with arrays will already be familiar to you.
 
+```{eval-rst}
+
+.. list-table:: A bit of Fortran vs NumPy
+   :header-rows: 1
+   :widths: 2 2 3
+   
+   * - Fortran
+     - NumPy equivalent
+     - Value
+
+   * - .. code-block:: fortran
+
+          integer :: a(2, 3)
+
+     - .. code-block :: python
+   
+          np.empty(
+            (2, 3),
+            dtype=np.int32
+          )
+        
+     - Empty 2x3 array of int32
+
+   * - .. code-block:: fortran
+          
+          a = 1
+
+     - .. code-block :: python
+   
+          a[:] = 1
+        
+     - All array elements set to 1
+
+   * - .. code-block:: fortran
+
+          size(a)
+        
+     - .. code-block :: python
+   
+          a.size
+        
+     - 6
+
+   * - .. code-block:: fortran
+
+          shape(a)
+        
+     - .. code-block :: python
+   
+          a.shape
+        
+     - (2, 3)
+
+   * - .. code-block:: fortran
+
+          a(1,1) = 100
+        
+     - .. code-block :: python
+   
+          a[0,0] = 100
+        
+     - Element in first row and first column set to 100
+
+   * - .. code-block:: fortran
+
+          maxval(a)
+        
+     - .. code-block :: python
+   
+          a.max()
+        
+     - 100
+
+   * - .. code-block:: fortran
+
+          minval(a)
+        
+     - .. code-block :: python
+   
+          a.min()
+        
+     - 1
+
+   * - .. code-block:: fortran
+
+          sum(a)
+        
+     - .. code-block :: python
+   
+          a.sum()
+        
+     - 105
+
+   * - .. code-block:: fortran
+
+          sum(a, dim=1)
+        
+     - .. code-block :: python
+   
+          a.sum(axis=0)
+        
+     - (101, 2, 2)
+```
+
+**Notes**[^a]
+
+* The NumPy examples assume
+  ```python
+  import numpy as np
+  ```
+
+* In Fortran, the "empty" array may get values set to zero,
+  but this is not guaranteed (compiler and hardware(?) dependence).
+  With NumPy, the unintialized array elements will not (all) be zero.
+
+* With NumPy,
+  ```python
+  a = np.full((m, n), value, dtype=np.int32)
+  ```
+  could be used  to achieve the result of the first two steps.
+
+* In Fortran, remember that the array elements are stored in
+  column-major order.
+  In NumPy, row-major order is the default, though you can specify
+  [on creation](https://numpy.org/doc/stable/reference/generated/numpy.empty.html)
+  or [transform to](https://numpy.org/doc/stable/reference/generated/numpy.asfortranarray.html)
+  column-major order.
+
+* Fortran supports the shorthand for setting all elements (`a = 1` above),
+  but if you do that in Python, `a` becomes a single Python integer (`int`).
+
+* Fortran also supports setting all elements with colon syntax,
+  but you must specify a `:` for each dimension.
+
+* In NumPy, `a[:]` and `a[...]` both work as shorthand for the entire array
+  regardless of the number of dimensions,
+  whereas in Fortran we need to give a colon for each dimension: `a(:,:)`.
+
+* For Fortran allocatable arrays, `a = ...` might re-allocate the array[^b],
+  whereas explicit `a(:,:) = ...` would not.
+
+* `shape(a)` (Fortran) returns an integer array,
+  whereas `a.shape` (NumPy) returns a tuple of Python `int`s
+  (i.e., not NumPy integers).
+
+[^a]: rST footnote links inside the rST `list-table` inside the MyST `{eval-rst}` fence
+  didn't work, though I tried...
+[^b]: If it has already been allocated and the RHS is an array with
+  a different shape from the LHS.
+  `a = 1` like in our example still just sets all elements to 1.
+
+---
+
+```{literalinclude} ../../src/cf-numpy.f90
+:language: fortran
+:caption: cf-numpy.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/cf-numpy.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:38,positionColumn:1,positionLineNumber:38,selectionStartColumn:1,selectionStartLineNumber:38,startColumn:1,startLineNumber:38),source:'program+cf_numpy%0A+++implicit+none%0A%0A+++integer,+parameter+::+m+%3D+2,+n+%3D+3%0A+++integer+::+a(m,+n)%0A+++character(len%3D*),+parameter+::+fmt+%3D+%22(x,+a,+!':!',+x,+*(g0,+x))%22%0A%0A+++print+*,+%22Before+setting:%22%0A+++call+print11(a)%0A%0A+++a+%3D+1++!!+Set+all+elements%0A%0A+++print+*,+%22After+setting:%22%0A+++call+print11(a)%0A%0A+++print+fmt,+%22size%22,+size(a)%0A+++print+fmt,+%22shape%22,+shape(a)%0A%0A+++a(1,1)+%3D+100%0A+++%0A+++print+fmt,+%22maxval%22,+maxval(a)%0A+++print+fmt,+%22minval%22,+minval(a)%0A%0A+++print+fmt,+%22sum%22,+sum(a)%0A+++print+fmt,+%22sum,+dim%3D1%22,+sum(a,+dim%3D1)%0A+++print+fmt,+%22sum,+dim%3D2%22,+sum(a,+dim%3D2)%0A%0Acontains%0A%0A+++subroutine+print11(mat)%0A++++++integer,+intent(in)+::+mat(:,:)%0A%0A++++++print+%22(3x,+!'row+1:!',+x,+*(i0,+x))%22,+mat(1,+:)%0A++++++print+%22(3x,+!'col+1:!',+x,+*(i0,+x))%22,+mat(:,+1)%0A%0A+++end+subroutine+print11%0A%0Aend+program+cf_numpy%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a>
+```
+
+```{code-block} text
+:caption: Output[^gfortran-version]
+
+ Before setting:
+   row 1: 0 1720353280 0
+   col 1: 0 0
+ After setting:
+   row 1: 1 1 1
+   col 1: 1 1
+ size: 6
+ shape: 2 3
+ maxval: 100
+ minval: 1
+ sum: 105
+ sum, dim=1: 101 2 2
+ sum, dim=2: 102 3
+
+```
+
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+
+```{note}
+NumPy also provides a functional API that makes it look more like Fortran.
+See such comparisons and more here:
+<https://www.fortran90.org/src/rosetta.html>
+```
 
 ---
 
