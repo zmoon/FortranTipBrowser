@@ -108,10 +108,17 @@ ghtree = r.json()["tree"]
 
 gh_fns = {d["path"] for d in ghtree} - {"README.md",}
 
-if len(set(mentioned_files)) != len(mentioned_files):
-    g1 = {k: n for k, n in Counter(mentioned_files).items() if n > 1}
+file_mention_allowed_dups = {"./lbound_assumed_shape.f90",}
 
-    raise Exception(f"files should be unique to tip but we have {g1}")
+mentioned_file_counts = Counter(mentioned_files)
+
+if len(mentioned_file_counts) != len(mentioned_files):
+    g1 = {
+        k: n for k, n in mentioned_file_counts.items()
+        if n > 1 and k not in file_mention_allowed_dups
+    }
+    if g1:
+        raise Exception(f"files should be unique to tip but we have {g1}")
 
 fns = {fn.lstrip("./") for fn in mentioned_files}
 
