@@ -722,14 +722,30 @@ tips:
     url: https://twitter.com/fortrantip/status/1474105626611662857
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">List-directed output (format *) is convenient, but don&#39;t use it when you care about layout as you&#39;ll lose control over spacing, line breaks and number of significant digits. If you care, use explicit formats instead.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474105626611662857?ref_src=twsrc%5Etfw">December 23, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # TODO
   - title: Derived type definition, initialization, and operator overloading
     intro: |
-      How to define a derived type, initialize it, access its components, convert it to a string, and define operators for it.
-    file: ~
+      The following program demonstrates
+      how to define a derived type, initialize it, access its components,
+      convert it to a string, and define operators for it.
+
+      The derived type here represents a specific month in time
+      (i.e., year is also specified).
+    concl: |
+      ```{note}
+      `idate` is getting highlighted in the module code above
+      because it is shadowing the
+      [intrinsic `idate` subroutine](https://gcc.gnu.org/onlinedocs/gfortran/IDATE.html),
+      which we demonstrate at the end.
+      ```
+
+      Some further references:
+      * <https://fortran-lang.org/learn/quickstart/derived_types.html>
+      * <https://fortranwiki.org/fortran/show/Object-oriented+programming>
+    file: ym-date-type.f90
     file0: date.f90
     url: https://twitter.com/fortrantip/status/1474169072665440259
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">How to define a derived type, initialize it, access its components, convert it to a string, and define operators for it. <a href="https://t.co/jcai3Usy25">pic.twitter.com/jcai3Usy25</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474169072665440259?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+    # TODO: current date thing should be separate tip?
 
   # 24-Dec-2021
 
