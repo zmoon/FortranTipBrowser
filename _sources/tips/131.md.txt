@@ -1,0 +1,8 @@
+# 131. Fortran 2018 procedures can have assumed-rank arguments.
+
+Fortran 2018 procedures with explicit interfaces can have assumed-rank arguments, denoted x(..), that can be scalars or arrays of arbitrary rank. Within the procedure the SELECT RANK construct and RANK intrinsic is used to handle each rank.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2018 procedures with explicit interfaces can have assumed-rank arguments, denoted x(..), that can be scalars or arrays of arbitrary rank. Within the procedure the SELECT RANK construct and RANK intrinsic is used to handle each rank.<a href="https://t.co/Hzqt5e1H9r">pic.twitter.com/Hzqt5e1H9r</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1496107321457528835?ref_src=twsrc%5Etfw">February 22, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

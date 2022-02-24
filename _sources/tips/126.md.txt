@@ -1,0 +1,8 @@
+# 126. A derived type can be used where a scalar is needed.
+
+A derived type variable is a scalar even if it has array components. Arrays of varying-length strings or pointers can be simulated. A derived type can be used where a scalar is required, for example as the dummy argument of an elemental procedure.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A derived type variable is a scalar even if it has array components. Arrays of varying-length strings or pointers can be simulated. A derived type can be used where a scalar is required, for example as the dummy argument of an elemental procedure.<a href="https://t.co/QMUCesqyVR">pic.twitter.com/QMUCesqyVR</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1494295438320713730?ref_src=twsrc%5Etfw">February 17, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

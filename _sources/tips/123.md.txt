@@ -1,0 +1,8 @@
+# 123. Bounds of a derived type array component are preserved when passed to procedure.
+
+The bounds of a derived type array component are preserved when the whole derived type is passed to a procedure, as shown in the code of the previous tip.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The bounds of a derived type array component are preserved when the whole derived type is passed to a procedure, as shown in the code of the previous tip.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1493214664754438149?ref_src=twsrc%5Etfw">February 14, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,8 @@
+# 124. Bounds of an allocatable array are preserved when passed to an allocatable, intent(in) or intent(in out) argument.
+
+The bounds of an allocatable array are preserved when passed to an allocatable, intent(in) or intent(in out) argument in a procedure. The same is true for intent(in) or intent(in out) pointer array arguments.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The bounds of an allocatable array are preserved when passed to an allocatable, intent(in) or intent(in out) argument in a procedure. The same is true for intent(in) or intent(in out) pointer array arguments.<a href="https://t.co/2S43P7demh">pic.twitter.com/2S43P7demh</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1493569929668354051?ref_src=twsrc%5Etfw">February 15, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

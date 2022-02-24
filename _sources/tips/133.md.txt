@@ -1,0 +1,12 @@
+# 133. Unlimited polymorphic pointer can point to any type.
+
+An unlimited polymorphic pointer p
+
+class(*), pointer :: p
+
+can point to any type of variable or object and can be passed as a class(*) or class(*), pointer argument. Otherwise it must be disambiguated with SELECT TYPE before being used.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An unlimited polymorphic pointer p<br><br>class(*), pointer :: p<br><br>can point to any type of variable or object and can be passed as a class(*) or class(*), pointer argument. Otherwise it must be disambiguated with SELECT TYPE before being used.<a href="https://t.co/AJaPqr1rBF">pic.twitter.com/AJaPqr1rBF</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1496470666576642048?ref_src=twsrc%5Etfw">February 23, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

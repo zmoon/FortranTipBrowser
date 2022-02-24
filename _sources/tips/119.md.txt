@@ -1,0 +1,8 @@
+# 119. Internal write to character variable too small to hold output causes run-time error.
+
+A character variable can be assigned to a character variable with smaller or larger LEN, resulting in padding with blanks or truncation, but an internal write to a character variable that is too small to hold the output will cause a run-time error.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A character variable can be assigned to a character variable with smaller or larger LEN, resulting in padding with blanks or truncation, but an internal write to a character variable that is too small to hold the output will cause a run-time error. <a href="https://t.co/4wW4hTYTHS">pic.twitter.com/4wW4hTYTHS</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1492114908351283206?ref_src=twsrc%5Etfw">February 11, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

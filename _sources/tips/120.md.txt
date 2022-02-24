@@ -1,0 +1,8 @@
+# 120. Character variables can be compared like numerical variables.
+
+The comparison operators &lt; &lt;= etc. or .lt. .le. etc. can be used for character variables, usually with the ASCII collating sequence. The lexical comparison functions LLT, LLE, LGE, LGT use this sequence. MINVAL, MINLOC, FINDLOC work on arrays of strings.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The comparison operators &lt; &lt;= etc. or .lt. .le. etc. can be used for character variables, usually with the ASCII collating sequence. The lexical comparison functions LLT, LLE, LGE, LGT use this sequence. MINVAL, MINLOC, FINDLOC work on arrays of strings. <a href="https://t.co/fymX8ecd4j">pic.twitter.com/fymX8ecd4j</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1492489511821004805?ref_src=twsrc%5Etfw">February 12, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

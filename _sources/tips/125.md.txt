@@ -1,0 +1,8 @@
+# 125. Modern Fortran Reference Card and Quick Reference/Cheat Sheet.
+
+Modern Fortran Reference Card of Michael Goerz crams a lot of good information in 2 pages
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Modern Fortran Reference Card of Michael Goerz crams a lot of good information in 2 pages<a href="https://t.co/QzVEZpfe1Z">https://t.co/QzVEZpfe1Z</a>, as does the 5-page Quick Reference/Cheat Sheet of Ben Evans <a href="https://t.co/HDt5B4Swe4">https://t.co/HDt5B4Swe4</a>.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1493920435997659145?ref_src=twsrc%5Etfw">February 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

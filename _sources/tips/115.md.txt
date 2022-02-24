@@ -1,0 +1,9 @@
+# 115. get_command() and get_command_argument() get command line arguments.
+
+In Fortran 2003, get_command(command) and
+get_command_argument(number,value) are subroutines to get the entire command line or the nth argument as character variables, and the function command_argument_count() returns the number of arguments.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In Fortran 2003, get_command(command) and<br>get_command_argument(number,value) are subroutines to get the entire command line or the nth argument as character variables, and the function command_argument_count() returns the number of arguments.<a href="https://t.co/TfCZ8dzn5R">pic.twitter.com/TfCZ8dzn5R</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1490666160504905730?ref_src=twsrc%5Etfw">February 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

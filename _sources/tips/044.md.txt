@@ -1,7 +1,39 @@
 # 044. List-directed vs. explicitly formatted output
 
-List-directed output (format *) is convenient, but don't use it when you care about layout as you'll lose control over spacing, line breaks and number of significant digits. If you care, use explicit formats instead.
+List-directed output (format `*`) is convenient,
+```fortran
+! Examples
+print *, x, y, z
+write (*, *) x, y, z
+write (unit_integer, *) x, y, z
+```
+but don't use it when you care about layout as you'll lose control over
+spacing, line breaks and number of significant digits.
+If you care, use explicit formats instead.
 
+```{literalinclude} ../../src/list-directed.f90
+:language: fortran
+:caption: list-directed.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/list-directed.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:14,positionColumn:1,positionLineNumber:14,selectionStartColumn:1,selectionStartLineNumber:14,startColumn:1,startLineNumber:14),source:'program+list_directed%0A+++use+iso_fortran_env,+only:+real64%0A+++implicit+none%0A%0A+++integer,+parameter+::+x+%3D+1%0A+++real(kind%3Dreal64),+parameter+::+y+%3D+acos(-1.0),+%26%0A++++++z+%3D+6.62607015d-34%0A%0A+++print+*,+x,+y,+z%0A+++print+!'(*(g0,+:,+x))!',+x,+y,+z%0A+++print+!'(*(g0.4,+:,+%22,%22))!',+x,+y,+z%0A+++print+!'(/,+i0,+/,+%22and%22,+/,+f0.5,+/,+%22and%22,+/,+es0.3)!',+x,+y,+z%0A%0Aend+program+list_directed%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a>
+```
+
+```{code-block} text
+:caption: Output[^gfortran-version]
+
+           1   3.1415927410125732        6.6260701499999998E-034
+1 3.1415927410125732 0.66260701499999998E-33
+1,3.142,0.6626E-33
+
+1
+and
+3.14159
+and
+6.626E-34
+
+```
+
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+
+See Tip 041 for `g0.d` and `:` meaning in format syntax.
 
 ---
 

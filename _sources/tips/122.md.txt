@@ -1,0 +1,8 @@
+# 122. Array lower bounds are not preserved when passed as assumed shape argument.
+
+The lower bounds of an assumed shape dummy argument are 1 or the lower bounds specified in the procedure declaration, regardless of the lower bounds of actual argument in the caller. The lower bounds can be passed as arguments.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The lower bounds of an assumed shape dummy argument are 1 or the lower bounds specified in the procedure declaration, regardless of the lower bounds of actual argument in the caller. The lower bounds can be passed as arguments.<a href="https://t.co/wRauYCI75B">pic.twitter.com/wRauYCI75B</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1493207320184164352?ref_src=twsrc%5Etfw">February 14, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

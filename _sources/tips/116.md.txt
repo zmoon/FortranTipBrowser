@@ -1,0 +1,9 @@
+# 116. Concatenate arrays and scalars in an array constructor []
+
+A mix of arrays and scalars can be concatenated to a 1D array by putting them in an array constructor. Each array is flattened in column-major order to a 1D array.
+Columns can be added to a matrix using RESHAPE on a concatenation.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A mix of arrays and scalars can be concatenated to a 1D array by putting them in an array constructor. Each array is flattened in column-major order to a 1D array.<br>Columns can be added to a matrix using RESHAPE on a concatenation. <a href="https://t.co/43bpTzHDTy">pic.twitter.com/43bpTzHDTy</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1491021968799600641?ref_src=twsrc%5Etfw">February 8, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

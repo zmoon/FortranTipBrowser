@@ -1,0 +1,14 @@
+# 129. A derived type can have PRIVATE components.
+
+Derived type components can be declared PRIVATE, in which case they are only visible in the module where the type is defined. Below, b is private and c is public.
+
+type dt
+  private
+  real :: b
+  real, public :: c ! override private
+end type
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Derived type components can be declared PRIVATE, in which case they are only visible in the module where the type is defined. Below, b is private and c is public.<br><br>type dt<br>  private<br>  real :: b<br>  real, public :: c ! override private<br>end type <a href="https://t.co/TD76teqpzi">pic.twitter.com/TD76teqpzi</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1495372934537428997?ref_src=twsrc%5Etfw">February 20, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

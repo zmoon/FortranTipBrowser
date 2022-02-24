@@ -1,0 +1,16 @@
+# 121. How to reverse an array or character string
+
+Write
+
+v = v(size(v):1:-1)
+
+to reverse a 1-D array v with lower bound 1, otherwise
+
+v = v(ubound(v):lbound(v):-1)
+
+v(::-1) is a zero-size array unless size(v) = 1. A character string can be reversed with the function shown.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Write<br><br>v = v(size(v):1:-1)<br><br>to reverse a 1-D array v with lower bound 1, otherwise<br><br>v = v(ubound(v):lbound(v):-1)<br><br>v(::-1) is a zero-size array unless size(v) = 1. A character string can be reversed with the function shown. <a href="https://t.co/ngOUfICgvf">pic.twitter.com/ngOUfICgvf</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1492844114492243971?ref_src=twsrc%5Etfw">February 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,8 @@
+# 130. storage_size(A) returns the storage size of argument A in bits.
+
+storage_size(A) is an F2008 function that returns the storage size of argument A in bits. If A is an array it returns the size of an element of A. If A is a derived type with allocatable components, the result of storage_size() is compiler-dependent.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">storage_size(A) is an F2008 function that returns the storage size of argument A in bits. If A is an array it returns the size of an element of A. If A is a derived type with allocatable components, the result of storage_size() is compiler-dependent.<a href="https://t.co/p5bobsQXUj">pic.twitter.com/p5bobsQXUj</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1495738404356689926?ref_src=twsrc%5Etfw">February 21, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
