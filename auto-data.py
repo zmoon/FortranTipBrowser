@@ -2,11 +2,13 @@
 Get tip info from the FortranTip readme
 """
 import base64
+import datetime
 import os
 import re
 from dataclasses import asdict, dataclass
 from collections import Counter
 from pathlib import Path
+from typing import NamedTuple
 
 import requests
 import yaml
@@ -38,6 +40,14 @@ class Link:
 
     def check(self):
         raise NotImplementedError
+
+
+class TipInfo(NamedTuple):
+    """FortranTip tip info from readme line."""
+    title: str
+    tweet_id: str
+    datetime: datetime.datetime
+    # TODO: file links
 
 
 # Get the FT readme and parse it
@@ -98,6 +108,79 @@ for line in lines[ihead+1:]:
         )
 
 
+# Get FT list by topic and parse it
+
+r = requests.get(
+    f"https://api.github.com/repos/Beliavsky/FortranTip/contents/topics.md"
+)
+r.raise_for_status()
+data = r.json()
+file_content = data["content"]
+file_content_encoding = data.get("encoding")
+if file_content_encoding == "base64":
+    file_content = base64.b64decode(file_content).decode()
+topics_md = file_content
+
+lines = topics_md.splitlines()
+istart = 3
+assert lines[istart].startswith("### ")
+
+topic_titles = {}
+topic_id = None
+tips_w_topic = []
+for line in lines[istart:]:
+    if not line.strip():
+        continue
+
+    if line.startswith("###"):
+        # New topic block
+        topic_title = line[4:].strip()
+        topic_id = topic_title.lower().replace(" ", "-")
+        topic_titles[topic_id] = topic_title
+    else:
+        # Tip
+        m = re_readme_line.match(line)
+        if m is None:
+            print(f"doesn't match the format:\n  {line}")
+
+        else:
+            d = m.groupdict()
+
+        tips_w_topic.append(
+            {
+                "title": d["title"],
+                "tweet_id": d["tweet_id"],
+                "datetime": parse(f"{d['time']} {d['date']}"),
+                "ft_topic_id": topic_id,
+            }
+        )
+
+# Each one from the readme should be here
+# and be in one and only one topic
+
+tips_ti = {TipInfo(d["title"], d["tweet_id"], d["datetime"]) for d in tips}
+tips_w_topic_ti = {TipInfo(d["title"], d["tweet_id"], d["datetime"]) for d in tips_w_topic}
+assert len(tips) == len(tips_ti)
+assert len(tips_w_topic) == len(tips_w_topic_ti)
+
+d = tips_ti - tips_w_topic_ti
+if d:
+    print("Mentioned in readme but not topic list:", d)
+
+d = tips_w_topic_ti - tips_ti
+if d:
+    print("Mentioned in topic list but not readme:", d)
+
+tips_w_topic_by_title = {tip["title"]: tip for tip in tips_w_topic}
+
+for d in tips:
+    try:
+        id_ = tips_w_topic_by_title[d["title"]]["ft_topic_id"]
+    except KeyError:
+        id_ = None
+    d.update(ft_topic_id=id_)
+
+
 # Get list of files in the FT GH repo and compare to the readme
 
 r = requests.get(
@@ -106,7 +189,7 @@ r = requests.get(
 r.raise_for_status()
 ghtree = r.json()["tree"]
 
-gh_fns = {d["path"] for d in ghtree} - {"README.md",}
+gh_fns = {d["path"] for d in ghtree} - {"README.md", "LICENSE", "topics.md"}
 
 file_mention_allowed_dups = {"./lbound_assumed_shape.f90",}
 
