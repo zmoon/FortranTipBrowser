@@ -232,8 +232,12 @@ if fns_only:
 
 
 # Get Tweet info and embed HTML
-# TODO: make optional for ones we already have, to avoid rate limit
-# or at least create a local cache
+
+use_prev_tweets = True  # from existing data0
+if use_prev_tweets:
+    with open("./data0.yaml") as f:
+        tips0 = yaml.load(f, yaml.Loader)["tips"]
+        tips0d = {d["tweet_id"]: d for d in tips0}
 
 if not os.environ.get("GITHUB_ACTIONS"):
     p = HERE / ".env"
@@ -245,24 +249,36 @@ BT = os.environ.get("TWITTER_BT")
 for d in track(tips, description="Getting data from Twitter"):
     tweet_id = d["tweet_id"]
 
-    # Get Tweet text
-    r = requests.get(
-        f"https://api.twitter.com/2/tweets/{tweet_id}?tweet.fields=text,created_at",
-        headers={"Authorization": f"Bearer {BT}"}
-    )
-    r.raise_for_status()
-    data = r.json()["data"]
-    d["tweet_text"] = data["text"]  # by default just has `text` and `id`
-    d["tweet_created_at"] = data["created_at"]
+    if tweet_id in tips0d and use_prev_tweets:
+        # Use existing data
+        d0 = tips0d[tweet_id]
+        text = d0["tweet_text"]
+        created_at = d0["tweet_created_at"]
+        embed = d0["tweet_embed"]
+    else:
+        # Get Tweet text
+        r = requests.get(
+            f"https://api.twitter.com/2/tweets/{tweet_id}?tweet.fields=text,created_at",
+            headers={"Authorization": f"Bearer {BT}"}
+        )
+        r.raise_for_status()
+        data = r.json()["data"]
+        text = data["text"]  # by default just has `text` and `id`
+        created_at = data["created_at"]
 
-    # Get embed HTML
-    r = requests.get(
-        "https://publish.twitter.com/oembed?"
-        f"url=https://twitter.com/fortrantip/status/{tweet_id}"
-    )
-    r.raise_for_status()
-    d["tweet_embed"] = r.json()["html"].strip()
+        # Get embed HTML
+        r = requests.get(
+            "https://publish.twitter.com/oembed?"
+            f"url=https://twitter.com/fortrantip/status/{tweet_id}"
+        )
+        r.raise_for_status()
+        embed = r.json()["html"].strip()
 
+    d["tweet_text"] = text
+    d["tweet_created_at"] = created_at
+    d["tweet_embed"] = embed
+
+    del text, created_at, embed
 
 # Save data
 

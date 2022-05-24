@@ -17,7 +17,7 @@ p_data = Path("./data.yaml")
 assert p_data0.is_file() and p_data.is_file()
 
 with open(p_data0) as f:
-    tips0 = yaml.load(f, yaml.Loader)[::-1]
+    tips0 = yaml.load(f, yaml.Loader)["tips"][::-1]
 
 with open(p_data) as f:
     tips = yaml.load(f, yaml.Loader)["tips"]
