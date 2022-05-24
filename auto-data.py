@@ -24,7 +24,7 @@ re_readme_line = re.compile(
     r" (?P<time>[0-9]{1,2}:[0-9]{2} [A|P]M)"
     r" \u00B7 (?P<date>[A-Z][a-z]{2} [0-9]{1,2}, [0-9]{4})"
     r"(?P<file_links> *\[.*\]\(.+\))*"
-    r"(<br>)?$"
+    r"\s*(<br>)?$"
 )
 
 re_link = re.compile(r"\[(?P<text>.*?)\]\((?P<target>.+?)\)")
@@ -62,6 +62,12 @@ file_content_encoding = data.get("encoding")
 if file_content_encoding == "base64":
     file_content = base64.b64decode(file_content).decode()
 readme = file_content
+
+# Workaround for non-Twitter link
+readme = readme.replace(
+    "[When is the -ffast-math option safe?](https://fortran-lang.discourse.group/t/can-one-design-coding-rules-to-follow-so-that-ffast-math-is-safe/2762) 7:14 AM · Apr 29, 2022<br>",
+    "[When is the -ffast-math option safe?](https://twitter.com/fortrantip/status/1519998641133563905) 7:14 AM · Apr 29, 2022<br>"
+)
 
 lines = readme.splitlines()
 ihead = 3
@@ -120,6 +126,12 @@ file_content_encoding = data.get("encoding")
 if file_content_encoding == "base64":
     file_content = base64.b64decode(file_content).decode()
 topics_md = file_content
+
+# Workaround for non-Twitter link
+topics_md = topics_md.replace(
+    "[When is the -ffast-math option safe?](https://fortran-lang.discourse.group/t/can-one-design-coding-rules-to-follow-so-that-ffast-math-is-safe/2762) 7:14 AM · Apr 29, 2022<br>",
+    "[When is the -ffast-math option safe?](https://twitter.com/fortrantip/status/1519998641133563905) 7:14 AM · Apr 29, 2022<br>"
+)
 
 lines = topics_md.splitlines()
 istart = 3
@@ -220,6 +232,7 @@ if fns_only:
 
 
 # Get Tweet info and embed HTML
+# TODO: make optional for ones we already have, to avoid rate limit
 
 if not os.environ.get("GITHUB_ACTIONS"):
     p = HERE / ".env"
