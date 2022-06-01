@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>045. Derived type definition, initialization, and operator overloading &#8212; FortranTip Browser</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,16 +20,13 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -35,8 +34,8 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="046. Use GAMMA to compute factorials" href="046.html" />
@@ -48,7 +47,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -57,14 +70,10 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -1004,87 +1013,136 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">Toggle navigation</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
             </div>
             
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/tips/045.md.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/zmoon/FortranTipBrowser"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
         </div>
     </div>
+    <div id="rtd-footer-container"></div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/zmoon/FortranTipBrowser"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tips/045.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>045. Derived type definition, initialization, and operator overloading</h1>
@@ -1095,18 +1153,19 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="derived-type-definition-initialization-and-operator-overloading">
-<h1>045. Derived type definition, initialization, and operator overloading<a class="headerlink" href="#derived-type-definition-initialization-and-operator-overloading" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="derived-type-definition-initialization-and-operator-overloading">
+<h1>045. Derived type definition, initialization, and operator overloading<a class="headerlink" href="#derived-type-definition-initialization-and-operator-overloading" title="Permalink to this headline">#</a></h1>
 <p>The following program demonstrates
 how to define a derived type, initialize it, access its components,
 convert it to a string, and define operators for it.</p>
 <p>The derived type here represents a specific month in time
 (i.e., year is also specified).</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">ym-date-type.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/ym-date-type.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://github.com/Beliavsky/FortranTip/blob/main/date.f90" target="_blank" title="See the original source on Beliavsky/FortranTip GitHub"><i class="fab fa-github"></i><sub>0</sub></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:76,positionColumn:1,positionLineNumber:76,selectionStartColumn:1,selectionStartLineNumber:76,startColumn:1,startLineNumber:76),source:'module+date_mod%0A+++implicit+none%0A%0A+++interface+operator(%2B)%0A++++++module+procedure+add%0A+++end+interface%0A+++interface+operator(%3E)%0A++++++module+procedure+greater%0A+++end+interface%0A+++type+::+ym%0A++++++integer+::+year,+month%0A+++end+type+ym%0A%0Acontains%0A%0A+++elemental+function+str(date)+result(text)%0A++++++type(ym),+intent(in)+::+date%0A++++++character(len%3D7)+++++::+text%0A++++++write+(text,+%22(i4.4,!'-!',i2.2)%22)+date%25year,+date%25month%0A+++end+function+str%0A%0A+++elemental+function+add(date,+n)+result(new_date)%0A++++++type(ym),+intent(in)+::+date%0A++++++integer,+intent(in)++::+n%0A++++++type(ym)+++++++++++++::+new_date%0A++++++new_date+%3D+int_to_ym(int(date)+%2B+n)%0A+++end+function+add%0A%0A+++elemental+function+int(date)+result(idate)%0A++++++type(ym),+intent(in)+::+date%0A++++++integer++++++++++++++::+idate%0A++++++idate+%3D+date%25year*12+%2B+date%25month%0A+++end+function+int%0A%0A+++elemental+function+int_to_ym(idate)+result(date)%0A++++++integer,+intent(in)+::+idate%0A++++++type(ym)++++++++++++::+date%0A++++++date%25year+%3D+idate/12%0A++++++date%25month+%3D+idate+-+date%25year*12%0A++++++if+(date%25month+%3D%3D+0)+then%0A+++++++++date%25month+%3D+12%0A+++++++++date%25year+%3D+date%25year+-+1%0A++++++end+if%0A+++end+function+int_to_ym%0A%0A+++elemental+function+greater(date_1,+date_2)+result(tf)%0A++++++type(ym),+intent(in)+::+date_1,+date_2%0A++++++logical++++++++++++++::+tf%0A++++++tf+%3D+int(date_1)+%3E+int(date_2)%0A+++end+function+greater%0A%0Aend+module+date_mod%0A%0A%0Aprogram+xdate%0A+++use+date_mod,+only:+ym,+str,+operator(%2B),+operator(%3E)%0A+++implicit+none%0A%0A+++type(ym),+allocatable+::+dates(:)%0A+++integer+::+ta(3)%0A%0A+++!!+Set+array+of+type+%60ym%60%0A+++dates+%3D+%5Bym(2021,+11),+ym(2021,+12),+ym(2022,+1)%5D%0A%0A+++print+%22(a10,!':!',*(1x,a))%22,+%22dates%22,+str(dates)%0A+++print+%22(a10,!':!',*(i8))%22,+%22months%22,+dates%25month%0A+++!!+Note+usage+of+%60%2B%60+and+%60%3E%60+operators+in+the+following:%0A+++print+%22(a10,!':!',*(1x,a))%22,+%22dates%2B1%22,+str(dates+%2B+1)%0A+++print+*,+%22dates+%3E+dates(2)%22,+dates+%3E+dates(2)%0A%0A+++!!+Current+date+using+%60idate%60%0A+++print+*%0A+++call+idate(ta)%0A+++print+%22(i4.4,!'-!',i2.2,!'-!',i2.2)%22,+ta(3:1:-1)%0A%0Aend+program+xdate%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">ym-date-type.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/ym-date-type.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://github.com/Beliavsky/FortranTip/blob/main/date.f90" target="_blank" title="See the original source on Beliavsky/FortranTip GitHub"><i class="fab fa-github"></i><sub>0</sub></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:76,positionColumn:1,positionLineNumber:76,selectionStartColumn:1,selectionStartLineNumber:76,startColumn:1,startLineNumber:76),source:'module+date_mod%0A+++implicit+none%0A%0A+++interface+operator(%2B)%0A++++++module+procedure+add%0A+++end+interface%0A+++interface+operator(%3E)%0A++++++module+procedure+greater%0A+++end+interface%0A+++type+::+ym%0A++++++integer+::+year,+month%0A+++end+type+ym%0A%0Acontains%0A%0A+++elemental+function+str(date)+result(text)%0A++++++type(ym),+intent(in)+::+date%0A++++++character(len%3D7)+++++::+text%0A++++++write+(text,+%22(i4.4,!'-!',i2.2)%22)+date%25year,+date%25month%0A+++end+function+str%0A%0A+++elemental+function+add(date,+n)+result(new_date)%0A++++++type(ym),+intent(in)+::+date%0A++++++integer,+intent(in)++::+n%0A++++++type(ym)+++++++++++++::+new_date%0A++++++new_date+%3D+int_to_ym(int(date)+%2B+n)%0A+++end+function+add%0A%0A+++elemental+function+int(date)+result(idate)%0A++++++type(ym),+intent(in)+::+date%0A++++++integer++++++++++++++::+idate%0A++++++idate+%3D+date%25year*12+%2B+date%25month%0A+++end+function+int%0A%0A+++elemental+function+int_to_ym(idate)+result(date)%0A++++++integer,+intent(in)+::+idate%0A++++++type(ym)++++++++++++::+date%0A++++++date%25year+%3D+idate/12%0A++++++date%25month+%3D+idate+-+date%25year*12%0A++++++if+(date%25month+%3D%3D+0)+then%0A+++++++++date%25month+%3D+12%0A+++++++++date%25year+%3D+date%25year+-+1%0A++++++end+if%0A+++end+function+int_to_ym%0A%0A+++elemental+function+greater(date_1,+date_2)+result(tf)%0A++++++type(ym),+intent(in)+::+date_1,+date_2%0A++++++logical++++++++++++++::+tf%0A++++++tf+%3D+int(date_1)+%3E+int(date_2)%0A+++end+function+greater%0A%0Aend+module+date_mod%0A%0A%0Aprogram+xdate%0A+++use+date_mod,+only:+ym,+str,+operator(%2B),+operator(%3E)%0A+++implicit+none%0A%0A+++type(ym),+allocatable+::+dates(:)%0A+++integer+::+ta(3)%0A%0A+++!!+Set+array+of+type+%60ym%60%0A+++dates+%3D+%5Bym(2021,+11),+ym(2021,+12),+ym(2022,+1)%5D%0A%0A+++print+%22(a10,!':!',*(1x,a))%22,+%22dates%22,+str(dates)%0A+++print+%22(a10,!':!',*(i8))%22,+%22months%22,+dates%25month%0A+++!!+Note+usage+of+%60%2B%60+and+%60%3E%60+operators+in+the+following:%0A+++print+%22(a10,!':!',*(1x,a))%22,+%22dates%2B1%22,+str(dates+%2B+1)%0A+++print+*,+%22dates+%3E+dates(2)%22,+dates+%3E+dates(2)%0A%0A+++!!+Current+date+using+%60idate%60%0A+++print+*%0A+++call+idate(ta)%0A+++print+%22(i4.4,!'-!',i2.2,!'-!',i2.2)%22,+ta(3:1:-1)%0A%0Aend+program+xdate%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a></span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">module </span><span class="n">date_mod</span><span class="w"></span>
 <span class="w">   </span><span class="k">implicit none</span>
 
@@ -1187,13 +1246,13 @@ convert it to a string, and define operators for it.</p>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id1">1</a></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id1">1</a></span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>     dates: 2021-11 2021-12 2022-01
     months:      11      12       1
    dates+1: 2021-12 2022-01 2022-02
  dates &gt; dates(2) F F T
 
-2022-02-24
+2022-06-01
 </pre></div>
 </div>
 </div>
@@ -1216,14 +1275,16 @@ which we demonstrate at the end.</p>
 <dd><p>Compiled using <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Fortran</span> <span class="pre">(Ubuntu</span> <span class="pre">11.1.0-1ubuntu1~20.04)</span> <span class="pre">11.1.0</span></code> with no flags</p>
 </dd>
 </dl>
-</div>
+</section>
 
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="044.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1239,24 +1300,28 @@ which we demonstrate at the end.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Beliavsky and FortranTip contributors<br/>
+  
+      &copy; Copyright 2021, Beliavsky and FortranTip contributors (website by zmoon).<br/>
+</p>
+        </footer>
+    </div>
     
-      By Beliavsky and FortranTip contributors<br/>
-    
-        &copy; Copyright 2021, Beliavsky and FortranTip contributors (website by zmoon).<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

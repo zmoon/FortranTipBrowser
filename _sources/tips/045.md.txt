@@ -20,7 +20,7 @@ The derived type here represents a specific month in time
    dates+1: 2021-12 2022-01 2022-02
  dates > dates(2) F F T
 
-2022-02-24
+2022-06-01
 
 ```
 
