@@ -1,9 +1,10 @@
 ---
 sd_hide_title: true
-substitutions:
-  gb_logo: |
-    <img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg"
-    alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" />
+myst:
+  substitutions:
+    gb_logo: |
+      <img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg"
+      alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" />
 ...
 
 # FortranTip
