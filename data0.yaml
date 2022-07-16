@@ -24,6 +24,130 @@ ft_topic_titles:
   procedures: Procedures
   style: Style
 tips:
+- datetime: 2022-06-07 10:21:00
+  file_links:
+  - target: ./size_test.f90
+    text: size_test.f90
+  ft_topic_id: arrays
+  title: Use the optional KIND argument of SIZE, MINLOC, FINDLOC etc. for large arrays.
+  tweet_created_at: '2022-06-07T14:21:47.000Z'
+  tweet_embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since the
+    maximum 32-bit integer is about 2e9, use the optional KIND argument of SIZE, MINLOC,
+    FINDLOC etc. to query an array that may be larger than this or compile with an
+    option such as gfortran<br>-fdefault-integer-8 to make the default integer 64-bit.<a
+    href="https://t.co/2E4edmUTp0">pic.twitter.com/2E4edmUTp0</a></p>&mdash; FortranTip
+    (@fortrantip) <a href="https://twitter.com/fortrantip/status/1534178812501577731?ref_src=twsrc%5Etfw">June
+    7, 2022</a></blockquote>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+  tweet_id: '1534178812501577731'
+  tweet_text: 'Since the maximum 32-bit integer is about 2e9, use the optional KIND
+    argument of SIZE, MINLOC, FINDLOC etc. to query an array that may be larger than
+    this or compile with an option such as gfortran
+
+    -fdefault-integer-8 to make the default integer 64-bit.
+
+    https://t.co/2E4edmUTp0'
+- datetime: 2022-06-01 12:42:00
+  file_links:
+  - target: ./print_mat.f90
+    text: print_mat.f90
+  ft_topic_id: array-arguments
+  title: With sequence association, the shapes of the actual and dummy arguments need
+    not match.
+  tweet_created_at: '2022-06-01T16:42:49.000Z'
+  tweet_embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">With sequence
+    association the actual argument and an explicit-shape or assumed-size dummy argument
+    can have different shapes or ranks, so a 6-element 1-D array can be passed to
+    a procedure as a 2x3 or 3x2 2-D array. <a href="https://t.co/4gxb6jWR6s">pic.twitter.com/4gxb6jWR6s</a></p>&mdash;
+    FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1532039979723022337?ref_src=twsrc%5Etfw">June
+    1, 2022</a></blockquote>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+  tweet_id: '1532039979723022337'
+  tweet_text: "With sequence association the actual argument and an explicit-shape\
+    \ or assumed-size dummy argument can have different shapes or ranks, so a 6-element\
+    \ 1-D array can be passed to a procedure as a 2x3 or 3x2 2-D array. \nhttps://t.co/4gxb6jWR6s"
+- datetime: 2022-05-31 08:58:00
+  file_links: []
+  ft_topic_id: array-arguments
+  title: Sequence association effectively lets you pass a pointer to an array element.
+  tweet_created_at: '2022-05-31T12:58:21.000Z'
+  tweet_embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">With sequence
+    association for explicit-shape and assumed-size arrays, you can pass a single
+    array element to an array dummy argument to pass a pointer to a location in the
+    array, as shown in the previous code. Restrictions are discussed at <a href="https://t.co/2EMAeNtUJB">https://t.co/2EMAeNtUJB</a></p>&mdash;
+    FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1531621102879133696?ref_src=twsrc%5Etfw">May
+    31, 2022</a></blockquote>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+  tweet_id: '1531621102879133696'
+  tweet_text: With sequence association for explicit-shape and assumed-size arrays,
+    you can pass a single array element to an array dummy argument to pass a pointer
+    to a location in the array, as shown in the previous code. Restrictions are discussed
+    at https://t.co/2EMAeNtUJB
+- datetime: 2022-05-31 08:56:00
+  file_links:
+  - target: ./wrap_explicit_shape.f90
+    text: wrap_explicit_shape.f90
+  ft_topic_id: array-arguments
+  title: Wrap a procedure with explicit shape array arguments in a procedure with
+    an assumed shape arguments for safety.
+  tweet_created_at: '2022-05-31T12:56:37.000Z'
+  tweet_embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A procedure
+    with explicit shape array arguments can be wrapped by a procedure with assumed
+    shape arguments that is safer to use, since the correct array dimensions can be
+    obtained from SIZE or SHAPE and be passed.<a href="https://t.co/SbZ5kImuFq">pic.twitter.com/SbZ5kImuFq</a></p>&mdash;
+    FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1531620667220709377?ref_src=twsrc%5Etfw">May
+    31, 2022</a></blockquote>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+  tweet_id: '1531620667220709377'
+  tweet_text: 'A procedure with explicit shape array arguments can be wrapped by a
+    procedure with assumed shape arguments that is safer to use, since the correct
+    array dimensions can be obtained from SIZE or SHAPE and be passed.
+
+    https://t.co/SbZ5kImuFq'
+- datetime: 2022-05-26 08:50:00
+  file_links:
+  - target: ./list_directed_read.f90
+    text: list_directed_read.f90
+  ft_topic_id: input-and-output
+  title: Special meanings of * and / in list-directed input
+  tweet_created_at: '2022-05-26T12:50:35.000Z'
+  tweet_embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In list-directed
+    input using the * format, n* means skip n items, n*i means set n items to i, i,,j
+    means set items 1 and 3 to i and j and keep item 2 unchanged, and / means to stop
+    reading. The n*i syntax also applies to DATA statements. Thx to urbanjost.<a href="https://t.co/qBAZnKLAEA">pic.twitter.com/qBAZnKLAEA</a></p>&mdash;
+    FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1529807207080009729?ref_src=twsrc%5Etfw">May
+    26, 2022</a></blockquote>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+  tweet_id: '1529807207080009729'
+  tweet_text: 'In list-directed input using the * format, n* means skip n items, n*i
+    means set n items to i, i,,j means set items 1 and 3 to i and j and keep item
+    2 unchanged, and / means to stop reading. The n*i syntax also applies to DATA
+    statements. Thx to urbanjost.
+
+    https://t.co/qBAZnKLAEA'
+- datetime: 2022-05-25 06:43:00
+  file_links: []
+  ft_topic_id: data-types
+  title: Ways of declaring character variables
+  tweet_created_at: '2022-05-25T10:43:11.000Z'
+  tweet_embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The code<br><br>character(5)
+    :: a, b, c*3<br><br>declares two character variables of length 5 and one of length
+    3, but clearer is<br><br>character(5) :: a, b<br>character(3) :: c<br><br>or <br><br>character(len=5)
+    :: a, b<br>character(len=3) :: c<br><br>or <br><br>character :: a*5, b*5, c*3</p>&mdash;
+    FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1529412759351336960?ref_src=twsrc%5Etfw">May
+    25, 2022</a></blockquote>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+  tweet_id: '1529412759351336960'
+  tweet_text: "The code\n\ncharacter(5) :: a, b, c*3\n\ndeclares two character variables\
+    \ of length 5 and one of length 3, but clearer is\n\ncharacter(5) :: a, b\ncharacter(3)\
+    \ :: c\n\nor \n\ncharacter(len=5) :: a, b\ncharacter(len=3) :: c\n\nor \n\ncharacter\
+    \ :: a*5, b*5, c*3"
 - datetime: 2022-05-22 06:47:00
   file_links: []
   ft_topic_id: fortran-resources
