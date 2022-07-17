@@ -280,6 +280,7 @@ sd_hide_title: true
 ## By topic
 
 *According to [the FortranTip topics page](https://github.com/Beliavsky/FortranTip/blob/main/topics.md).*
+*Note that these [are exclusive categories](https://github.com/zmoon/FortranTipBrowser/issues/5#issuecomment-1060020993).*
 
 {topics}
 """
