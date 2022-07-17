@@ -193,7 +193,7 @@ def write_tip_md(i: int, d: dict) -> None:
     assert fortran0 is None or fortran0.endswith(".f90")
 
     s = (
-        f"# {i:03d}. {title}\n\n"
+        f"# <span class='text-muted'>{i:03d}.</span> {title}\n\n"
         f"<span style='font-size: small;' class='text-muted'>topic: {{ref}}`{ft_topic_id}`</span>\n\n"
     )
 
