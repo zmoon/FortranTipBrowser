@@ -8,8 +8,8 @@ requests
 rich
 #
 # Sphinx
-myst_parser
-sphinx >= 4
+myst_parser >=0.18.0
+sphinx ==4.*
 sphinx-autobuild
 sphinx-book-theme
 sphinx-copybutton
