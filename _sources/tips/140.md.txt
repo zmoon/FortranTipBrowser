@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 An internal procedure can declare variables with the same names as the enclosing procedure, which can declare variables with the same names as module variables. Within a scope a name refers to the local variable. Variables from the host are accessible.
 
 

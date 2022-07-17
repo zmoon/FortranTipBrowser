@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 If the arrays are INTEGER or CHARACTER, then the comparison can be exact. For REAL or COMPLEX arrays, you should consider using a suitably small tolerance when comparing values. This and the previous tip are from urbanjost.
 
 

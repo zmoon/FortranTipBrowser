@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 Type conversion from strings to numbers and vice-versa is most commonly done with internal reads and writes. You can read from and write to a character variable as with a file. You cannot write to an unallocated deferred-length character variable.
 
 

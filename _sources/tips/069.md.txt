@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 WRITE inserts a newline at the end, which can be avoided with the
 advance="no" specifier. This is useful for prompting input and reading it from the same line and for printing an unknown amount of data with one format before another format. From zoziha.
 

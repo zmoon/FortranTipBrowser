@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 Module iso_fortran_env has KIND constants int8, int16, int32, int64 for integers with those storage sizes and real32, real64, real128 for reals.
 Use huge(x) and tiny(x) to get the largest and smallest numbers of type real x and huge(i) for integer i.
 

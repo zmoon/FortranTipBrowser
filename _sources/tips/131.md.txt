@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 Fortran 2018 procedures with explicit interfaces can have assumed-rank arguments, denoted x(..), that can be scalars or arrays of arbitrary rank. Within the procedure the SELECT RANK construct and RANK intrinsic is used to handle each rank.
 
 

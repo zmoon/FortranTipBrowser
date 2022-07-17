@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 Fortran 2008 allows procedures to be labeled IMPURE ELEMENTAL. Such procedures can do external I/O and have a STOP or ERROR STOP statement. They can simulate a loop over a collection. The plain ELEMENTAL designation means the same as PURE ELEMENTAL.
 
 

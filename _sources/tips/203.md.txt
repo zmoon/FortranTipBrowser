@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 Use the ifort -fast and gfortran -O3 -march=native options to increase speed. Gfortran -Ofast turns on -ffast-math and can give a further 2x speedup in some cases, but it can also give incorrect results and should be used with care. Use gfortran -Og to debug.
 
 

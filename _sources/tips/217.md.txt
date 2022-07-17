@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 An ALLOCATABLE array does not have a C counterpart, but it can be ALLOCATED and passed to C as an explicit-shape array. This can be done for the allocated components of a derived type which is not itself interoperable.
 
 

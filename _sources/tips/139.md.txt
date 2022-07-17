@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 The BLOCK construct of Fortran 2008 allows variables to be declared and exist only within the block. This permits variables to be declared closer to their use and deallocated earlier and can avoid name clashes. If the block is named, EXIT &lt;name&gt; leaves it
 
 

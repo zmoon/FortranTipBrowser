@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`environment-variables`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 Subroutine get_environment_variable(name,value) of Fortran 2003 returns the value of an environment variable or a blank string if it does not exist. The user
 and computer name can be added to results, and whether the OS is Windows or Unix can be queried.
 

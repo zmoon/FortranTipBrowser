@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 The RANDOM_NUMBER intrinsic returns a scalar or an array of uniform variates. An impure elemental subroutine can do the same for normal variates, given an algorithm to generate a single normal variate, possibly using RANDOM_NUMBER.
 
 

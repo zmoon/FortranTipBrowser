@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`associate`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 A pointer assignment or ASSOCIATE with the RHS a variable can create shallow copies where changes in one variable affect another. Normal assignment or ALLOCATE with SOURCE creates a deep copy.
 Created with @carbon_app
 

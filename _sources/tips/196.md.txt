@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 BTEST(i,pos) gives the value of the bit in position pos of integer i, counting from 0 on the right. An N-bit integer can be used to store integers of a smaller BIT_SIZE or N booleans. Intrinsic functions for logical operations are NOT, IAND, IOR, and IEOR.
 
 

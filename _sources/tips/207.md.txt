@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 To catch the use of uninitialized variables, initialize real variables to signalling NaN and integers to -999 and trap NaNs at run time with
 
 gfortran -g -ffpe-trap=invalid,overflow -finit-real=snan -finit-integer=-999 -fbacktrace a.f90

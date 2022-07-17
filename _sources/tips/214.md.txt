@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 Use the std::span container from C++ 20 to create a view of a contiguous Fortran array with a STL-compatible interface. std::sort will sort the array in-place. Also works for other STL algorithms.
 From @IvanPribec. #cpp
 

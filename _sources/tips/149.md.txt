@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`pointers`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 In Fortran 90, allocatable arrays could not be used as procedure arguments or derived type components. An old code may use pointers in these situations, where it is now safer and more convenient to use allocatable arrays. In other cases POINTER can be replaced by
 ASSOCIATE.
 

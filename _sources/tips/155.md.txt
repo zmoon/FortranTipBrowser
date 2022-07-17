@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 The INQUIRE statement can tell if a unit has been opened, if a file exists, a file's size, whether it is open for reading or writing, formatted or not, its form of access, and other properties. Common uses of INQUIRE can be wrapped as functions as shown.
 
 

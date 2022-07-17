@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 Compilers may accept extensions by default but have options to flag non-standard code, such as -std=[f2018, f2008, f2003, f95] for gfortran and -stand:[f18, f08, f03, f95, f90] for ifort. For ifort, -standard-semantics causes the program to behave as the standard requires.
 
 

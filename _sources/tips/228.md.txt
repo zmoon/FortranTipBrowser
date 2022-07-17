@@ -2,6 +2,16 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`array-arguments`</span>
 
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
 With sequence association the actual argument and an explicit-shape or assumed-size dummy argument can have different shapes or ranks, so a 6-element 1-D array can be passed to a procedure as a 2x3 or 3x2 2-D array.
 
 
