@@ -276,6 +276,7 @@ sd_hide_title: true
 {nums}
 ```
 
+(by-topic)=
 ## By topic
 
 *According to [the FortranTip topics page](https://github.com/Beliavsky/FortranTip/blob/main/topics.md).*

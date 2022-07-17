@@ -22,6 +22,8 @@ myst:
   and test different compilers
 * Use the {kbd}`Left` and {kbd}`Right` arrow keys to switch between sequential tips
 * The embedded Tweets seem to load much faster in Chrome than Firefox
+* The tips [are in](./tips/index.md) chronological Tweet order, but you can also
+  {ref}`browse by topic <by-topic>`
 
 
 ```{toctree}
