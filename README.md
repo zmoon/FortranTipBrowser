@@ -11,10 +11,12 @@ Sphinx site for the [@FortranTip](https://twitter.com/fortrantip) (see also [Bel
 * [x] embedded original tweet
 * [x] GodBolt button for programs
 * [x] random tip button on home page
-* [ ] category/tag-based browsing of tips
+* [ ] category/tag-based browsing of tips [^3]
 * [ ] cl tips with Rich
 * [ ] ...
 
 
 [^1]: Formatting done for all tips that I have been through. In some cases I have expanded them as well.
 [^2]: Currently done for some of the tips that I have been through.
+[^3]: Browsing by [FortranTip topic](https://github.com/Beliavsky/FortranTip/blob/main/topics.md)
+  has been added. These [are exclusive categories](https://github.com/zmoon/FortranTipBrowser/issues/5#issuecomment-1060020993).
