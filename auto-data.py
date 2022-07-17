@@ -137,6 +137,9 @@ lines = topics_md.splitlines()
 istart = 3
 assert lines[istart].startswith("### ")
 
+# Topic ID overrides
+topic_id_overrides = {"interoperability-with-c-and-c++": "interoperability-with-c"}
+
 topic_titles = {}
 topic_id = None
 tips_w_topic = []
@@ -148,6 +151,8 @@ for line in lines[istart:]:
         # New topic block
         topic_title = line[4:].strip()
         topic_id = topic_title.lower().replace(" ", "-")
+        topic_id = topic_id_overrides.get(topic_id, topic_id)
+        # TODO: check topic ID is alphanum + hyphen + ...
         topic_titles[topic_id] = topic_title
     else:
         # Tip

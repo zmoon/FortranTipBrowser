@@ -240,8 +240,24 @@ def write_tip_md(i: int, d: dict) -> None:
     return None
 
 
-def write_tips_index(ntips: int) -> None:
+def write_tips_index(tips: list[dict], ft_topics: dict[str, str]) -> None:
+    from collections import defaultdict
+
+    ntips = len(tips)
     nums = "\n".join(f"{i:03d}" for i in range(1, ntips+1))
+
+    # Topics
+    tips_by_topic = defaultdict(list)
+    for i, d in enumerate(tips, start=1):
+        tips_by_topic[d["ft_topic_id"]].append((i, d["title"]))
+
+    lines = []
+    for id_, title in ft_topics.items():
+        lines.extend([f"({id_})=", f"### {title}", ""])
+        lines.extend([f"- [{i:03d}.](./{i:03d}.md) {title}" for i, title in tips_by_topic[id_]])
+        lines.extend([""])
+
+    topics = "\n".join(lines)
 
     s = f"""\
 ---
@@ -255,6 +271,12 @@ sd_hide_title: true
 
 {nums}
 ```
+
+## By topic
+
+*According to [the FortranTip topics page](https://github.com/Beliavsky/FortranTip/blob/main/topics.md)*
+
+{topics}
 """
 
     with open(DST / "index.md", "w") as f:
@@ -289,6 +311,17 @@ def main(tip: str) -> int:
     with open("data.yaml", "r") as f:
         data = yaml.load(f, Loader=yaml.Loader)
 
+    with open("data0.yaml", "r") as f:
+        data0 = yaml.load(f, Loader=yaml.Loader)
+
+    ft_topic_titles = data0["ft_topic_titles"]
+
+    # Add FT topic ID to tip dicts
+    tips0_by_id = {d["tweet_id"]: d for d in data0["tips"]}
+    for d in data["tips"]:
+        tweet_id = d["url"][len("https://twitter.com/fortrantip/status/"):]
+        d["ft_topic_id"] = tips0_by_id[tweet_id]["ft_topic_id"]
+
     ntips = len(data["tips"])
 
     # Generate tip pages
@@ -309,9 +342,12 @@ def main(tip: str) -> int:
             joblib.delayed(write_tip_md)(i, d)
             for i, d in enumerate(data["tips"], start=1)
         )
-        write_tips_index(ntips)
+        write_tips_index(ntips, ft_topics=ft_topic_titles)
         write_random_tip_button_snippet(ntips)
-    else:
+    elif tip in {"i", "index"}:
+        write_tips_index(data["tips"], ft_topics=ft_topic_titles)
+        write_random_tip_button_snippet(ntips)
+    else:  # single tip
         try:
             i = int(tip)
         except ValueError:
@@ -334,7 +370,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "tip",
-        help="tip (e.g. '42' or '042') to generate MD for. 'a'/'all' to generate all",
+        help=(
+            "tip (e.g. '42' or '042') to generate MD for. 'a'/'all' to generate all. "
+            "'i'/'index' to generate the tips index"
+        ),
     )
 
     args = parser.parse_args()
