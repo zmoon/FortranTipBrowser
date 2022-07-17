@@ -2382,16 +2382,16 @@ using formatted and unformatted stream I/O.</p>
 <div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id2">2</a></span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   4.3121527171230412E-007  0.99999981748614708        4.3121527170000001E-007  0.99999981748614708     
-   0.0000000000000000        4.3121527171230412E-007  0.99999981748614708        4.3121527171230412E-007  0.99999981748614708     
+   5.5511151231257827E-017   1.5132989150679066E-006  0.99999979477234990        1.5132989151000000E-006  0.99999979477234990     
+   0.0000000000000000        1.5132989150679066E-006  0.99999979477234990        1.5132989150679066E-006  0.99999979477234990     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.638       0.426       0.536E-02   0.949E-03
+   0.563       0.467       0.560E-02   0.124E-02
 
  enhancement enhancement
        write        read
-    119.        448.    
+    100.        377.    
 </pre></div>
 </div>
 </div>
@@ -2414,7 +2414,7 @@ not sufficient to measure the unformatted write time on my laptop.</p>
 <dd><p>float64; <span class="math notranslate nohighlight">\(10^6 \times 64\,\text{bits} = 8\,\text{MB}\)</span></p>
 </dd>
 <dt class="label" id="gfortran-version"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Compiled using <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Fortran</span> <span class="pre">(Ubuntu</span> <span class="pre">11.1.0-1ubuntu1~20.04)</span> <span class="pre">11.1.0</span></code> with no flags</p>
+<dd><p>Compiled using <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Fortran</span> <span class="pre">(Ubuntu</span> <span class="pre">11.2.0-19ubuntu1)</span> <span class="pre">11.2.0</span></code> with no flags</p>
 </dd>
 <dt class="label" id="sys-clock"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p><a class="reference external" href="https://gcc.gnu.org/onlinedocs/gfortran/SYSTEM_005fCLOCK.html">https://gcc.gnu.org/onlinedocs/gfortran/SYSTEM_005fCLOCK.html</a></p>

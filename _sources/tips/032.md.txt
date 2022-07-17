@@ -19,7 +19,7 @@ In the code below, `pi` is used both in module `m` and the main program.
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
 
 One should declare a module `private` and list as `public`
 the entities that will be referenced outside the module.

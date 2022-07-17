@@ -21,20 +21,20 @@ using formatted and unformatted stream I/O.
 
  n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   4.3121527171230412E-007  0.99999981748614708        4.3121527170000001E-007  0.99999981748614708     
-   0.0000000000000000        4.3121527171230412E-007  0.99999981748614708        4.3121527171230412E-007  0.99999981748614708     
+   5.5511151231257827E-017   1.5132989150679066E-006  0.99999979477234990        1.5132989151000000E-006  0.99999979477234990     
+   0.0000000000000000        1.5132989150679066E-006  0.99999979477234990        1.5132989150679066E-006  0.99999979477234990     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.638       0.426       0.536E-02   0.949E-03
+   0.563       0.467       0.560E-02   0.124E-02
 
  enhancement enhancement
        write        read
-    119.        448.    
+    100.        377.    
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
 
 The degree of enhancement depends on $n$ and your hardware, but it should be considerable.
 

@@ -10,11 +10,11 @@
 ```{code-block} text
 :caption: Output[^gfortran-version]
 
-  0.500036180      0.288589597    
+  0.500355422      0.288506269    
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
 
 Subroutines are commonly used to return multiple values,
 although a function can return an array or a user-defined type that contains multiple values.

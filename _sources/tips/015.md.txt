@@ -22,7 +22,7 @@ We can get the same result as the previous tip:
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
 
 Similar to the three-argument usage of
 [`numpy.where`](https://numpy.org/doc/stable/reference/generated/numpy.where.html).

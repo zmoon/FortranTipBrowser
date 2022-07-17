@@ -146,7 +146,7 @@ widths: 2 2 3
 :caption: Output[^gfortran-version]
 
  Before setting:
-   row 1: 0 1744538112 0
+   row 1: 0 1964718080 0
    col 1: 0 0
  After setting:
    row 1: 1 1 1
@@ -161,7 +161,7 @@ widths: 2 2 3
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
 
 ```{note}
 NumPy also provides a functional API that makes it look more like Fortran.

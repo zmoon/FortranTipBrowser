@@ -10,13 +10,13 @@
 ```{code-block} text
 :caption: Output[^gfortran-version]
 
-  0.288287669    
-  0.288287669    
-  0.288287669    
+  0.288696259    
+  0.288696259    
+  0.288696259    
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.1.0-1ubuntu1~20.04) 11.1.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
 
 ```{important}
 Within a procedure, you should test that an optional argument is present
