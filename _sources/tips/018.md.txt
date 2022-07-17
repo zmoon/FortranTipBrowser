@@ -1,4 +1,6 @@
-# 018. Fortran has a one-line `if`
+# <span class='text-muted'>018.</span> Fortran has a one-line `if`
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`conditionals`</span>
 
 In addition to `if`-`else if`, Fortran has a one-line `if`:
 

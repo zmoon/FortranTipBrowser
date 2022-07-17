@@ -1,4 +1,6 @@
-# 023. `elemental` functions broadcast arguments
+# <span class='text-muted'>023.</span> `elemental` functions broadcast arguments
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 ```{literalinclude} ../../src/elemental.f90
 :language: fortran

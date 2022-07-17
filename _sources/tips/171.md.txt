@@ -1,0 +1,10 @@
+# <span class='text-muted'>171.</span> Error in READ statement causes all variables to become undefined.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+If there is an error in a READ statement, all read items become undefined, although most compilers will update only the variables that can be read. The safe approach is to read temporary variables and set variables to them when READ is successful.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If there is an error in a READ statement, all read items become undefined, although most compilers will update only the variables that can be read. The safe approach is to read temporary variables and set variables to them when READ is successful. <a href="https://t.co/viXblw7sEp">pic.twitter.com/viXblw7sEp</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1509144120404676611?ref_src=twsrc%5Etfw">March 30, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

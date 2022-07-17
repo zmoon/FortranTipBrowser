@@ -1,0 +1,10 @@
+# <span class='text-muted'>153.</span> Number of files open simultaneously is limited, so they should be closed when possible.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+The number of files that can be connected simultaneously differs by compiler and operating system, so files that will no longer be used should be closed, especially when opened in a loop. On Unix ulimit -n gives the maximum # of open file descriptors.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The number of files that can be connected simultaneously differs by compiler and operating system, so files that will no longer be used should be closed, especially when opened in a loop. On Unix ulimit -n gives the maximum # of open file descriptors.<a href="https://t.co/sSJe11cw8X">pic.twitter.com/sSJe11cw8X</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1503339726534852615?ref_src=twsrc%5Etfw">March 14, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

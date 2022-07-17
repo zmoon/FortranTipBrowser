@@ -1,0 +1,11 @@
+# <span class='text-muted'>182.</span> ALLOCATE has an optional ERRMSG specifier.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`allocation`</span>
+
+The ERRMSG specifier of ALLOCATE gives an error message when an ALLOCATE fails. Two common reasons are an already allocated variable or insufficient memory. ALLOCATE with ERRMSG should also have the
+STAT specifier to avoid program termination upon error.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The ERRMSG specifier of ALLOCATE gives an error message when an ALLOCATE fails. Two common reasons are an already allocated variable or insufficient memory. ALLOCATE with ERRMSG should also have the<br>STAT specifier to avoid program termination upon error.<a href="https://t.co/dGRmUGaVe0">pic.twitter.com/dGRmUGaVe0</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1512395017473736704?ref_src=twsrc%5Etfw">April 8, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

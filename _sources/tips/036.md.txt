@@ -1,4 +1,6 @@
-# 036. Reading user input
+# <span class='text-muted'>036.</span> Reading user input
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
 
 The `read` statement is used to get data from the terminal or a file.
 To handle errors, set the `iostat` in the `read` call and check afterwards if it is zero.

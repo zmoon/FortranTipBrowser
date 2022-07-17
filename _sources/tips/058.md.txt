@@ -1,4 +1,6 @@
-# 058. To learn about Fortran beyond F95, read the New Features articles of John Reid
+# <span class='text-muted'>058.</span> To learn about Fortran beyond F95, read the New Features articles of John Reid
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
 
 To learn about Fortran beyond F95, read the 3 articles of John Reid, convenor (chairman) of the standards committee 1999-2017 on the New Features of Fortran 2018, 2008, and 2003
 

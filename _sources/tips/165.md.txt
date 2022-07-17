@@ -1,0 +1,10 @@
+# <span class='text-muted'>165.</span> Number of iterations in a loop is determined at the beginning.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
+
+The number of iterations in a loop is determined at the beginning of the loop and is unaffected by changing the loop bound variables within the loop, but doing so may confuse the reader.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The number of iterations in a loop is determined at the beginning of the loop and is unaffected by changing the loop bound variables within the loop, but doing so may confuse the reader.<a href="https://t.co/rH6kehDFIJ">pic.twitter.com/rH6kehDFIJ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1507323239151906819?ref_src=twsrc%5Etfw">March 25, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

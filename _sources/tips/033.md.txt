@@ -1,4 +1,6 @@
-# 033. Declare floating point variables with `kind`s
+# <span class='text-muted'>033.</span> Declare floating point variables with `kind`s
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
 Although floating point variables can still be declared just `real`
 or `double precision` in Fortran, they should not be.

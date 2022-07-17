@@ -1,4 +1,6 @@
-# 099. Turn compiler warnings into errors to force code defects to be fixed.
+# <span class='text-muted'>099.</span> Turn compiler warnings into errors to force code defects to be fixed.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`style`</span>
 
 To ensure that code defects are fixed, use options to turn the relevant compiler warnings into errors in the build system. For example
 

@@ -1,0 +1,10 @@
+# <span class='text-muted'>159.</span> Stream input/output article by Clive Page
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+&nbsp;
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://t.co/QMS2EyFcPF">https://t.co/QMS2EyFcPF</a><br>The Fortran Wiki has an article on stream input/output by Clive Page.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1505153106228690946?ref_src=twsrc%5Etfw">March 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

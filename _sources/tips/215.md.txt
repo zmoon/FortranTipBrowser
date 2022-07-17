@@ -1,0 +1,18 @@
+# <span class='text-muted'>215.</span> Fortran array x(n1,n2) passed to C array x[n2][n1]
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+A Fortran array 
+
+real x(n1,n2) 
+
+matches a C array
+
+float x[n2][n1]
+
+Matrices can be passed to C99 variable length arrays. A procedure with explicit-shape arrays calling C can be wrapped in a procedure with assumed-shape array arguments for ease of use.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A Fortran array <br><br>real x(n1,n2) <br><br>matches a C array<br><br>float x[n2][n1]<br><br>Matrices can be passed to C99 variable length arrays. A procedure with explicit-shape arrays calling C can be wrapped in a procedure with assumed-shape array arguments for ease of use.<a href="https://t.co/5966N4LY0t">pic.twitter.com/5966N4LY0t</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1525473581492314112?ref_src=twsrc%5Etfw">May 14, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

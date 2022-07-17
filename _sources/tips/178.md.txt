@@ -1,0 +1,10 @@
+# <span class='text-muted'>178.</span> Scratch files are unnamed temporary files for I/O.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+A scratch file is an unnamed temporary file intended to exist only during a program run, which gives the system flexibility in its location. It is deleted when closed or when the program terminates. The Fortran Wiki has an article on scratch files.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A scratch file is an unnamed temporary file intended to exist only during a program run, which gives the system flexibility in its location. It is deleted when closed or when the program terminates. The Fortran Wiki has an article on scratch files.<a href="https://t.co/mQqhUemPkx">pic.twitter.com/mQqhUemPkx</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1511318331659325445?ref_src=twsrc%5Etfw">April 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

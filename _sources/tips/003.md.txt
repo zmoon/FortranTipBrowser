@@ -1,4 +1,6 @@
-# 003. `do` loop
+# <span class='text-muted'>003.</span> `do` loop
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
 
 The primary looping construct in Fortran is `do` ... `end do`.
 A program to print the sum the squares of the integers from 1 to 5 is

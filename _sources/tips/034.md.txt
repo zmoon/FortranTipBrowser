@@ -1,4 +1,6 @@
-# 034. Replace non-standard `REAL*8` declaration with `real(kind=real64)`
+# <span class='text-muted'>034.</span> Replace non-standard `REAL*8` declaration with `real(kind=real64)`
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
 In older code, declarations such as[^1]
 ```fortran

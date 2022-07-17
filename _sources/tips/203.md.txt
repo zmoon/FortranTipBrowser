@@ -1,0 +1,10 @@
+# <span class='text-muted'>203.</span> Use ifort -fast or gfortran -O3 -march=native for speed.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
+
+Use the ifort -fast and gfortran -O3 -march=native options to increase speed. Gfortran -Ofast turns on -ffast-math and can give a further 2x speedup in some cases, but it can also give incorrect results and should be used with care. Use gfortran -Og to debug.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use the ifort -fast and gfortran -O3 -march=native options to increase speed. Gfortran -Ofast turns on -ffast-math and can give a further 2x speedup in some cases, but it can also give incorrect results and should be used with care. Use gfortran -Og to debug.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1519634828265762816?ref_src=twsrc%5Etfw">April 28, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

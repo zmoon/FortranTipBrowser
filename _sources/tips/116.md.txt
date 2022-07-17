@@ -1,4 +1,6 @@
-# 116. Concatenate arrays and scalars in an array constructor []
+# <span class='text-muted'>116.</span> Concatenate arrays and scalars in an array constructor []
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 A mix of arrays and scalars can be concatenated to a 1D array by putting them in an array constructor. Each array is flattened in column-major order to a 1D array.
 Columns can be added to a matrix using RESHAPE on a concatenation.

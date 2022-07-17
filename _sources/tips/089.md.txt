@@ -1,4 +1,6 @@
-# 089. Module entities are PUBLIC by default.
+# <span class='text-muted'>089.</span> Module entities are PUBLIC by default.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`modules`</span>
 
 Module entities are PUBLIC by default, but if a blank PRIVATE statement is used, any public entities must be labeled so explicitly. Doing this clarifies what is exported from the module.
 

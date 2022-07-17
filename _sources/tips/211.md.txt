@@ -1,0 +1,10 @@
+# <span class='text-muted'>211.</span> A simple derived type with the BIND(C) attribute interoperates with a C struct.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+Use the bind(c) attribute to make a derived type compatible with C, with restrictions listed at
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use the bind(c) attribute to make a derived type compatible with C, with restrictions listed at <a href="https://t.co/P7PbDVsc9a">https://t.co/P7PbDVsc9a</a>. For example,<br>   <br>type, bind(c) :: date<br>   integer (kind=c_int) :: year, month<br>end type<br><br>interoperates with<br><br>typedef struct {<br>   int year, month;<br>} date;</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1522553330282778625?ref_src=twsrc%5Etfw">May 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 056. Standards committee has approved conditional expressions
+# <span class='text-muted'>056.</span> Standards committee has approved conditional expressions
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`conditionals`</span>
 
 @arclight The standards committee has approved conditional expressions, with 
 

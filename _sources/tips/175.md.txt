@@ -1,0 +1,10 @@
+# <span class='text-muted'>175.</span> Use an implied do loop with a dummy variable to skip fields when reading a file.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+To skip reading N fields of a space- or comma-delimited file, a dummy variable can be read N times in an implied do loop before the actual  data is read. A READ with no items skips a line in a file.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To skip reading N fields of a space- or comma-delimited file, a dummy variable can be read N times in an implied do loop before the actual  data is read. A READ with no items skips a line in a file.<a href="https://t.co/KGhVGgiZrW">pic.twitter.com/KGhVGgiZrW</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1510212760201830401?ref_src=twsrc%5Etfw">April 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

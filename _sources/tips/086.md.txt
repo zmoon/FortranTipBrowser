@@ -1,4 +1,6 @@
-# 086. Procedures can be called with a mix of named and positional arguments.
+# <span class='text-muted'>086.</span> Procedures can be called with a mix of named and positional arguments.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 Procedures can be called with a mix of named and positional arguments, but positional arguments cannot follow named ones. Naming arguments makes it easier to add arguments without breaking code. It's good to
 name OPTIONAL arguments.

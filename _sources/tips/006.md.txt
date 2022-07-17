@@ -1,4 +1,6 @@
-# 006. `**` is the exponentiation operator
+# <span class='text-muted'>006.</span> `**` is the exponentiation operator
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
 
 The exponentiation operator in Fortran is `**`, as in Python.
 

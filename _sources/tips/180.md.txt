@@ -1,0 +1,16 @@
+# <span class='text-muted'>180.</span> ALLOCATE with SOURCE or MOLD to set values or SHAPE.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`allocation`</span>
+
+Some forms of ALLOCATE are
+
+allocate (y(2)) ! y undefined
+allocate (y(2),source=0.0) ! fill with zeros
+allocate (y(2),source=[3.0,4.0]) ! fill with [3.0,4.0]
+allocate (y,mold=x) ! get shape from x
+allocate (y,source=x) ! get shape and values from x
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some forms of ALLOCATE are<br><br>allocate (y(2)) ! y undefined<br>allocate (y(2),source=0.0) ! fill with zeros<br>allocate (y(2),source=[3.0,4.0]) ! fill with [3.0,4.0]<br>allocate (y,mold=x) ! get shape from x<br>allocate (y,source=x) ! get shape and values from x <a href="https://t.co/n4fKcZUdXA">pic.twitter.com/n4fKcZUdXA</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1512018397734838274?ref_src=twsrc%5Etfw">April 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

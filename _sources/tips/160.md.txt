@@ -1,0 +1,18 @@
+# <span class='text-muted'>160.</span> Slash / terminates a record.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+A / in a format creates a new record, so
+
+print "('c'/'d')"
+
+prints 'c' and 'd' on successive lines, as does
+
+print "(a)","c" // new_line("") // "d"
+
+A list-directed READ is terminated by a / in input and may surprise for a file with / characters.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A / in a format creates a new record, so<br><br>print &quot;(&#39;c&#39;/&#39;d&#39;)&quot;<br><br>prints &#39;c&#39; and &#39;d&#39; on successive lines, as does<br><br>print &quot;(a)&quot;,&quot;c&quot; // new_line(&quot;&quot;) // &quot;d&quot;<br><br>A list-directed READ is terminated by a / in input and may surprise for a file with / characters.<a href="https://t.co/e8hvGptp4z">pic.twitter.com/e8hvGptp4z</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1505555510262697987?ref_src=twsrc%5Etfw">March 20, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

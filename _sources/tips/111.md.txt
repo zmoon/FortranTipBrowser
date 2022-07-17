@@ -1,4 +1,6 @@
-# 111. Execute_command_line() to pass a command to the shell.
+# <span class='text-muted'>111.</span> Execute_command_line() to pass a command to the shell.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`environment-variables`</span>
 
 execute_command_line(command [,wait,exitstat]) is a Fortran 2008 subroutine that issues a command to the shell and returns the exit code exitstat of the command. The program pauses until the command is finished unless wait is PRESENT and .FALSE.
 

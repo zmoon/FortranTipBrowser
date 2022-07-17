@@ -1,4 +1,6 @@
-# 048. CMPLX should be used with a KIND argument
+# <span class='text-muted'>048.</span> CMPLX should be used with a KIND argument
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
 CMPLX(X,Y,[KIND]) returns a single precision complex variable, even if X and Y are double precision, unless a KIND is specified. 
 

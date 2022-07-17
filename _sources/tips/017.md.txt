@@ -1,4 +1,6 @@
-# 017. Character variables are padded with spaces at the end if necessary
+# <span class='text-muted'>017.</span> Character variables are padded with spaces at the end if necessary
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 Fortran character variables are padded with spaces at the end if necessary.
 The `//` operator concatenates.

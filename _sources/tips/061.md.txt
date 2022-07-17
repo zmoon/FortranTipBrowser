@@ -1,4 +1,6 @@
-# 061. Compiler Support for the Fortran 2008 and 2018 Standards
+# <span class='text-muted'>061.</span> Compiler Support for the Fortran 2008 and 2018 Standards
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
 
 @jeff_replies @axccl @OndrejCertik There is a paper "Compiler Support for the Fortran 2008 and 2018 Standards" April 2020 by Chivers &amp; Sleightholme covering Absoft Arm Cray Fujitsu gfortran IBM Intel Nag NEC Oracle PGI
 

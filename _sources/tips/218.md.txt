@@ -1,0 +1,10 @@
+# <span class='text-muted'>218.</span> Use TYPE(C_PTR) and C_F_POINTER to call a C function returning a pointer.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+In ISO_C_BINDING, TYPE(C_PTR) holds a C pointer, and C_F_POINTER(CPTR,FPTR[, SHAPE]) associates the target of a C pointer to a Fortran pointer. Use them to call a C function that returns a pointer, possibly to an unknown amount of data.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In ISO_C_BINDING, TYPE(C_PTR) holds a C pointer, and C_F_POINTER(CPTR,FPTR[, SHAPE]) associates the target of a C pointer to a Fortran pointer. Use them to call a C function that returns a pointer, possibly to an unknown amount of data.<a href="https://t.co/5YsyOOakbR">pic.twitter.com/5YsyOOakbR</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1526575755903246336?ref_src=twsrc%5Etfw">May 17, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 125. Modern Fortran Reference Card and Quick Reference/Cheat Sheet.
+# <span class='text-muted'>125.</span> Modern Fortran Reference Card and Quick Reference/Cheat Sheet.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
 
 Modern Fortran Reference Card of Michael Goerz crams a lot of good information in 2 pages
 

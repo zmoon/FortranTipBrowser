@@ -1,4 +1,6 @@
-# 030. Specify function and subroutine `intent`s
+# <span class='text-muted'>030.</span> Specify function and subroutine `intent`s
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 Function and subroutine argument `intent`s were introduced in the Fortran 90 standard.
 Much Fortran code does not specify intents, which is legal, but all new code should.

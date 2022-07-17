@@ -1,4 +1,6 @@
-# 009. Fortran array sections contain both endpoints
+# <span class='text-muted'>009.</span> Fortran array sections contain both endpoints
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 Fortran array sections contain both endpoints like Julia, Matlab and R, unlike Python.
 

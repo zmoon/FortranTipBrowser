@@ -1,0 +1,10 @@
+# <span class='text-muted'>167.</span> Invalid loop bounds were discussed at Fortran Discourse.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
+
+&nbsp;
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://t.co/JHQ9gv9Wat">https://t.co/JHQ9gv9Wat</a><br>Invalid loop bounds were discussed at Fortran Discourse.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1507673746965946368?ref_src=twsrc%5Etfw">March 26, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

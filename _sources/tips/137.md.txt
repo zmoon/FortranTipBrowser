@@ -1,0 +1,10 @@
+# <span class='text-muted'>137.</span> Errors in a procedure can be handled with an optional argument.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
+
+Errors in a procedure can be handled by setting an error flag and returning or by stopping with an error message. A procedure with an optional error flag argument can handle errors in either way, depending on whether an error flag is passed.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Errors in a procedure can be handled by setting an error flag and returning or by stopping with an error message. A procedure with an optional error flag argument can handle errors in either way, depending on whether an error flag is passed.<a href="https://t.co/IMhQY8pLfw">pic.twitter.com/IMhQY8pLfw</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1497902611915284482?ref_src=twsrc%5Etfw">February 27, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 076. Use d0 or \_kind to make a constant double precision.
+# <span class='text-muted'>076.</span> Use d0 or \_kind to make a constant double precision.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
 Use d0 or _kind to make a constant double precision. Merely having many decimal places in a literal constant does not do so.
 

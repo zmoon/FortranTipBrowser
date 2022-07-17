@@ -1,0 +1,11 @@
+# <span class='text-muted'>150.</span> Connect INPUT_UNIT and OUTPUT_UNIT to files to redirect standard input and output.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+Module ISO_FORTRAN_ENV has named constants INPUT_UNIT and OUTPUT_UNIT, usually 5 and 6. Connecting output_unit to a file sends the output of
+PRINT fmt, and WRITE (*,fmt) to that file. Connecting input_unit to a file causes READ (*,fmt) to access that file
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Module ISO_FORTRAN_ENV has named constants INPUT_UNIT and OUTPUT_UNIT, usually 5 and 6. Connecting output_unit to a file sends the output of<br>PRINT fmt, and WRITE (*,fmt) to that file. Connecting input_unit to a file causes READ (*,fmt) to access that file<a href="https://t.co/2IdX5vwkfu">pic.twitter.com/2IdX5vwkfu</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1502277940066893835?ref_src=twsrc%5Etfw">March 11, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

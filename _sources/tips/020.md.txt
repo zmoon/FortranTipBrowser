@@ -1,4 +1,6 @@
-# 020. Loop variable after completion
+# <span class='text-muted'>020.</span> Loop variable after completion
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
 
 The loop variable equals the upper bound plus the stride
 after normal completion of a loop.

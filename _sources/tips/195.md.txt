@@ -1,0 +1,10 @@
+# <span class='text-muted'>195.</span> TRANSFER can be used to store one type in another type.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
+
+The TRANSFER function interprets the bits of one type as another type. One use is to copy data from a derived type to an array or the reverse. An int64 can be stored in a real64 with full precision until it is TRANSFERred back, as can a character(len=8).
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The TRANSFER function interprets the bits of one type as another type. One use is to copy data from a derived type to an array or the reverse. An int64 can be stored in a real64 with full precision until it is TRANSFERred back, as can a character(len=8).<a href="https://t.co/dk7WjMWWuD">pic.twitter.com/dk7WjMWWuD</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1516389389189984265?ref_src=twsrc%5Etfw">April 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

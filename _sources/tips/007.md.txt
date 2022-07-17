@@ -1,4 +1,6 @@
-# 007. Integer division truncates
+# <span class='text-muted'>007.</span> Integer division truncates
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
 
 ```{literalinclude} ../../src/int-trunc.f90
 :language: fortran

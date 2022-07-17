@@ -1,0 +1,10 @@
+# <span class='text-muted'>164.</span> Changing a loop index within a loop is invalid.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
+
+Changing the loop index within a loop is not allowed, but a compiler may not catch it if it happens in another procedure. It is safer to pass a loop index only to procedures where it is an INTENT(IN) argument.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Changing the loop index within a loop is not allowed, but a compiler may not catch it if it happens in another procedure. It is safer to pass a loop index only to procedures where it is an INTENT(IN) argument.<a href="https://t.co/RaDHvxsvrv">pic.twitter.com/RaDHvxsvrv</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1506976258411872268?ref_src=twsrc%5Etfw">March 24, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,10 @@
+# <span class='text-muted'>156.</span> How to append to a file or delete it
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+In an OPEN statement with ACTION="write", use POSITION="append" to append data to a file rather than overwriting it. To delete a file that is connected to a unit, CLOSE that unit with STATUS="delete".
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In an OPEN statement with ACTION=&quot;write&quot;, use POSITION=&quot;append&quot; to append data to a file rather than overwriting it. To delete a file that is connected to a unit, CLOSE that unit with STATUS=&quot;delete&quot;.<a href="https://t.co/WN3uo3agpf">pic.twitter.com/WN3uo3agpf</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1504422788517576704?ref_src=twsrc%5Etfw">March 17, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

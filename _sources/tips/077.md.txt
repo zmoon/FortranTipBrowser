@@ -1,4 +1,6 @@
-# 077. Use integer powers when possible.
+# <span class='text-muted'>077.</span> Use integer powers when possible.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
 
 Use integer powers when possible, writing x**2 instead of x**2.0, since depending on the compiler option used, the latter may be computed as exp(2*log(x)), which is slower.
 

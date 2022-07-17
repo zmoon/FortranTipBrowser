@@ -1,0 +1,10 @@
+# <span class='text-muted'>223.</span> List of books with Fortran code other than Fortran textbooks.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
+
+Many books other than Fortran textbooks have included Fortran code, listed at
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Many books other than Fortran textbooks have included Fortran code, listed at <a href="https://t.co/3TNLI1ekxM">https://t.co/3TNLI1ekxM</a>.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1528326631043088384?ref_src=twsrc%5Etfw">May 22, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

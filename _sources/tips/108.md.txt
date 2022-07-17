@@ -1,4 +1,6 @@
-# 108. Vector subscript can be used for non-contiguous array sections.
+# <span class='text-muted'>108.</span> Vector subscript can be used for non-contiguous array sections.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 A vector subscript can be used for non-contiguous array sections, for example 
 

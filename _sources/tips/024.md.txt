@@ -1,4 +1,6 @@
-# 024. Put functions and subroutines in modules to ensure that interfaces are checked
+# <span class='text-muted'>024.</span> Put functions and subroutines in modules to ensure that interfaces are checked
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 Fortran procedures should be defined in modules to
 ensure that interfaces are checked.

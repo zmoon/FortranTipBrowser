@@ -1,4 +1,6 @@
-# 074. Avoid implicit save
+# <span class='text-muted'>074.</span> Avoid implicit save
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 A variable given a value in the declaration has the implicit SAVE attribute and is not re-initialized in later calls to the procedure. Write
 

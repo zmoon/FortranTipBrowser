@@ -1,4 +1,6 @@
-# 066. Do case-insensitive string comparisons by converting to lower case
+# <span class='text-muted'>066.</span> Do case-insensitive string comparisons by converting to lower case
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 Character variables are case-sensitive, and to compare two strings ignoring case you can first convert them to lower case.
 

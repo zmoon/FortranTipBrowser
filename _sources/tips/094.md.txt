@@ -1,4 +1,6 @@
-# 094. Impure elemental procedure can be used to generate array of non-uniform variates
+# <span class='text-muted'>094.</span> Impure elemental procedure can be used to generate array of non-uniform variates
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 The RANDOM_NUMBER intrinsic returns a scalar or an array of uniform variates. An impure elemental subroutine can do the same for normal variates, given an algorithm to generate a single normal variate, possibly using RANDOM_NUMBER.
 

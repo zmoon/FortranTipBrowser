@@ -1,4 +1,6 @@
-# 019. `associate` creates an alias for expressions or variables
+# <span class='text-muted'>019.</span> `associate` creates an alias for expressions or variables
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`associate`</span>
 
 ```{literalinclude} ../../src/assoc.f90
 :language: fortran

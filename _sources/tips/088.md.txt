@@ -1,4 +1,6 @@
-# 088. How to rename an imported module entity
+# <span class='text-muted'>088.</span> How to rename an imported module entity
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`modules`</span>
 
 An imported module entity can be renamed with the syntax
 

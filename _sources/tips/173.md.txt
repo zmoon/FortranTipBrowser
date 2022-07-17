@@ -1,0 +1,10 @@
+# <span class='text-muted'>173.</span> MOOC on "Defensive programming and debugging"
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
+
+&nbsp;
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://t.co/oIbB4xhpEX">https://t.co/oIbB4xhpEX</a><br>A MOOC on &quot;Defensive programming and debugging&quot; in C, C++, and Fortran is starting, with a companion web site. A previous MOOC from PRACE was &quot;Fortran for Scientific Computing&quot;.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1509557710810980358?ref_src=twsrc%5Etfw">March 31, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

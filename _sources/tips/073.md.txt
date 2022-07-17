@@ -1,4 +1,6 @@
-# 073. Use parameters to dimension fixed-size arrays to make a code easier to change
+# <span class='text-muted'>073.</span> Use parameters to dimension fixed-size arrays to make a code easier to change
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 Use parameters to dimension fixed-size arrays to make a code easier to change, for example
 

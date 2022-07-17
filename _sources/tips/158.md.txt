@@ -1,0 +1,10 @@
+# <span class='text-muted'>158.</span> Specific array elements can read or written to unformatted stream file by specifying the POS.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+Unformatted stream I/O is fast for large data sets. By specifying the POSition in the READ or WRITE of an unformatted stream file, you can read or write an arbitrary array element in the file without looping over previous elements.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Unformatted stream I/O is fast for large data sets. By specifying the POSition in the READ or WRITE of an unformatted stream file, you can read or write an arbitrary array element in the file without looping over previous elements.<a href="https://t.co/INZyxK0foW">pic.twitter.com/INZyxK0foW</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1505150360851210241?ref_src=twsrc%5Etfw">March 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

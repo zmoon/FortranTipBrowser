@@ -1,0 +1,10 @@
+# <span class='text-muted'>134.</span> Assumed type arguments have no declared type.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`generic-programming`</span>
+
+Fortran 2018 allows assumed type arguments that have no declared type, with syntax type(*). Such arguments can only be used in a small number of intrinsic functions, including SHAPE, SIZE, and RANK. Actual arguments can have intrinsic or derived types.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2018 allows assumed type arguments that have no declared type, with syntax type(*). Such arguments can only be used in a small number of intrinsic functions, including SHAPE, SIZE, and RANK. Actual arguments can have intrinsic or derived types.<a href="https://t.co/mDry4PCOh9">pic.twitter.com/mDry4PCOh9</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1496825853551992843?ref_src=twsrc%5Etfw">February 24, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

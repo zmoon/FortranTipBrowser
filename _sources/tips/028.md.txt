@@ -1,4 +1,6 @@
-# 028. Define and call a subroutine
+# <span class='text-muted'>028.</span> Define and call a subroutine
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 ```{literalinclude} ../../src/subroutine.f90
 :language: fortran
@@ -8,7 +10,7 @@
 ```{code-block} text
 :caption: Output[^gfortran-version]
 
-  0.500442207      0.288720548    
+  0.500036180      0.288589597    
 
 ```
 

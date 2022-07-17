@@ -1,4 +1,6 @@
-# 109. Setting the values of an array section
+# <span class='text-muted'>109.</span> Setting the values of an array section
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 Fortran array indices must be integers, so you cannot write
 

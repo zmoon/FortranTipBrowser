@@ -1,0 +1,14 @@
+# <span class='text-muted'>170.</span> Use an implied do loop with TRIM to print an array of character variables without trailing blanks.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
+
+Since TRIM is not elemental, use an implied do loop with TRIM to print an array of character variables without trailing blanks: 
+
+print "(*(a,:,','))",(trim(s(i)),i=1,size(s))
+
+A function can join trimmed strings as shown.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since TRIM is not elemental, use an implied do loop with TRIM to print an array of character variables without trailing blanks: <br><br>print &quot;(*(a,:,&#39;,&#39;))&quot;,(trim(s(i)),i=1,size(s))<br><br>A function can join trimmed strings as shown. <a href="https://t.co/u6GPRscyBm">pic.twitter.com/u6GPRscyBm</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1508769980313124870?ref_src=twsrc%5Etfw">March 29, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 039. Name modules and the source files containing them consistently, with one module per file
+# <span class='text-muted'>039.</span> Name modules and the source files containing them consistently, with one module per file
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`modules`</span>
 
 The convention @Beliavsky uses is that a module named `m_mod` is defined in a source file `m.f90`.
 That way if you see

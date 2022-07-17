@@ -1,4 +1,6 @@
-# 124. Bounds of an allocatable array are preserved when passed to an allocatable, intent(in) or intent(in out) argument.
+# <span class='text-muted'>124.</span> Bounds of an allocatable array are preserved when passed to an allocatable, intent(in) or intent(in out) argument.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`array-arguments`</span>
 
 The bounds of an allocatable array are preserved when passed to an allocatable, intent(in) or intent(in out) argument in a procedure. The same is true for intent(in) or intent(in out) pointer array arguments.
 

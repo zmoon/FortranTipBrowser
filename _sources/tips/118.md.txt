@@ -1,4 +1,6 @@
-# 118. Convert from strings to numbers and the reverse using internal READ and WRITE.
+# <span class='text-muted'>118.</span> Convert from strings to numbers and the reverse using internal READ and WRITE.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 Type conversion from strings to numbers and vice-versa is most commonly done with internal reads and writes. You can read from and write to a character variable as with a file. You cannot write to an unallocated deferred-length character variable.
 

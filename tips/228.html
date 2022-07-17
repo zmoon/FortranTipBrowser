@@ -1,0 +1,2371 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>228. With sequence association, the shapes of the actual and dummy arguments need not match. &#8212; FortranTip Browser</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="229. Use the optional KIND argument of SIZE, MINLOC, FINDLOC etc. for large arrays." href="229.html" />
+    <link rel="prev" title="227. Sequence association effectively lets you pass a pointer to an array element." href="227.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">FortranTip Browser</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Tips
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="001.html">
+     <span class="text-muted">
+      001.
+     </span>
+     Hello World
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="002.html">
+     <span class="text-muted">
+      002.
+     </span>
+     Intrinsic data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="003.html">
+     <span class="text-muted">
+      003.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       do
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="004.html">
+     <span class="text-muted">
+      004.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       exit
+      </span>
+     </code>
+     ing a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       do
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="005.html">
+     <span class="text-muted">
+      005.
+     </span>
+     Fortran compilers and tutorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="006.html">
+     <span class="text-muted">
+      006.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       **
+      </span>
+     </code>
+     is the exponentiation operator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="007.html">
+     <span class="text-muted">
+      007.
+     </span>
+     Integer division truncates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="008.html">
+     <span class="text-muted">
+      008.
+     </span>
+     Array intrinsic functions:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sum
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       minval
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       maxval
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       minloc
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       findloc
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="009.html">
+     <span class="text-muted">
+      009.
+     </span>
+     Fortran array sections contain both endpoints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="010.html">
+     <span class="text-muted">
+      010.
+     </span>
+     Fortran arrays can have any lower bound (the default is 1)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="011.html">
+     <span class="text-muted">
+      011.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sum
+      </span>
+     </code>
+     and other array functions have an optional
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dim
+      </span>
+     </code>
+     ension argument
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="012.html">
+     <span class="text-muted">
+      012.
+     </span>
+     Fortran has allocation-on-assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="013.html">
+     <span class="text-muted">
+      013.
+     </span>
+     New Fortran code should use free source form and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .f90
+      </span>
+     </code>
+     suffix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="014.html">
+     <span class="text-muted">
+      014.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+      <span class="pre">
+       if
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       end
+      </span>
+      <span class="pre">
+       if
+      </span>
+     </code>
+     block
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="015.html">
+     <span class="text-muted">
+      015.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       merge(x,
+      </span>
+      <span class="pre">
+       y,
+      </span>
+      <span class="pre">
+       cond)
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="016.html">
+     <span class="text-muted">
+      016.
+     </span>
+     An array of character variables has elements of the same
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       len
+      </span>
+     </code>
+     gth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="017.html">
+     <span class="text-muted">
+      017.
+     </span>
+     Character variables are padded with spaces at the end if necessary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="018.html">
+     <span class="text-muted">
+      018.
+     </span>
+     Fortran has a one-line
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="019.html">
+     <span class="text-muted">
+      019.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       associate
+      </span>
+     </code>
+     creates an alias for expressions or variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="020.html">
+     <span class="text-muted">
+      020.
+     </span>
+     Loop variable after completion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="021.html">
+     <span class="text-muted">
+      021.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pack
+      </span>
+     </code>
+     selects elements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="022.html">
+     <span class="text-muted">
+      022.
+     </span>
+     Functions should be
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pure
+      </span>
+     </code>
+     and have
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       intent(in)
+      </span>
+     </code>
+     arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="023.html">
+     <span class="text-muted">
+      023.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elemental
+      </span>
+     </code>
+     functions broadcast arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="024.html">
+     <span class="text-muted">
+      024.
+     </span>
+     Put functions and subroutines in modules to ensure that interfaces are checked
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="025.html">
+     <span class="text-muted">
+      025.
+     </span>
+     Avoid polluting the namespace by using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       use
+      </span>
+     </code>
+     -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       only
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="026.html">
+     <span class="text-muted">
+      026.
+     </span>
+     Function overloading using an interface with module procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="027.html">
+     <span class="text-muted">
+      027.
+     </span>
+     Optional arguments (and the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       random_number
+      </span>
+     </code>
+     intrinsic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="028.html">
+     <span class="text-muted">
+      028.
+     </span>
+     Define and call a subroutine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="029.html">
+     <span class="text-muted">
+      029.
+     </span>
+     Subroutines can have
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       intent(in
+      </span>
+      <span class="pre">
+       out)
+      </span>
+     </code>
+     arguments, but functions should not
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="030.html">
+     <span class="text-muted">
+      030.
+     </span>
+     Specify function and subroutine
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       intent
+      </span>
+     </code>
+     s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="031.html">
+     <span class="text-muted">
+      031.
+     </span>
+     Procedures can be recursive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="032.html">
+     <span class="text-muted">
+      032.
+     </span>
+     Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       parameter
+      </span>
+     </code>
+     s in modules to define constants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="033.html">
+     <span class="text-muted">
+      033.
+     </span>
+     Declare floating point variables with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       kind
+      </span>
+     </code>
+     s
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="034.html">
+     <span class="text-muted">
+      034.
+     </span>
+     Replace non-standard
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       REAL*8
+      </span>
+     </code>
+     declaration with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       real(kind=real64)
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="035.html">
+     <span class="text-muted">
+      035.
+     </span>
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       select
+      </span>
+      <span class="pre">
+       case
+      </span>
+     </code>
+     for conditional execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="036.html">
+     <span class="text-muted">
+      036.
+     </span>
+     Reading user input
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="037.html">
+     <span class="text-muted">
+      037.
+     </span>
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       read
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       write
+      </span>
+     </code>
+     for file I/O
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="038.html">
+     <span class="text-muted">
+      038.
+     </span>
+     Use unformatted stream of Fortran 2003 for large-scale I/O
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="039.html">
+     <span class="text-muted">
+      039.
+     </span>
+     Name modules and the source files containing them consistently, with one module per file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="040.html">
+     <span class="text-muted">
+      040.
+     </span>
+     If allocation errors must be handled, use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       allocatable
+      </span>
+     </code>
+     rather than automatic arrays in procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="041.html">
+     <span class="text-muted">
+      041.
+     </span>
+     Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       g0.d
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       :
+      </span>
+     </code>
+     edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="042.html">
+     <span class="text-muted">
+      042.
+     </span>
+     Zero-size array constructor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="043.html">
+     <span class="text-muted">
+      043.
+     </span>
+     Comparing Fortran and NumPy syntax
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="044.html">
+     <span class="text-muted">
+      044.
+     </span>
+     List-directed vs. explicitly formatted output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="045.html">
+     <span class="text-muted">
+      045.
+     </span>
+     Derived type definition, initialization, and operator overloading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="046.html">
+     <span class="text-muted">
+      046.
+     </span>
+     Use GAMMA to compute factorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="047.html">
+     <span class="text-muted">
+      047.
+     </span>
+     RESHAPE with the optional ORDER and PAD arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="048.html">
+     <span class="text-muted">
+      048.
+     </span>
+     CMPLX should be used with a KIND argument
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="049.html">
+     <span class="text-muted">
+      049.
+     </span>
+     Fortran is column-major
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="050.html">
+     <span class="text-muted">
+      050.
+     </span>
+     Store data as an array of derived types or a derived type with array components?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="051.html">
+     <span class="text-muted">
+      051.
+     </span>
+     Doubled delimiter in a string is regarded as a single character of the constant
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="052.html">
+     <span class="text-muted">
+      052.
+     </span>
+     Intel Fortran Compiler (ifx)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="053.html">
+     <span class="text-muted">
+      053.
+     </span>
+     Use ALL(A==B) to test for array equality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="054.html">
+     <span class="text-muted">
+      054.
+     </span>
+     Consider using a tolerance to compare floats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="055.html">
+     <span class="text-muted">
+      055.
+     </span>
+     ANY and ALL may not be the most efficient methods to compare arrays.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="056.html">
+     <span class="text-muted">
+      056.
+     </span>
+     Standards committee has approved conditional expressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="057.html">
+     <span class="text-muted">
+      057.
+     </span>
+     Use .true. and .false. for Booleans, not 1 and 0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="058.html">
+     <span class="text-muted">
+      058.
+     </span>
+     To learn about Fortran beyond F95, read the New Features articles of John Reid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="059.html">
+     <span class="text-muted">
+      059.
+     </span>
+     LEN of a character variable may be deferred in Fortran 2003 on
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="060.html">
+     <span class="text-muted">
+      060.
+     </span>
+     Many compilers evaluate ALL(x==y) efficiently with short-circuiting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="061.html">
+     <span class="text-muted">
+      061.
+     </span>
+     Compiler Support for the Fortran 2008 and 2018 Standards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="062.html">
+     <span class="text-muted">
+      062.
+     </span>
+     MODULO vs. MOD function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="063.html">
+     <span class="text-muted">
+      063.
+     </span>
+     Returning multiple values from a subroutine or function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="064.html">
+     <span class="text-muted">
+      064.
+     </span>
+     Case insensitivity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="065.html">
+     <span class="text-muted">
+      065.
+     </span>
+     Fortran-lang suggested variable naming conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="066.html">
+     <span class="text-muted">
+      066.
+     </span>
+     Do case-insensitive string comparisons by converting to lower case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="067.html">
+     <span class="text-muted">
+      067.
+     </span>
+     How size of an array function result can depend on function arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="068.html">
+     <span class="text-muted">
+      068.
+     </span>
+     Len of character variable function result can depend on arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="069.html">
+     <span class="text-muted">
+      069.
+     </span>
+     Advance=”no” specifier of WRITE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="070.html">
+     <span class="text-muted">
+      070.
+     </span>
+     Real and integer KIND constants from iso_fortran_env; HUGE() and TINY()
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="071.html">
+     <span class="text-muted">
+      071.
+     </span>
+     KindFinder code finds all KIND Values implemented by a compiler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="072.html">
+     <span class="text-muted">
+      072.
+     </span>
+     Fortran 2008 introduced z%re and z%im as alternatives to real(z) and aimag(z)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="073.html">
+     <span class="text-muted">
+      073.
+     </span>
+     Use parameters to dimension fixed-size arrays to make a code easier to change
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="074.html">
+     <span class="text-muted">
+      074.
+     </span>
+     Avoid implicit save
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="075.html">
+     <span class="text-muted">
+      075.
+     </span>
+     KIND numbers of types are not portable across compilers and should not be used directly.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="076.html">
+     <span class="text-muted">
+      076.
+     </span>
+     Use d0 or _kind to make a constant double precision.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="077.html">
+     <span class="text-muted">
+      077.
+     </span>
+     Use integer powers when possible.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="078.html">
+     <span class="text-muted">
+      078.
+     </span>
+     Parenthesize a variable to copy it “on the fly”.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="079.html">
+     <span class="text-muted">
+      079.
+     </span>
+     Substrings of character variable arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="080.html">
+     <span class="text-muted">
+      080.
+     </span>
+     Intrinsic character functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="081.html">
+     <span class="text-muted">
+      081.
+     </span>
+     Syntax for character array without manual padding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="082.html">
+     <span class="text-muted">
+      082.
+     </span>
+     Two types of syntax for defining a function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="083.html">
+     <span class="text-muted">
+      083.
+     </span>
+     Propagation of an optional argument
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="084.html">
+     <span class="text-muted">
+      084.
+     </span>
+     DIMENSION can be used to declare several arrays of the same SHAPE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="085.html">
+     <span class="text-muted">
+      085.
+     </span>
+     UnALLOCATED variable passed to a procedure is not PRESENT there.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="086.html">
+     <span class="text-muted">
+      086.
+     </span>
+     Procedures can be called with a mix of named and positional arguments.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="087.html">
+     <span class="text-muted">
+      087.
+     </span>
+     Use the same name for analogous procedures defined in different modules using an INTERFACE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="088.html">
+     <span class="text-muted">
+      088.
+     </span>
+     How to rename an imported module entity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="089.html">
+     <span class="text-muted">
+      089.
+     </span>
+     Module entities are PUBLIC by default.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="090.html">
+     <span class="text-muted">
+      090.
+     </span>
+     An unqualified USE foo statement imports public entities defined in foo and what foo imported.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="091.html">
+     <span class="text-muted">
+      091.
+     </span>
+     Use iostat and iomsg to handle READ errors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="092.html">
+     <span class="text-muted">
+      092.
+     </span>
+     List of Fortran compilers, build tools, text editors, etc.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="093.html">
+     <span class="text-muted">
+      093.
+     </span>
+     Fortran 2008 introduced IMPURE ELEMENTAL procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="094.html">
+     <span class="text-muted">
+      094.
+     </span>
+     Impure elemental procedure can be used to generate array of non-uniform variates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="095.html">
+     <span class="text-muted">
+      095.
+     </span>
+     Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="096.html">
+     <span class="text-muted">
+      096.
+     </span>
+     PROTECTED module variables cannot be changed outside the module.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="097.html">
+     <span class="text-muted">
+      097.
+     </span>
+     Use INTRINSIC to specify that compiler-provided procedures and modules are referenced
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="098.html">
+     <span class="text-muted">
+      098.
+     </span>
+     VALUE attribute for procedure arguments introduced in Fortran 2003
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="099.html">
+     <span class="text-muted">
+      099.
+     </span>
+     Turn compiler warnings into errors to force code defects to be fixed.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="100.html">
+     <span class="text-muted">
+      100.
+     </span>
+     An INTENT(OUT) argument is undefined at the beginning of a procedure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="101.html">
+     <span class="text-muted">
+      101.
+     </span>
+     ALLOCATABLE INTENT(OUT) argument is deallocated.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="102.html">
+     <span class="text-muted">
+      102.
+     </span>
+     Dummy argument that is changed must be definable in the caller.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="103.html">
+     <span class="text-muted">
+      103.
+     </span>
+     IEEE_ARITHMETIC module has functions to test numerical conditions.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="104.html">
+     <span class="text-muted">
+      104.
+     </span>
+     Call ieee_set_halting_mode() to set floating point conditions that halt program.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="105.html">
+     <span class="text-muted">
+      105.
+     </span>
+     A procedure can have an argument that is another PROCEDURE with an INTERFACE.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="106.html">
+     <span class="text-muted">
+      106.
+     </span>
+     Google foo filetype:f90 or foo filetype:f to find Fortran code with foo.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="107.html">
+     <span class="text-muted">
+      107.
+     </span>
+     Polyhedron suggested compiler optimization options and Fortran 95 benchmarks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="108.html">
+     <span class="text-muted">
+      108.
+     </span>
+     Vector subscript can be used for non-contiguous array sections.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="109.html">
+     <span class="text-muted">
+      109.
+     </span>
+     Setting the values of an array section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="110.html">
+     <span class="text-muted">
+      110.
+     </span>
+     Mistakes in Fortran 90 Programs That Might Surprise You, by Szymanski
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="111.html">
+     <span class="text-muted">
+      111.
+     </span>
+     Execute_command_line() to pass a command to the shell.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="112.html">
+     <span class="text-muted">
+      112.
+     </span>
+     Execute_command_line() can call gnuplot to display a plot during a run.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="113.html">
+     <span class="text-muted">
+      113.
+     </span>
+     Document results with compiler_version(), compiler_options(), and other intrinsics.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="114.html">
+     <span class="text-muted">
+      114.
+     </span>
+     Demonstrate subroutine get_environment_variable(name,value) of Fortran 2003.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="115.html">
+     <span class="text-muted">
+      115.
+     </span>
+     get_command() and get_command_argument() get command line arguments.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="116.html">
+     <span class="text-muted">
+      116.
+     </span>
+     Concatenate arrays and scalars in an array constructor []
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="117.html">
+     <span class="text-muted">
+      117.
+     </span>
+     spread(source, dim, ncopies) copies a SOURCE array NCOPIES times along dimension DIM.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="118.html">
+     <span class="text-muted">
+      118.
+     </span>
+     Convert from strings to numbers and the reverse using internal READ and WRITE.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="119.html">
+     <span class="text-muted">
+      119.
+     </span>
+     Internal write to character variable too small to hold output causes run-time error.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="120.html">
+     <span class="text-muted">
+      120.
+     </span>
+     Character variables can be compared like numerical variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="121.html">
+     <span class="text-muted">
+      121.
+     </span>
+     How to reverse an array or character string
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="122.html">
+     <span class="text-muted">
+      122.
+     </span>
+     Array lower bounds are not preserved when passed as assumed shape argument.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="123.html">
+     <span class="text-muted">
+      123.
+     </span>
+     Bounds of a derived type array component are preserved when passed to procedure.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="124.html">
+     <span class="text-muted">
+      124.
+     </span>
+     Bounds of an allocatable array are preserved when passed to an allocatable, intent(in) or intent(in out) argument.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="125.html">
+     <span class="text-muted">
+      125.
+     </span>
+     Modern Fortran Reference Card and Quick Reference/Cheat Sheet.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="126.html">
+     <span class="text-muted">
+      126.
+     </span>
+     A derived type can be used where a scalar is needed.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="127.html">
+     <span class="text-muted">
+      127.
+     </span>
+     A derived type can have derived type components.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="128.html">
+     <span class="text-muted">
+      128.
+     </span>
+     A derived type component can have a default value.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="129.html">
+     <span class="text-muted">
+      129.
+     </span>
+     A derived type can have PRIVATE components.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="130.html">
+     <span class="text-muted">
+      130.
+     </span>
+     storage_size(A) returns the storage size of argument A in bits.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="131.html">
+     <span class="text-muted">
+      131.
+     </span>
+     Fortran 2018 procedures can have assumed-rank arguments.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="132.html">
+     <span class="text-muted">
+      132.
+     </span>
+     Unlimited polymorphic allocatable variable can be set to any type.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="133.html">
+     <span class="text-muted">
+      133.
+     </span>
+     Unlimited polymorphic pointer can point to any type.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="134.html">
+     <span class="text-muted">
+      134.
+     </span>
+     Assumed type arguments have no declared type.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="135.html">
+     <span class="text-muted">
+      135.
+     </span>
+     ERROR STOP vs. STOP.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="136.html">
+     <span class="text-muted">
+      136.
+     </span>
+     Check that assumed-shape array arguments have consistent dimensions.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="137.html">
+     <span class="text-muted">
+      137.
+     </span>
+     Errors in a procedure can be handled with an optional argument.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="138.html">
+     <span class="text-muted">
+      138.
+     </span>
+     Five free C C++ Fortran compiler families
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="139.html">
+     <span class="text-muted">
+      139.
+     </span>
+     BLOCK construct allows declarations after executable statements.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="140.html">
+     <span class="text-muted">
+      140.
+     </span>
+     Internal procedures have access to variables from the host unless they are overridden by local variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="141.html">
+     <span class="text-muted">
+      141.
+     </span>
+     Pointer assignment and ASSOCIATE can create shallow copies.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="142.html">
+     <span class="text-muted">
+      142.
+     </span>
+     ASSOCIATE is preferred over POINTER to create an alias because POINTER can inhibit optimization.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="143.html">
+     <span class="text-muted">
+      143.
+     </span>
+     ASSOCIATE statement can set several independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="144.html">
+     <span class="text-muted">
+      144.
+     </span>
+     A variable ASSOCIATEd to an ALLOCATABLE variable is not ALLOCATABLE.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="145.html">
+     <span class="text-muted">
+      145.
+     </span>
+     Tips by topic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="146.html">
+     <span class="text-muted">
+      146.
+     </span>
+     Bounds of associate-name for whole array or array section selector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="147.html">
+     <span class="text-muted">
+      147.
+     </span>
+     Pointer can remap array shape and bounds.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="148.html">
+     <span class="text-muted">
+      148.
+     </span>
+     Pointer should be initialized to null() to avoid undefined association status.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="149.html">
+     <span class="text-muted">
+      149.
+     </span>
+     Use ALLOCATABLE arrays or ASSOCIATE instead of POINTER when possible.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="150.html">
+     <span class="text-muted">
+      150.
+     </span>
+     Connect INPUT_UNIT and OUTPUT_UNIT to files to redirect standard input and output.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="151.html">
+     <span class="text-muted">
+      151.
+     </span>
+     Unit n is connected to fort.n by default for most compilers.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="152.html">
+     <span class="text-muted">
+      152.
+     </span>
+     Write to many files by creating file names with internal write.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="153.html">
+     <span class="text-muted">
+      153.
+     </span>
+     Number of files open simultaneously is limited, so they should be closed when possible.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="154.html">
+     <span class="text-muted">
+      154.
+     </span>
+     Use NEWUNIT in OPEN to get an unused unit number.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="155.html">
+     <span class="text-muted">
+      155.
+     </span>
+     Use INQUIRE to get unit and file properties.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="156.html">
+     <span class="text-muted">
+      156.
+     </span>
+     How to append to a file or delete it
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="157.html">
+     <span class="text-muted">
+      157.
+     </span>
+     DIRECT access file allows access to arbitrary record without looping over the previous records.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="158.html">
+     <span class="text-muted">
+      158.
+     </span>
+     Specific array elements can read or written to unformatted stream file by specifying the POS.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="159.html">
+     <span class="text-muted">
+      159.
+     </span>
+     Stream input/output article by Clive Page
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="160.html">
+     <span class="text-muted">
+      160.
+     </span>
+     Slash / terminates a record.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="161.html">
+     <span class="text-muted">
+      161.
+     </span>
+     Use REWIND and BACKSPACE to change file position.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="162.html">
+     <span class="text-muted">
+      162.
+     </span>
+     EXIT can be used to leave a named outer loop.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="163.html">
+     <span class="text-muted">
+      163.
+     </span>
+     CYCLE skips the remaining statements in a loop.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="164.html">
+     <span class="text-muted">
+      164.
+     </span>
+     Changing a loop index within a loop is invalid.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="165.html">
+     <span class="text-muted">
+      165.
+     </span>
+     Number of iterations in a loop is determined at the beginning.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="166.html">
+     <span class="text-muted">
+      166.
+     </span>
+     Beware of a loop to huge(i), since huge(i)+1 is out of range.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="167.html">
+     <span class="text-muted">
+      167.
+     </span>
+     Invalid loop bounds were discussed at Fortran Discourse.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="168.html">
+     <span class="text-muted">
+      168.
+     </span>
+     DO WHILE loop iterates as long as condition at beginning is met.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="169.html">
+     <span class="text-muted">
+      169.
+     </span>
+     print*,char(7) causes the program to beep.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="170.html">
+     <span class="text-muted">
+      170.
+     </span>
+     Use an implied do loop with TRIM to print an array of character variables without trailing blanks.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="171.html">
+     <span class="text-muted">
+      171.
+     </span>
+     Error in READ statement causes all variables to become undefined.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="172.html">
+     <span class="text-muted">
+      172.
+     </span>
+     Use the “(a)” format to read a line of a file into a string.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="173.html">
+     <span class="text-muted">
+      173.
+     </span>
+     MOOC on “Defensive programming and debugging”
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="174.html">
+     <span class="text-muted">
+      174.
+     </span>
+     List-directed READ will use several lines if necessary.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="175.html">
+     <span class="text-muted">
+      175.
+     </span>
+     Use an implied do loop with a dummy variable to skip fields when reading a file.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="176.html">
+     <span class="text-muted">
+      176.
+     </span>
+     Because recursive I/O is prohibited, a function should use ERROR STOP msg instead of PRINT statements for error messages.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="177.html">
+     <span class="text-muted">
+      177.
+     </span>
+     Read a file into a string with unformatted stream.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="178.html">
+     <span class="text-muted">
+      178.
+     </span>
+     Scratch files are unnamed temporary files for I/O.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="179.html">
+     <span class="text-muted">
+      179.
+     </span>
+     Place IMPLICIT NONE before CONTAINS in a module.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="180.html">
+     <span class="text-muted">
+      180.
+     </span>
+     ALLOCATE with SOURCE or MOLD to set values or SHAPE.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="181.html">
+     <span class="text-muted">
+      181.
+     </span>
+     ASSOCIATE to an array-valued expression allocates an array.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="182.html">
+     <span class="text-muted">
+      182.
+     </span>
+     ALLOCATE has an optional ERRMSG specifier.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="183.html">
+     <span class="text-muted">
+      183.
+     </span>
+     If unsure, test whether a variable is ALLOCATED before using DEALLOCATE.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="184.html">
+     <span class="text-muted">
+      184.
+     </span>
+     Use MOVE_ALLOC to resize an array.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="185.html">
+     <span class="text-muted">
+      185.
+     </span>
+     MOVE_ALLOC may be faster than RESHAPE or allocation on asignment to resize an array.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="186.html">
+     <span class="text-muted">
+      186.
+     </span>
+     Deallocating a derived type deallocates its allocatable components.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="187.html">
+     <span class="text-muted">
+      187.
+     </span>
+     Links to tutorials on parameterized derived types (PDT).
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="188.html">
+     <span class="text-muted">
+      188.
+     </span>
+     PDT can have array dimension, KIND, and character LEN parameters.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="189.html">
+     <span class="text-muted">
+      189.
+     </span>
+     PDT can have fixed parameters at compile time or be ALLOCATABLE.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="190.html">
+     <span class="text-muted">
+      190.
+     </span>
+     Serialize a derived type using unformatted stream I/O.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="191.html">
+     <span class="text-muted">
+      191.
+     </span>
+     Derived type array sections are allowed before or after the % component selector, but not in both places.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="192.html">
+     <span class="text-muted">
+      192.
+     </span>
+     Implied do loop can access arbitrary derived type array sections.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="193.html">
+     <span class="text-muted">
+      193.
+     </span>
+     Fortran codes are listed by topic at the fortran-lang package index and Fortran Code on GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="194.html">
+     <span class="text-muted">
+      194.
+     </span>
+     Use PACK to select records from an array of derived types.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="195.html">
+     <span class="text-muted">
+      195.
+     </span>
+     TRANSFER can be used to store one type in another type.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="196.html">
+     <span class="text-muted">
+      196.
+     </span>
+     NOT, IAND, IOR, and IEOR perform logical operations on the bit representations of integers.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="197.html">
+     <span class="text-muted">
+      197.
+     </span>
+     Create an executable in one step by compiling all source files or by compiling source files with -c and linking the object files.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="198.html">
+     <span class="text-muted">
+      198.
+     </span>
+     Compilation can fail if there is no main program or if a USEd module has not been compiled.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="199.html">
+     <span class="text-muted">
+      199.
+     </span>
+     Fortran Package Manger simplifies building programs.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="200.html">
+     <span class="text-muted">
+      200.
+     </span>
+     Fortran-lang has a section on Building Programs, and F18 has a compiler options comparison.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="201.html">
+     <span class="text-muted">
+      201.
+     </span>
+     Compiler Explorer shows the assembly code generated by many Fortran compilers.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="202.html">
+     <span class="text-muted">
+      202.
+     </span>
+     Compilers may accept extensions by default but have options to flag non-standard code.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="203.html">
+     <span class="text-muted">
+      203.
+     </span>
+     Use ifort -fast or gfortran -O3 -march=native for speed.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="204.html">
+     <span class="text-muted">
+      204.
+     </span>
+     When is the -ffast-math option safe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="205.html">
+     <span class="text-muted">
+      205.
+     </span>
+     Use IANY instead of nested IOR, IALL instead of nested IAND.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="206.html">
+     <span class="text-muted">
+      206.
+     </span>
+     B, O, Z edit descriptors can be used to print integers as binary, octal, or hexadecimal.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="207.html">
+     <span class="text-muted">
+      207.
+     </span>
+     Use compiler options to catch the use of uninitialized variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="208.html">
+     <span class="text-muted">
+      208.
+     </span>
+     Fortran 2003 standardized the interoperation of Fortran and C.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="209.html">
+     <span class="text-muted">
+      209.
+     </span>
+     C library functions can be called if an INTERFACE is provided.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="210.html">
+     <span class="text-muted">
+      210.
+     </span>
+     Non-pointer arguments of C functions should have the VALUE attribute in the Fortran interface.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="211.html">
+     <span class="text-muted">
+      211.
+     </span>
+     A simple derived type with the BIND(C) attribute interoperates with a C struct.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="212.html">
+     <span class="text-muted">
+      212.
+     </span>
+     The Fortran name can differ from the C name of a function if the NAME attribute appears in BIND.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="213.html">
+     <span class="text-muted">
+      213.
+     </span>
+     C++ functions can be called from Fortran if they are declared extern “C” and have C-like arguments.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="214.html">
+     <span class="text-muted">
+      214.
+     </span>
+     Use the std::span container from C++ 20 to view a contiguous Fortran array with a STL-compatible interface.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="215.html">
+     <span class="text-muted">
+      215.
+     </span>
+     Fortran array x(n1,n2) passed to C array x[n2][n1]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="216.html">
+     <span class="text-muted">
+      216.
+     </span>
+     Common block and module variables with bind(c) can be accessed from C.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="217.html">
+     <span class="text-muted">
+      217.
+     </span>
+     An allocated allocatable array can be passed to C as an explicit-shape array.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="218.html">
+     <span class="text-muted">
+      218.
+     </span>
+     Use TYPE(C_PTR) and C_F_POINTER to call a C function returning a pointer.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="219.html">
+     <span class="text-muted">
+      219.
+     </span>
+     Use valgrind to find memory leaks in programs that use pointers.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="220.html">
+     <span class="text-muted">
+      220.
+     </span>
+     Use c_funloc() to pass a Fortran function as an argument to a C function.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="221.html">
+     <span class="text-muted">
+      221.
+     </span>
+     An omitted Fortran optional argument corresponds to a NULL argument of a C function.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="222.html">
+     <span class="text-muted">
+      222.
+     </span>
+     C can call Fortran procedures with prototypes generated by gfortran -fc-prototypes.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="223.html">
+     <span class="text-muted">
+      223.
+     </span>
+     List of books with Fortran code other than Fortran textbooks.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="224.html">
+     <span class="text-muted">
+      224.
+     </span>
+     Ways of declaring character variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="225.html">
+     <span class="text-muted">
+      225.
+     </span>
+     Special meanings of * and / in list-directed input
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="226.html">
+     <span class="text-muted">
+      226.
+     </span>
+     Wrap a procedure with explicit shape array arguments in a procedure with an assumed shape arguments for safety.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="227.html">
+     <span class="text-muted">
+      227.
+     </span>
+     Sequence association effectively lets you pass a pointer to an array element.
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <span class="text-muted">
+      228.
+     </span>
+     With sequence association, the shapes of the actual and dummy arguments need not match.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="229.html">
+     <span class="text-muted">
+      229.
+     </span>
+     Use the optional KIND argument of SIZE, MINLOC, FINDLOC etc. for large arrays.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://twitter.com/fortrantip">
+   @FortranTip
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/zmoon/FortranTipBrowser"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tips/228.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><span class='text-muted'>228.</span> With sequence association, the shapes of the actual and dummy arguments need not match.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="span-class-text-muted-228-span-with-sequence-association-the-shapes-of-the-actual-and-dummy-arguments-need-not-match">
+<h1><span class='text-muted'>228.</span> With sequence association, the shapes of the actual and dummy arguments need not match.<a class="headerlink" href="#span-class-text-muted-228-span-with-sequence-association-the-shapes-of-the-actual-and-dummy-arguments-need-not-match" title="Permalink to this headline">#</a></h1>
+<p><span style='font-size: small;' class='text-muted'>topic: <a class="reference internal" href="index.html#array-arguments"><span class="std std-ref">Array arguments</span></a></span></p>
+<p>With sequence association the actual argument and an explicit-shape or assumed-size dummy argument can have different shapes or ranks, so a 6-element 1-D array can be passed to a procedure as a 2x3 or 3x2 2-D array.</p>
+<hr class="docutils" />
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">With sequence association the actual argument and an explicit-shape or assumed-size dummy argument can have different shapes or ranks, so a 6-element 1-D array can be passed to a procedure as a 2x3 or 3x2 2-D array. <a href="https://t.co/4gxb6jWR6s">pic.twitter.com/4gxb6jWR6s</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1532039979723022337?ref_src=twsrc%5Etfw">June 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="227.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class='text-muted'>227.</span> Sequence association effectively lets you pass a pointer to an array element.</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="229.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class='text-muted'>229.</span> Use the optional KIND argument of SIZE, MINLOC, FINDLOC etc. for large arrays.</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Beliavsky and FortranTip contributors<br/>
+  
+      &copy; Copyright 2021, Beliavsky and FortranTip contributors (website by zmoon).<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

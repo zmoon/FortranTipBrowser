@@ -1,4 +1,6 @@
-# 053. Use ALL(A==B) to test for array equality
+# <span class='text-muted'>053.</span> Use ALL(A==B) to test for array equality
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 If size(A)==size(B), use ALL(A==B) to test for equality of arrays A and B and ANY(A==B) to test for equality of any corresponding elements.
 

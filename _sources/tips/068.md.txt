@@ -1,4 +1,6 @@
-# 068. Len of character variable function result can depend on arguments
+# <span class='text-muted'>068.</span> Len of character variable function result can depend on arguments
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 The LEN of a character variable function RESULT can also depend on intrinsic functions of the arguments.
 

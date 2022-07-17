@@ -1,4 +1,6 @@
-# 112. Execute_command_line() can call gnuplot to display a plot during a run.
+# <span class='text-muted'>112.</span> Execute_command_line() can call gnuplot to display a plot during a run.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`environment-variables`</span>
 
 &nbsp;
 

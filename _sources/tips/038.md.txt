@@ -1,4 +1,6 @@
-# 038. Use unformatted stream of Fortran 2003 for large-scale I/O
+# <span class='text-muted'>038.</span> Use unformatted stream of Fortran 2003 for large-scale I/O
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
 
 Consider using unformatted stream I/O introduced in Fortran 2003 for 
 large data sets. Formatted I/O converts numerical data to and from ASCII 
@@ -19,16 +21,16 @@ using formatted and unformatted stream I/O.
 
  n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   5.5104840190889348E-007  0.99999900469414071        5.5104840189999995E-007  0.99999900469414071     
-   0.0000000000000000        5.5104840190889348E-007  0.99999900469414071        5.5104840190889348E-007  0.99999900469414071     
+   5.5511151231257827E-017   4.3121527171230412E-007  0.99999981748614708        4.3121527170000001E-007  0.99999981748614708     
+   0.0000000000000000        4.3121527171230412E-007  0.99999981748614708        4.3121527171230412E-007  0.99999981748614708     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.564       0.381       0.485E-02   0.861E-03
+   0.638       0.426       0.536E-02   0.949E-03
 
  enhancement enhancement
        write        read
-    116.        442.    
+    119.        448.    
 
 ```
 

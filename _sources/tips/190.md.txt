@@ -1,0 +1,10 @@
+# <span class='text-muted'>190.</span> Serialize a derived type using unformatted stream I/O.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+A derived type with allocatable components can be saved efficiently (serialized) by writing its dimensions and components using unformatted stream I/O. Later the dimensions and components (after allocation) can be read from the same file using stream I/O.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A derived type with allocatable components can be saved efficiently (serialized) by writing its dimensions and components using unformatted stream I/O. Later the dimensions and components (after allocation) can be read from the same file using stream I/O.<a href="https://t.co/ht7rp2wy06">pic.twitter.com/ht7rp2wy06</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1514587088393494528?ref_src=twsrc%5Etfw">April 14, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 117. spread(source, dim, ncopies) copies a SOURCE array NCOPIES times along dimension DIM.
+# <span class='text-muted'>117.</span> spread(source, dim, ncopies) copies a SOURCE array NCOPIES times along dimension DIM.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 spread(source, dim, ncopies) copies a SOURCE array NCOPIES times along dimension DIM, creating an array one rank higher than SOURCE. It can be applied to a vector to get a result that is conformable with a matrix.
 

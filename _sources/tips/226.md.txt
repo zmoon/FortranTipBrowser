@@ -1,0 +1,10 @@
+# <span class='text-muted'>226.</span> Wrap a procedure with explicit shape array arguments in a procedure with an assumed shape arguments for safety.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`array-arguments`</span>
+
+A procedure with explicit shape array arguments can be wrapped by a procedure with assumed shape arguments that is safer to use, since the correct array dimensions can be obtained from SIZE or SHAPE and be passed.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A procedure with explicit shape array arguments can be wrapped by a procedure with assumed shape arguments that is safer to use, since the correct array dimensions can be obtained from SIZE or SHAPE and be passed.<a href="https://t.co/SbZ5kImuFq">pic.twitter.com/SbZ5kImuFq</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1531620667220709377?ref_src=twsrc%5Etfw">May 31, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

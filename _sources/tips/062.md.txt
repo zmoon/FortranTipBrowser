@@ -1,4 +1,6 @@
-# 062. MODULO vs. MOD function
+# <span class='text-muted'>062.</span> MODULO vs. MOD function
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`math-intrinsic-functions`</span>
 
 Fortran has similar MODULO and MOD functions.
 MODULO (MOD) takes the sign of the 2nd (1st) argument.

@@ -1,0 +1,22 @@
+# <span class='text-muted'>181.</span> ASSOCIATE to an array-valued expression allocates an array.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`associate`</span>
+
+Also possible is allocation on assignment 
+
+real, allocatable :: x(:)
+x = [1.0,2.0] ! works even if x is allocated
+
+or ASSOCIATE with an array-valued expression
+
+ASSOCIATE (x =&gt; [1.0,2.0])
+! x is fixed within ASSOCIATE block
+...
+END ASSOCIATE
+
+as shown in the last code.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Also possible is allocation on assignment <br><br>real, allocatable :: x(:)<br>x = [1.0,2.0] ! works even if x is allocated<br><br>or ASSOCIATE with an array-valued expression<br><br>ASSOCIATE (x =&gt; [1.0,2.0])<br>! x is fixed within ASSOCIATE block<br>...<br>END ASSOCIATE<br><br>as shown in the last code.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1512020145853673478?ref_src=twsrc%5Etfw">April 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

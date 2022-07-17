@@ -1,0 +1,16 @@
+# <span class='text-muted'>188.</span> PDT can have array dimension, KIND, and character LEN parameters.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`parameterized-derived-types`</span>
+
+A parameterized derived type (PDT) can have array dimensions, kinds,  and character LENs as parameters, with default values allowed:
+
+type :: matrix(n1,n2,wp)
+  integer, len  :: n1, n2
+  integer, kind :: wp = kind(1d0)
+  real(kind=wp) :: x(n1,n2)
+end type
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A parameterized derived type (PDT) can have array dimensions, kinds,  and character LENs as parameters, with default values allowed:<br><br>type :: matrix(n1,n2,wp)<br>  integer, len  :: n1, n2<br>  integer, kind :: wp = kind(1d0)<br>  real(kind=wp) :: x(n1,n2)<br>end type<a href="https://t.co/Mxxa8Tof2V">pic.twitter.com/Mxxa8Tof2V</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1514220328846831625?ref_src=twsrc%5Etfw">April 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

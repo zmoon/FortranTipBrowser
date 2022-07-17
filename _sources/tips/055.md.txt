@@ -1,4 +1,6 @@
-# 055. ANY and ALL may not be the most efficient methods to compare arrays.
+# <span class='text-muted'>055.</span> ANY and ALL may not be the most efficient methods to compare arrays.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`conditionals`</span>
 
 ANY and ALL may not be the most efficient methods to compare arrays. They
 may generate a logical array the size of the input arrays or always test all elements, depending on how they are

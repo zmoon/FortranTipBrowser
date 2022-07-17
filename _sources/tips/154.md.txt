@@ -1,0 +1,12 @@
+# <span class='text-muted'>154.</span> Use NEWUNIT in OPEN to get an unused unit number.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+open (newunit=iu,...)
+
+is a Fortran 2008 feature that finds an unused unit number less than -1. By doing this instead of hard coding a unit number, you avoid inadvertently using a unit number that is already connected.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">open (newunit=iu,...)<br><br>is a Fortran 2008 feature that finds an unused unit number less than -1. By doing this instead of hard coding a unit number, you avoid inadvertently using a unit number that is already connected.<a href="https://t.co/197XS6ABbM">pic.twitter.com/197XS6ABbM</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1503700530496946177?ref_src=twsrc%5Etfw">March 15, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,10 @@
+# <span class='text-muted'>196.</span> NOT, IAND, IOR, and IEOR perform logical operations on the bit representations of integers.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
+
+BTEST(i,pos) gives the value of the bit in position pos of integer i, counting from 0 on the right. An N-bit integer can be used to store integers of a smaller BIT_SIZE or N booleans. Intrinsic functions for logical operations are NOT, IAND, IOR, and IEOR.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">BTEST(i,pos) gives the value of the bit in position pos of integer i, counting from 0 on the right. An N-bit integer can be used to store integers of a smaller BIT_SIZE or N booleans. Intrinsic functions for logical operations are NOT, IAND, IOR, and IEOR.<a href="https://t.co/V9e8Xlgy7Z">pic.twitter.com/V9e8Xlgy7Z</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1516749872019431432?ref_src=twsrc%5Etfw">April 20, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

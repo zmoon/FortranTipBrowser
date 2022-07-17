@@ -1,0 +1,10 @@
+# <span class='text-muted'>142.</span> ASSOCIATE is preferred over POINTER to create an alias because POINTER can inhibit optimization.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`associate`</span>
+
+Although ASSOCIATE of Fortran 2003 and POINTER of Fortran 90 can both create an alias for a derived type component or an array section, ASSOCIATE is now preferred since the use of POINTER can inhibit optimization.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Although ASSOCIATE of Fortran 2003 and POINTER of Fortran 90 can both create an alias for a derived type component or an array section, ASSOCIATE is now preferred since the use of POINTER can inhibit optimization.<a href="https://t.co/n39lBNhTEz">pic.twitter.com/n39lBNhTEz</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1499720499181535247?ref_src=twsrc%5Etfw">March 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

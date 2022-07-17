@@ -1,0 +1,14 @@
+# <span class='text-muted'>185.</span> MOVE_ALLOC may be faster than RESHAPE or allocation on asignment to resize an array.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`allocation`</span>
+
+Another way to grow an array is
+
+x = reshape(x,[size(x)+size(new)],pad=new)
+
+The code compares the speeds of move_alloc, reshape, and allocation on assignment in growing an array. Move_alloc was fastest for gfortran, but this is platform-dependent.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Another way to grow an array is<br><br>x = reshape(x,[size(x)+size(new)],pad=new)<br><br>The code compares the speeds of move_alloc, reshape, and allocation on assignment in growing an array. Move_alloc was fastest for gfortran, but this is platform-dependent.<a href="https://t.co/LMVRYZXBnt">pic.twitter.com/LMVRYZXBnt</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1513125862916382720?ref_src=twsrc%5Etfw">April 10, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

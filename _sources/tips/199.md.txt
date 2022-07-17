@@ -1,0 +1,10 @@
+# <span class='text-muted'>199.</span> Fortran Package Manger simplifies building programs.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
+
+&nbsp;
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://t.co/yy45zLGaFP">https://t.co/yy45zLGaFP</a><br>Fortran Package Manager (fpm) lets you build a program/library, run the executables/tests, and distribute it as a dependency to other projects. It detects module dependencies and compiles files in<br>the proper order, being more Fortran-aware than make.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1517462836062081024?ref_src=twsrc%5Etfw">April 22, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

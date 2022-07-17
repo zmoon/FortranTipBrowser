@@ -1,0 +1,10 @@
+# <span class='text-muted'>174.</span> List-directed READ will use several lines if necessary.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+A list-directed read will read data from as many lines as needed for the items, so a malformed data file may go undetected. To read items from a single line, first read the line with the "(a)" format into a string and then read items from the string.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A list-directed read will read data from as many lines as needed for the items, so a malformed data file may go undetected. To read items from a single line, first read the line with the &quot;(a)&quot; format into a string and then read items from the string.<a href="https://t.co/WJh6E6v0Mh">pic.twitter.com/WJh6E6v0Mh</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1509858203227545602?ref_src=twsrc%5Etfw">April 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

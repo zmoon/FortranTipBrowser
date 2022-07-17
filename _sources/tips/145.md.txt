@@ -1,0 +1,10 @@
+# <span class='text-muted'>145.</span> Tips by topic
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`by-topic`</span>
+
+Since the tip topics have jumped around, I have listed them by topic.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since the tip topics have jumped around, I have listed them by topic.<a href="https://t.co/rUZiffPR5o">https://t.co/rUZiffPR5o</a><br>To suggest a topic please raise an issue at GitHub or send a direct message.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1500472144878313473?ref_src=twsrc%5Etfw">March 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

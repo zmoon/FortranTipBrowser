@@ -1,0 +1,10 @@
+# <span class='text-muted'>187.</span> Links to tutorials on parameterized derived types (PDT).
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`parameterized-derived-types`</span>
+
+The components of a derived type should allocated in a single place so that they are dimensioned consistently. The parameterized derived type of F2003 facilitates this. Tutorials by Iain Barrass and Mark Leair are at
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The components of a derived type should allocated in a single place so that they are dimensioned consistently. The parameterized derived type of F2003 facilitates this. Tutorials by Iain Barrass and Mark Leair are at <a href="https://t.co/rcOPdyjWzO">https://t.co/rcOPdyjWzO</a> and <a href="https://t.co/FzrwQhYc4q">https://t.co/FzrwQhYc4q</a> .</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1513863460706308096?ref_src=twsrc%5Etfw">April 12, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 126. A derived type can be used where a scalar is needed.
+# <span class='text-muted'>126.</span> A derived type can be used where a scalar is needed.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
 
 A derived type variable is a scalar even if it has array components. Arrays of varying-length strings or pointers can be simulated. A derived type can be used where a scalar is required, for example as the dummy argument of an elemental procedure.
 

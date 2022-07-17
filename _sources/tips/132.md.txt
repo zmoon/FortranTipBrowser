@@ -1,4 +1,6 @@
-# 132. Unlimited polymorphic allocatable variable can be set to any type.
+# <span class='text-muted'>132.</span> Unlimited polymorphic allocatable variable can be set to any type.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`generic-programming`</span>
 
 An unlimited polymorphic allocatable variable x
 

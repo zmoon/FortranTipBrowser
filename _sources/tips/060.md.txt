@@ -1,4 +1,6 @@
-# 060. Many compilers evaluate ALL(x==y) efficiently with short-circuiting
+# <span class='text-muted'>060.</span> Many compilers evaluate ALL(x==y) efficiently with short-circuiting
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 For a code that evaluates ALL(x==y) with a short-circuiting function and the intrinsic, gfortran, ifort, and nvfortran seem to short-circuit the intrinsic, so it may be OK to use ALL for large expressions.
 

@@ -1,4 +1,6 @@
-# 031. Procedures can be recursive
+# <span class='text-muted'>031.</span> Procedures can be recursive
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 Fortran procedures declared `recursive` can call themselves.
 

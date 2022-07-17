@@ -1,4 +1,6 @@
-# 059. LEN of a character variable may be deferred in Fortran 2003 on
+# <span class='text-muted'>059.</span> LEN of a character variable may be deferred in Fortran 2003 on
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 The LEN of a character variable may be deferred in F2003 on.
 

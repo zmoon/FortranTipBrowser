@@ -1,4 +1,6 @@
-# 029. Subroutines can have `intent(in out)` arguments, but functions should not
+# <span class='text-muted'>029.</span> Subroutines can have `intent(in out)` arguments, but functions should not
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 A procedure argument can be `intent(in out)`,
 which means that it is an input that can be overwritten.

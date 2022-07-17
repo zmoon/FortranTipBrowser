@@ -1,0 +1,10 @@
+# <span class='text-muted'>200.</span> Fortran-lang has a section on Building Programs, and F18 has a compiler options comparison.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
+
+&nbsp;
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://t.co/8uXGmDfWXi">https://t.co/8uXGmDfWXi</a> discusses compiling and linking, make, meson, and Cmake, and the distribution of libraries and programs.<a href="https://t.co/dBCWh320p6">https://t.co/dBCWh320p6</a> lists equivalent options of many compilers.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1517857866757124099?ref_src=twsrc%5Etfw">April 23, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

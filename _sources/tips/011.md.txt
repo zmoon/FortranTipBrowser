@@ -1,4 +1,6 @@
-# 011. `sum` and other array functions have an optional `dim`ension argument
+# <span class='text-muted'>011.</span> `sum` and other array functions have an optional `dim`ension argument
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 ```{literalinclude} ../../src/sum-dim.f90
 :language: fortran

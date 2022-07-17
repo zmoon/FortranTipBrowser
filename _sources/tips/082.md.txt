@@ -1,4 +1,6 @@
-# 082. Two types of syntax for defining a function
+# <span class='text-muted'>082.</span> Two types of syntax for defining a function
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 Ways of defining a function:
 

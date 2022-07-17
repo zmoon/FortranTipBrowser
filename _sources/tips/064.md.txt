@@ -1,4 +1,6 @@
-# 064. Case insensitivity
+# <span class='text-muted'>064.</span> Case insensitivity
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
 
 Fortran used to be written entirely in UPPERCASE, but is now case insensitive. However, whilst the following example is completely valid, to ensure legibility it's highly recommended to choose a case convention and stick to it!
 

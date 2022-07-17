@@ -1,4 +1,6 @@
-# 032. Use `parameter`s in modules to define constants
+# <span class='text-muted'>032.</span> Use `parameter`s in modules to define constants
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`modules`</span>
 
 A physical or mathematical constant such as $\pi$ that will be used 
 in many parts of a program should be defined as a `parameter` in a 

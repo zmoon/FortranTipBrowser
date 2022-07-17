@@ -1,4 +1,6 @@
-# 128. A derived type component can have a default value.
+# <span class='text-muted'>128.</span> A derived type component can have a default value.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
 
 If a derived type component is given a default value, the default constructor can be called without setting that component, which takes that value.
 

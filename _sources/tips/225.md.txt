@@ -1,0 +1,10 @@
+# <span class='text-muted'>225.</span> Special meanings of * and / in list-directed input
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+In list-directed input using the * format, n* means skip n items, n*i means set n items to i, i,,j means set items 1 and 3 to i and j and keep item 2 unchanged, and / means to stop reading. The n*i syntax also applies to DATA statements. Thx to urbanjost.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In list-directed input using the * format, n* means skip n items, n*i means set n items to i, i,,j means set items 1 and 3 to i and j and keep item 2 unchanged, and / means to stop reading. The n*i syntax also applies to DATA statements. Thx to urbanjost.<a href="https://t.co/qBAZnKLAEA">pic.twitter.com/qBAZnKLAEA</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1529807207080009729?ref_src=twsrc%5Etfw">May 26, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

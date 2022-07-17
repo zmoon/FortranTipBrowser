@@ -1,4 +1,6 @@
-# 005. Fortran compilers and tutorials
+# <span class='text-muted'>005.</span> Fortran compilers and tutorials
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
 
 Two good sites to get started with Fortran are
 <https://fortran-lang.org> and <https://fortranwiki.org/fortran/show/HomePage>.

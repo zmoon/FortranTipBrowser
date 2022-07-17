@@ -1,0 +1,14 @@
+# <span class='text-muted'>169.</span> print*,char(7) causes the program to beep.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
+
+In ASCII and Unicode the character with the value 7 is BEL, so
+
+print*,char(7)
+
+will cause the program to beep, which can be used to signal completion.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In ASCII and Unicode the character with the value 7 is BEL, so<br><br>print*,char(7)<br><br>will cause the program to beep, which can be used to signal completion.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1508401513445605379?ref_src=twsrc%5Etfw">March 28, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

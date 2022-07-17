@@ -1,0 +1,17 @@
+# <span class='text-muted'>166.</span> Beware of a loop to huge(i), since huge(i)+1 is out of range.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
+
+To loop from 1 to a large number, with the loop terminated by an EXIT, write
+
+do i=1,huge(i)-1
+   ! code
+   if (cond) exit
+end do
+
+It is invalid for the upper bound to be huge(i), since i is set to huge(i)+1 upon exit, which is out of range.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To loop from 1 to a large number, with the loop terminated by an EXIT, write<br><br>do i=1,huge(i)-1<br>   ! code<br>   if (cond) exit<br>end do<br><br>It is invalid for the upper bound to be huge(i), since i is set to huge(i)+1 upon exit, which is out of range.<a href="https://t.co/bv6j43P7d8">pic.twitter.com/bv6j43P7d8</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1507669898486501381?ref_src=twsrc%5Etfw">March 26, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

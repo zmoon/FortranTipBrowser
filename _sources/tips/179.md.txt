@@ -1,0 +1,10 @@
+# <span class='text-muted'>179.</span> Place IMPLICIT NONE before CONTAINS in a module.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`modules`</span>
+
+Place IMPLICIT NONE after USE statements but before the CONTAINS statement in a module. Then IMPLICIT NONE in CONTAINed module procedures is legal but redundant.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Place IMPLICIT NONE after USE statements but before the CONTAINS statement in a module. Then IMPLICIT NONE in CONTAINed module procedures is legal but redundant.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1511683238212816903?ref_src=twsrc%5Etfw">April 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

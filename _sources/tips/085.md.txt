@@ -1,4 +1,6 @@
-# 085. UnALLOCATED variable passed to a procedure is not PRESENT there.
+# <span class='text-muted'>085.</span> UnALLOCATED variable passed to a procedure is not PRESENT there.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 A variable that is not ALLOCATED, when passed as an OPTIONAL, non-allocatable argument to a procedure, is considered not PRESENT there. This Fortran 2008 feature can simplify code.
 

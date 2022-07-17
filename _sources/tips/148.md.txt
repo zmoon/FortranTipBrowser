@@ -1,0 +1,10 @@
+# <span class='text-muted'>148.</span> Pointer should be initialized to null() to avoid undefined association status.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`pointers`</span>
+
+Whether a pointer is initially ASSOCIATED is undefined, unless the pointer is initialized to null(), which makes it not associated. This is recommended. A pointer becomes associated by being allocated or by being given a target.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Whether a pointer is initially ASSOCIATED is undefined, unless the pointer is initialized to null(), which makes it not associated. This is recommended. A pointer becomes associated by being allocated or by being given a target.<a href="https://t.co/D8eBKzMZ0i">pic.twitter.com/D8eBKzMZ0i</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1501547568307728385?ref_src=twsrc%5Etfw">March 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

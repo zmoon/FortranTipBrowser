@@ -1,4 +1,6 @@
-# 041. Use `g0.d` and `:` edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+# <span class='text-muted'>041.</span> Use `g0.d` and `:` edit descriptors with infinite repeat count to write delimited (CSV, etc.) output
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
 
 - `g0.d` will appropriately format any intrinsic type.
 - `:` causes processing to stop until the next I/O list item.

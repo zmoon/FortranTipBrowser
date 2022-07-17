@@ -1,4 +1,6 @@
-# 127. A derived type can have derived type components.
+# <span class='text-muted'>127.</span> A derived type can have derived type components.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
 
 A derived type may have components that are also derived types. If x is an instance of a derived type that has component y, and y has component z, you can write x%y%z to access z. A similar syntax applies with type extension of Fortran 2003.
 

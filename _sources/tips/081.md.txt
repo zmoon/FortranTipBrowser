@@ -1,4 +1,6 @@
-# 081. Syntax for character array without manual padding
+# <span class='text-muted'>081.</span> Syntax for character array without manual padding
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 Fortran 2003 lets you write an array of character variables as
 

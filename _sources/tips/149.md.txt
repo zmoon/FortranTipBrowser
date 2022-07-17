@@ -1,0 +1,11 @@
+# <span class='text-muted'>149.</span> Use ALLOCATABLE arrays or ASSOCIATE instead of POINTER when possible.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`pointers`</span>
+
+In Fortran 90, allocatable arrays could not be used as procedure arguments or derived type components. An old code may use pointers in these situations, where it is now safer and more convenient to use allocatable arrays. In other cases POINTER can be replaced by
+ASSOCIATE.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In Fortran 90, allocatable arrays could not be used as procedure arguments or derived type components. An old code may use pointers in these situations, where it is now safer and more convenient to use allocatable arrays. In other cases POINTER can be replaced by<br>ASSOCIATE.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1501898993785319429?ref_src=twsrc%5Etfw">March 10, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

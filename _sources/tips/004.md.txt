@@ -1,4 +1,6 @@
-# 004. `exit`ing a `do` loop
+# <span class='text-muted'>004.</span> `exit`ing a `do` loop
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
 
 You `exit` a loop as shown in the code below,
 which accumulates the sums of squared integers until the sum exceeds 100.

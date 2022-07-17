@@ -1,4 +1,6 @@
-# 045. Derived type definition, initialization, and operator overloading
+# <span class='text-muted'>045.</span> Derived type definition, initialization, and operator overloading
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
 
 The following program demonstrates
 how to define a derived type, initialize it, access its components,
@@ -20,7 +22,7 @@ The derived type here represents a specific month in time
    dates+1: 2021-12 2022-01 2022-02
  dates > dates(2) F F T
 
-2022-06-01
+2022-07-17
 
 ```
 

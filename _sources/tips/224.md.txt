@@ -1,0 +1,26 @@
+# <span class='text-muted'>224.</span> Ways of declaring character variables
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
+
+The code
+
+character(5) :: a, b, c*3
+
+declares two character variables of length 5 and one of length 3, but clearer is
+
+character(5) :: a, b
+character(3) :: c
+
+or 
+
+character(len=5) :: a, b
+character(len=3) :: c
+
+or 
+
+character :: a*5, b*5, c*3
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The code<br><br>character(5) :: a, b, c*3<br><br>declares two character variables of length 5 and one of length 3, but clearer is<br><br>character(5) :: a, b<br>character(3) :: c<br><br>or <br><br>character(len=5) :: a, b<br>character(len=3) :: c<br><br>or <br><br>character :: a*5, b*5, c*3</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1529412759351336960?ref_src=twsrc%5Etfw">May 25, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

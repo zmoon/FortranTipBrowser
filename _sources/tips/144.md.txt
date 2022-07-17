@@ -1,0 +1,10 @@
+# <span class='text-muted'>144.</span> A variable ASSOCIATEd to an ALLOCATABLE variable is not ALLOCATABLE.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`associate`</span>
+
+In an ASSOCIATE statement the LHS is not ALLOCATABLE even if the RHS is. If the RHS is an allocatable array, it must already be ALLOCATED, and it should not be reallocated or deallocated within the ASSOCIATE block.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In an ASSOCIATE statement the LHS is not ALLOCATABLE even if the RHS is. If the RHS is an allocatable array, it must already be ALLOCATED, and it should not be reallocated or deallocated within the ASSOCIATE block.<a href="https://t.co/cOHvBuqK4X">pic.twitter.com/cOHvBuqK4X</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1500448694734364675?ref_src=twsrc%5Etfw">March 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 043. Comparing Fortran and NumPy syntax
+# <span class='text-muted'>043.</span> Comparing Fortran and NumPy syntax
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 Used to NumPy?
 Many of the Fortran intrinsics to deal with arrays will already be familiar to you.
@@ -144,7 +146,7 @@ widths: 2 2 3
 :caption: Output[^gfortran-version]
 
  Before setting:
-   row 1: 0 1276003584 0
+   row 1: 0 1744538112 0
    col 1: 0 0
  After setting:
    row 1: 1 1 1

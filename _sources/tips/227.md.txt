@@ -1,0 +1,10 @@
+# <span class='text-muted'>227.</span> Sequence association effectively lets you pass a pointer to an array element.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`array-arguments`</span>
+
+With sequence association for explicit-shape and assumed-size arrays, you can pass a single array element to an array dummy argument to pass a pointer to a location in the array, as shown in the previous code. Restrictions are discussed at
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">With sequence association for explicit-shape and assumed-size arrays, you can pass a single array element to an array dummy argument to pass a pointer to a location in the array, as shown in the previous code. Restrictions are discussed at <a href="https://t.co/2EMAeNtUJB">https://t.co/2EMAeNtUJB</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1531621102879133696?ref_src=twsrc%5Etfw">May 31, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

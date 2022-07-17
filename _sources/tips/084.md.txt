@@ -1,4 +1,6 @@
-# 084. DIMENSION can be used to declare several arrays of the same SHAPE
+# <span class='text-muted'>084.</span> DIMENSION can be used to declare several arrays of the same SHAPE
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 DIMENSION can be used to declare several arrays of the same SHAPE, which can be overridden on the same line.
 

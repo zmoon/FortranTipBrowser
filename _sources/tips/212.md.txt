@@ -1,0 +1,10 @@
+# <span class='text-muted'>212.</span> The Fortran name can differ from the C name of a function if the NAME attribute appears in BIND.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+The Fortran name can differ from the C name of a function if the NAME attribute appears in BIND. A variadic C function such as printf can be given multiple Fortran interfaces with different names and sets of argument types.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Fortran name can differ from the C name of a function if the NAME attribute appears in BIND. A variadic C function such as printf can be given multiple Fortran interfaces with different names and sets of argument types.<a href="https://t.co/EhQGNNOHaj">pic.twitter.com/EhQGNNOHaj</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1522907590048587776?ref_src=twsrc%5Etfw">May 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

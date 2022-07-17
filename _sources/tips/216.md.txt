@@ -1,0 +1,10 @@
+# <span class='text-muted'>216.</span> Common block and module variables with bind(c) can be accessed from C.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+An interoperable common block or module variable with the bind(c) attribute can be accessed from C. A constant should be PROTECTED in Fortran and extern const in C. A PARAMETER is not interoperable.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An interoperable common block or module variable with the bind(c) attribute can be accessed from C. A constant should be PROTECTED in Fortran and extern const in C. A PARAMETER is not interoperable.<a href="https://t.co/oEVUQROAog">pic.twitter.com/oEVUQROAog</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1525817060856561667?ref_src=twsrc%5Etfw">May 15, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

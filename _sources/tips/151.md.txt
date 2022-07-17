@@ -1,0 +1,14 @@
+# <span class='text-muted'>151.</span> Unit n is connected to fort.n by default for most compilers.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+For a positive integer n other than 5 or 6 that has not been connected to a file with OPEN,
+
+write (n,*) "hello"
+
+will write to a file with n in the name, such as fort.10 for n = 10, with details up to the compiler.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For a positive integer n other than 5 or 6 that has not been connected to a file with OPEN,<br><br>write (n,*) &quot;hello&quot;<br><br>will write to a file with n in the name, such as fort.10 for n = 10, with details up to the compiler.<a href="https://t.co/bv8FnEq0UZ">pic.twitter.com/bv8FnEq0UZ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1502625494499536904?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

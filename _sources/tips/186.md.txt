@@ -1,0 +1,10 @@
+# <span class='text-muted'>186.</span> Deallocating a derived type deallocates its allocatable components.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
+
+Deallocating a derived type deallocates its allocatable components but not its pointer components, which can be deallocated manually before the derived type is. An INTENT(OUT) derived type dummy argument has its allocatable components deallocated.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Deallocating a derived type deallocates its allocatable components but not its pointer components, which can be deallocated manually before the derived type is. An INTENT(OUT) derived type dummy argument has its allocatable components deallocated. <a href="https://t.co/072EgfRFe1">pic.twitter.com/072EgfRFe1</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1513501493382496259?ref_src=twsrc%5Etfw">April 11, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

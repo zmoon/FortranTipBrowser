@@ -1,4 +1,6 @@
-# 123. Bounds of a derived type array component are preserved when passed to procedure.
+# <span class='text-muted'>123.</span> Bounds of a derived type array component are preserved when passed to procedure.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`array-arguments`</span>
 
 The bounds of a derived type array component are preserved when the whole derived type is passed to a procedure, as shown in the code of the previous tip.
 

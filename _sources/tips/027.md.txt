@@ -1,4 +1,6 @@
-# 027. Optional arguments (and the `random_number` intrinsic)
+# <span class='text-muted'>027.</span> Optional arguments (and the `random_number` intrinsic)
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 ```{literalinclude} ../../src/optional.f90
 :language: fortran
@@ -8,9 +10,9 @@
 ```{code-block} text
 :caption: Output[^gfortran-version]
 
-  0.288822532    
-  0.288822532    
-  0.288822532    
+  0.288287669    
+  0.288287669    
+  0.288287669    
 
 ```
 

@@ -1,0 +1,10 @@
+# <span class='text-muted'>193.</span> Fortran codes are listed by topic at the fortran-lang package index and Fortran Code on GitHub
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
+
+Many open-source Fortran codes are listed by topic at
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Many open-source Fortran codes are listed by topic at<a href="https://t.co/JdtNnNmn1h">https://t.co/JdtNnNmn1h</a> and<a href="https://t.co/bZmof1LhWr">https://t.co/bZmof1LhWr</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1515656659292598277?ref_src=twsrc%5Etfw">April 17, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

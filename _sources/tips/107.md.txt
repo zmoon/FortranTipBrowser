@@ -1,4 +1,6 @@
-# 107. Polyhedron suggested compiler optimization options and Fortran 95 benchmarks
+# <span class='text-muted'>107.</span> Polyhedron suggested compiler optimization options and Fortran 95 benchmarks
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
 
 Polyhedron has suggested compiler options for optimization and compared compiler speed on some Fortran 95 codes.
 

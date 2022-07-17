@@ -1,4 +1,6 @@
-# 114. Demonstrate subroutine get_environment_variable(name,value) of Fortran 2003.
+# <span class='text-muted'>114.</span> Demonstrate subroutine get_environment_variable(name,value) of Fortran 2003.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`environment-variables`</span>
 
 Subroutine get_environment_variable(name,value) of Fortran 2003 returns the value of an environment variable or a blank string if it does not exist. The user
 and computer name can be added to results, and whether the OS is Windows or Unix can be queried.

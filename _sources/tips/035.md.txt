@@ -1,4 +1,6 @@
-# 035. `select case` for conditional execution
+# <span class='text-muted'>035.</span> `select case` for conditional execution
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`conditionals`</span>
 
 > A `select case` construct conditionally executes one block of
 > constructs or statements depending on the value of a scalar expression

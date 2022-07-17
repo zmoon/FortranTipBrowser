@@ -1,4 +1,6 @@
-# 049. Fortran is column-major
+# <span class='text-muted'>049.</span> Fortran is column-major
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order.
 

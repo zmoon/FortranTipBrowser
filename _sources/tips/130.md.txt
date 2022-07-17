@@ -1,4 +1,6 @@
-# 130. storage_size(A) returns the storage size of argument A in bits.
+# <span class='text-muted'>130.</span> storage_size(A) returns the storage size of argument A in bits.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
 storage_size(A) is an F2008 function that returns the storage size of argument A in bits. If A is an array it returns the size of an element of A. If A is a derived type with allocatable components, the result of storage_size() is compiler-dependent.
 

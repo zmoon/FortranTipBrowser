@@ -1,4 +1,6 @@
-# 115. get_command() and get_command_argument() get command line arguments.
+# <span class='text-muted'>115.</span> get_command() and get_command_argument() get command line arguments.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`environment-variables`</span>
 
 In Fortran 2003, get_command(command) and
 get_command_argument(number,value) are subroutines to get the entire command line or the nth argument as character variables, and the function command_argument_count() returns the number of arguments.

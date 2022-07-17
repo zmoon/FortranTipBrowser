@@ -1,0 +1,10 @@
+# <span class='text-muted'>206.</span> B, O, Z edit descriptors can be used to print integers as binary, octal, or hexadecimal.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
+
+A BOZ constant with prefix B, O, or Z for binary, octal, or hexadecimal can be passed to the INT or REAL function to set an integer or real variable. The B, O, and Z edit descriptors can print integers as BOZ constants.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A BOZ constant with prefix B, O, or Z for binary, octal, or hexadecimal can be passed to the INT or REAL function to set an integer or real variable. The B, O, and Z edit descriptors can print integers as BOZ constants.<a href="https://t.co/SHnhM3h9BP">pic.twitter.com/SHnhM3h9BP</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1520746070829158400?ref_src=twsrc%5Etfw">May 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

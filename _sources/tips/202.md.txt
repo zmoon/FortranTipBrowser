@@ -1,0 +1,10 @@
+# <span class='text-muted'>202.</span> Compilers may accept extensions by default but have options to flag non-standard code.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
+
+Compilers may accept extensions by default but have options to flag non-standard code, such as -std=[f2018, f2008, f2003, f95] for gfortran and -stand:[f18, f08, f03, f95, f90] for ifort. For ifort, -standard-semantics causes the program to behave as the standard requires.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Compilers may accept extensions by default but have options to flag non-standard code, such as -std=[f2018, f2008, f2003, f95] for gfortran and -stand:[f18, f08, f03, f95, f90] for ifort. For ifort, -standard-semantics causes the program to behave as the standard requires.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1518923088599162880?ref_src=twsrc%5Etfw">April 26, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

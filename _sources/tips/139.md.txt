@@ -1,0 +1,10 @@
+# <span class='text-muted'>139.</span> BLOCK construct allows declarations after executable statements.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
+
+The BLOCK construct of Fortran 2008 allows variables to be declared and exist only within the block. This permits variables to be declared closer to their use and deallocated earlier and can avoid name clashes. If the block is named, EXIT &lt;name&gt; leaves it
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The BLOCK construct of Fortran 2008 allows variables to be declared and exist only within the block. This permits variables to be declared closer to their use and deallocated earlier and can avoid name clashes. If the block is named, EXIT &lt;name&gt; leaves it <a href="https://t.co/4iAzqE52Qg">pic.twitter.com/4iAzqE52Qg</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1498646417778548736?ref_src=twsrc%5Etfw">March 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

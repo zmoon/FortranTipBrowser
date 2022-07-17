@@ -1,0 +1,14 @@
+# <span class='text-muted'>207.</span> Use compiler options to catch the use of uninitialized variables.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
+
+To catch the use of uninitialized variables, initialize real variables to signalling NaN and integers to -999 and trap NaNs at run time with
+
+gfortran -g -ffpe-trap=invalid,overflow -finit-real=snan -finit-integer=-999 -fbacktrace a.f90
+
+For ifort see
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To catch the use of uninitialized variables, initialize real variables to signalling NaN and integers to -999 and trap NaNs at run time with<br><br>gfortran -g -ffpe-trap=invalid,overflow -finit-real=snan -finit-integer=-999 -fbacktrace a.f90<br><br>For ifort see <a href="https://t.co/gjX3gj8seB">https://t.co/gjX3gj8seB</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1521100997195669504?ref_src=twsrc%5Etfw">May 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

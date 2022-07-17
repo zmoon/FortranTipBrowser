@@ -1,4 +1,6 @@
-# 083. Propagation of an optional argument
+# <span class='text-muted'>083.</span> Propagation of an optional argument
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 A procedure with an OPTIONAL argument can call a procedure with that argument if it is OPTIONAL there too. The PRESENT status of the argument propagates to called procedures. The optval function of the Fortran stdlib project exploits this.
 

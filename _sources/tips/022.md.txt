@@ -1,4 +1,6 @@
-# 022. Functions should be `pure` and have `intent(in)` arguments
+# <span class='text-muted'>022.</span> Functions should be `pure` and have `intent(in)` arguments
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 `intent(in)` arguments cannot be changed.
 `pure` = no side effects.

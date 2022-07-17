@@ -1,4 +1,6 @@
-# 063. Returning multiple values from a subroutine or function
+# <span class='text-muted'>063.</span> Returning multiple values from a subroutine or function
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 Fortran cannot return multiple values with syntax like
 

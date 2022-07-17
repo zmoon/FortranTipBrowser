@@ -1,4 +1,6 @@
-# 008. Array intrinsic functions: `sum`, `minval`, `maxval`, `minloc`, `findloc`
+# <span class='text-muted'>008.</span> Array intrinsic functions: `sum`, `minval`, `maxval`, `minloc`, `findloc`
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 Fortran has many array intrinsic functions. Below, `!` starts a comment.
 

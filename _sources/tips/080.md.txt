@@ -1,4 +1,6 @@
-# 080. Intrinsic character functions
+# <span class='text-muted'>080.</span> Intrinsic character functions
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 Character functions:
 

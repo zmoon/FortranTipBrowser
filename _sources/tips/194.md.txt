@@ -1,0 +1,19 @@
+# <span class='text-muted'>194.</span> Use PACK to select records from an array of derived types.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
+
+With an array of derived types, you can use PACK with a MASK on type components to select records, for example
+
+type :: t
+   integer year, month, day
+   real x
+end type t
+
+type(t) :: d(1000)
+print*,pack(d, d%month==3) ! data for March
+@carbon_app
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">With an array of derived types, you can use PACK with a MASK on type components to select records, for example<br><br>type :: t<br>   integer year, month, day<br>   real x<br>end type t<br><br>type(t) :: d(1000)<br>print*,pack(d, d%month==3) ! data for March<a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/S1QHRU5ft6">pic.twitter.com/S1QHRU5ft6</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1516024155698872329?ref_src=twsrc%5Etfw">April 18, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

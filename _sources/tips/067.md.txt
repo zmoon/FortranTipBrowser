@@ -1,4 +1,6 @@
-# 067. How size of an array function result can depend on function arguments
+# <span class='text-muted'>067.</span> How size of an array function result can depend on function arguments
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 The SIZE of a function result can be an argument, depend on an intrinsic function of an argument such as SIZE, or have an arbitrary dependence if the result is allocatable.
 

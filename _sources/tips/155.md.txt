@@ -1,0 +1,10 @@
+# <span class='text-muted'>155.</span> Use INQUIRE to get unit and file properties.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+The INQUIRE statement can tell if a unit has been opened, if a file exists, a file's size, whether it is open for reading or writing, formatted or not, its form of access, and other properties. Common uses of INQUIRE can be wrapped as functions as shown.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The INQUIRE statement can tell if a unit has been opened, if a file exists, a file&#39;s size, whether it is open for reading or writing, formatted or not, its form of access, and other properties. Common uses of INQUIRE can be wrapped as functions as shown.<a href="https://t.co/4ksASPJnLS">pic.twitter.com/4ksASPJnLS</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1504067234326528000?ref_src=twsrc%5Etfw">March 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

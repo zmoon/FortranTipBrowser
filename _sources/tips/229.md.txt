@@ -1,0 +1,11 @@
+# <span class='text-muted'>229.</span> Use the optional KIND argument of SIZE, MINLOC, FINDLOC etc. for large arrays.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
+
+Since the maximum 32-bit integer is about 2e9, use the optional KIND argument of SIZE, MINLOC, FINDLOC etc. to query an array that may be larger than this or compile with an option such as gfortran
+-fdefault-integer-8 to make the default integer 64-bit.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since the maximum 32-bit integer is about 2e9, use the optional KIND argument of SIZE, MINLOC, FINDLOC etc. to query an array that may be larger than this or compile with an option such as gfortran<br>-fdefault-integer-8 to make the default integer 64-bit.<a href="https://t.co/2E4edmUTp0">pic.twitter.com/2E4edmUTp0</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1534178812501577731?ref_src=twsrc%5Etfw">June 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

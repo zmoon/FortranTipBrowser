@@ -1,4 +1,6 @@
-# 087. Use the same name for analogous procedures defined in different modules using an INTERFACE
+# <span class='text-muted'>087.</span> Use the same name for analogous procedures defined in different modules using an INTERFACE
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`modules`</span>
 
 Using an INTERFACE, one can use the same name for analogous procedures that operate on derived types defined in different modules, for example str to convert a derived type to a string.
 

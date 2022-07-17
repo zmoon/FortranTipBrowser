@@ -1,0 +1,10 @@
+# <span class='text-muted'>213.</span> C++ functions can be called from Fortran if they are declared extern "C" and have C-like arguments.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+C++ functions can be called from Fortran if they are declared extern "C" and have C-like arguments, so the random number generators for uniform and non-uniform distributions in the C++ standard library are accessible through simple wrappers.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">C++ functions can be called from Fortran if they are declared extern &quot;C&quot; and have C-like arguments, so the random number generators for uniform and non-uniform distributions in the C++ standard library are accessible through simple wrappers.<a href="https://t.co/5we4VwUqtJ">pic.twitter.com/5we4VwUqtJ</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1523289035900276736?ref_src=twsrc%5Etfw">May 8, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

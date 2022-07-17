@@ -1,0 +1,10 @@
+# <span class='text-muted'>209.</span> C library functions can be called if an INTERFACE is provided.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+Fortran can call a function from the C standard library if an INTERFACE is provided. For example, it may be faster to call C atoi() or atof() than to use an internal read to read an integer or double from a string.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran can call a function from the C standard library if an INTERFACE is provided. For example, it may be faster to call C atoi() or atof() than to use an internal read to read an integer or double from a string. <a href="https://t.co/AbiHFnSvok">pic.twitter.com/AbiHFnSvok</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1521921486302363656?ref_src=twsrc%5Etfw">May 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

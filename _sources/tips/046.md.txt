@@ -1,4 +1,6 @@
-# 046. Use GAMMA to compute factorials
+# <span class='text-muted'>046.</span> Use GAMMA to compute factorials
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`math-intrinsic-functions`</span>
 
 Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).
 That is,

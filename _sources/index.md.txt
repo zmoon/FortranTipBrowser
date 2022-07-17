@@ -1,9 +1,10 @@
 ---
 sd_hide_title: true
-substitutions:
-  gb_logo: |
-    <img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg"
-    alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" />
+myst:
+  substitutions:
+    gb_logo: |
+      <img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg"
+      alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" />
 ...
 
 # FortranTip
@@ -21,6 +22,8 @@ substitutions:
   and test different compilers
 * Use the {kbd}`Left` and {kbd}`Right` arrow keys to switch between sequential tips
 * The embedded Tweets seem to load much faster in Chrome than Firefox
+* The tips [are in](./tips/index.md) chronological Tweet order, but you can also
+  {ref}`browse by topic <by-topic>`
 
 
 ```{toctree}

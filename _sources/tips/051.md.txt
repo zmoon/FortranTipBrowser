@@ -1,4 +1,6 @@
-# 051. Doubled delimiter in a string is regarded as a single character of the constant
+# <span class='text-muted'>051.</span> Doubled delimiter in a string is regarded as a single character of the constant
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 A doubled delimiter in a string without any embedded intervening blanks is regarded as a single character of the constant. One can also put a single quote in double quotes or a double quote in single quotes. Thanks to Amir Shahmoradi for tip.
 

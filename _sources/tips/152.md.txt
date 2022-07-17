@@ -1,0 +1,10 @@
+# <span class='text-muted'>152.</span> Write to many files by creating file names with internal write.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+To portably create many files named by integers with specified prefix and suffix you can loop over the integers and in the loop body use an internal write to create the file name, connect the file to a unit, write to it, and then close it.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To portably create many files named by integers with specified prefix and suffix you can loop over the integers and in the loop body use an internal write to create the file name, connect the file to a unit, write to it, and then close it.<a href="https://t.co/M7UFaRglkv">pic.twitter.com/M7UFaRglkv</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1503015109354045442?ref_src=twsrc%5Etfw">March 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

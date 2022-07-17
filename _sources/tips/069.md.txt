@@ -1,4 +1,6 @@
-# 069. Advance="no" specifier of WRITE
+# <span class='text-muted'>069.</span> Advance="no" specifier of WRITE
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
 
 WRITE inserts a newline at the end, which can be avoided with the
 advance="no" specifier. This is useful for prompting input and reading it from the same line and for printing an unknown amount of data with one format before another format. From zoziha.

@@ -1,4 +1,6 @@
-# 016. An array of character variables has elements of the same `len`gth
+# <span class='text-muted'>016.</span> An array of character variables has elements of the same `len`gth
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 ```{literalinclude} ../../src/char-array.f90
 :language: fortran

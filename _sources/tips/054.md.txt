@@ -1,4 +1,6 @@
-# 054. Consider using a tolerance to compare floats
+# <span class='text-muted'>054.</span> Consider using a tolerance to compare floats
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
 
 If the arrays are INTEGER or CHARACTER, then the comparison can be exact. For REAL or COMPLEX arrays, you should consider using a suitably small tolerance when comparing values. This and the previous tip are from urbanjost.
 

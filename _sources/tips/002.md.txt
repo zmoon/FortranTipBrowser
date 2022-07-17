@@ -1,4 +1,6 @@
-# 002. Intrinsic data types
+# <span class='text-muted'>002.</span> Intrinsic data types
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
 Fortran has 5 intrinsic data types: integer, real, complex, logical, and character.
 The types have various `kind`s that determine the range of data they can represent.

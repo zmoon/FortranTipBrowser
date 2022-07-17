@@ -1,0 +1,18 @@
+# <span class='text-muted'>189.</span> PDT can have fixed parameters at compile time or be ALLOCATABLE.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`parameterized-derived-types`</span>
+
+A PDT can have fixed parameters at compile time or be ALLOCATABLE.
+
+type(matrix(n1=3,n2=6,wp=kind(1d0))) :: a
+type(matrix(:,:)), allocatable :: b
+allocate (matrix(3,6) :: b)
+
+The type parameters are accessible, read-only, as
+
+a%n1, a%n2, a%wp
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A PDT can have fixed parameters at compile time or be ALLOCATABLE.<br><br>type(matrix(n1=3,n2=6,wp=kind(1d0))) :: a<br>type(matrix(:,:)), allocatable :: b<br>allocate (matrix(3,6) :: b)<br><br>The type parameters are accessible, read-only, as<br><br>a%n1, a%n2, a%wp</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1514220538071244804?ref_src=twsrc%5Etfw">April 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

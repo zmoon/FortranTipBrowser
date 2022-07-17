@@ -1,4 +1,6 @@
-# 129. A derived type can have PRIVATE components.
+# <span class='text-muted'>129.</span> A derived type can have PRIVATE components.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
 
 Derived type components can be declared PRIVATE, in which case they are only visible in the module where the type is defined. Below, b is private and c is public.
 

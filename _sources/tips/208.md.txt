@@ -1,0 +1,10 @@
+# <span class='text-muted'>208.</span> Fortran 2003 standardized the interoperation of Fortran and C.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+&nbsp;
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://t.co/QqGhsxGbj6">https://t.co/QqGhsxGbj6</a> <br>F2003 standardized interoperation with C. Fortran can call a C function with an INTERFACE, and C can call Fortran procedures with prototypes. A C function with a void result interoperates with a Fortran subroutine. ISO_C_BINDING defines compatible KINDs.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1521476255165698051?ref_src=twsrc%5Etfw">May 3, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

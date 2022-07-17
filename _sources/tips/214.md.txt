@@ -1,0 +1,11 @@
+# <span class='text-muted'>214.</span> Use the std::span container from C++ 20 to view a contiguous Fortran array with a STL-compatible interface.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+Use the std::span container from C++ 20 to create a view of a contiguous Fortran array with a STL-compatible interface. std::sort will sort the array in-place. Also works for other STL algorithms.
+From @IvanPribec. #cpp
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use the std::span container from C++ 20 to create a view of a contiguous Fortran array with a STL-compatible interface. std::sort will sort the array in-place. Also works for other STL algorithms.<br>From <a href="https://twitter.com/IvanPribec?ref_src=twsrc%5Etfw">@IvanPribec</a>. <a href="https://twitter.com/hashtag/cpp?src=hash&amp;ref_src=twsrc%5Etfw">#cpp</a><a href="https://t.co/WVazkhQ5Et">pic.twitter.com/WVazkhQ5Et</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1524730212176564230?ref_src=twsrc%5Etfw">May 12, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

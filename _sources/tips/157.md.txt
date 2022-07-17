@@ -1,0 +1,10 @@
+# <span class='text-muted'>157.</span> DIRECT access file allows access to arbitrary record without looping over the previous records.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+A DIRECT access data file lets you read or write an arbitrary record without looping over the previous records, as needed with the usual SEQUENTIAL access. The record length RECL is given in the OPEN statement, and READ or WRITE need a record number REC.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A DIRECT access data file lets you read or write an arbitrary record without looping over the previous records, as needed with the usual SEQUENTIAL access. The record length RECL is given in the OPEN statement, and READ or WRITE need a record number REC.<a href="https://t.co/FRvhhG3che">pic.twitter.com/FRvhhG3che</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1504793375765155840?ref_src=twsrc%5Etfw">March 18, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

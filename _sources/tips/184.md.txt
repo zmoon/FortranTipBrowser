@@ -1,0 +1,20 @@
+# <span class='text-muted'>184.</span> Use MOVE_ALLOC to resize an array.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`allocation`</span>
+
+CALL MOVE_ALLOC(FROM,TO) copies FROM to TO and then deallocates FROM. It can be used to expand array x(:) with
+
+n = size(x)
+allocate (y(n+size(new)))
+y(:n) = x
+y(n+1:) = new
+call move_alloc(from=y,to=x)
+
+This may be faster than
+
+x = [x,new]
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">CALL MOVE_ALLOC(FROM,TO) copies FROM to TO and then deallocates FROM. It can be used to expand array x(:) with<br><br>n = size(x)<br>allocate (y(n+size(new)))<br>y(:n) = x<br>y(n+1:) = new<br>call move_alloc(from=y,to=x)<br><br>This may be faster than<br><br>x = [x,new]<a href="https://t.co/ljSNwAxZVR">pic.twitter.com/ljSNwAxZVR</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1513111554107006979?ref_src=twsrc%5Etfw">April 10, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

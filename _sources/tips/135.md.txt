@@ -1,0 +1,11 @@
+# <span class='text-muted'>135.</span> ERROR STOP vs. STOP.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
+
+Fortran 2008 introduced the ERROR STOP statement, which can be used in PURE procedures, 
+unlike STOP. Error stop or stop can be followed by an integer or string that is printed. Error stop on one coarray image will terminate the entire program.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Fortran 2008 introduced the ERROR STOP statement, which can be used in PURE procedures, <br>unlike STOP. Error stop or stop can be followed by an integer or string that is printed. Error stop on one coarray image will terminate the entire program.<a href="https://t.co/M1lajeSZvp">pic.twitter.com/M1lajeSZvp</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1497181532146089985?ref_src=twsrc%5Etfw">February 25, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

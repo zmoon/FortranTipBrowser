@@ -1,4 +1,6 @@
-# 010. Fortran arrays can have any lower bound (the default is 1)
+# <span class='text-muted'>010.</span> Fortran arrays can have any lower bound (the default is 1)
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 Fortran arrays can have any lower bound. 
 The default is 1.

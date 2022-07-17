@@ -1,4 +1,6 @@
-# 106. Google foo filetype:f90 or foo filetype:f to find Fortran code with foo.
+# <span class='text-muted'>106.</span> Google foo filetype:f90 or foo filetype:f to find Fortran code with foo.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
 
 Since Fortran source files usually have the .f90 or .f suffix, you can Google, for example, "finite element" filetype:f90 and "finite element" filetype:f to find finite element codes.
 

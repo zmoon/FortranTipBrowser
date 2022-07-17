@@ -1,4 +1,6 @@
-# 121. How to reverse an array or character string
+# <span class='text-muted'>121.</span> How to reverse an array or character string
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 Write
 

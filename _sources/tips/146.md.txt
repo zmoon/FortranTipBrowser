@@ -1,0 +1,10 @@
+# <span class='text-muted'>146.</span> Bounds of associate-name for whole array or array section selector
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`associate`</span>
+
+The left-hand side of an association (associate-name) has the same bounds as the right-hand side (selector) if it is a whole array but has lower bounds of 1 if the selector is an array section.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The left-hand side of an association (associate-name) has the same bounds as the right-hand side (selector) if it is a whole array but has lower bounds of 1 if the selector is an array section.<a href="https://t.co/uQzrh5I0iR">pic.twitter.com/uQzrh5I0iR</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1500813206356430848?ref_src=twsrc%5Etfw">March 7, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

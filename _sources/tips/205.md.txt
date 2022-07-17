@@ -1,0 +1,10 @@
+# <span class='text-muted'>205.</span> Use IANY instead of nested IOR, IALL instead of nested IAND.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
+
+Use IANY instead of nested IOR, IALL instead of nested IAND. Never use .OR. or .AND. on non-LOGICAL values! See also
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use IANY instead of nested IOR, IALL instead of nested IAND. Never use .OR. or .AND. on non-LOGICAL values! See also <a href="https://t.co/Eusy3dn9eH">https://t.co/Eusy3dn9eH</a> <a href="https://t.co/A8Pnk1qlpp">pic.twitter.com/A8Pnk1qlpp</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1520241782038007808?ref_src=twsrc%5Etfw">April 30, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

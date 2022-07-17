@@ -1,0 +1,16 @@
+# <span class='text-muted'>168.</span> DO WHILE loop iterates as long as condition at beginning is met.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
+
+A DO WHILE loop iterates as long as the condition at the beginning of the loop is met. The syntax is
+
+do while (condition)
+   ...
+end do
+
+An infinite do loop allows the test for exiting to be made anywhere in the loop and is more flexible.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A DO WHILE loop iterates as long as the condition at the beginning of the loop is met. The syntax is<br><br>do while (condition)<br>   ...<br>end do<br><br>An infinite do loop allows the test for exiting to be made anywhere in the loop and is more flexible.<a href="https://t.co/FChl184asF">pic.twitter.com/FChl184asF</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1508040660124848129?ref_src=twsrc%5Etfw">March 27, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

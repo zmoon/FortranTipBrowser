@@ -1,0 +1,17 @@
+# <span class='text-muted'>191.</span> Derived type array sections are allowed before or after the % component selector, but not in both places.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
+
+For an array of derived types that have array components, you can refer to an array section at either level, but both array sections cannot have rank &gt; 0. The array sections
+
+t(1:n)%c(1)
+t(1)%c(1:2)
+
+are valid for array component c(:) but not
+
+t(1:n)%c
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For an array of derived types that have array components, you can refer to an array section at either level, but both array sections cannot have rank &gt; 0. The array sections<br><br>t(1:n)%c(1)<br>t(1)%c(1:2)<br><br>are valid for array component c(:) but not<br><br>t(1:n)%c<a href="https://t.co/79rumEeJGI">pic.twitter.com/79rumEeJGI</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1514939755892510727?ref_src=twsrc%5Etfw">April 15, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 119. Internal write to character variable too small to hold output causes run-time error.
+# <span class='text-muted'>119.</span> Internal write to character variable too small to hold output causes run-time error.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 A character variable can be assigned to a character variable with smaller or larger LEN, resulting in padding with blanks or truncation, but an internal write to a character variable that is too small to hold the output will cause a run-time error.
 

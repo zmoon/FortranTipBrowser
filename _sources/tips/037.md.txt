@@ -1,4 +1,6 @@
-# 037. Using `read` and `write` for file I/O
+# <span class='text-muted'>037.</span> Using `read` and `write` for file I/O
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
 
 To `read` or `write` data from a file, it must first be connected to a unit.
 The `newunit` specifier, introduced in Fortran 2008, finds a free unit number.

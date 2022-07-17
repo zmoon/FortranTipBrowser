@@ -1,4 +1,6 @@
-# 047. RESHAPE with the optional ORDER and PAD arguments
+# <span class='text-muted'>047.</span> RESHAPE with the optional ORDER and PAD arguments
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 RESHAPE returns an array with a different shape than the SOURCE array. Optional ORDER argument changes the order of elements of SOURCE from the usual column major. Optional PAD argument fills the result, with recycling, after source is exhausted.
 

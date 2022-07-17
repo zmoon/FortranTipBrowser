@@ -1,0 +1,18 @@
+# <span class='text-muted'>162.</span> EXIT can be used to leave a named outer loop.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`loops`</span>
+
+Loops can be labeled with syntax
+
+name1: do i=1,n
+   name2: do j=1,n
+      ...
+   end do name2
+end do name1
+
+EXIT leaves the inner loop. EXIT &lt;name&gt; can be used to leave an outer loop. A loop label also clarifies what loop is terminated by END DO.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Loops can be labeled with syntax<br><br>name1: do i=1,n<br>   name2: do j=1,n<br>      ...<br>   end do name2<br>end do name1<br><br>EXIT leaves the inner loop. EXIT &lt;name&gt; can be used to leave an outer loop. A loop label also clarifies what loop is terminated by END DO.<a href="https://t.co/leKjbkwyOm">pic.twitter.com/leKjbkwyOm</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1506235487782113282?ref_src=twsrc%5Etfw">March 22, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

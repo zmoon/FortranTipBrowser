@@ -1,4 +1,6 @@
-# 012. Fortran has allocation-on-assignment
+# <span class='text-muted'>012.</span> Fortran has allocation-on-assignment
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`allocation`</span>
 
 Fortran has allocation on assignment,
 but you cannot use the `allocate` statement for an array that is already allocated.

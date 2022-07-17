@@ -1,4 +1,6 @@
-# 070. Real and integer KIND constants from iso_fortran_env; HUGE() and TINY()
+# <span class='text-muted'>070.</span> Real and integer KIND constants from iso_fortran_env; HUGE() and TINY()
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`data-types`</span>
 
 Module iso_fortran_env has KIND constants int8, int16, int32, int64 for integers with those storage sizes and real32, real64, real128 for reals.
 Use huge(x) and tiny(x) to get the largest and smallest numbers of type real x and huge(i) for integer i.

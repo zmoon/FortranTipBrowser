@@ -1,4 +1,6 @@
-# 100. An INTENT(OUT) argument is undefined at the beginning of a procedure
+# <span class='text-muted'>100.</span> An INTENT(OUT) argument is undefined at the beginning of a procedure
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 A non-allocatable INTENT(OUT) dummy argument is undefined at the beginning of a procedure. Although most compilers will set it to the value of the actual argument, you should declare the argument 
 INTENT(IN OUT) to mandate this behavior.

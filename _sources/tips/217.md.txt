@@ -1,0 +1,10 @@
+# <span class='text-muted'>217.</span> An allocated allocatable array can be passed to C as an explicit-shape array.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+An ALLOCATABLE array does not have a C counterpart, but it can be ALLOCATED and passed to C as an explicit-shape array. This can be done for the allocated components of a derived type which is not itself interoperable.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An ALLOCATABLE array does not have a C counterpart, but it can be ALLOCATED and passed to C as an explicit-shape array. This can be done for the allocated components of a derived type which is not itself interoperable.<a href="https://t.co/xAnFxnFM5y">pic.twitter.com/xAnFxnFM5y</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1526179041652486147?ref_src=twsrc%5Etfw">May 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

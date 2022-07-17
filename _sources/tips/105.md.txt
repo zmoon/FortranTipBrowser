@@ -1,4 +1,6 @@
-# 105. A procedure can have an argument that is another PROCEDURE with an INTERFACE.
+# <span class='text-muted'>105.</span> A procedure can have an argument that is another PROCEDURE with an INTERFACE.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 A procedure can have an argument that is another PROCEDURE with an INTERFACE, which is useful for writing a procedure that minimizes or integrates a function.
 

@@ -1,0 +1,10 @@
+# <span class='text-muted'>161.</span> Use REWIND and BACKSPACE to change file position.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+REWIND (unit=u) positions the file at the beginning so it can be reread or rewritten. A WRITE deletes lines after the position. BACKSPACE moves the position back one line. It can be used to print an informative error message when a READ fails.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">REWIND (unit=u) positions the file at the beginning so it can be reread or rewritten. A WRITE deletes lines after the position. BACKSPACE moves the position back one line. It can be used to print an informative error message when a READ fails.<a href="https://t.co/5uCuyaxNY5">pic.twitter.com/5uCuyaxNY5</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1505877382716170245?ref_src=twsrc%5Etfw">March 21, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

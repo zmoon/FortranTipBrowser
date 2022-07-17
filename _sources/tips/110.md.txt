@@ -1,4 +1,6 @@
-# 110. Mistakes in Fortran 90 Programs That Might Surprise You, by Szymanski
+# <span class='text-muted'>110.</span> Mistakes in Fortran 90 Programs That Might Surprise You, by Szymanski
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
 
 Here is a a survey of Fortran 90 pitfalls. Most are still relevant, but now
 (1) Derived types can have allocatable components.

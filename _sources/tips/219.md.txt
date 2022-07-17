@@ -1,0 +1,10 @@
+# <span class='text-muted'>219.</span> Use valgrind to find memory leaks in programs that use pointers.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
+
+Use tools such as valgrind to find memory leaks in programs that use pointers.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Use tools such as valgrind to find memory leaks in programs that use pointers. <a href="https://t.co/JIFQkF0Yti">pic.twitter.com/JIFQkF0Yti</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1526882686467448833?ref_src=twsrc%5Etfw">May 18, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

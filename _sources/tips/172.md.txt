@@ -1,0 +1,17 @@
+# <span class='text-muted'>172.</span> Use the "(a)" format to read a line of a file into a string.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+character (len=100) :: s
+read (iunit,"(a)") s
+
+will read the first 100 characters of a line into s, padding with blanks if necessary.
+
+read (iunit,*) s
+
+will read the first "word" of the line, where words are separated by blanks or commas.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">character (len=100) :: s<br>read (iunit,&quot;(a)&quot;) s<br><br>will read the first 100 characters of a line into s, padding with blanks if necessary.<br><br>read (iunit,*) s<br><br>will read the first &quot;word&quot; of the line, where words are separated by blanks or commas.<a href="https://t.co/ecBC7hKu6v">pic.twitter.com/ecBC7hKu6v</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1509493654678876166?ref_src=twsrc%5Etfw">March 31, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

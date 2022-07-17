@@ -1,4 +1,6 @@
-# 015. `merge(x, y, cond)`
+# <span class='text-muted'>015.</span> `merge(x, y, cond)`
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`conditionals`</span>
 
 `merge(x, y, cond)` returns `x` if the condition `cond` is true, otherwise `y`.
 We can get the same result as the previous tip:

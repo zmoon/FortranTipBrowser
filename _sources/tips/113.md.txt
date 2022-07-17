@@ -1,4 +1,6 @@
-# 113. Document results with compiler_version(), compiler_options(), and other intrinsics.
+# <span class='text-muted'>113.</span> Document results with compiler_version(), compiler_options(), and other intrinsics.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`environment-variables`</span>
 
 To document results use get_command_argument(0,name) to get the
 executable name, compiler_version() and compiler_options() to get the compiler and options used, date_and_time() for the time, and cpu_time() or system_clock() for time elapsed.

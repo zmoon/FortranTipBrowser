@@ -1,4 +1,6 @@
-# 065. Fortran-lang suggested variable naming conventions
+# <span class='text-muted'>065.</span> Fortran-lang suggested variable naming conventions
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`fortran-resources`</span>
 
 Fortran-lang Best Practices:
 1. Use lower case for all Fortran constructs, such as do, end do, if, then

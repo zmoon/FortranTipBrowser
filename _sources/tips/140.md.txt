@@ -1,0 +1,10 @@
+# <span class='text-muted'>140.</span> Internal procedures have access to variables from the host unless they are overridden by local variables.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
+
+An internal procedure can declare variables with the same names as the enclosing procedure, which can declare variables with the same names as module variables. Within a scope a name refers to the local variable. Variables from the host are accessible.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An internal procedure can declare variables with the same names as the enclosing procedure, which can declare variables with the same names as module variables. Within a scope a name refers to the local variable. Variables from the host are accessible.<a href="https://t.co/9ics0WynEP">pic.twitter.com/9ics0WynEP</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1499014126265372685?ref_src=twsrc%5Etfw">March 2, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

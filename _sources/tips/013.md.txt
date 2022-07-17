@@ -1,4 +1,6 @@
-# 013. New Fortran code should use free source form and `.f90` suffix
+# <span class='text-muted'>013.</span> New Fortran code should use free source form and `.f90` suffix
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`style`</span>
 
 New Fortran code should be written using free source form and stored in a file with a `.f90` file extension.
 Free form was introduced in the Fortran 90 standard,

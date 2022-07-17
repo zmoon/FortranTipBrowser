@@ -1,4 +1,6 @@
-# 021. `pack` selects elements
+# <span class='text-muted'>021.</span> `pack` selects elements
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 ```{literalinclude} ../../src/pack.f90
 :language: fortran

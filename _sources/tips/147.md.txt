@@ -1,0 +1,14 @@
+# <span class='text-muted'>147.</span> Pointer can remap array shape and bounds.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`pointers`</span>
+
+A pointer can be used to map an array to an array of the same type and size but a different shape, rank, or bounds, for example
+
+real, target  :: y(6)
+real, pointer :: p(:,:)
+p(-1:1,1:2) =&gt; y ! map y(:) to 3x2 matrix with LB -1, 1
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A pointer can be used to map an array to an array of the same type and size but a different shape, rank, or bounds, for example<br><br>real, target  :: y(6)<br>real, pointer :: p(:,:)<br>p(-1:1,1:2) =&gt; y ! map y(:) to 3x2 matrix with LB -1, 1<a href="https://t.co/rZ72DjBWgH">pic.twitter.com/rZ72DjBWgH</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1501169574997377025?ref_src=twsrc%5Etfw">March 8, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

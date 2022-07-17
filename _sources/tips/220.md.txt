@@ -1,0 +1,10 @@
+# <span class='text-muted'>220.</span> Use c_funloc() to pass a Fortran function as an argument to a C function.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+A Fortran function can be passed as an argument to a C function. C_funloc(x) of iso_c_binding has a result of type(c_funptr) with the C address of function x or a pointer to a function.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A Fortran function can be passed as an argument to a C function. C_funloc(x) of iso_c_binding has a result of type(c_funptr) with the C address of function x or a pointer to a function.<a href="https://t.co/xaBmcFDoPK">pic.twitter.com/xaBmcFDoPK</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1527249982692245510?ref_src=twsrc%5Etfw">May 19, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

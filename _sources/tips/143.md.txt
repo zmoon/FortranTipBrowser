@@ -1,0 +1,10 @@
+# <span class='text-muted'>143.</span> ASSOCIATE statement can set several independent variables.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`associate`</span>
+
+A single ASSOCIATE statement can create multiple variables, but they must be independent. If y depends on x you must first ASSOCIATE x and then ASSOCIATE y in a following statement. A loop with an ASSOCIATE must also have an END ASSOCIATE.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A single ASSOCIATE statement can create multiple variables, but they must be independent. If y depends on x you must first ASSOCIATE x and then ASSOCIATE y in a following statement. A loop with an ASSOCIATE must also have an END ASSOCIATE.<a href="https://t.co/aTf72Py2cg">pic.twitter.com/aTf72Py2cg</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1500087163668549636?ref_src=twsrc%5Etfw">March 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,4 +1,6 @@
-# 122. Array lower bounds are not preserved when passed as assumed shape argument.
+# <span class='text-muted'>122.</span> Array lower bounds are not preserved when passed as assumed shape argument.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`array-arguments`</span>
 
 The lower bounds of an assumed shape dummy argument are 1 or the lower bounds specified in the procedure declaration, regardless of the lower bounds of actual argument in the caller. The lower bounds can be passed as arguments.
 

@@ -1,0 +1,16 @@
+# <span class='text-muted'>177.</span> Read a file into a string with unformatted stream.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+An entire file can be read into a string by 
+
+(1) using INQUIRE to get the file size
+(2) allocating a string to this size
+(3) reading the string using unformatted stream 
+
+The string can then be broken into lines by searching for newline characters.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An entire file can be read into a string by <br><br>(1) using INQUIRE to get the file size<br>(2) allocating a string to this size<br>(3) reading the string using unformatted stream <br><br>The string can then be broken into lines by searching for newline characters.<a href="https://t.co/khKAhk83HM">pic.twitter.com/khKAhk83HM</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1510940360582782976?ref_src=twsrc%5Etfw">April 4, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

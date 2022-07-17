@@ -1,4 +1,6 @@
-# 078. Parenthesize a variable to copy it "on the fly".
+# <span class='text-muted'>078.</span> Parenthesize a variable to copy it "on the fly".
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`basics`</span>
 
 Parenthesize a variable to copy it "on the fly" to avoid overlapping INTENT(IN) and INTENT(OUT) arguments, which is non-standard, for example writing
 

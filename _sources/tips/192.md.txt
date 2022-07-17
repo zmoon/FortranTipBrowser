@@ -1,0 +1,22 @@
+# <span class='text-muted'>192.</span> Implied do loop can access arbitrary derived type array sections.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
+
+An implied do loop can be used to access a derived type array section at more than one level.
+
+t(1:n)%c
+
+is invalid for array component c but
+
+[(t(i)%c,i=1,n)]
+
+or the transpose
+
+[((t(i)%c(j),i=1,size(t)),j=1,size_c)]
+
+are allowed expressions.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An implied do loop can be used to access a derived type array section at more than one level.<br><br>t(1:n)%c<br><br>is invalid for array component c but<br><br>[(t(i)%c,i=1,n)]<br><br>or the transpose<br><br>[((t(i)%c(j),i=1,size(t)),j=1,size_c)]<br><br>are allowed expressions.<a href="https://t.co/GTtfS8cOCL">pic.twitter.com/GTtfS8cOCL</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1515301634280148995?ref_src=twsrc%5Etfw">April 16, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

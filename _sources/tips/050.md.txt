@@ -1,4 +1,6 @@
-# 050. Store data as an array of derived types or a derived type with array components?
+# <span class='text-muted'>050.</span> Store data as an array of derived types or a derived type with array components?
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`derived-types`</span>
 
 Whether to store data as an array of derived types or a derived type with array components also depends on how the data will typically be accessed.
 

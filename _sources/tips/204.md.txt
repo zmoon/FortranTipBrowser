@@ -1,0 +1,10 @@
+# <span class='text-muted'>204.</span> When is the -ffast-math option safe?
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
+
+&nbsp;
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://t.co/Jnai5VcixS">https://t.co/Jnai5VcixS</a><br>discusses when using the -ffast-math option is safe.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1519998641133563905?ref_src=twsrc%5Etfw">April 29, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

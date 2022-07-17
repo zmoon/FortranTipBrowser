@@ -1,4 +1,6 @@
-# 095. Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
+# <span class='text-muted'>095.</span> Array constructor with [] was introduced in Fortran 2003. Still valid is (//)
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 Using [] for an array constructor was introduced in Fortran 2003, although many Fortran 95 compilers supported it. The older syntax (//) is still valid.
 

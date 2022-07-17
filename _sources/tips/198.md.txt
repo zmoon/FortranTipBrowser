@@ -1,0 +1,24 @@
+# <span class='text-muted'>198.</span> Compilation can fail if there is no main program or if a USEd module has not been compiled.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`compiling`</span>
+
+gfortran m.f90
+
+gives an error
+
+undefined reference to `main'
+
+if m.f90 does not contain a main program.
+
+gfortran -c m.f90
+
+gives an error like
+
+Cannot open module file 'x.mod'
+
+if the file containing module x has not previously been compiled.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">gfortran m.f90<br><br>gives an error<br><br>undefined reference to `main&#39;<br><br>if m.f90 does not contain a main program.<br><br>gfortran -c m.f90<br><br>gives an error like<br><br>Cannot open module file &#39;x.mod&#39;<br><br>if the file containing module x has not previously been compiled.</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1517106458281844736?ref_src=twsrc%5Etfw">April 21, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

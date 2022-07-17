@@ -1,4 +1,6 @@
-# 079. Substrings of character variable arrays
+# <span class='text-muted'>079.</span> Substrings of character variable arrays
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 For variables
 

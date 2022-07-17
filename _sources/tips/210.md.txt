@@ -1,0 +1,10 @@
+# <span class='text-muted'>210.</span> Non-pointer arguments of C functions should have the VALUE attribute in the Fortran interface.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`interoperability-with-c`</span>
+
+Arguments corresponding to non-pointer arguments of C functions must have the VALUE attribute in the Fortran interface. A C const argument can be INTENT(IN) in the Fortran interface.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Arguments corresponding to non-pointer arguments of C functions must have the VALUE attribute in the Fortran interface. A C const argument can be INTENT(IN) in the Fortran interface. <a href="https://t.co/oHM1F6sbLK">pic.twitter.com/oHM1F6sbLK</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1522208519096836096?ref_src=twsrc%5Etfw">May 5, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

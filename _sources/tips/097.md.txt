@@ -1,4 +1,6 @@
-# 097. Use INTRINSIC to specify that compiler-provided procedures and modules are referenced
+# <span class='text-muted'>097.</span> Use INTRINSIC to specify that compiler-provided procedures and modules are referenced
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 You can supply procedures and modules with the same names as intrinsics. To specify that the intrinsic procedure or module provided by the compiler is used write
 

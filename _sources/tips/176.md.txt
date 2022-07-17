@@ -1,0 +1,14 @@
+# <span class='text-muted'>176.</span> Because recursive I/O is prohibited, a function should use ERROR STOP msg instead of PRINT statements for error messages.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
+
+Because recursive I/O is prohibited, a function should not have PRINT or WRITE(*,fmt) statements for error messages, since the behavior of
+
+print*,f(x)
+
+is then undefined. ERROR STOP &lt;msg&gt; is an alternative. Internal write can be useful in a function.
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Because recursive I/O is prohibited, a function should not have PRINT or WRITE(*,fmt) statements for error messages, since the behavior of<br><br>print*,f(x)<br><br>is then undefined. ERROR STOP &lt;msg&gt; is an alternative. Internal write can be useful in a function.<a href="https://t.co/wjAoag2Hgl">pic.twitter.com/wjAoag2Hgl</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1510585396467535879?ref_src=twsrc%5Etfw">April 3, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

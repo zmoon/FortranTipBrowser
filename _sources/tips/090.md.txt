@@ -1,4 +1,6 @@
-# 090. An unqualified USE foo statement imports public entities defined in foo and what foo imported.
+# <span class='text-muted'>090.</span> An unqualified USE foo statement imports public entities defined in foo and what foo imported.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`modules`</span>
 
 use foo
 

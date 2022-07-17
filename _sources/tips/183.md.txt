@@ -1,0 +1,13 @@
+# <span class='text-muted'>183.</span> If unsure, test whether a variable is ALLOCATED before using DEALLOCATE.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`allocation`</span>
+
+Since (ALLOCATE / DEALLOCATE) is valid only when a variable is (not allocated / allocated), when the allocation status of a variable is unclear from reading the code you can write
+
+if (allocated(x)) deallocate(x)
+allocate (x(n))
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Since (ALLOCATE / DEALLOCATE) is valid only when a variable is (not allocated / allocated), when the allocation status of a variable is unclear from reading the code you can write<br><br>if (allocated(x)) deallocate(x)<br>allocate (x(n))</p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1512757635291963395?ref_src=twsrc%5Etfw">April 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

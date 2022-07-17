@@ -1,4 +1,6 @@
-# 044. List-directed vs. explicitly formatted output
+# <span class='text-muted'>044.</span> List-directed vs. explicitly formatted output
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`input-and-output`</span>
 
 List-directed output (format `*`) is convenient,
 ```fortran

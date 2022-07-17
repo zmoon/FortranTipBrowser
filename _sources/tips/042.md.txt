@@ -1,4 +1,6 @@
-# 042. Zero-size array constructor
+# <span class='text-muted'>042.</span> Zero-size array constructor
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`arrays`</span>
 
 `[data_type ::]` is a zero-size array of type `data_type`.
 See examples below.

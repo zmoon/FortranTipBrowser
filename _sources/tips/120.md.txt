@@ -1,4 +1,6 @@
-# 120. Character variables can be compared like numerical variables.
+# <span class='text-muted'>120.</span> Character variables can be compared like numerical variables.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`character-variables`</span>
 
 The comparison operators &lt; &lt;= etc. or .lt. .le. etc. can be used for character variables, usually with the ASCII collating sequence. The lexical comparison functions LLT, LLE, LGE, LGT use this sequence. MINVAL, MINLOC, FINDLOC work on arrays of strings.
 

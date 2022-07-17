@@ -1,0 +1,11 @@
+# <span class='text-muted'>141.</span> Pointer assignment and ASSOCIATE can create shallow copies.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`associate`</span>
+
+A pointer assignment or ASSOCIATE with the RHS a variable can create shallow copies where changes in one variable affect another. Normal assignment or ALLOCATE with SOURCE creates a deep copy.
+Created with @carbon_app
+
+
+---
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A pointer assignment or ASSOCIATE with the RHS a variable can create shallow copies where changes in one variable affect another. Normal assignment or ALLOCATE with SOURCE creates a deep copy.<br>Created with <a href="https://twitter.com/carbon_app?ref_src=twsrc%5Etfw">@carbon_app</a> <a href="https://t.co/7FPHzH0uX2">pic.twitter.com/7FPHzH0uX2</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1499368960151760896?ref_src=twsrc%5Etfw">March 3, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

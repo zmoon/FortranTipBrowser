@@ -1,4 +1,6 @@
-# 101. ALLOCATABLE INTENT(OUT) argument is deallocated.
+# <span class='text-muted'>101.</span> ALLOCATABLE INTENT(OUT) argument is deallocated.
+
+<span style='font-size: small;' class='text-muted'>topic: {ref}`procedures`</span>
 
 An ALLOCATABLE INTENT(OUT) dummy argument is deallocated at the beginning of a procedure, as are the ALLOCATABLE components of an INTENT(OUT) derived type.
 
