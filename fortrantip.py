@@ -181,6 +181,7 @@ def write_tip_md(i: int, d: dict) -> None:
     ft_topic_id = d["ft_topic_id"]
     if title == "Tips by topic":  # meta
         ft_topic_id = "by-topic"
+    is_draft = d["is_draft"]
 
     # Optional keys
     concl = d.get("concl")
@@ -198,6 +199,20 @@ def write_tip_md(i: int, d: dict) -> None:
         f"# <span class='text-muted'>{i:03d}.</span> {title}\n\n"
         f"<span style='font-size: small;' class='text-muted'>topic: {{ref}}`{ft_topic_id}`</span>\n\n"
     )
+
+    if is_draft:
+        s += """\
+```{note}
+This tip is a draft[^draft].
+
+[^draft]: From the perspective of FortranTip Browser, "draft" means that
+  it hasn't been edited for formatting,
+  hasn't had corresponding Fortran programs added,
+  the text content hasn't been enhanced, etc.
+  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+```
+
+"""
 
     # Intro MD
     if intro is not None:
@@ -331,6 +346,20 @@ def main(tip: str) -> int:
         d["ft_topic_id"] = tips0_by_id[tweet_id]["ft_topic_id"]
 
     ntips = len(data["tips"])
+
+    # Determine draft status by looking for the todo comments
+    is_draft = [None] * ntips
+    with open("data.yaml", "r") as f:
+        lines = f.readlines()
+    i = 0
+    for prev, curr in zip(lines[:-1], lines[1:]):
+        if curr.lstrip().startswith("- title:"):  # tip block
+            is_draft[i] = prev.strip() == "# TODO"
+            i += 1
+    assert not any(x is None for x in is_draft)
+    assert not all(x is True for x in is_draft)
+    for is_draft_i, d in zip(is_draft, data["tips"]):
+        d["is_draft"] = is_draft_i
 
     # Generate tip pages
     # TODO: cache last Fortran run, MD generation time, yaml DATA, so can regen only things that need it
