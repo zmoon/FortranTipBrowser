@@ -6,16 +6,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: '3.9'
           cache: pip
       
       - name: Install Python requirements
@@ -28,9 +28,8 @@ jobs:
           gfortran --version
           echo $(which gfortran)
 
-      - name: Install GFortran v11 and link to `/usr/bin/gfortran`
+      - name: Ensure default GFortran is v11 (link to `/usr/bin/gfortran`)
         run: |
-          sudo apt install gfortran-11
           sudo ln -sf $(which gfortran-11) /usr/bin/gfortran
           gfortran --version
 
@@ -44,7 +43,7 @@ jobs:
         run: sphinx-build -b html -W docs docs/_build/html
 
       - name: Push built HTML to GHP
-        uses: JamesIves/github-pages-deploy-action@4.1.9
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: ./docs/_build/html
