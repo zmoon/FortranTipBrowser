@@ -179,6 +179,8 @@ def write_tip_md(i: int, d: dict) -> None:
     fortran = d["file"]
     inputs = d.get("inputs")
     ft_topic_id = d["ft_topic_id"]
+    if title == "Tips by topic":  # meta
+        ft_topic_id = "by-topic"
 
     # Optional keys
     concl = d.get("concl")
