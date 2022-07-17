@@ -178,6 +178,7 @@ def write_tip_md(i: int, d: dict) -> None:
     intro = d["intro"]
     fortran = d["file"]
     inputs = d.get("inputs")
+    ft_topic_id = d["ft_topic_id"]
 
     # Optional keys
     concl = d.get("concl")
@@ -191,7 +192,10 @@ def write_tip_md(i: int, d: dict) -> None:
         fortran0 = None
     assert fortran0 is None or fortran0.endswith(".f90")
 
-    s = f"# {i:03d}. {title}\n\n"
+    s = (
+        f"# {i:03d}. {title}\n\n"
+        f"<span style='font-size: small;' class='text-muted'>topic: {{ref}}`{ft_topic_id}`</span>\n\n"
+    )
 
     # Intro MD
     if intro is not None:
@@ -274,7 +278,7 @@ sd_hide_title: true
 
 ## By topic
 
-*According to [the FortranTip topics page](https://github.com/Beliavsky/FortranTip/blob/main/topics.md)*
+*According to [the FortranTip topics page](https://github.com/Beliavsky/FortranTip/blob/main/topics.md).*
 
 {topics}
 """
@@ -342,7 +346,7 @@ def main(tip: str) -> int:
             joblib.delayed(write_tip_md)(i, d)
             for i, d in enumerate(data["tips"], start=1)
         )
-        write_tips_index(ntips, ft_topics=ft_topic_titles)
+        write_tips_index(data["tips"], ft_topics=ft_topic_titles)
         write_random_tip_button_snippet(ntips)
     elif tip in {"i", "index"}:
         write_tips_index(data["tips"], ft_topics=ft_topic_titles)
