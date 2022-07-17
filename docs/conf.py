@@ -1,6 +1,6 @@
 project = "FortranTip"
 author = "Beliavsky and FortranTip contributors"
-copyright = f"2021, {author} (website by zmoon)"
+copyright = f"2021\u20132022, {author} (website by zmoon)"
 
 extensions = [
     "myst_parser",
