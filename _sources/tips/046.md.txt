@@ -2,23 +2,51 @@
 
 <span style='font-size: small;' class='text-muted'>topic: {ref}`math-intrinsic-functions`</span>
 
-```{note}
-This tip is a draft[^draft].
-
-[^draft]: From the perspective of FortranTip Browser, "draft" means that
-  it hasn't been edited for formatting,
-  hasn't had corresponding Fortran programs added,
-  the text content hasn't been enhanced, etc.
-  Draft texts are extracted from the corresponding Tweet using the Twitter API.
+Why does Fortran not have a factorial function?
+It does, as for positive whole values of $n$,
+the [gamma function](https://en.wikipedia.org/wiki/Gamma_function)
+simplifies to the factorial function for $n-1$.
+That is,
+```
+n! == gamma(n+1)
 ```
 
-Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).
-That is,
+```{literalinclude} ../../src/factorial.f90
+:language: fortran
+:caption: factorial.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/factorial.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://github.com/Beliavsky/FortranTip/blob/main/factorial.f90" target="_blank" title="See the original source on Beliavsky/FortranTip GitHub"><i class="fab fa-github"></i><sub>0</sub></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:15,positionColumn:1,positionLineNumber:15,selectionStartColumn:1,selectionStartLineNumber:15,startColumn:1,startLineNumber:15),source:'program+factorial%0A+++use,+intrinsic+::+iso_fortran_env,+only:+wp+%3D%3E+real64%0A%0A+++integer,+parameter+::+n(*)+%3D+%5B0,+1,+5,+11,+170%5D%0A+++integer++++++++++++::+j%0A%0A+++do+j+%3D+1,+size(n)%0A++++++print+!'(*(g0,1x))!',+!'factorial+of!',+n(j),+!'+is+!',+%26%0A+++++++++product(%5B(real(i,+kind%3Dwp),+i%3D1,+n(j))%5D),+%26%0A+++++++++!'+or+!',+%26%0A+++++++++gamma(real(n(j)+%2B+1,+kind%3Dwp))%0A+++end+do%0A+++print+*,+huge(0._wp)%0A%0Aend+program+factorial%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a>
+```
 
-x! == gamma(x+1)
+```{code-block} text
+:caption: Output[^gfortran-version]
 
-Thanks to urbanjost for tip!
+factorial of 0  is  1.0000000000000000  or  1.0000000000000000
+factorial of 1  is  1.0000000000000000  or  1.0000000000000000
+factorial of 5  is  120.00000000000000  or  120.00000000000000
+factorial of 11  is  39916800.000000000  or  39916800.000000000
+factorial of 170  is  0.72574156153079940E+307  or  0.72574156153079990E+307
+   1.7976931348623157E+308
 
+```
+
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
+
+Intrinsic function
+[`gamma`](https://gcc.gnu.org/onlinedocs/gfortran/GAMMA.html)
+was added in the F2008 standard.
+
+We can see that $170!$ is close to the real64 limit.
+$171!$ [would be](https://www.wolframalpha.com/input?i=171%21) too large.
+
+Also used above:
+* implied `do` loop for computing the array passed to `product`
+* assumed-size array (`n(*)`) -- the size is "assumed" from the size of the
+  array literal on the right-hand side of the equals sign
+* `g0` edit descriptor and `*` infinite repeat count -- see Tip 041
+
+```{note}
+Thanks to [@urbanjost](https://github.com/urbanjost)
+[for this tip and code](https://github.com/Beliavsky/FortranTip/issues/19).
+```
 
 ---
 

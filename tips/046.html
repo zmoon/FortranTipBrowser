@@ -36,6 +36,8 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="047. RESHAPE with the optional ORDER and PAD arguments" href="047.html" />
@@ -2317,23 +2319,67 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="span-class-text-muted-046-span-use-gamma-to-compute-factorials">
 <h1><span class='text-muted'>046.</span> Use GAMMA to compute factorials<a class="headerlink" href="#span-class-text-muted-046-span-use-gamma-to-compute-factorials" title="Permalink to this headline">#</a></h1>
 <p><span style='font-size: small;' class='text-muted'>topic: <a class="reference internal" href="index.html#math-intrinsic-functions"><span class="std std-ref">Math intrinsic functions</span></a></span></p>
+<p>Why does Fortran not have a factorial function?
+It does, as for positive whole values of <span class="math notranslate nohighlight">\(n\)</span>,
+the <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_function">gamma function</a>
+simplifies to the factorial function for <span class="math notranslate nohighlight">\(n-1\)</span>.
+That is,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>n! == gamma(n+1)
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">factorial.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/factorial.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://github.com/Beliavsky/FortranTip/blob/main/factorial.f90" target="_blank" title="See the original source on Beliavsky/FortranTip GitHub"><i class="fab fa-github"></i><sub>0</sub></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:15,positionColumn:1,positionLineNumber:15,selectionStartColumn:1,selectionStartLineNumber:15,startColumn:1,startLineNumber:15),source:'program+factorial%0A+++use,+intrinsic+::+iso_fortran_env,+only:+wp+%3D%3E+real64%0A%0A+++integer,+parameter+::+n(*)+%3D+%5B0,+1,+5,+11,+170%5D%0A+++integer++++++++++++::+j%0A%0A+++do+j+%3D+1,+size(n)%0A++++++print+!'(*(g0,1x))!',+!'factorial+of!',+n(j),+!'+is+!',+%26%0A+++++++++product(%5B(real(i,+kind%3Dwp),+i%3D1,+n(j))%5D),+%26%0A+++++++++!'+or+!',+%26%0A+++++++++gamma(real(n(j)+%2B+1,+kind%3Dwp))%0A+++end+do%0A+++print+*,+huge(0._wp)%0A%0Aend+program+factorial%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a></span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">factorial</span><span class="w"></span>
+<span class="w">   </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">wp</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="w"></span>
+
+<span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">170</span><span class="p">]</span><span class="w"></span>
+<span class="w">   </span><span class="kt">integer</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">j</span><span class="w"></span>
+
+<span class="w">   </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="s1">&#39;(*(g0,1x))&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;factorial of&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39; is &#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="nb">product</span><span class="p">([(</span><span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">),</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">(</span><span class="n">j</span><span class="p">))]),</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="s1">&#39; or &#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="nb">gamma</span><span class="p">(</span><span class="kt">real</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">))</span><span class="w"></span>
+<span class="w">   </span><span class="k">end do</span>
+<span class="k">   print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="nb">huge</span><span class="p">(</span><span class="mf">0._wp</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">end program </span><span class="n">factorial</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id1">1</a></span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>factorial of 0  is  1.0000000000000000  or  1.0000000000000000
+factorial of 1  is  1.0000000000000000  or  1.0000000000000000
+factorial of 5  is  120.00000000000000  or  120.00000000000000
+factorial of 11  is  39916800.000000000  or  39916800.000000000
+factorial of 170  is  0.72574156153079940E+307  or  0.72574156153079990E+307
+   1.7976931348623157E+308
+</pre></div>
+</div>
+</div>
+<p>Intrinsic function
+<a class="reference external" href="https://gcc.gnu.org/onlinedocs/gfortran/GAMMA.html"><code class="docutils literal notranslate"><span class="pre">gamma</span></code></a>
+was added in the F2008 standard.</p>
+<p>We can see that <span class="math notranslate nohighlight">\(170!\)</span> is close to the real64 limit.
+<span class="math notranslate nohighlight">\(171!\)</span> <a class="reference external" href="https://www.wolframalpha.com/input?i=171%21">would be</a> too large.</p>
+<p>Also used above:</p>
+<ul class="simple">
+<li><p>implied <code class="docutils literal notranslate"><span class="pre">do</span></code> loop for computing the array passed to <code class="docutils literal notranslate"><span class="pre">product</span></code></p></li>
+<li><p>assumed-size array (<code class="docutils literal notranslate"><span class="pre">n(*)</span></code>) – the size is “assumed” from the size of the
+array literal on the right-hand side of the equals sign</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g0</span></code> edit descriptor and <code class="docutils literal notranslate"><span class="pre">*</span></code> infinite repeat count – see Tip 041</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This tip is a draft<a class="footnote-reference brackets" href="#draft" id="id1">1</a>.</p>
+<p>Thanks to <a class="reference external" href="https://github.com/urbanjost">&#64;urbanjost</a>
+<a class="reference external" href="https://github.com/Beliavsky/FortranTip/issues/19">for this tip and code</a>.</p>
 </div>
-<p>Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).
-That is,</p>
-<p>x! == gamma(x+1)</p>
-<p>Thanks to urbanjost for tip!</p>
 <hr class="docutils" />
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).<br>That is,<br><br>x! == gamma(x+1)<br><br>Thanks to urbanjost for tip! <a href="https://t.co/fTAPvhKEpr">pic.twitter.com/fTAPvhKEpr</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474357943667671060?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="draft"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>From the perspective of FortranTip Browser, “draft” means that
-it hasn’t been edited for formatting,
-hasn’t had corresponding Fortran programs added,
-the text content hasn’t been enhanced, etc.
-Draft texts are extracted from the corresponding Tweet using the Twitter API.</p>
+<dt class="label" id="gfortran-version"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Compiled using <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Fortran</span> <span class="pre">(Ubuntu</span> <span class="pre">11.2.0-19ubuntu1)</span> <span class="pre">11.2.0</span></code> with no flags</p>
 </dd>
 </dl>
 </section>
