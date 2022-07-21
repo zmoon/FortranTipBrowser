@@ -749,16 +749,35 @@ tips:
 
   # 24-Dec-2021
 
-  # TODO
   - title: Use GAMMA to compute factorials
     intro: |
-      Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).
+      Why does Fortran not have a factorial function?
+      It does, as for positive whole values of $n$,
+      the [gamma function](https://en.wikipedia.org/wiki/Gamma_function)
+      simplifies to the factorial function for $n-1$.
       That is,
+      ```
+      n! == gamma(n+1)
+      ```
+    concl: |
+      Intrinsic function
+      [`gamma`](https://gcc.gnu.org/onlinedocs/gfortran/GAMMA.html)
+      was added in the F2008 standard.
 
-      x! == gamma(x+1)
+      We can see that $170!$ is close to the real64 limit.
+      $171!$ [would be](https://www.wolframalpha.com/input?i=171%21) too large.
 
-      Thanks to urbanjost for tip!
-    file: ~
+      Also used above:
+      * implied `do` loop for computing the array passed to `product`
+      * assumed-size array (`n(*)`) -- the size is "assumed" from the size of the
+        array literal on the right-hand side of the equals sign
+      * `g0` edit descriptor and `*` infinite repeat count -- see Tip 041
+
+      ```{note}
+      Thanks to [@urbanjost](https://github.com/urbanjost)
+      [for this tip and code](https://github.com/Beliavsky/FortranTip/issues/19).
+      ```
+    file: factorial.f90
     file0: factorial.f90
     url: https://twitter.com/fortrantip/status/1474357943667671060
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).<br>That is,<br><br>x! == gamma(x+1)<br><br>Thanks to urbanjost for tip! <a href="https://t.co/fTAPvhKEpr">pic.twitter.com/fTAPvhKEpr</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474357943667671060?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
