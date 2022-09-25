@@ -58,6 +58,12 @@ GB_LINK_FMT = (
     ' alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" />'
     "</a>"
 )
+FPG_LINK_FMT = (
+    '<a href="https://play.fortran-lang.org/?code={source:s}" target="_blank" title="Open in Fortran Playground">'
+    '<img src="https://raw.githubusercontent.com/fortran-lang/playground/main/frontend/src/fortran-logo.png"'
+    ' alt="Fortran logo" height="15.5" class="align-text-bottom" />'
+    "</a>"
+)
 
 
 def fortran_to_myst(fn: str, *, fn0: Optional[str] = None) -> str:
@@ -73,12 +79,13 @@ def fortran_to_myst(fn: str, *, fn0: Optional[str] = None) -> str:
     # TODO: use GB short links (only create new if needed)
 
     gb = GB_LINK_FMT.format(url=gb_url)
+    fpg = FPG_LINK_FMT.format(source=urllib.parse.quote(s))
 
     if fn0 is not None:
         gh0 = GH0_LINK_FMT.format(fn=fn0)
-        caption = f"{fn} | {gh} | {gh0} | {gb}"
+        caption = f"{fn} | {gh} | {gh0} | {gb} | {fpg}"
     else:
-        caption = f"{fn} | {gh} | {gb}"
+        caption = f"{fn} | {gh} | {gb} | {fpg}"
 
     return f"""\
 ```{{literalinclude}} ../../src/{fn}
