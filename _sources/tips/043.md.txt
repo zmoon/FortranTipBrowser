@@ -146,7 +146,7 @@ widths: 2 2 3
 :caption: Output[^gfortran-version]
 
  Before setting:
-   row 1: 0 968941312 0
+   row 1: 0 -1699078144 0
    col 1: 0 0
  After setting:
    row 1: 1 1 1
