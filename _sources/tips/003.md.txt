@@ -17,7 +17,7 @@ A program to print the sum the squares of the integers from 1 to 5 is
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0` with no flags
 
 ---
 

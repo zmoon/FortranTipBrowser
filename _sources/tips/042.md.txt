@@ -21,7 +21,7 @@ See examples below.
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0` with no flags
 
 From the Tweet comments, one potential use for this is that
 "if a procedure has a required argument that is an integer array,

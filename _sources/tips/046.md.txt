@@ -28,7 +28,7 @@ factorial of 170  is  0.72574156153079940E+307  or  0.72574156153079990E+307
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0` with no flags
 
 Intrinsic function
 [`gamma`](https://gcc.gnu.org/onlinedocs/gfortran/GAMMA.html)

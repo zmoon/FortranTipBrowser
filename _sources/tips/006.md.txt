@@ -17,7 +17,7 @@ The exponentiation operator in Fortran is `**`, as in Python.
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0` with no flags
 
 Many Fortran operators and intrinsic functions are elemental, and brackets denote arrays.
 

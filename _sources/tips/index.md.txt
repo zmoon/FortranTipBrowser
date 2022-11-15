@@ -276,7 +276,7 @@ sd_hide_title: true
 - [021.](./021.md) `pack` selects elements
 - [042.](./042.md) Zero-size array constructor
 - [043.](./043.md) Comparing Fortran and NumPy syntax
-- [047.](./047.md) RESHAPE with the optional ORDER and PAD arguments
+- [047.](./047.md) `reshape` with the optional `order` and `pad` arguments
 - [049.](./049.md) Fortran is column-major
 - [053.](./053.md) Use ALL(A==B) to test for array equality
 - [060.](./060.md) Many compilers evaluate ALL(x==y) efficiently with short-circuiting

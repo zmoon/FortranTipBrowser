@@ -14,7 +14,7 @@
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0` with no flags
 
 2/3 = 0 in Fortran because the quotient of two integers is truncated to an integer.
 The quotient of an integer and a real is a real.

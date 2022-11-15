@@ -18,7 +18,7 @@ Use `subroutine` instead for a procedure with side effects.
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0` with no flags
 
 `real` in the function definition line indicates the type of the return value.
 By default, the value corresponding to a variable with the same name as the function

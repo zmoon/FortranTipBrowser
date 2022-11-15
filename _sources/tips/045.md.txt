@@ -22,11 +22,11 @@ The derived type here represents a specific month in time
    dates+1: 2021-12 2022-01 2022-02
  dates > dates(2) F F T
 
-2022-10-30
+2022-11-15
 
 ```
 
-[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0` with no flags
+[^gfortran-version]: Compiled using `GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0` with no flags
 
 ```{note}
 `idate` is getting highlighted in the module code above

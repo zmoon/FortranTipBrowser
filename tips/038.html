@@ -703,7 +703,24 @@
      <span class="text-muted">
       047.
      </span>
-     RESHAPE with the optional ORDER and PAD arguments
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       reshape
+      </span>
+     </code>
+     with the optional
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       order
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pad
+      </span>
+     </code>
+     arguments
     </a>
    </li>
    <li class="toctree-l2">
@@ -2382,16 +2399,16 @@ using formatted and unformatted stream I/O.</p>
 <div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id2">2</a></span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span> n =     1000000
  irate =           1000000000
-   5.5511151231257827E-017   4.5754312505419392E-007  0.99999956413088320        4.5754312509999998E-007  0.99999956413088320     
-   0.0000000000000000        4.5754312505419392E-007  0.99999956413088320        4.5754312505419392E-007  0.99999956413088320     
+   5.5511151231257827E-017   1.2025892480727052E-006  0.99999979000132211        1.2025892481000000E-006  0.99999979000132211     
+   0.0000000000000000        1.2025892480727052E-006  0.99999979000132211        1.2025892480727052E-006  0.99999979000132211     
 
    formatted   formatted unformatted unformatted
        write        read       write        read
-   0.668       0.521       0.632E-02   0.145E-02
+   0.558       0.436       0.544E-02   0.113E-02
 
  enhancement enhancement
        write        read
-    106.        360.    
+    103.        384.    
 </pre></div>
 </div>
 </div>
@@ -2414,7 +2431,7 @@ not sufficient to measure the unformatted write time on my laptop.</p>
 <dd><p>float64; <span class="math notranslate nohighlight">\(10^6 \times 64\,\text{bits} = 8\,\text{MB}\)</span></p>
 </dd>
 <dt class="label" id="gfortran-version"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Compiled using <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Fortran</span> <span class="pre">(Ubuntu</span> <span class="pre">11.2.0-19ubuntu1)</span> <span class="pre">11.2.0</span></code> with no flags</p>
+<dd><p>Compiled using <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Fortran</span> <span class="pre">(Ubuntu</span> <span class="pre">11.3.0-1ubuntu1~22.04)</span> <span class="pre">11.3.0</span></code> with no flags</p>
 </dd>
 <dt class="label" id="sys-clock"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p><a class="reference external" href="https://gcc.gnu.org/onlinedocs/gfortran/SYSTEM_005fCLOCK.html">https://gcc.gnu.org/onlinedocs/gfortran/SYSTEM_005fCLOCK.html</a></p>
