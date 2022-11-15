@@ -782,11 +782,13 @@ tips:
     url: https://twitter.com/fortrantip/status/1474357943667671060
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why does Fortran not have a factorial function? It does, as for positive whole values of X the Gamma function simplifies to the factorial function for (X-1).<br>That is,<br><br>x! == gamma(x+1)<br><br>Thanks to urbanjost for tip! <a href="https://t.co/fTAPvhKEpr">pic.twitter.com/fTAPvhKEpr</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474357943667671060?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # TODO
-  - title: RESHAPE with the optional ORDER and PAD arguments
+  - title: '`reshape` with the optional `order` and `pad` arguments'
     intro: |
-      RESHAPE returns an array with a different shape than the SOURCE array. Optional ORDER argument changes the order of elements of SOURCE from the usual column major. Optional PAD argument fills the result, with recycling, after source is exhausted.
-    file: ~
+      [`reshape`](https://gcc.gnu.org/onlinedocs/gfortran/RESHAPE.html)
+      returns an array with a different shape than the `source` array.
+      Optional `order` argument changes the order of elements of `source` from the usual column major.
+      Optional `pad` argument fills the result, with recycling, after the source is exhausted.
+    file: reshape-array.f90
     file0: reshape_array.f90
     url: https://twitter.com/fortrantip/status/1474394605890244614
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">RESHAPE returns an array with a different shape than the SOURCE array. Optional ORDER argument changes the order of elements of SOURCE from the usual column major. Optional PAD argument fills the result, with recycling, after source is exhausted. <a href="https://t.co/Xb3RCZ6LcW">pic.twitter.com/Xb3RCZ6LcW</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474394605890244614?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
