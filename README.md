@@ -1,8 +1,8 @@
 # FortranTipBrowser
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-
 Sphinx site for the [@FortranTip](https://twitter.com/fortrantip) (see also [Beliavsky/FortranTip](https://github.com/Beliavsky/FortranTip)) tips.
+
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 ## Ideas
 
