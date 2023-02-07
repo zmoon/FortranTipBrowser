@@ -2335,7 +2335,7 @@ title="Print to PDF"
 <h1><span class='text-muted'>025.</span> Avoid polluting the namespace by using <code class="docutils literal notranslate"><span class="pre">use</span></code>-<code class="docutils literal notranslate"><span class="pre">only</span></code><a class="headerlink" href="#span-class-text-muted-025-span-avoid-polluting-the-namespace-by-using-use-only" title="Permalink to this headline">#</a></h1>
 <p><span style='font-size: small;' class='text-muted'>topic: <a class="reference internal" href="index.html#modules"><span class="std std-ref">Modules</span></a></span></p>
 <p>In Fortran,</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">m</span><span class="w"></span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">m</span>
 </pre></div>
 </div>
 <p>is equivalent to Python</p>
@@ -2343,7 +2343,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>It is better to write</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">bar</span><span class="w"></span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">bar</span>
 </pre></div>
 </div>
 <p>to avoid polluting the namespace and to clarify the origin of imported entities.</p>

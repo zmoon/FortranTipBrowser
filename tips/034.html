@@ -2335,16 +2335,16 @@ title="Print to PDF"
 <h1><span class='text-muted'>034.</span> Replace non-standard <code class="docutils literal notranslate"><span class="pre">REAL*8</span></code> declaration with <code class="docutils literal notranslate"><span class="pre">real(kind=real64)</span></code><a class="headerlink" href="#span-class-text-muted-034-span-replace-non-standard-real-8-declaration-with-real-kind-real64" title="Permalink to this headline">#</a></h1>
 <p><span style='font-size: small;' class='text-muted'>topic: <a class="reference internal" href="index.html#data-types"><span class="std std-ref">Data types</span></a></span></p>
 <p>In older code, declarations such as<a class="footnote-reference brackets" href="#id3" id="id1">1</a></p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">REAL</span><span class="o">*</span><span class="mi">8</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">REAL</span><span class="o">*</span><span class="mi">8</span><span class="w"> </span><span class="n">x</span>
 </pre></div>
 </div>
 <p>are common but non-standard.
 They should be replaced by</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span>
 </pre></div>
 </div>
 <p>with <code class="docutils literal notranslate"><span class="pre">wp</span></code><a class="footnote-reference brackets" href="#wp" id="id2">2</a> set appropriately (e.g., <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">iso_fortran_env,</span> <span class="pre">only:</span> <span class="pre">wp</span> <span class="pre">=&gt;</span> <span class="pre">real64</span></code>).</p>

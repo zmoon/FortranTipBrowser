@@ -2343,12 +2343,12 @@ Use <code class="docutils literal notranslate"><span class="pre">subroutine</spa
 
 <span class="k">contains</span>
 
-<span class="kt">real </span><span class="k">pure function </span><span class="n">area</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">)</span><span class="w"></span>
-<span class="w">   </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"></span>
-<span class="w">   </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="o">*</span><span class="n">width</span><span class="w"></span>
-<span class="k">end function </span><span class="n">area</span><span class="w"></span>
+<span class="kt">real </span><span class="k">pure function </span><span class="n">area</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">)</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">width</span>
+<span class="w">   </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="o">*</span><span class="n">width</span>
+<span class="k">end function </span><span class="n">area</span>
 
-<span class="k">end</span><span class="w"></span>
+<span class="k">end</span>
 </pre></div>
 </div>
 </div>
