@@ -793,13 +793,15 @@ tips:
     url: https://twitter.com/fortrantip/status/1474394605890244614
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">RESHAPE returns an array with a different shape than the SOURCE array. Optional ORDER argument changes the order of elements of SOURCE from the usual column major. Optional PAD argument fills the result, with recycling, after source is exhausted. <a href="https://t.co/Xb3RCZ6LcW">pic.twitter.com/Xb3RCZ6LcW</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474394605890244614?ref_src=twsrc%5Etfw">December 24, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
-  # TODO
-  - title: CMPLX should be used with a KIND argument
+  - title: '`cmplx` should be used with a `kind` argument'
     intro: |
-      CMPLX(X,Y,[KIND]) returns a single precision complex variable, even if X and Y are double precision, unless a KIND is specified. 
-
-      Merry Christmas and Happy Holidays! Posts may be sparse until the new year.
-    file: ~
+      [`cmplx(x, y [, kind])`](https://gcc.gnu.org/onlinedocs/gfortran/CMPLX.html)
+      returns a single precision complex variable,
+      even if `x` and `y` are double precision, unless a `kind` is specified.
+    concl: |
+      Some further references:
+      * <https://fortran-lang.discourse.group/t/complex-constants-and-variables/2909>
+    file: cmplx.f90
     file0: cmplx.f90
     url: https://twitter.com/fortrantip/status/1474537984066301959
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">CMPLX(X,Y,[KIND]) returns a single precision complex variable, even if X and Y are double precision, unless a KIND is specified. <br><br>Merry Christmas and Happy Holidays! Posts may be sparse until the new year. <a href="https://t.co/MD9tCw4pTB">pic.twitter.com/MD9tCw4pTB</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1474537984066301959?ref_src=twsrc%5Etfw">December 25, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
