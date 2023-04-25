@@ -808,11 +808,46 @@ tips:
 
   # 26-Dec-2021
 
-  # TODO
   - title: Fortran is column-major
     intro: |
-      The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order.
-    file: ~
+      The order you loop through multidimensional arrays can have a big impact on speed.
+      Fortran is [column-major](https://en.wikipedia.org/wiki/Row-_and_column-major_order),
+      meaning consecutive elements of a column are stored next to each other in memory,
+      and you should loop through arrays in this order.
+    concl: |
+      Another way to think about this is to say that
+      the first (leftmost) index ($i$) varies fastest when considering all elements of the array in storage order,
+      as illustrated [here](https://en.wikipedia.org/wiki/File:Row_and_column_major_order.svg),
+      so you want that to be the innermost loop.
+      The last (rightmost) index ($j$ in 2-D), varies slowest, so we want this to be our outermost loop.
+
+      ```{tip}
+      Different languages use different storage.
+      For example, C is row-major, and this is what NumPy uses by default.
+      Want NumPy arrays to be stored Fortran-style (column-major) instead?
+      Specify `order='F'` when creating arrays!
+      ```
+
+      ```{note}
+      Although Fortran's array *storage* order is column-*major*,
+      semantically we still refer to the first dimension
+      (`dim=1` in the above program, first index (`i`) in the `array(i, j)` indexing)
+      as the row dimension (with index $i$).
+      ```
+
+      ```{note}
+      This idea extends to arrays with more than two dimensions.
+      In general, the loop nesting order for fastest access will be
+      *last dimension* $\to \ldots \to$ *first dimension*,
+      as shown [here](https://fortran-lang.org/en/learn/best_practices/multidim_arrays/).
+      Also, the 1-D slice `arr(:, 1, 1, ..., 1)` is contiguous,
+      like the column slice `arr(:, 1)` is for 2-D arrays.
+      ```
+
+      Some further references:
+      * <https://fortran-lang.org/en/learn/best_practices/multidim_arrays/>
+      * <https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays>
+    file: column-major.f90
     file0: column_major.f90
     url: https://twitter.com/fortrantip/status/1475049356155883524
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order. <a href="https://t.co/oEtrOaMbzC">pic.twitter.com/oEtrOaMbzC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475049356155883524?ref_src=twsrc%5Etfw">December 26, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
