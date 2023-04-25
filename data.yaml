@@ -653,7 +653,7 @@ tips:
 
       [^empty]: In Fortran, the "empty" array may get values set to zero,
           but this is not guaranteed (compiler and hardware(?) dependence).
-          With NumPy, the unintialized array elements will not (all) be zero.
+          With NumPy, the uninitialized array elements will not (all) be zero.
 
       [^np.full]: With NumPy,
           ```python
@@ -2569,7 +2569,7 @@ tips:
     embed: '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">CALL MOVE_ALLOC(FROM,TO) copies FROM to TO and then deallocates FROM. It can be used to expand array x(:) with<br><br>n = size(x)<br>allocate (y(n+size(new)))<br>y(:n) = x<br>y(n+1:) = new<br>call move_alloc(from=y,to=x)<br><br>This may be faster than<br><br>x = [x,new]<a href="https://t.co/ljSNwAxZVR">pic.twitter.com/ljSNwAxZVR</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1513111554107006979?ref_src=twsrc%5Etfw">April 10, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
 
   # TODO
-  - title: MOVE_ALLOC may be faster than RESHAPE or allocation on asignment to resize an array.
+  - title: MOVE_ALLOC may be faster than RESHAPE or allocation on assignment to resize an array.
     intro: |
       Another way to grow an array is
 
@@ -2791,7 +2791,7 @@ tips:
   # 22-Apr-2022
 
   # TODO
-  - title: Fortran Package Manger simplifies building programs.
+  - title: Fortran Package Manager simplifies building programs.
     intro: |
       &nbsp;
     file: ~
