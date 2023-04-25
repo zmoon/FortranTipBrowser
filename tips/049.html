@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -32,11 +32,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -46,6 +46,8 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tips/049';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -313,7 +315,7 @@
 <li class="toctree-l2"><a class="reference internal" href="182.html"><span class="text-muted">182.</span> ALLOCATE has an optional ERRMSG specifier.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="183.html"><span class="text-muted">183.</span> If unsure, test whether a variable is ALLOCATED before using DEALLOCATE.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="184.html"><span class="text-muted">184.</span> Use MOVE_ALLOC to resize an array.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="185.html"><span class="text-muted">185.</span> MOVE_ALLOC may be faster than RESHAPE or allocation on asignment to resize an array.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="185.html"><span class="text-muted">185.</span> MOVE_ALLOC may be faster than RESHAPE or allocation on assignment to resize an array.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="186.html"><span class="text-muted">186.</span> Deallocating a derived type deallocates its allocatable components.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="187.html"><span class="text-muted">187.</span> Links to tutorials on parameterized derived types (PDT).</a></li>
 <li class="toctree-l2"><a class="reference internal" href="188.html"><span class="text-muted">188.</span> PDT can have array dimension, KIND, and character LEN parameters.</a></li>
@@ -329,7 +331,7 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="198.html"><span class="text-muted">198.</span> Compilation can fail if there is no main program or if a USEd module has not been compiled.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="199.html"><span class="text-muted">199.</span> Fortran Package Manger simplifies building programs.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="199.html"><span class="text-muted">199.</span> Fortran Package Manager simplifies building programs.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="200.html"><span class="text-muted">200.</span> Fortran-lang has a section on Building Programs, and F18 has a compiler options comparison.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="201.html"><span class="text-muted">201.</span> Compiler Explorer shows the assembly code generated by many Fortran compilers.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="202.html"><span class="text-muted">202.</span> Compilers may accept extensions by default but have options to flag non-standard code.</a></li>
@@ -529,20 +531,96 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="span-class-text-muted-049-span-fortran-is-column-major">
 <h1><span class='text-muted'>049.</span> Fortran is column-major<a class="headerlink" href="#span-class-text-muted-049-span-fortran-is-column-major" title="Permalink to this headline">#</a></h1>
 <p><span style='font-size: small;' class='text-muted'>topic: <a class="reference internal" href="index.html#arrays"><span class="std std-ref">Arrays</span></a></span></p>
+<p>The order you loop through multidimensional arrays can have a big impact on speed.
+Fortran is <a class="reference external" href="https://en.wikipedia.org/wiki/Row-_and_column-major_order">column-major</a>,
+meaning consecutive elements of a column are stored next to each other in memory,
+and you should loop through arrays in this order.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">column-major.f90 | <a href="https://github.com/zmoon/FortranTipBrowser/blob/main/src/column-major.f90" target="_blank" title="See this source on GitHub"><i class="fab fa-github"></i></a> | <a href="https://github.com/Beliavsky/FortranTip/blob/main/column_major.f90" target="_blank" title="See the original source on Beliavsky/FortranTip GitHub"><i class="fab fa-github"></i><sub>0</sub></a> | <a href="https://godbolt.org/#g:!((g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,selection:(endColumn:1,endLineNumber:36,positionColumn:1,positionLineNumber:36,selectionStartColumn:1,selectionStartLineNumber:36,startColumn:1,startLineNumber:36),source:'program+column_major%0A+++use+iso_fortran_env,+only:+wp+%3D%3E+real64,+int64%0A%0A+++integer,+parameter+::+m+%3D+10000,+n+%3D+m%0A+++integer+::+array(m,+n)%0A+++integer+::+i,+j,+tot%0A+++integer(int64)+::+irate,+tic,+toc%0A%0A+++call+system_clock(count_rate%3Dirate)++!!+%23+of+clock+ticks+per+second%0A+++array+%3D+0%0A%0A+++!!+FASTER:+Looping+consecutively+through+columns%0A+++call+system_clock(count%3Dtic)%0A+++tot+%3D+0%0A+++do+j+%3D+1,+size(array,+dim%3D2)%0A++++++do+i+%3D+1,+size(array,+dim%3D1)%0A+++++++++!!+Do+something+with+array(i,+j)%0A+++++++++tot+%3D+tot+%2B+array(i,+j)%0A++++++end+do%0A+++end+do%0A+++call+system_clock(count%3Dtoc)%0A+++print+%22(g12.3)%22,+(toc+-+tic)+/+real(irate,+wp)%0A%0A+++!!+SLOWER:+Looping+consecutively+through+rows%0A+++call+system_clock(count%3Dtic)%0A+++tot+%3D+0%0A+++do+i+%3D+1,+size(array,+dim%3D1)%0A++++++do+j+%3D+1,+size(array,+dim%3D2)%0A+++++++++!!+Do+something+with+array(i,+j)%0A+++++++++tot+%3D+tot+%2B+array(i,+j)%0A++++++end+do%0A+++end+do%0A+++call+system_clock(count%3Dtoc)%0A+++print+%22(g12.3)%22,+(toc+-+tic)+/+real(irate,+wp)%0A%0Aend+program%0A'),l:'5',n:'0',o:'Fortran+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gfortran112,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'0',intel:'0',libraryCode:'0',trim:'1'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:1,lang:fortran,libs:!(),options:'',selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1,tree:'1'),l:'5',n:'0',o:'x86-64+gfortran+11.2+(Fortran,+Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:62.300683371298405,n:'0',o:'',t:'0'),(g:!((h:output,i:(compiler:1,editor:1,fontScale:14,fontUsePx:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+gfortran+11.2+(Compiler+%231)',t:'0')),header:(),l:'4',m:37.699316628701595,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4" target="_blank" title="Open in Godbolt Compiler Explorer"><img src="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/views/resources/site-logo.svg" alt="Godbolt Compiler Explorer logo" width="55.11" height="16.7" class="align-text-bottom" /></a> | <a href="https://play.fortran-lang.org/?code=program%20column_major%0A%20%20%20use%20iso_fortran_env%2C%20only%3A%20wp%20%3D%3E%20real64%2C%20int64%0A%0A%20%20%20integer%2C%20parameter%20%3A%3A%20m%20%3D%2010000%2C%20n%20%3D%20m%0A%20%20%20integer%20%3A%3A%20array%28m%2C%20n%29%0A%20%20%20integer%20%3A%3A%20i%2C%20j%2C%20tot%0A%20%20%20integer%28int64%29%20%3A%3A%20irate%2C%20tic%2C%20toc%0A%0A%20%20%20call%20system_clock%28count_rate%3Dirate%29%20%20%21%20%23%20of%20clock%20ticks%20per%20second%0A%20%20%20array%20%3D%200%0A%0A%20%20%20%21%20FASTER%3A%20Looping%20consecutively%20through%20columns%0A%20%20%20call%20system_clock%28count%3Dtic%29%0A%20%20%20tot%20%3D%200%0A%20%20%20do%20j%20%3D%201%2C%20size%28array%2C%20dim%3D2%29%0A%20%20%20%20%20%20do%20i%20%3D%201%2C%20size%28array%2C%20dim%3D1%29%0A%20%20%20%20%20%20%20%20%20%21%20Do%20something%20with%20array%28i%2C%20j%29%0A%20%20%20%20%20%20%20%20%20tot%20%3D%20tot%20%2B%20array%28i%2C%20j%29%0A%20%20%20%20%20%20end%20do%0A%20%20%20end%20do%0A%20%20%20call%20system_clock%28count%3Dtoc%29%0A%20%20%20print%20%22%28g12.3%29%22%2C%20%28toc%20-%20tic%29%20/%20real%28irate%2C%20wp%29%0A%0A%20%20%20%21%20SLOWER%3A%20Looping%20consecutively%20through%20rows%0A%20%20%20call%20system_clock%28count%3Dtic%29%0A%20%20%20tot%20%3D%200%0A%20%20%20do%20i%20%3D%201%2C%20size%28array%2C%20dim%3D1%29%0A%20%20%20%20%20%20do%20j%20%3D%201%2C%20size%28array%2C%20dim%3D2%29%0A%20%20%20%20%20%20%20%20%20%21%20Do%20something%20with%20array%28i%2C%20j%29%0A%20%20%20%20%20%20%20%20%20tot%20%3D%20tot%20%2B%20array%28i%2C%20j%29%0A%20%20%20%20%20%20end%20do%0A%20%20%20end%20do%0A%20%20%20call%20system_clock%28count%3Dtoc%29%0A%20%20%20print%20%22%28g12.3%29%22%2C%20%28toc%20-%20tic%29%20/%20real%28irate%2C%20wp%29%0A%0Aend%20program%0A" target="_blank" title="Open in Fortran Playground"><img src="https://raw.githubusercontent.com/fortran-lang/playground/main/frontend/src/fortran-logo.png" alt="Fortran logo" height="15.5" class="align-text-bottom" /></a></span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">column_major</span>
+<span class="w">   </span><span class="k">use </span><span class="n">iso_fortran_env</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">wp</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">real64</span><span class="p">,</span><span class="w"> </span><span class="n">int64</span>
+
+<span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span>
+<span class="w">   </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">array</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">   </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">tot</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="n">int64</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">irate</span><span class="p">,</span><span class="w"> </span><span class="n">tic</span><span class="p">,</span><span class="w"> </span><span class="n">toc</span>
+
+<span class="w">   </span><span class="k">call </span><span class="nb">system_clock</span><span class="p">(</span><span class="n">count_rate</span><span class="o">=</span><span class="n">irate</span><span class="p">)</span><span class="w">  </span><span class="c">! # of clock ticks per second</span>
+<span class="w">   </span><span class="k">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">   </span><span class="c">! FASTER: Looping consecutively through columns</span>
+<span class="w">   </span><span class="k">call </span><span class="nb">system_clock</span><span class="p">(</span><span class="nb">count</span><span class="o">=</span><span class="n">tic</span><span class="p">)</span>
+<span class="w">   </span><span class="n">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">   </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="nb">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">         </span><span class="c">! Do something with array(i, j)</span>
+<span class="w">         </span><span class="n">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">array</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">   end do</span>
+<span class="k">   call </span><span class="nb">system_clock</span><span class="p">(</span><span class="nb">count</span><span class="o">=</span><span class="n">toc</span><span class="p">)</span>
+<span class="w">   </span><span class="k">print</span><span class="w"> </span><span class="s2">&quot;(g12.3)&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">toc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tic</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">irate</span><span class="p">,</span><span class="w"> </span><span class="n">wp</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! SLOWER: Looping consecutively through rows</span>
+<span class="w">   </span><span class="k">call </span><span class="nb">system_clock</span><span class="p">(</span><span class="nb">count</span><span class="o">=</span><span class="n">tic</span><span class="p">)</span>
+<span class="w">   </span><span class="n">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="nb">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">         </span><span class="c">! Do something with array(i, j)</span>
+<span class="w">         </span><span class="n">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">array</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">   end do</span>
+<span class="k">   call </span><span class="nb">system_clock</span><span class="p">(</span><span class="nb">count</span><span class="o">=</span><span class="n">toc</span><span class="p">)</span>
+<span class="w">   </span><span class="k">print</span><span class="w"> </span><span class="s2">&quot;(g12.3)&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">toc</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tic</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">irate</span><span class="p">,</span><span class="w"> </span><span class="n">wp</span><span class="p">)</span>
+
+<span class="k">end program</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Output<a class="footnote-reference brackets" href="#gfortran-version" id="id1">1</a></span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>   0.225    
+   0.398    
+</pre></div>
+</div>
+</div>
+<p>Another way to think about this is to say that
+the first (leftmost) index (<span class="math notranslate nohighlight">\(i\)</span>) varies fastest when considering all elements of the array in storage order,
+as illustrated <a class="reference external" href="https://en.wikipedia.org/wiki/File:Row_and_column_major_order.svg">here</a>,
+so you want that to be the innermost loop.
+The last (rightmost) index (<span class="math notranslate nohighlight">\(j\)</span> in 2-D), varies slowest, so we want this to be our outermost loop.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Different languages use different storage.
+For example, C is row-major, and this is what NumPy uses by default.
+Want NumPy arrays to be stored Fortran-style (column-major) instead?
+Specify <code class="docutils literal notranslate"><span class="pre">order='F'</span></code> when creating arrays!</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This tip is a draft<a class="footnote-reference brackets" href="#draft" id="id1">1</a>.</p>
+<p>Although Fortran’s array <em>storage</em> order is column-<em>major</em>,
+semantically we still refer to the first dimension
+(<code class="docutils literal notranslate"><span class="pre">dim=1</span></code> in the above program, first index (<code class="docutils literal notranslate"><span class="pre">i</span></code>) in the <code class="docutils literal notranslate"><span class="pre">array(i,</span> <span class="pre">j)</span></code> indexing)
+as the row dimension (with index <span class="math notranslate nohighlight">\(i\)</span>).</p>
 </div>
-<p>The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This idea extends to arrays with more than two dimensions.
+In general, the loop nesting order for fastest access will be
+<em>last dimension</em> <span class="math notranslate nohighlight">\(\to \ldots \to\)</span> <em>first dimension</em>,
+as shown <a class="reference external" href="https://fortran-lang.org/en/learn/best_practices/multidim_arrays/">here</a>.
+Also, the 1-D slice <code class="docutils literal notranslate"><span class="pre">arr(:,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">...,</span> <span class="pre">1)</span></code> is contiguous,
+like the column slice <code class="docutils literal notranslate"><span class="pre">arr(:,</span> <span class="pre">1)</span></code> is for 2-D arrays.</p>
+</div>
+<p>Some further references:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fortran-lang.org/en/learn/best_practices/multidim_arrays/">https://fortran-lang.org/en/learn/best_practices/multidim_arrays/</a></p></li>
+<li><p><a class="reference external" href="https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays">https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays</a></p></li>
+</ul>
 <hr class="docutils" />
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The order you loop through multidimensional arrays can have a big impact on speed. Fortran is column-major, meaning consecutive elements of a column are stored next to each other in memory, and you should loop through arrays in this order. <a href="https://t.co/oEtrOaMbzC">pic.twitter.com/oEtrOaMbzC</a></p>&mdash; FortranTip (@fortrantip) <a href="https://twitter.com/fortrantip/status/1475049356155883524?ref_src=twsrc%5Etfw">December 26, 2021</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="draft"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>From the perspective of FortranTip Browser, “draft” means that
-it hasn’t been edited for formatting,
-hasn’t had corresponding Fortran programs added,
-the text content hasn’t been enhanced, etc.
-Draft texts are extracted from the corresponding Tweet using the Twitter API.</p>
+<dt class="label" id="gfortran-version"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Compiled using <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">Fortran</span> <span class="pre">(Ubuntu</span> <span class="pre">11.3.0-1ubuntu1~22.04)</span> <span class="pre">11.3.0</span></code> with no flags</p>
 </dd>
 </dl>
 </section>
@@ -554,7 +632,10 @@ Draft texts are extracted from the corresponding Tweet using the Twitter API.</p
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="048.html"
@@ -574,7 +655,10 @@ Draft texts are extracted from the corresponding Tweet using the Twitter API.</p
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -584,7 +668,7 @@ Draft texts are extracted from the corresponding Tweet using the Twitter API.</p
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -614,7 +698,7 @@ By Beliavsky and FortranTip contributors
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -623,8 +707,8 @@ By Beliavsky and FortranTip contributors
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
